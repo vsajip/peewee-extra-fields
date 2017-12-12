@@ -1,10 +1,10 @@
 # peewee-extra-fields
 
-Extra additional Fields for [Peewee ORM.](https://docs.peewee-orm.com)
+[Extra additional Fields](http://docs.peewee-orm.com/en/latest/peewee/models.html#creating-a-custom-field) for [Peewee ORM.](https://docs.peewee-orm.com)
 
 CSVField, CharFieldCustom, CountryISOCodeField, CurrencyISOCodeField, IPAddressField, IPNetworkField, LanguageISOCodeField, PastDateField, PastDateTimeField, PositiveDecimalField, PositiveFloatField, PositiveIntegerField and more.
 
-We want to be a hub for all custom Fields. If your created a Custom Peewee Field feel free to Send Pull Requests!!!.
+We want to be a hub for all custom Fields. If your created a Custom Peewee Field feel free to [Send Pull Requests!!!.](https://github.com/juancarlospaco/peewee-extra-fields/compare)
 
 ![screenshot](https://source.unsplash.com/IClZBVw5W5A/800x400 "Illustrative Photo by https://unsplash.com/@toddquackenbush")
 
