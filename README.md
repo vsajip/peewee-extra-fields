@@ -651,7 +651,6 @@ pytest
 - GNU GPL Latest Version and GNU LGPL Latest Version and any Licence YOU Request via Bug Report.
 
 
-# Ethics and Humanism Policy:
+### Ethics and Humanism Policy:
 
-- Religions is not allowed.
-- Contributing means you agree with the COC.
+- Religions is not allowed. Contributing means you agree with the COC.
