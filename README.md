@@ -1,6 +1,6 @@
 # peewee-extra-fields
 
-Extra additional Fields for Peewee ORM.  
+Extra additional Fields for [Peewee ORM.](https://docs.peewee-orm.com)
 
 CSVField, CharFieldCustom, CountryISOCodeField, CurrencyISOCodeField, IPAddressField, IPNetworkField, LanguageISOCodeField, PastDateField, PastDateTimeField, PositiveDecimalField, PositiveFloatField, PositiveIntegerField and more.
 
@@ -20,7 +20,7 @@ We want to be a hub for all custom Fields. If your created a Custom Peewee Field
 
 `peewee_extra_fields.PositiveIntegerField()`
 
-**Description:** `IntegerField` subclass but only accepts **Positive** values (>= 0).
+**Description:** [`IntegerField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Positive** values (>= 0).
 
 **Arguments:** None.
 
@@ -59,7 +59,7 @@ ValueError: PositiveIntegerField Value is not a Positive Integer (valid values m
 
 `peewee_extra_fields.PositiveFloatField(round_by: int=None)`
 
-**Description:** `FloatField` subclass but only accepts **Positive** values (>= 0).
+**Description:** [`FloatField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Positive** values (>= 0).
 Optionally it can round Floats using Pythons `round()` with `round_by` integer argument.
 
 **Arguments:**
@@ -110,7 +110,7 @@ ValueError: PositiveFloatField 'round_by' argument is not a Non-Zero Positive In
 
 `peewee_extra_fields.PositiveDecimalField(round_by: int=None)`
 
-**Description:** `DecimalField` subclass but only accepts **Positive** values (>= 0).
+**Description:** [`DecimalField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Positive** values (>= 0).
 
 **Arguments:**
 - `round()` round `decimal.Decimal` using Pythons `Decimal().quantize().normalize()`, optional, defaults to `None`, integer type, positive value.
@@ -161,7 +161,7 @@ ValueError: PositiveDecimalField 'round_by' argument is not a Non-Zero Positive 
 
 `peewee_extra_fields.IPAddressField()`
 
-**Description:** `CharField` subclass but only accepts **IP Addresses** values (IPv4 & IPv6).
+**Description:** [`CharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **IP Addresses** values (IPv4 & IPv6).
 
 **Arguments:** None.
 
@@ -213,7 +213,7 @@ IPv4Address('172.16.0.1')
 
 `peewee_extra_fields.IPNetworkField()`
 
-**Description:** `CharField` subclass but only accepts **IP Networks** values (IPv4 & IPv6).
+**Description:** [`CharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **IP Networks** values (IPv4 & IPv6).
 
 **Arguments:** None.
 
@@ -254,7 +254,7 @@ IPv4Network('10.0.0.0/23')
 
 `peewee_extra_fields.PastDateField()`
 
-**Description:** `DateField` subclass but only accepts dates **Not on the Future** values.
+**Description:** [`DateField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts dates **Not on the Future** values.
 Past is Ok, Present is Ok, Future is Not Ok.
 Most of times you need Dates on the Past, eg. your Birthday cant be in the Future.
 
@@ -296,7 +296,7 @@ ValueError: PastDateField Dates Value is not in the Past (valid values must be i
 
 `peewee_extra_fields.PastDateTimeField()`
 
-**Description:** `DateTimeField` subclass but only accepts dates **Not on the Future** values.
+**Description:** [`DateTimeField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts dates **Not on the Future** values.
 Past is Ok, Present is Ok, Future is Not Ok.
 Most of times you need DateTimes on the Past, eg. your Birthday cant be in the Future.
 
@@ -339,7 +339,7 @@ ValueError: PastDateTimeField Dates & Times Value is not in the Past (valid valu
 
 `peewee_extra_fields.LanguageISOCodeField()`
 
-**Description:** `FixedCharField` subclass but only accepts **Language ISO Code** values (ISO-639_1).
+**Description:** [`FixedCharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Language ISO Code** values (ISO-639_1).
 Uses hardcoded `max_length = 2`.
 
 **Arguments:** None.
@@ -389,7 +389,7 @@ LanguageISO639(code='en', name='English')
 
 `peewee_extra_fields.CountryISOCodeField()`
 
-**Description:** `SmallIntegerField` subclass only accepts **Country ISO Code** string values.
+**Description:** [`SmallIntegerField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass only accepts **Country ISO Code** string values.
 
 It converts the 2-Characters Country ISO Code to integer Country ISO Code,
 saves to Database the SmallInt, when reading from Database, reverts back,
@@ -441,7 +441,7 @@ ValueError: CountryISOCodeField Value is not an ISO-3166 Standard Country Code o
 
 `peewee_extra_fields.CurrencyISOCodeField()`
 
-**Description:** `SmallIntegerField` subclass only accepts **Currency ISO Code** values.
+**Description:** [`SmallIntegerField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass only accepts **Currency ISO Code** values.
 
 It converts 3-Characters Currency ISO Code to integer Currency ISO Code,
 saves to Database the SmallInt, when reading from Database, reverts back,
@@ -497,7 +497,7 @@ ValueError: CurrencyISOCodeField Value is not an ISO-4217 Standard Currency Code
 
 `peewee_extra_fields.ARPostalCodeField()`
 
-**Description:** `CharField` subclass but only accepts **Argentine Postal Codes** (old & new).
+**Description:** [`CharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Argentine Postal Codes** (old & new).
 
 **Arguments:** None.
 
@@ -534,7 +534,7 @@ ValueError: ARPostalCodeField Value is not a valid Argentine Postal Code (old & 
 
 `peewee_extra_fields.ARCUITField()`
 
-**Description:** `CharField` subclass but only accepts **Argentine CUIT**, also it can extract DNI from CUIT.
+**Description:** [`CharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Argentine CUIT**, also it can extract DNI from CUIT.
 
 **Arguments:** None.
 
