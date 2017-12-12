@@ -328,7 +328,7 @@ class CurrencyISOCodeField(SmallIntegerField):
 
     def python_value(self, value: int) -> namedtuple:
         if value and isinstance(value, int):
-            value = INT2CURRENCY.get(value)  # int -> str.
+            value = INT2CURRENCY.get(str(value))  # int -> str.
 
             return namedtuple("CurrencyISO4217", "code name iso4217_numeric")(
                 value,

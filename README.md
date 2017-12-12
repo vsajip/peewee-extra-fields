@@ -1,2 +1,569 @@
 # peewee-extra-fields
-Extra Fields for Peewee ORM.  CSVField, CharFieldCustom, CountryISOCodeField, CurrencyISOCodeField, IPAddressField, IPNetworkField, LanguageISOCodeField, PastDateField, PastDateTimeField, PositiveDecimalField, PositiveFloatField, PositiveIntegerField and more.
+
+Extra additional Fields for Peewee ORM.  
+
+CSVField, CharFieldCustom, CountryISOCodeField, CurrencyISOCodeField, IPAddressField, IPNetworkField, LanguageISOCodeField, PastDateField, PastDateTimeField, PositiveDecimalField, PositiveFloatField, PositiveIntegerField and more.
+
+If your created a Custom Peewee Field feel free to Sen Pull Requests!!!.
+
+
+[![GPL License](http://img.shields.io/badge/license-GPL-blue.svg)](http://opensource.org/licenses/GPL-3.0)
+[![LGPL License](http://img.shields.io/badge/license-LGPL-blue.svg)](http://opensource.org/licenses/LGPL-3.0)
+[![Python Version](https://img.shields.io/badge/Python-3-brightgreen.svg)](http://python.org)
+
+
+# Description of fields
+
+##### PositiveIntegerField
+<details>
+
+`peewee_extra_fields.PositiveIntegerField()`
+
+**Description:** `IntegerField` subclass but only accepts **Positive** values (>= 0).
+
+**Arguments:** None.
+
+**Keyword Arguments:** None.
+
+**Returns:** `int`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import PositiveIntegerField
+>>> PositiveIntegerField().db_value(1)
+1
+>>> PositiveIntegerField().db_value(0)
+0
+>>> PositiveIntegerField().db_value(-1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: PositiveIntegerField Value is not a Positive Integer (valid values must be Integers >=0): -1.
+
+```
+</details>
+
+
+##### PositiveFloatField
+<details>
+
+`peewee_extra_fields.PositiveFloatField(round_by: int=None)`
+
+**Description:** `FloatField` subclass but only accepts **Positive** values (>= 0).
+Optionally it can round Floats using Pythons `round()` with `round_by` integer argument.
+
+**Arguments:**
+- `round()` round `float` using Pythons `round()`, optional, defaults to `None`, integer type, positive value.
+
+**Keyword Arguments:** None.
+
+**Returns:** `float`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import PositiveFloatField
+>>> PositiveFloatField().db_value(1.0)
+1.0
+>>> PositiveFloatField().db_value(0.0)
+0.0
+>>> PositiveFloatField().db_value(-1.0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: PositiveFloatField Value is not a Positive Float (valid values must be Floats >=0): -1.0.
+
+>>> PositiveFloatField(round_by=2).db_value(1.123456789)
+1.12
+>>> PositiveFloatField(round_by=4).db_value(1.123456789)
+1.1235
+>>> PositiveFloatField(round_by=-2).db_value(1.123456789)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: PositiveFloatField 'round_by' argument is not a Non-Zero Positive Integer number (valid values must be Integers > 0): -2.
+
+```
+</details>
+
+
+##### PositiveDecimalField
+<details>
+
+`peewee_extra_fields.PositiveDecimalField(round_by: int=None)`
+
+**Description:** `DecimalField` subclass but only accepts **Positive** values (>= 0).
+
+**Arguments:**
+- `round()` round `decimal.Decimal` using Pythons `Decimal().quantize().normalize()`, optional, defaults to `None`, integer type, positive value.
+
+**Keyword Arguments:** None.
+
+**Returns:** `decimal.Decimal`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import PositiveDecimalField
+>>> from decimal import Decimal
+>>> PositiveDecimalField().db_value(Decimal("1.0"))
+Decimal('1.0')
+>>> PositiveDecimalField().db_value(Decimal("0.0"))
+Decimal('0.0')
+>>> PositiveDecimalField().db_value(Decimal("-1.0"))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: PositiveDecimalField Value is not a Positive Decimal (valid values must be Decimals >=0): -1.0.
+
+>>> PositiveDecimalField(round_by=2).db_value(Decimal("1.123456789"))
+Decimal('1.12')
+>>> PositiveDecimalField(round_by=4).db_value(Decimal("1.123456789"))
+Decimal('1.1235')
+>>> PositiveDecimalField(round_by=-2).db_value(Decimal("1.123456789"))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: PositiveDecimalField 'round_by' argument is not a Non-Zero Positive Integer numbers (valid values must be Integers > 0): -2.
+
+```
+</details>
+
+
+##### IPAddressField
+<details>
+
+`peewee_extra_fields.IPAddressField()`
+
+**Description:** `CharField` subclass but only accepts **IP Addresses** values (IPv4 & IPv6).
+
+**Arguments:** None.
+
+**Keyword Arguments:** None.
+
+**Returns:** `IPv4Address` or `IPv6Address`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import IPAddressField
+>>> IPAddressField().db_value("127.0.0.1")
+'127.0.0.1'
+>>> IPAddressField().db_value("::1")
+'::1'
+>>> IPAddressField().db_value("10.0.0.1")
+'10.0.0.1'
+>>> IPAddressField().db_value("10.0.256")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: IPAddressField Value string is not a Valid IP v4 or v6 Address (valid values must be a valid <class 'ipaddress.IPv4Address'>): 10.0.256 --> '10.0.256' does not appear to be an IPv4 or IPv6 address.
+
+>>> IPAddressField().db_value("a.b.c")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: IPAddressField Value string is not a Valid IP v4 or v6 Address (valid values must be a valid <class 'ipaddress.IPv4Address'>): a.b.c --> 'a.b.c' does not appear to be an IPv4 or IPv6 address.
+
+>>> IPAddressField().python_value("::1")
+IPv6Address('::1')
+>>> IPAddressField().python_value("172.16.0.1")
+IPv4Address('172.16.0.1')
+```
+</details>
+
+
+
+##### IPNetworkField
+<details>
+
+`peewee_extra_fields.IPNetworkField()`
+
+**Description:** `CharField` subclass but only accepts **IP Networks** values (IPv4 & IPv6).
+
+**Arguments:** None.
+
+**Keyword Arguments:** None.
+
+**Returns:** `IPv4Network` or `IPv6Network`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import IPNetworkField
+>>> IPNetworkField().db_value("10.0.0.0")
+'10.0.0.0'
+>>> IPNetworkField().db_value("10.0.0.0/23")
+'10.0.0.0/23'
+>>> IPNetworkField().db_value("256.0.0.0/23")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: IPNetworkField Value string is not a Valid IP v4 or v6 Network (valid values must be a valid <class 'ipaddress.IPv4Network'>): 256.0.0.0/23 --> '256.0.0.0/23' does not appear to be an IPv4 or IPv6 network.
+
+>>> IPNetworkField().python_value("10.0.0.0/23")
+IPv4Network('10.0.0.0/23')
+```
+</details>
+
+
+##### PastDateField
+<details>
+
+`peewee_extra_fields.PastDateField()`
+
+**Description:** `DateField` subclass but only accepts dates **Not on the Future** values.
+Past is Ok, Present is Ok, Future is Not Ok.
+Most of times you need Dates on the Past, eg. your Birthday cant be in the Future.
+
+**Arguments:** None.
+
+**Keyword Arguments:** None.
+
+**Returns:** `date`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import PastDateField
+>>> from datetime import date
+>>> PastDateField().db_value(date(year=2010, month=1, day=1))
+datetime.date(2010, 1, 1)
+>>> PastDateField().db_value(date(year=2017, month=1, day=1))
+datetime.date(2017, 1, 1)
+>>> PastDateField().db_value(date(year=2020, month=1, day=1))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: PastDateField Dates Value is not in the Past (valid values must be in the Past): 2020-01-01.
+
+```
+</details>
+
+
+##### PastDateTimeField
+<details>
+
+`peewee_extra_fields.PastDateTimeField()`
+
+**Description:** `DateTimeField` subclass but only accepts dates **Not on the Future** values.
+Past is Ok, Present is Ok, Future is Not Ok.
+Most of times you need DateTimes on the Past, eg. your Birthday cant be in the Future.
+
+**Arguments:** None.
+
+**Keyword Arguments:** None.
+
+**Returns:** `datetime`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import PastDateTimeField
+>>> from datetime import datetime
+>>> PastDateTimeField().db_value(datetime(year=2010, month=1, day=1))
+datetime.datetime(2010, 1, 1, 0, 0)
+>>> PastDateTimeField().db_value(datetime(year=2017, month=1, day=1))
+datetime.datetime(2017, 1, 1, 0, 0)
+>>> PastDateTimeField().db_value(datetime(year=2020, month=1, day=1))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: PastDateTimeField Dates & Times Value is not in the Past (valid values must be in the Past): 2020-01-01 00:00:00.
+
+```
+</details>
+
+
+
+##### LanguageISOCodeField
+<details>
+
+`peewee_extra_fields.LanguageISOCodeField()`
+
+**Description:** `FixedCharField` subclass but only accepts **Language ISO Code** values (ISO-639_1).
+Uses hardcoded `max_length = 2`.
+
+**Arguments:** None.
+
+**Keyword Arguments:** None.
+
+**Returns:** `collections.namedtuple`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import LanguageISOCodeField
+>>> LanguageISOCodeField().db_value("en")
+'en'
+>>> LanguageISOCodeField().db_value("es")
+'es'
+>>> LanguageISOCodeField().db_value("not valid")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: LanguageISOCodeField Value is 9 Characters long instead of 2 Characters long (valid values must be ISO-639_1 Language Codes): not valid.
+
+>>> LanguageISOCodeField().db_value("xx")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: LanguageISOCodeField Value is not an ISO-639_1 Standard Language Code of 2 Characters long (valid values must be ISO-639_1 Language Codes): xx.
+
+>>> LanguageISOCodeField().python_value("es")
+LanguageISO639(code='es', name='Spanish')
+>>> LanguageISOCodeField().python_value("en")
+LanguageISO639(code='en', name='English')
+```
+</details>
+
+
+##### CountryISOCodeField
+<details>
+
+`peewee_extra_fields.CountryISOCodeField()`
+
+**Description:** `SmallIntegerField` subclass only accepts **Country ISO Code** string values.
+
+It converts the 2-Characters Country ISO Code to integer Country ISO Code,
+saves to Database the SmallInt, when reading from Database, reverts back,
+small integer Country ISO Code to 2-Characters string Country ISO Code.
+
+Returns 1 namedtuple with iso3166_a3, iso3166_numeric, capital, continent,
+currency_code, currency_name, geoname_id, is_developed, is_independent,
+languages, name, name_human, phone_code, timezones and tld.
+
+This always stores only small positive Integer numbers of 3 digits max,
+that maps 1-to-1 to 2-Characters string Country Codes, according to ISO.
+
+Small integer is always faster than varchar or text in every aspect.
+
+**Arguments:** None.
+
+**Keyword Arguments:** None.
+
+**Returns:** `collections.namedtuple`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import CountryISOCodeField
+>>> CountryISOCodeField().db_value("ar")
+32
+>>> CountryISOCodeField().python_value(32)
+CountryISO3166(iso3166_a3='ARG', iso3166_numeric=32, capital='Buenos Aires', continent='Americas', currency_code='ARS', currency_name='Argentine Peso', geoname_id=3865483, is_developed=False, is_independent=True, languages=['es-AR', 'en', 'it', 'de', 'fr', 'gn'], name='Argentina', name_human='The Argentine Republic', phone_code='54', timezones=['america/argentina/buenos_aires', 'america/argentina/cordoba', 'america/argentina/jujuy', 'america/argentina/tucuman', 'america/argentina/catamarca', 'america/argentina/la_rioja', 'america/argentina/san_juan', 'america/argentina/mendoza', 'america/argentina/rio_gallegos', 'america/argentina/ushuaia'], tld='.ar')
+>>> CountryISOCodeField().db_value("xx")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: CountryISOCodeField Value is not an ISO-3166 Standard Country Code of 2 Characters long (valid values must be ISO-3166 Country Codes): xx.
+
+```
+</details>
+
+
+##### CurrencyISOCodeField
+<details>
+
+`peewee_extra_fields.CurrencyISOCodeField()`
+
+**Description:** `SmallIntegerField` subclass only accepts **Currency ISO Code** values.
+
+It converts 3-Characters Currency ISO Code to integer Currency ISO Code,
+saves to Database the SmallInt, when reading from Database, reverts back,
+small integer Currency ISO Code to 3-Characters string Currency ISO Code.
+
+Returns 1 namedtuple with code, name, iso4217_numeric.
+
+This always stores only small positive Integer numbers of 3 digits max,
+that maps 1-to-1 to 3-Characters string Currency Codes, according to ISO.
+
+Small integer is always faster than varchar or text in every aspect.
+
+**Arguments:** None.
+
+**Keyword Arguments:** None.
+
+**Returns:** `collections.namedtuple`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import CurrencyISOCodeField
+>>> CurrencyISOCodeField().db_value("usd")
+840
+>>> CurrencyISOCodeField().python_value(840)
+CurrencyISO4217(code='usd', name='United States Dollar', iso4217_numeric=840)
+>>> CurrencyISOCodeField().db_value("not valid")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: CurrencyISOCodeField Value is 9 Characters long instead of 3 Characters long (valid values must be ISO-4217 Currency Codes): not valid.
+
+>>> CurrencyISOCodeField().db_value("lol")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: CurrencyISOCodeField Value is not an ISO-4217 Standard Currency Code of 3 Characters long (valid values must be ISO-4217 Currency Codes): lol.
+
+```
+</details>
+
+
+##### ARPostalCodeField
+<details>
+
+`peewee_extra_fields.ARPostalCodeField()`
+
+**Description:** `CharField` subclass but only accepts **Argentine Postal Codes** (old & new).
+
+**Arguments:** None.
+
+**Keyword Arguments:** None.
+
+**Returns:** `str`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import ARPostalCodeField
+>>> ARPostalCodeField().db_value("2804")
+'2804'
+>>> ARPostalCodeField().db_value("666")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: ARPostalCodeField Value is not a valid Argentine Postal Code (old & new) string of 4 to 8 characters long: 666.
+
+```
+</details>
+
+
+##### ARCUITField
+<details>
+
+`peewee_extra_fields.ARCUITField()`
+
+**Description:** `CharField` subclass but only accepts **Argentine CUIT**, also it can extract DNI from CUIT.
+
+**Arguments:** None.
+
+**Keyword Arguments:** None.
+
+**Returns:** `str`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import ARCUITField
+>>> ARCUITField().db_value("20-30999666-6")
+'20309996666'
+>>> ARCUITField().db_value("20309996666")
+'20309996666'
+>>> ARCUITField().cuit2dni("20-30999666-6")
+30999666
+>>> ARCUITField().db_value("20-30999-6")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: ARCUITField Value is not a valid Argentine Postal Code (old or new) string of 4 to 8 characters long: 20-30999-6.
+
+```
+</details>
