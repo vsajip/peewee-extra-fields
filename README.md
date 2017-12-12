@@ -22,9 +22,9 @@ We want to be a hub for all custom Fields. If your created a Custom Peewee Field
 
 **Description:** [`IntegerField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Positive** values (>= 0).
 
-**Arguments:** None.
+**Arguments:** None (should take the same `*args` and `**kwargs` as `IntegerField`)
 
-**Keyword Arguments:** None.
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `IntegerField`).
 
 **Returns:** `int`.
 
@@ -65,7 +65,7 @@ Optionally it can round Floats using Pythons `round()` with `round_by` integer a
 **Arguments:**
 - `round()` round `float` using Pythons `round()`, optional, defaults to `None`, integer type, positive value.
 
-**Keyword Arguments:** None.
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `FloatField`).
 
 **Returns:** `float`.
 
@@ -115,7 +115,7 @@ ValueError: PositiveFloatField 'round_by' argument is not a Non-Zero Positive In
 **Arguments:**
 - `round()` round `decimal.Decimal` using Pythons `Decimal().quantize().normalize()`, optional, defaults to `None`, integer type, positive value.
 
-**Keyword Arguments:** None.
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `DecimalField`).
 
 **Returns:** `decimal.Decimal`.
 
@@ -163,9 +163,9 @@ ValueError: PositiveDecimalField 'round_by' argument is not a Non-Zero Positive 
 
 **Description:** [`CharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **IP Addresses** values (IPv4 & IPv6).
 
-**Arguments:** None.
+**Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
 
-**Keyword Arguments:** None.
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
 
 **Returns:** `IPv4Address` or `IPv6Address`.
 
@@ -215,9 +215,9 @@ IPv4Address('172.16.0.1')
 
 **Description:** [`CharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **IP Networks** values (IPv4 & IPv6).
 
-**Arguments:** None.
+**Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
 
-**Keyword Arguments:** None.
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
 
 **Returns:** `IPv4Network` or `IPv6Network`.
 
@@ -258,9 +258,9 @@ IPv4Network('10.0.0.0/23')
 Past is Ok, Present is Ok, Future is Not Ok.
 Most of times you need Dates on the Past, eg. your Birthday cant be in the Future.
 
-**Arguments:** None.
+**Arguments:** None (should take the same `*args` and `**kwargs` as `IntegerField`).
 
-**Keyword Arguments:** None.
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `IntegerField`).
 
 **Returns:** `date`.
 
@@ -300,9 +300,9 @@ ValueError: PastDateField Dates Value is not in the Past (valid values must be i
 Past is Ok, Present is Ok, Future is Not Ok.
 Most of times you need DateTimes on the Past, eg. your Birthday cant be in the Future.
 
-**Arguments:** None.
+**Arguments:** None (should take the same `*args` and `**kwargs` as `DateTimeField`).
 
-**Keyword Arguments:** None.
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `DateTimeField`).
 
 **Returns:** `datetime`.
 
@@ -342,9 +342,9 @@ ValueError: PastDateTimeField Dates & Times Value is not in the Past (valid valu
 **Description:** [`FixedCharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Language ISO Code** values (ISO-639_1).
 Uses hardcoded `max_length = 2`.
 
-**Arguments:** None.
+**Arguments:** None (should take the same `*args` and `**kwargs` as `FixedCharField`).
 
-**Keyword Arguments:** None.
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `FixedCharField`).
 
 **Returns:** `collections.namedtuple`.
 
@@ -404,9 +404,9 @@ that maps 1-to-1 to 2-Characters string Country Codes, according to ISO.
 
 Small integer is always faster than varchar or text in every aspect.
 
-**Arguments:** None.
+**Arguments:** None (should take the same `*args` and `**kwargs` as `SmallIntegerField`).
 
-**Keyword Arguments:** None.
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `SmallIntegerField`).
 
 **Returns:** `collections.namedtuple`.
 
@@ -454,9 +454,9 @@ that maps 1-to-1 to 3-Characters string Currency Codes, according to ISO.
 
 Small integer is always faster than varchar or text in every aspect.
 
-**Arguments:** None.
+**Arguments:** None (should take the same `*args` and `**kwargs` as `SmallIntegerField`).
 
-**Keyword Arguments:** None.
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `SmallIntegerField`).
 
 **Returns:** `collections.namedtuple`.
 
@@ -499,9 +499,9 @@ ValueError: CurrencyISOCodeField Value is not an ISO-4217 Standard Currency Code
 
 **Description:** [`CharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Argentine Postal Codes** (old & new).
 
-**Arguments:** None.
+**Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
 
-**Keyword Arguments:** None.
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
 
 **Returns:** `str`.
 
@@ -536,9 +536,9 @@ ValueError: ARPostalCodeField Value is not a valid Argentine Postal Code (old & 
 
 **Description:** [`CharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Argentine CUIT**, also it can extract DNI from CUIT.
 
-**Arguments:** None.
+**Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
 
-**Keyword Arguments:** None.
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
 
 **Returns:** `str`.
 
