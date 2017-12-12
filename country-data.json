@@ -1,0 +1,10151 @@
+{
+    "ad": {
+        "capital": "andorra la vella",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 3041565,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "and",
+
+        "iso3166_numeric": 20,
+
+        "languages": [
+            "ca"
+        ],
+
+        "name": "andorra",
+
+        "name_human": "the principality of andorra",
+
+        "phone_code": "376",
+
+        "timezones": [
+            "europe/andorra"
+        ],
+
+        "tld": ".ad"
+    },
+
+    "ae": {
+        "capital": "abu dhabi",
+
+        "continent": "asia",
+
+        "currency_code": "aed",
+
+        "currency_name": "uae dirham",
+
+        "geoname_id": 290557,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "are",
+
+        "iso3166_numeric": 784,
+
+        "languages": [
+            "ar-AE",
+
+            "fa",
+
+            "en",
+
+            "hi",
+
+            "ur"
+        ],
+
+        "name": "united arab emirates",
+
+        "name_human": "the united arab emirates",
+
+        "phone_code": "971",
+
+        "timezones": [
+            "asia/dubai"
+        ],
+
+        "tld": ".ae"
+    },
+
+    "af": {
+        "capital": "kabul",
+
+        "continent": "asia",
+
+        "currency_code": "afn",
+
+        "currency_name": "afghani",
+
+        "geoname_id": 1149361,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "afg",
+
+        "iso3166_numeric": 4,
+
+        "languages": [
+            "fa-AF",
+
+            "ps",
+
+            "uz-AF",
+
+            "tk"
+        ],
+
+        "name": "afghanistan",
+
+        "name_human": "the islamic republic of afghanistan",
+
+        "phone_code": "93",
+
+        "timezones": [
+            "asia/kabul"
+        ],
+
+        "tld": ".af"
+    },
+
+    "ag": {
+        "capital": "st. john's",
+
+        "continent": "americas",
+
+        "currency_code": "xcd",
+
+        "currency_name": "east caribbean dollar",
+
+        "geoname_id": 3576396,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "atg",
+
+        "iso3166_numeric": 28,
+
+        "languages": [
+            "en-AG"
+        ],
+
+        "name": "antigua & barbuda",
+
+        "name_human": "antigua and barbuda",
+
+        "phone_code": "1-268",
+
+        "timezones": [
+            "america/antigua"
+        ],
+
+        "tld": ".ag"
+    },
+
+    "ai": {
+        "capital": "the valley",
+
+        "continent": "americas",
+
+        "currency_code": "xcd",
+
+        "currency_name": "east caribbean dollar",
+
+        "geoname_id": 3573511,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "aia",
+
+        "iso3166_numeric": 660,
+
+        "languages": [
+            "en-AI"
+        ],
+
+        "name": "anguilla",
+
+        "name_human": null,
+
+        "phone_code": "1-264",
+
+        "timezones": [
+            "africa/luanda"
+        ],
+
+        "tld": ".ai"
+    },
+
+    "al": {
+        "capital": "tirana",
+
+        "continent": "europe",
+
+        "currency_code": "all",
+
+        "currency_name": "lek",
+
+        "geoname_id": 783754,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "alb",
+
+        "iso3166_numeric": 8,
+
+        "languages": [
+            "sq",
+
+            "el"
+        ],
+
+        "name": "albania",
+
+        "name_human": "the republic of albania",
+
+        "phone_code": "355",
+
+        "timezones": [
+            "europe/tirane"
+        ],
+
+        "tld": ".al"
+    },
+
+    "am": {
+        "capital": "yerevan",
+
+        "continent": "asia",
+
+        "currency_code": "amd",
+
+        "currency_name": "armenian dram",
+
+        "geoname_id": 174982,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "arm",
+
+        "iso3166_numeric": 51,
+
+        "languages": [
+            "hy"
+        ],
+
+        "name": "armenia",
+
+        "name_human": "the republic of armenia",
+
+        "phone_code": "374",
+
+        "timezones": [
+            "asia/yerevan"
+        ],
+
+        "tld": ".am"
+    },
+
+    "ao": {
+        "capital": "luanda",
+
+        "continent": "africa",
+
+        "currency_code": "aoa",
+
+        "currency_name": "kwanza",
+
+        "geoname_id": 3351879,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "ago",
+
+        "iso3166_numeric": 24,
+
+        "languages": [
+            "pt-AO"
+        ],
+
+        "name": "angola",
+
+        "name_human": "the republic of angola",
+
+        "phone_code": "244",
+
+        "timezones": [
+            "africa/luanda"
+        ],
+
+        "tld": ".ao"
+    },
+
+    "aq": {
+        "capital": null,
+
+        "continent": null,
+
+        "currency_code": null,
+
+        "currency_name": "no universal currency",
+
+        "geoname_id": 6697173,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "ata",
+
+        "iso3166_numeric": 10,
+
+        "languages": null,
+
+        "name": "antarctica",
+
+        "name_human": null,
+
+        "phone_code": "672",
+
+        "timezones": [
+            "africa/luanda"
+        ],
+
+        "tld": ".aq"
+    },
+
+    "ar": {
+        "capital": "buenos aires",
+
+        "continent": "americas",
+
+        "currency_code": "ars",
+
+        "currency_name": "argentine peso",
+
+        "geoname_id": 3865483,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "arg",
+
+        "iso3166_numeric": 32,
+
+        "languages": [
+            "es-AR",
+
+            "en",
+
+            "it",
+
+            "de",
+
+            "fr",
+
+            "gn"
+        ],
+
+        "name": "argentina",
+
+        "name_human": "the argentine republic",
+
+        "phone_code": "54",
+
+        "timezones": [
+            "america/argentina/buenos_aires",
+
+            "america/argentina/cordoba",
+
+            "america/argentina/jujuy",
+
+            "america/argentina/tucuman",
+
+            "america/argentina/catamarca",
+
+            "america/argentina/la_rioja",
+
+            "america/argentina/san_juan",
+
+            "america/argentina/mendoza",
+
+            "america/argentina/rio_gallegos",
+
+            "america/argentina/ushuaia"
+        ],
+
+        "tld": ".ar"
+    },
+
+    "as": {
+        "capital": "pago pago",
+
+        "continent": "oceania",
+
+        "currency_code": "usd",
+
+        "currency_name": "us dollar",
+
+        "geoname_id": 5880801,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "asm",
+
+        "iso3166_numeric": 16,
+
+        "languages": [
+            "en-AS",
+
+            "sm",
+
+            "to"
+        ],
+
+        "name": "american samoa",
+
+        "name_human": null,
+
+        "phone_code": "1-684",
+
+        "timezones": [
+            "africa/algiers"
+        ],
+
+        "tld": ".as"
+    },
+
+    "at": {
+        "capital": "vienna",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 2782113,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "aut",
+
+        "iso3166_numeric": 40,
+
+        "languages": [
+            "de-AT",
+
+            "hr",
+
+            "hu",
+
+            "sl"
+        ],
+
+        "name": "austria",
+
+        "name_human": "the republic of austria",
+
+        "phone_code": "43",
+
+        "timezones": [
+            "europe/vienna"
+        ],
+
+        "tld": ".at"
+    },
+
+    "au": {
+        "capital": "canberra",
+
+        "continent": "oceania",
+
+        "currency_code": "aud",
+
+        "currency_name": "australian dollar",
+
+        "geoname_id": 2077456,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "aus",
+
+        "iso3166_numeric": 36,
+
+        "languages": [
+            "en-AU"
+        ],
+
+        "name": "australia",
+
+        "name_human": "australia",
+
+        "phone_code": "61",
+
+        "timezones": [
+            "australia/lord_howe",
+
+            "australia/hobart",
+
+            "australia/currie",
+
+            "australia/melbourne",
+
+            "australia/sydney",
+
+            "australia/broken_hill",
+
+            "australia/brisbane",
+
+            "australia/lindeman",
+
+            "australia/adelaide",
+
+            "australia/darwin",
+
+            "australia/perth"
+        ],
+
+        "tld": ".au"
+    },
+
+    "aw": {
+        "capital": "oranjestad",
+
+        "continent": "americas",
+
+        "currency_code": "awg",
+
+        "currency_name": "aruban florin",
+
+        "geoname_id": 3577279,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "abw",
+
+        "iso3166_numeric": 533,
+
+        "languages": [
+            "nl-AW",
+
+            "es",
+
+            "en"
+        ],
+
+        "name": "aruba",
+
+        "name_human": null,
+
+        "phone_code": "297",
+
+        "timezones": [],
+
+        "tld": ".aw"
+    },
+
+    "ax": {
+        "capital": "mariehamn",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 661882,
+
+        "is_developed": true,
+
+        "is_independent": false,
+
+        "iso3166_a3": "ala",
+
+        "iso3166_numeric": 248,
+
+        "languages": [
+            "sv-AX"
+        ],
+
+        "name": "\u00e5land islands",
+
+        "name_human": null,
+
+        "phone_code": "358",
+
+        "timezones": [
+            "africa/harare"
+        ],
+
+        "tld": ".ax"
+    },
+
+    "az": {
+        "capital": "baku",
+
+        "continent": "asia",
+
+        "currency_code": "azn",
+
+        "currency_name": "azerbaijan manat",
+
+        "geoname_id": 587116,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "aze",
+
+        "iso3166_numeric": 31,
+
+        "languages": [
+            "az",
+
+            "ru",
+
+            "hy"
+        ],
+
+        "name": "azerbaijan",
+
+        "name_human": "the republic of azerbaijan",
+
+        "phone_code": "994",
+
+        "timezones": [
+            "asia/baku"
+        ],
+
+        "tld": ".az"
+    },
+
+    "ba": {
+        "capital": "sarajevo",
+
+        "continent": "europe",
+
+        "currency_code": "bam",
+
+        "currency_name": "convertible mark",
+
+        "geoname_id": 3277605,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "bih",
+
+        "iso3166_numeric": 70,
+
+        "languages": [
+            "bs",
+
+            "hr-BA",
+
+            "sr-BA"
+        ],
+
+        "name": "bosnia",
+
+        "name_human": "bosnia and herzegovina",
+
+        "phone_code": "387",
+
+        "timezones": [
+            "europe/sarajevo"
+        ],
+
+        "tld": ".ba"
+    },
+
+    "bb": {
+        "capital": "bridgetown",
+
+        "continent": "americas",
+
+        "currency_code": "bbd",
+
+        "currency_name": "barbados dollar",
+
+        "geoname_id": 3374084,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "brb",
+
+        "iso3166_numeric": 52,
+
+        "languages": [
+            "en-BB"
+        ],
+
+        "name": "barbados",
+
+        "name_human": "barbados",
+
+        "phone_code": "1-246",
+
+        "timezones": [
+            "america/barbados"
+        ],
+
+        "tld": ".bb"
+    },
+
+    "bd": {
+        "capital": "dhaka",
+
+        "continent": "asia",
+
+        "currency_code": "bdt",
+
+        "currency_name": "taka",
+
+        "geoname_id": 1210997,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "bgd",
+
+        "iso3166_numeric": 50,
+
+        "languages": [
+            "bn-BD",
+
+            "en"
+        ],
+
+        "name": "bangladesh",
+
+        "name_human": "the people's republic of bangladesh",
+
+        "phone_code": "880",
+
+        "timezones": [
+            "asia/dhaka"
+        ],
+
+        "tld": ".bd"
+    },
+
+    "be": {
+        "capital": "brussels",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 2802361,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "bel",
+
+        "iso3166_numeric": 56,
+
+        "languages": [
+            "nl-BE",
+
+            "fr-BE",
+
+            "de-BE"
+        ],
+
+        "name": "belgium",
+
+        "name_human": "the kingdom of belgium",
+
+        "phone_code": "32",
+
+        "timezones": [
+            "europe/brussels"
+        ],
+
+        "tld": ".be"
+    },
+
+    "bf": {
+        "capital": "ouagadougou",
+
+        "continent": "africa",
+
+        "currency_code": "xof",
+
+        "currency_name": "cfa franc bceao",
+
+        "geoname_id": 2361809,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "bfa",
+
+        "iso3166_numeric": 854,
+
+        "languages": [
+            "fr-BF"
+        ],
+
+        "name": "burkina faso",
+
+        "name_human": "burkina faso",
+
+        "phone_code": "226",
+
+        "timezones": [
+            "africa/ouagadougou"
+        ],
+
+        "tld": ".bf"
+    },
+
+    "bg": {
+        "capital": "sofia",
+
+        "continent": "europe",
+
+        "currency_code": "bgn",
+
+        "currency_name": "bulgarian lev",
+
+        "geoname_id": 732800,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "bgr",
+
+        "iso3166_numeric": 100,
+
+        "languages": [
+            "bg",
+
+            "tr-BG",
+
+            "rom"
+        ],
+
+        "name": "bulgaria",
+
+        "name_human": "the republic of bulgaria",
+
+        "phone_code": "359",
+
+        "timezones": [
+            "europe/sofia"
+        ],
+
+        "tld": ".bg"
+    },
+
+    "bh": {
+        "capital": "manama",
+
+        "continent": "asia",
+
+        "currency_code": "bhd",
+
+        "currency_name": "bahraini dinar",
+
+        "geoname_id": 290291,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "bhr",
+
+        "iso3166_numeric": 48,
+
+        "languages": [
+            "ar-BH",
+
+            "en",
+
+            "fa",
+
+            "ur"
+        ],
+
+        "name": "bahrain",
+
+        "name_human": "the kingdom of bahrain",
+
+        "phone_code": "973",
+
+        "timezones": [
+            "asia/bahrain"
+        ],
+
+        "tld": ".bh"
+    },
+
+    "bi": {
+        "capital": "bujumbura",
+
+        "continent": "africa",
+
+        "currency_code": "bif",
+
+        "currency_name": "burundi franc",
+
+        "geoname_id": 433561,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "bdi",
+
+        "iso3166_numeric": 108,
+
+        "languages": [
+            "fr-BI",
+
+            "rn"
+        ],
+
+        "name": "burundi",
+
+        "name_human": "the republic of burundi",
+
+        "phone_code": "257",
+
+        "timezones": [
+            "africa/bujumbura"
+        ],
+
+        "tld": ".bi"
+    },
+
+    "bj": {
+        "capital": "porto-novo",
+
+        "continent": "africa",
+
+        "currency_code": "xof",
+
+        "currency_name": "cfa franc bceao",
+
+        "geoname_id": 2395170,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "ben",
+
+        "iso3166_numeric": 204,
+
+        "languages": [
+            "fr-BJ"
+        ],
+
+        "name": "benin",
+
+        "name_human": "the republic of benin",
+
+        "phone_code": "229",
+
+        "timezones": [
+            "africa/porto-novo"
+        ],
+
+        "tld": ".bj"
+    },
+
+    "bl": {
+        "capital": "gustavia",
+
+        "continent": "americas",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 3578476,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "blm",
+
+        "iso3166_numeric": 652,
+
+        "languages": [
+            "fr"
+        ],
+
+        "name": "st. barth\u00e9lemy",
+
+        "name_human": null,
+
+        "phone_code": "590",
+
+        "timezones": [
+            "africa/kigali"
+        ],
+
+        "tld": ".gp"
+    },
+
+    "bm": {
+        "capital": "hamilton",
+
+        "continent": "americas",
+
+        "currency_code": "bmd",
+
+        "currency_name": "bermudian dollar",
+
+        "geoname_id": 3573345,
+
+        "is_developed": true,
+
+        "is_independent": false,
+
+        "iso3166_a3": "bmu",
+
+        "iso3166_numeric": 60,
+
+        "languages": [
+            "en-BM",
+
+            "pt"
+        ],
+
+        "name": "bermuda",
+
+        "name_human": null,
+
+        "phone_code": "1-441",
+
+        "timezones": [
+            "africa/porto-novo"
+        ],
+
+        "tld": ".bm"
+    },
+
+    "bn": {
+        "capital": "bandar seri begawan",
+
+        "continent": "asia",
+
+        "currency_code": "bnd",
+
+        "currency_name": "brunei dollar",
+
+        "geoname_id": 1820814,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "brn",
+
+        "iso3166_numeric": 96,
+
+        "languages": [
+            "ms-BN",
+
+            "en-BN"
+        ],
+
+        "name": "brunei",
+
+        "name_human": "brunei darussalam",
+
+        "phone_code": "673",
+
+        "timezones": [
+            "asia/brunei"
+        ],
+
+        "tld": ".bn"
+    },
+
+    "bo": {
+        "capital": "sucre",
+
+        "continent": "americas",
+
+        "currency_code": "bob",
+
+        "currency_name": "boliviano",
+
+        "geoname_id": 3923057,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "bol",
+
+        "iso3166_numeric": 68,
+
+        "languages": [
+            "es-BO",
+
+            "qu",
+
+            "ay"
+        ],
+
+        "name": "bolivia",
+
+        "name_human": "the plurinational state of bolivia",
+
+        "phone_code": "591",
+
+        "timezones": [
+            "america/la_paz"
+        ],
+
+        "tld": ".bo"
+    },
+
+    "bq": {
+        "capital": null,
+
+        "continent": "americas",
+
+        "currency_code": "usd",
+
+        "currency_name": "us dollar",
+
+        "geoname_id": 7626844,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "bes",
+
+        "iso3166_numeric": 535,
+
+        "languages": [
+            "nl",
+
+            "pap",
+
+            "en"
+        ],
+
+        "name": "caribbean netherlands",
+
+        "name_human": null,
+
+        "phone_code": "599",
+
+        "timezones": [
+            "america/la_paz"
+        ],
+
+        "tld": ".bq"
+    },
+
+    "br": {
+        "capital": "brasilia",
+
+        "continent": "americas",
+
+        "currency_code": "brl",
+
+        "currency_name": "brazilian real",
+
+        "geoname_id": 3469034,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "bra",
+
+        "iso3166_numeric": 76,
+
+        "languages": [
+            "pt-BR",
+
+            "es",
+
+            "en",
+
+            "fr"
+        ],
+
+        "name": "brazil",
+
+        "name_human": "the federative republic of brazil",
+
+        "phone_code": "55",
+
+        "timezones": [
+            "america/noronha",
+
+            "america/belem",
+
+            "america/fortaleza",
+
+            "america/recife",
+
+            "america/araguaina",
+
+            "america/maceio",
+
+            "america/bahia",
+
+            "america/sao_paulo",
+
+            "america/campo_grande",
+
+            "america/cuiaba",
+
+            "america/porto_velho",
+
+            "america/boa_vista",
+
+            "america/manaus",
+
+            "america/eirunepe",
+
+            "america/rio_branco"
+        ],
+
+        "tld": ".br"
+    },
+
+    "bs": {
+        "capital": "nassau",
+
+        "continent": "americas",
+
+        "currency_code": "bsd",
+
+        "currency_name": "bahamian dollar",
+
+        "geoname_id": 3572887,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "bhs",
+
+        "iso3166_numeric": 44,
+
+        "languages": [
+            "en-BS"
+        ],
+
+        "name": "bahamas",
+
+        "name_human": "the commonwealth of the bahamas",
+
+        "phone_code": "1-242",
+
+        "timezones": [
+            "america/nassau"
+        ],
+
+        "tld": ".bs"
+    },
+
+    "bt": {
+        "capital": "thimphu",
+
+        "continent": "asia",
+
+        "currency_code": "inr,btn",
+
+        "currency_name": "indian rupee,ngultrum",
+
+        "geoname_id": 1252634,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "btn",
+
+        "iso3166_numeric": 64,
+
+        "languages": [
+            "dz"
+        ],
+
+        "name": "bhutan",
+
+        "name_human": "the kingdom of bhutan",
+
+        "phone_code": "975",
+
+        "timezones": [
+            "asia/thimphu"
+        ],
+
+        "tld": ".bt"
+    },
+
+    "bv": {
+        "capital": null,
+
+        "continent": "americas",
+
+        "currency_code": "nok",
+
+        "currency_name": "norwegian krone",
+
+        "geoname_id": 3371123,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "bvt",
+
+        "iso3166_numeric": 74,
+
+        "languages": null,
+
+        "name": "bouvet island",
+
+        "name_human": null,
+
+        "phone_code": "47",
+
+        "timezones": [
+            "africa/gaborone"
+        ],
+
+        "tld": ".bv"
+    },
+
+    "bw": {
+        "capital": "gaborone",
+
+        "continent": "africa",
+
+        "currency_code": "bwp",
+
+        "currency_name": "pula",
+
+        "geoname_id": 933860,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "bwa",
+
+        "iso3166_numeric": 72,
+
+        "languages": [
+            "en-BW",
+
+            "tn-BW"
+        ],
+
+        "name": "botswana",
+
+        "name_human": "the republic of botswana",
+
+        "phone_code": "267",
+
+        "timezones": [
+            "africa/gaborone"
+        ],
+
+        "tld": ".bw"
+    },
+
+    "by": {
+        "capital": "minsk",
+
+        "continent": "europe",
+
+        "currency_code": "byn",
+
+        "currency_name": "belarusian ruble",
+
+        "geoname_id": 630336,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "blr",
+
+        "iso3166_numeric": 112,
+
+        "languages": [
+            "be",
+
+            "ru"
+        ],
+
+        "name": "belarus",
+
+        "name_human": "the republic of belarus",
+
+        "phone_code": "375",
+
+        "timezones": [
+            "europe/minsk"
+        ],
+
+        "tld": ".by"
+    },
+
+    "bz": {
+        "capital": "belmopan",
+
+        "continent": "americas",
+
+        "currency_code": "bzd",
+
+        "currency_name": "belize dollar",
+
+        "geoname_id": 3582678,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "blz",
+
+        "iso3166_numeric": 84,
+
+        "languages": [
+            "en-BZ",
+
+            "es"
+        ],
+
+        "name": "belize",
+
+        "name_human": "belize",
+
+        "phone_code": "501",
+
+        "timezones": [
+            "america/belize"
+        ],
+
+        "tld": ".bz"
+    },
+
+    "ca": {
+        "capital": "ottawa",
+
+        "continent": "americas",
+
+        "currency_code": "cad",
+
+        "currency_name": "canadian dollar",
+
+        "geoname_id": 6251999,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "can",
+
+        "iso3166_numeric": 124,
+
+        "languages": [
+            "en-CA",
+
+            "fr-CA",
+
+            "iu"
+        ],
+
+        "name": "canada",
+
+        "name_human": "canada",
+
+        "phone_code": "1",
+
+        "timezones": [
+            "america/st_johns",
+
+            "america/halifax",
+
+            "america/glace_bay",
+
+            "america/moncton",
+
+            "america/goose_bay",
+
+            "america/blanc-sablon",
+
+            "america/montreal",
+
+            "america/toronto",
+
+            "america/nipigon",
+
+            "america/thunder_bay",
+
+            "america/pangnirtung",
+
+            "america/iqaluit",
+
+            "america/atikokan",
+
+            "america/rankin_inlet",
+
+            "america/winnipeg",
+
+            "america/rainy_river",
+
+            "america/cambridge_bay",
+
+            "america/regina",
+
+            "america/swift_current",
+
+            "america/edmonton",
+
+            "america/yellowknife",
+
+            "america/inuvik",
+
+            "america/dawson_creek",
+
+            "america/vancouver",
+
+            "america/whitehorse",
+
+            "america/dawson"
+        ],
+
+        "tld": ".ca"
+    },
+
+    "cc": {
+        "capital": "west island",
+
+        "continent": "oceania",
+
+        "currency_code": "aud",
+
+        "currency_name": "australian dollar",
+
+        "geoname_id": 1547376,
+
+        "is_developed": true,
+
+        "is_independent": false,
+
+        "iso3166_a3": "cck",
+
+        "iso3166_numeric": 166,
+
+        "languages": [
+            "ms-CC",
+
+            "en"
+        ],
+
+        "name": "cocos (keeling) islands",
+
+        "name_human": null,
+
+        "phone_code": "61",
+
+        "timezones": [],
+
+        "tld": ".cc"
+    },
+
+    "cd": {
+        "capital": "kinshasa",
+
+        "continent": "africa",
+
+        "currency_code": "cdf",
+
+        "currency_name": "congolese franc",
+
+        "geoname_id": 203312,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "cod",
+
+        "iso3166_numeric": 180,
+
+        "languages": [
+            "fr-CD",
+
+            "ln",
+
+            "kg"
+        ],
+
+        "name": "congo - kinshasa",
+
+        "name_human": "the democratic republic of the congo",
+
+        "phone_code": "243",
+
+        "timezones": [
+            "africa/kinshasa",
+
+            "africa/lubumbashi"
+        ],
+
+        "tld": ".cd"
+    },
+
+    "cf": {
+        "capital": "bangui",
+
+        "continent": "africa",
+
+        "currency_code": "xaf",
+
+        "currency_name": "cfa franc beac",
+
+        "geoname_id": 239880,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "caf",
+
+        "iso3166_numeric": 140,
+
+        "languages": [
+            "fr-CF",
+
+            "sg",
+
+            "ln",
+
+            "kg"
+        ],
+
+        "name": "central african republic",
+
+        "name_human": "the central african republic",
+
+        "phone_code": "236",
+
+        "timezones": [
+            "africa/bangui"
+        ],
+
+        "tld": ".cf"
+    },
+
+    "cg": {
+        "capital": "brazzaville",
+
+        "continent": "africa",
+
+        "currency_code": "xaf",
+
+        "currency_name": "cfa franc beac",
+
+        "geoname_id": 2260494,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "cog",
+
+        "iso3166_numeric": 178,
+
+        "languages": [
+            "fr-CG",
+
+            "kg",
+
+            "ln-CG"
+        ],
+
+        "name": "congo - brazzaville",
+
+        "name_human": "the republic of the congo",
+
+        "phone_code": "242",
+
+        "timezones": [
+            "africa/brazzaville"
+        ],
+
+        "tld": ".cg"
+    },
+
+    "ch": {
+        "capital": "bern",
+
+        "continent": "europe",
+
+        "currency_code": "chf",
+
+        "currency_name": "swiss franc",
+
+        "geoname_id": 2658434,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "che",
+
+        "iso3166_numeric": 756,
+
+        "languages": [
+            "de-CH",
+
+            "fr-CH",
+
+            "it-CH",
+
+            "rm"
+        ],
+
+        "name": "switzerland",
+
+        "name_human": "the swiss confederation",
+
+        "phone_code": "41",
+
+        "timezones": [
+            "europe/zurich"
+        ],
+
+        "tld": ".ch"
+    },
+
+    "ci": {
+        "capital": "yamoussoukro",
+
+        "continent": "africa",
+
+        "currency_code": "xof",
+
+        "currency_name": "cfa franc bceao",
+
+        "geoname_id": 2287781,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "civ",
+
+        "iso3166_numeric": 384,
+
+        "languages": [
+            "fr-CI"
+        ],
+
+        "name": "c\u00f4te d\u2019ivoire",
+
+        "name_human": "the republic of c\u00f4te d'ivoire",
+
+        "phone_code": "225",
+
+        "timezones": [
+            "africa/abidjan"
+        ],
+
+        "tld": ".ci"
+    },
+
+    "ck": {
+        "capital": "avarua",
+
+        "continent": "oceania",
+
+        "currency_code": "nzd",
+
+        "currency_name": "new zealand dollar",
+
+        "geoname_id": 1899402,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "cok",
+
+        "iso3166_numeric": 184,
+
+        "languages": [
+            "en-CK",
+
+            "mi"
+        ],
+
+        "name": "cook islands",
+
+        "name_human": "the cook islands",
+
+        "phone_code": "682",
+
+        "timezones": [
+            "africa/brazzaville"
+        ],
+
+        "tld": ".ck"
+    },
+
+    "cl": {
+        "capital": "santiago",
+
+        "continent": "americas",
+
+        "currency_code": "clp",
+
+        "currency_name": "chilean peso",
+
+        "geoname_id": 3895114,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "chl",
+
+        "iso3166_numeric": 152,
+
+        "languages": [
+            "es-CL"
+        ],
+
+        "name": "chile",
+
+        "name_human": "the republic of chile",
+
+        "phone_code": "56",
+
+        "timezones": [
+            "america/santiago",
+
+            "pacific/easter"
+        ],
+
+        "tld": ".cl"
+    },
+
+    "cm": {
+        "capital": "yaounde",
+
+        "continent": "africa",
+
+        "currency_code": "xaf",
+
+        "currency_name": "cfa franc beac",
+
+        "geoname_id": 2233387,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "cmr",
+
+        "iso3166_numeric": 120,
+
+        "languages": [
+            "en-CM",
+
+            "fr-CM"
+        ],
+
+        "name": "cameroon",
+
+        "name_human": "the republic of cameroon",
+
+        "phone_code": "237",
+
+        "timezones": [
+            "africa/douala"
+        ],
+
+        "tld": ".cm"
+    },
+
+    "cn": {
+        "capital": "beijing",
+
+        "continent": "asia",
+
+        "currency_code": "cny",
+
+        "currency_name": "yuan renminbi",
+
+        "geoname_id": 1814991,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "chn",
+
+        "iso3166_numeric": 156,
+
+        "languages": [
+            "zh-CN",
+
+            "yue",
+
+            "wuu",
+
+            "dta",
+
+            "ug",
+
+            "za"
+        ],
+
+        "name": "china",
+
+        "name_human": "the people's republic of china",
+
+        "phone_code": "86",
+
+        "timezones": [
+            "asia/shanghai",
+
+            "asia/harbin",
+
+            "asia/chongqing",
+
+            "asia/urumqi",
+
+            "asia/kashgar"
+        ],
+
+        "tld": ".cn"
+    },
+
+    "co": {
+        "capital": "bogota",
+
+        "continent": "americas",
+
+        "currency_code": "cop",
+
+        "currency_name": "colombian peso",
+
+        "geoname_id": 3686110,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "col",
+
+        "iso3166_numeric": 170,
+
+        "languages": [
+            "es-CO"
+        ],
+
+        "name": "colombia",
+
+        "name_human": "the republic of colombia",
+
+        "phone_code": "57",
+
+        "timezones": [
+            "america/bogota"
+        ],
+
+        "tld": ".co"
+    },
+
+    "cr": {
+        "capital": "san jose",
+
+        "continent": "americas",
+
+        "currency_code": "crc",
+
+        "currency_name": "costa rican colon",
+
+        "geoname_id": 3624060,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "cri",
+
+        "iso3166_numeric": 188,
+
+        "languages": [
+            "es-CR",
+
+            "en"
+        ],
+
+        "name": "costa rica",
+
+        "name_human": "the republic of costa rica",
+
+        "phone_code": "506",
+
+        "timezones": [
+            "america/costa_rica"
+        ],
+
+        "tld": ".cr"
+    },
+
+    "cu": {
+        "capital": "havana",
+
+        "continent": "americas",
+
+        "currency_code": "cup,cuc",
+
+        "currency_name": "cuban peso,peso convertible",
+
+        "geoname_id": 3562981,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "cub",
+
+        "iso3166_numeric": 192,
+
+        "languages": [
+            "es-CU"
+        ],
+
+        "name": "cuba",
+
+        "name_human": "the republic of cuba",
+
+        "phone_code": "53",
+
+        "timezones": [
+            "america/havana"
+        ],
+
+        "tld": ".cu"
+    },
+
+    "cv": {
+        "capital": "praia",
+
+        "continent": "africa",
+
+        "currency_code": "cve",
+
+        "currency_name": "cabo verde escudo",
+
+        "geoname_id": 3374766,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "cpv",
+
+        "iso3166_numeric": 132,
+
+        "languages": [
+            "pt-CV"
+        ],
+
+        "name": "cape verde",
+
+        "name_human": "the republic of cabo verde",
+
+        "phone_code": "238",
+
+        "timezones": [
+            "atlantic/cape_verde"
+        ],
+
+        "tld": ".cv"
+    },
+
+    "cw": {
+        "capital": "willemstad",
+
+        "continent": "americas",
+
+        "currency_code": "ang",
+
+        "currency_name": "netherlands antillean guilder",
+
+        "geoname_id": 7626836,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "cuw",
+
+        "iso3166_numeric": 531,
+
+        "languages": [
+            "nl",
+
+            "pap"
+        ],
+
+        "name": "cura\u00e7ao",
+
+        "name_human": null,
+
+        "phone_code": "599",
+
+        "timezones": [
+            "america/havana"
+        ],
+
+        "tld": ".cw"
+    },
+
+    "cx": {
+        "capital": "flying fish cove",
+
+        "continent": "oceania",
+
+        "currency_code": "aud",
+
+        "currency_name": "australian dollar",
+
+        "geoname_id": 2078138,
+
+        "is_developed": true,
+
+        "is_independent": false,
+
+        "iso3166_a3": "cxr",
+
+        "iso3166_numeric": 162,
+
+        "languages": [
+            "en",
+
+            "zh",
+
+            "ms-CC"
+        ],
+
+        "name": "christmas island",
+
+        "name_human": null,
+
+        "phone_code": "61",
+
+        "timezones": [],
+
+        "tld": ".cx"
+    },
+
+    "cy": {
+        "capital": "nicosia",
+
+        "continent": "asia",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 146669,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "cyp",
+
+        "iso3166_numeric": 196,
+
+        "languages": [
+            "el-CY",
+
+            "tr-CY",
+
+            "en"
+        ],
+
+        "name": "cyprus",
+
+        "name_human": "the republic of cyprus",
+
+        "phone_code": "357",
+
+        "timezones": [
+            "asia/nicosia"
+        ],
+
+        "tld": ".cy"
+    },
+
+    "cz": {
+        "capital": "prague",
+
+        "continent": "europe",
+
+        "currency_code": "czk",
+
+        "currency_name": "czech koruna",
+
+        "geoname_id": 3077311,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "cze",
+
+        "iso3166_numeric": 203,
+
+        "languages": [
+            "cs",
+
+            "sk"
+        ],
+
+        "name": "czechia",
+
+        "name_human": "the czech republic",
+
+        "phone_code": "420",
+
+        "timezones": [
+            "europe/prague"
+        ],
+
+        "tld": ".cz"
+    },
+
+    "de": {
+        "capital": "berlin",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 2921044,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "deu",
+
+        "iso3166_numeric": 276,
+
+        "languages": [
+            "de"
+        ],
+
+        "name": "germany",
+
+        "name_human": "the federal republic of germany",
+
+        "phone_code": "49",
+
+        "timezones": [
+            "europe/berlin"
+        ],
+
+        "tld": ".de"
+    },
+
+    "dj": {
+        "capital": "djibouti",
+
+        "continent": "africa",
+
+        "currency_code": "djf",
+
+        "currency_name": "djibouti franc",
+
+        "geoname_id": 223816,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "dji",
+
+        "iso3166_numeric": 262,
+
+        "languages": [
+            "fr-DJ",
+
+            "ar",
+
+            "so-DJ",
+
+            "aa"
+        ],
+
+        "name": "djibouti",
+
+        "name_human": "the republic of djibouti",
+
+        "phone_code": "253",
+
+        "timezones": [
+            "africa/djibouti"
+        ],
+
+        "tld": ".dj"
+    },
+
+    "dk": {
+        "capital": "copenhagen",
+
+        "continent": "europe",
+
+        "currency_code": "dkk",
+
+        "currency_name": "danish krone",
+
+        "geoname_id": 2623032,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "dnk",
+
+        "iso3166_numeric": 208,
+
+        "languages": [
+            "da-DK",
+
+            "en",
+
+            "fo",
+
+            "de-DK"
+        ],
+
+        "name": "denmark",
+
+        "name_human": "the kingdom of denmark",
+
+        "phone_code": "45",
+
+        "timezones": [
+            "europe/copenhagen"
+        ],
+
+        "tld": ".dk"
+    },
+
+    "dm": {
+        "capital": "roseau",
+
+        "continent": "americas",
+
+        "currency_code": "xcd",
+
+        "currency_name": "east caribbean dollar",
+
+        "geoname_id": 3575830,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "dma",
+
+        "iso3166_numeric": 212,
+
+        "languages": [
+            "en-DM"
+        ],
+
+        "name": "dominica",
+
+        "name_human": "the commonwealth of dominica",
+
+        "phone_code": "1-767",
+
+        "timezones": [
+            "america/dominica"
+        ],
+
+        "tld": ".dm"
+    },
+
+    "do": {
+        "capital": "santo domingo",
+
+        "continent": "americas",
+
+        "currency_code": "dop",
+
+        "currency_name": "dominican peso",
+
+        "geoname_id": 3508796,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "dom",
+
+        "iso3166_numeric": 214,
+
+        "languages": [
+            "es-DO"
+        ],
+
+        "name": "dominican republic",
+
+        "name_human": "the dominican republic",
+
+        "phone_code": "1-809,1-829,1-849",
+
+        "timezones": [
+            "america/santo_domingo"
+        ],
+
+        "tld": ".do"
+    },
+
+    "dz": {
+        "capital": "algiers",
+
+        "continent": "africa",
+
+        "currency_code": "dzd",
+
+        "currency_name": "algerian dinar",
+
+        "geoname_id": 2589581,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "dza",
+
+        "iso3166_numeric": 12,
+
+        "languages": [
+            "ar-DZ"
+        ],
+
+        "name": "algeria",
+
+        "name_human": "the people's democratic republic of algeria",
+
+        "phone_code": "213",
+
+        "timezones": [
+            "africa/algiers"
+        ],
+
+        "tld": ".dz"
+    },
+
+    "ec": {
+        "capital": "quito",
+
+        "continent": "americas",
+
+        "currency_code": "usd",
+
+        "currency_name": "us dollar",
+
+        "geoname_id": 3658394,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "ecu",
+
+        "iso3166_numeric": 218,
+
+        "languages": [
+            "es-EC"
+        ],
+
+        "name": "ecuador",
+
+        "name_human": "the republic of ecuador",
+
+        "phone_code": "593",
+
+        "timezones": [
+            "america/guayaquil",
+
+            "pacific/galapagos"
+        ],
+
+        "tld": ".ec"
+    },
+
+    "ee": {
+        "capital": "tallinn",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 453733,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "est",
+
+        "iso3166_numeric": 233,
+
+        "languages": [
+            "et",
+
+            "ru"
+        ],
+
+        "name": "estonia",
+
+        "name_human": "the republic of estonia",
+
+        "phone_code": "372",
+
+        "timezones": [
+            "europe/tallinn"
+        ],
+
+        "tld": ".ee"
+    },
+
+    "eg": {
+        "capital": "cairo",
+
+        "continent": "africa",
+
+        "currency_code": "egp",
+
+        "currency_name": "egyptian pound",
+
+        "geoname_id": 357994,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "egy",
+
+        "iso3166_numeric": 818,
+
+        "languages": [
+            "ar-EG",
+
+            "en",
+
+            "fr"
+        ],
+
+        "name": "egypt",
+
+        "name_human": "the arab republic of egypt",
+
+        "phone_code": "20",
+
+        "timezones": [
+            "africa/cairo"
+        ],
+
+        "tld": ".eg"
+    },
+
+    "eh": {
+        "capital": "el-aaiun",
+
+        "continent": "africa",
+
+        "currency_code": "mad",
+
+        "currency_name": "moroccan dirham",
+
+        "geoname_id": 2461445,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "esh",
+
+        "iso3166_numeric": 732,
+
+        "languages": [
+            "ar",
+
+            "mey"
+        ],
+
+        "name": "western sahara",
+
+        "name_human": null,
+
+        "phone_code": "212",
+
+        "timezones": [
+            "asia/saigon"
+        ],
+
+        "tld": ".eh"
+    },
+
+    "er": {
+        "capital": "asmara",
+
+        "continent": "africa",
+
+        "currency_code": "ern",
+
+        "currency_name": "nakfa",
+
+        "geoname_id": 338010,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "eri",
+
+        "iso3166_numeric": 232,
+
+        "languages": [
+            "aa-ER",
+
+            "ar",
+
+            "tig",
+
+            "kun",
+
+            "ti-ER"
+        ],
+
+        "name": "eritrea",
+
+        "name_human": "the state of eritrea",
+
+        "phone_code": "291",
+
+        "timezones": [
+            "africa/asmera"
+        ],
+
+        "tld": ".er"
+    },
+
+    "es": {
+        "capital": "madrid",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 2510769,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "esp",
+
+        "iso3166_numeric": 724,
+
+        "languages": [
+            "es-ES",
+
+            "ca",
+
+            "gl",
+
+            "eu",
+
+            "oc"
+        ],
+
+        "name": "spain",
+
+        "name_human": "the kingdom of spain",
+
+        "phone_code": "34",
+
+        "timezones": [
+            "europe/madrid",
+
+            "africa/ceuta",
+
+            "atlantic/canary"
+        ],
+
+        "tld": ".es"
+    },
+
+    "et": {
+        "capital": "addis ababa",
+
+        "continent": "africa",
+
+        "currency_code": "etb",
+
+        "currency_name": "ethiopian birr",
+
+        "geoname_id": 337996,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "eth",
+
+        "iso3166_numeric": 231,
+
+        "languages": [
+            "am",
+
+            "en-ET",
+
+            "om-ET",
+
+            "ti-ET",
+
+            "so-ET",
+
+            "sid"
+        ],
+
+        "name": "ethiopia",
+
+        "name_human": "the federal democratic republic of ethiopia",
+
+        "phone_code": "251",
+
+        "timezones": [
+            "africa/addis_ababa"
+        ],
+
+        "tld": ".et"
+    },
+
+    "fi": {
+        "capital": "helsinki",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 660013,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "fin",
+
+        "iso3166_numeric": 246,
+
+        "languages": [
+            "fi-FI",
+
+            "sv-FI",
+
+            "smn"
+        ],
+
+        "name": "finland",
+
+        "name_human": "the republic of finland",
+
+        "phone_code": "358",
+
+        "timezones": [
+            "europe/helsinki"
+        ],
+
+        "tld": ".fi"
+    },
+
+    "fj": {
+        "capital": "suva",
+
+        "continent": "oceania",
+
+        "currency_code": "fjd",
+
+        "currency_name": "fiji dollar",
+
+        "geoname_id": 2205218,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "fji",
+
+        "iso3166_numeric": 242,
+
+        "languages": [
+            "en-FJ",
+
+            "fj"
+        ],
+
+        "name": "fiji",
+
+        "name_human": "the republic of fiji",
+
+        "phone_code": "679",
+
+        "timezones": [
+            "pacific/fiji"
+        ],
+
+        "tld": ".fj"
+    },
+
+    "fk": {
+        "capital": "stanley",
+
+        "continent": "americas",
+
+        "currency_code": null,
+
+        "currency_name": null,
+
+        "geoname_id": 3474414,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "flk",
+
+        "iso3166_numeric": 238,
+
+        "languages": [
+            "en-FK"
+        ],
+
+        "name": "falkland islands",
+
+        "name_human": null,
+
+        "phone_code": "500",
+
+        "timezones": [
+            "africa/addis_ababa"
+        ],
+
+        "tld": ".fk"
+    },
+
+    "fm": {
+        "capital": "palikir",
+
+        "continent": "oceania",
+
+        "currency_code": "usd",
+
+        "currency_name": "us dollar",
+
+        "geoname_id": 2081918,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "fsm",
+
+        "iso3166_numeric": 583,
+
+        "languages": [
+            "en-FM",
+
+            "chk",
+
+            "pon",
+
+            "yap",
+
+            "kos",
+
+            "uli",
+
+            "woe",
+
+            "nkr",
+
+            "kpg"
+        ],
+
+        "name": "micronesia",
+
+        "name_human": "the federated states of micronesia",
+
+        "phone_code": "691",
+
+        "timezones": [
+            "pacific/truk",
+
+            "pacific/ponape",
+
+            "pacific/kosrae"
+        ],
+
+        "tld": ".fm"
+    },
+
+    "fo": {
+        "capital": "torshavn",
+
+        "continent": "europe",
+
+        "currency_code": "dkk",
+
+        "currency_name": "danish krone",
+
+        "geoname_id": 2622320,
+
+        "is_developed": true,
+
+        "is_independent": false,
+
+        "iso3166_a3": "fro",
+
+        "iso3166_numeric": 234,
+
+        "languages": [
+            "fo",
+
+            "da-FO"
+        ],
+
+        "name": "faroe islands",
+
+        "name_human": null,
+
+        "phone_code": "298",
+
+        "timezones": [],
+
+        "tld": ".fo"
+    },
+
+    "fr": {
+        "capital": "paris",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 3017382,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "fra",
+
+        "iso3166_numeric": 250,
+
+        "languages": [
+            "fr-FR",
+
+            "frp",
+
+            "br",
+
+            "co",
+
+            "ca",
+
+            "eu",
+
+            "oc"
+        ],
+
+        "name": "france",
+
+        "name_human": "the french republic",
+
+        "phone_code": "33",
+
+        "timezones": [
+            "europe/paris"
+        ],
+
+        "tld": ".fr"
+    },
+
+    "ga": {
+        "capital": "libreville",
+
+        "continent": "africa",
+
+        "currency_code": "xaf",
+
+        "currency_name": "cfa franc beac",
+
+        "geoname_id": 2400553,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "gab",
+
+        "iso3166_numeric": 266,
+
+        "languages": [
+            "fr-GA"
+        ],
+
+        "name": "gabon",
+
+        "name_human": "the gabonese republic",
+
+        "phone_code": "241",
+
+        "timezones": [
+            "africa/libreville"
+        ],
+
+        "tld": ".ga"
+    },
+
+    "gb": {
+        "capital": "london",
+
+        "continent": "europe",
+
+        "currency_code": "gbp",
+
+        "currency_name": "pound sterling",
+
+        "geoname_id": 2635167,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "gbr",
+
+        "iso3166_numeric": 826,
+
+        "languages": [
+            "en-GB",
+
+            "cy-GB",
+
+            "gd"
+        ],
+
+        "name": "uk",
+
+        "name_human": "the united kingdom of great britain and northern ireland",
+
+        "phone_code": "44",
+
+        "timezones": [
+            "europe/london"
+        ],
+
+        "tld": ".uk"
+    },
+
+    "gd": {
+        "capital": "st. george's",
+
+        "continent": "americas",
+
+        "currency_code": "xcd",
+
+        "currency_name": "east caribbean dollar",
+
+        "geoname_id": 3580239,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "grd",
+
+        "iso3166_numeric": 308,
+
+        "languages": [
+            "en-GD"
+        ],
+
+        "name": "grenada",
+
+        "name_human": "grenada",
+
+        "phone_code": "1-473",
+
+        "timezones": [
+            "america/grenada"
+        ],
+
+        "tld": ".gd"
+    },
+
+    "ge": {
+        "capital": "tbilisi",
+
+        "continent": "asia",
+
+        "currency_code": "gel",
+
+        "currency_name": "lari",
+
+        "geoname_id": 614540,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "geo",
+
+        "iso3166_numeric": 268,
+
+        "languages": [
+            "ka",
+
+            "ru",
+
+            "hy",
+
+            "az"
+        ],
+
+        "name": "georgia",
+
+        "name_human": "georgia",
+
+        "phone_code": "995",
+
+        "timezones": [
+            "asia/tbilisi"
+        ],
+
+        "tld": ".ge"
+    },
+
+    "gf": {
+        "capital": "cayenne",
+
+        "continent": "americas",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 3381670,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "guf",
+
+        "iso3166_numeric": 254,
+
+        "languages": [
+            "fr-GF"
+        ],
+
+        "name": "french guiana",
+
+        "name_human": null,
+
+        "phone_code": "594",
+
+        "timezones": [
+            "europe/paris"
+        ],
+
+        "tld": ".gf"
+    },
+
+    "gg": {
+        "capital": "st peter port",
+
+        "continent": "europe",
+
+        "currency_code": "gbp",
+
+        "currency_name": "pound sterling",
+
+        "geoname_id": 3042362,
+
+        "is_developed": true,
+
+        "is_independent": false,
+
+        "iso3166_a3": "ggy",
+
+        "iso3166_numeric": 831,
+
+        "languages": [
+            "en",
+
+            "fr"
+        ],
+
+        "name": "guernsey",
+
+        "name_human": null,
+
+        "phone_code": "44",
+
+        "timezones": [
+            "america/guatemala"
+        ],
+
+        "tld": ".gg"
+    },
+
+    "gh": {
+        "capital": "accra",
+
+        "continent": "africa",
+
+        "currency_code": "ghs",
+
+        "currency_name": "ghana cedi",
+
+        "geoname_id": 2300660,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "gha",
+
+        "iso3166_numeric": 288,
+
+        "languages": [
+            "en-GH",
+
+            "ak",
+
+            "ee",
+
+            "tw"
+        ],
+
+        "name": "ghana",
+
+        "name_human": "the republic of ghana",
+
+        "phone_code": "233",
+
+        "timezones": [
+            "africa/accra"
+        ],
+
+        "tld": ".gh"
+    },
+
+    "gi": {
+        "capital": "gibraltar",
+
+        "continent": "europe",
+
+        "currency_code": "gip",
+
+        "currency_name": "gibraltar pound",
+
+        "geoname_id": 2411586,
+
+        "is_developed": true,
+
+        "is_independent": false,
+
+        "iso3166_a3": "gib",
+
+        "iso3166_numeric": 292,
+
+        "languages": [
+            "en-GI",
+
+            "es",
+
+            "it",
+
+            "pt"
+        ],
+
+        "name": "gibraltar",
+
+        "name_human": null,
+
+        "phone_code": "350",
+
+        "timezones": [],
+
+        "tld": ".gi"
+    },
+
+    "gl": {
+        "capital": "nuuk",
+
+        "continent": "americas",
+
+        "currency_code": "dkk",
+
+        "currency_name": "danish krone",
+
+        "geoname_id": 3425505,
+
+        "is_developed": true,
+
+        "is_independent": false,
+
+        "iso3166_a3": "grl",
+
+        "iso3166_numeric": 304,
+
+        "languages": [
+            "kl",
+
+            "da-GL",
+
+            "en"
+        ],
+
+        "name": "greenland",
+
+        "name_human": null,
+
+        "phone_code": "299",
+
+        "timezones": [
+            "europe/athens"
+        ],
+
+        "tld": ".gl"
+    },
+
+    "gm": {
+        "capital": "banjul",
+
+        "continent": "africa",
+
+        "currency_code": "gmd",
+
+        "currency_name": "dalasi",
+
+        "geoname_id": 2413451,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "gmb",
+
+        "iso3166_numeric": 270,
+
+        "languages": [
+            "en-GM",
+
+            "mnk",
+
+            "wof",
+
+            "wo",
+
+            "ff"
+        ],
+
+        "name": "gambia",
+
+        "name_human": "the republic of the gambia",
+
+        "phone_code": "220",
+
+        "timezones": [
+            "africa/banjul"
+        ],
+
+        "tld": ".gm"
+    },
+
+    "gn": {
+        "capital": "conakry",
+
+        "continent": "africa",
+
+        "currency_code": "gnf",
+
+        "currency_name": "guinean franc",
+
+        "geoname_id": 2420477,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "gin",
+
+        "iso3166_numeric": 324,
+
+        "languages": [
+            "fr-GN"
+        ],
+
+        "name": "guinea",
+
+        "name_human": "the republic of guinea",
+
+        "phone_code": "224",
+
+        "timezones": [
+            "africa/conakry"
+        ],
+
+        "tld": ".gn"
+    },
+
+    "gp": {
+        "capital": "basse-terre",
+
+        "continent": "americas",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 3579143,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "glp",
+
+        "iso3166_numeric": 312,
+
+        "languages": [
+            "fr-GP"
+        ],
+
+        "name": "guadeloupe",
+
+        "name_human": null,
+
+        "phone_code": "590",
+
+        "timezones": [
+            "america/grenada"
+        ],
+
+        "tld": ".gp"
+    },
+
+    "gq": {
+        "capital": "malabo",
+
+        "continent": "africa",
+
+        "currency_code": "xaf",
+
+        "currency_name": "cfa franc beac",
+
+        "geoname_id": 2309096,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "gnq",
+
+        "iso3166_numeric": 226,
+
+        "languages": [
+            "es-GQ",
+
+            "fr"
+        ],
+
+        "name": "equatorial guinea",
+
+        "name_human": "the republic of equatorial guinea",
+
+        "phone_code": "240",
+
+        "timezones": [
+            "africa/malabo"
+        ],
+
+        "tld": ".gq"
+    },
+
+    "gr": {
+        "capital": "athens",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 390903,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "grc",
+
+        "iso3166_numeric": 300,
+
+        "languages": [
+            "el-GR",
+
+            "en",
+
+            "fr"
+        ],
+
+        "name": "greece",
+
+        "name_human": "the hellenic republic",
+
+        "phone_code": "30",
+
+        "timezones": [
+            "europe/athens"
+        ],
+
+        "tld": ".gr"
+    },
+
+    "gs": {
+        "capital": "grytviken",
+
+        "continent": "americas",
+
+        "currency_code": null,
+
+        "currency_name": "no universal currency",
+
+        "geoname_id": 3474415,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "sgs",
+
+        "iso3166_numeric": 239,
+
+        "languages": [
+            "en"
+        ],
+
+        "name": "south georgia & south sandwich islands",
+
+        "name_human": null,
+
+        "phone_code": "500",
+
+        "timezones": [
+            "africa/johannesburg"
+        ],
+
+        "tld": ".gs"
+    },
+
+    "gt": {
+        "capital": "guatemala city",
+
+        "continent": "americas",
+
+        "currency_code": "gtq",
+
+        "currency_name": "quetzal",
+
+        "geoname_id": 3595528,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "gtm",
+
+        "iso3166_numeric": 320,
+
+        "languages": [
+            "es-GT"
+        ],
+
+        "name": "guatemala",
+
+        "name_human": "the republic of guatemala",
+
+        "phone_code": "502",
+
+        "timezones": [
+            "america/guatemala"
+        ],
+
+        "tld": ".gt"
+    },
+
+    "gu": {
+        "capital": "hagatna",
+
+        "continent": "oceania",
+
+        "currency_code": "usd",
+
+        "currency_name": "us dollar",
+
+        "geoname_id": 4043988,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "gum",
+
+        "iso3166_numeric": 316,
+
+        "languages": [
+            "en-GU",
+
+            "ch-GU"
+        ],
+
+        "name": "guam",
+
+        "name_human": null,
+
+        "phone_code": "1-671",
+
+        "timezones": [],
+
+        "tld": ".gu"
+    },
+
+    "gw": {
+        "capital": "bissau",
+
+        "continent": "africa",
+
+        "currency_code": "xof",
+
+        "currency_name": "cfa franc bceao",
+
+        "geoname_id": 2372248,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "gnb",
+
+        "iso3166_numeric": 624,
+
+        "languages": [
+            "pt-GW",
+
+            "pov"
+        ],
+
+        "name": "guinea-bissau",
+
+        "name_human": "the republic of guinea-bissau",
+
+        "phone_code": "245",
+
+        "timezones": [
+            "africa/bissau"
+        ],
+
+        "tld": ".gw"
+    },
+
+    "gy": {
+        "capital": "georgetown",
+
+        "continent": "americas",
+
+        "currency_code": "gyd",
+
+        "currency_name": "guyana dollar",
+
+        "geoname_id": 3378535,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "guy",
+
+        "iso3166_numeric": 328,
+
+        "languages": [
+            "en-GY"
+        ],
+
+        "name": "guyana",
+
+        "name_human": "the republic of guyana",
+
+        "phone_code": "592",
+
+        "timezones": [
+            "america/guyana"
+        ],
+
+        "tld": ".gy"
+    },
+
+    "hk": {
+        "capital": "hong kong",
+
+        "continent": "asia",
+
+        "currency_code": "hkd",
+
+        "currency_name": "hong kong dollar",
+
+        "geoname_id": 1819730,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "hkg",
+
+        "iso3166_numeric": 344,
+
+        "languages": [
+            "zh-HK",
+
+            "yue",
+
+            "zh",
+
+            "en"
+        ],
+
+        "name": "hong kong",
+
+        "name_human": null,
+
+        "phone_code": "852",
+
+        "timezones": [],
+
+        "tld": ".hk"
+    },
+
+    "hm": {
+        "capital": null,
+
+        "continent": "oceania",
+
+        "currency_code": "aud",
+
+        "currency_name": "australian dollar",
+
+        "geoname_id": 1547314,
+
+        "is_developed": true,
+
+        "is_independent": false,
+
+        "iso3166_a3": "hmd",
+
+        "iso3166_numeric": 334,
+
+        "languages": null,
+
+        "name": "heard & mcdonald islands",
+
+        "name_human": null,
+
+        "phone_code": "672",
+
+        "timezones": [
+            "america/guatemala"
+        ],
+
+        "tld": ".hm"
+    },
+
+    "hn": {
+        "capital": "tegucigalpa",
+
+        "continent": "americas",
+
+        "currency_code": "hnl",
+
+        "currency_name": "lempira",
+
+        "geoname_id": 3608932,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "hnd",
+
+        "iso3166_numeric": 340,
+
+        "languages": [
+            "es-HN"
+        ],
+
+        "name": "honduras",
+
+        "name_human": "the republic of honduras",
+
+        "phone_code": "504",
+
+        "timezones": [
+            "america/tegucigalpa"
+        ],
+
+        "tld": ".hn"
+    },
+
+    "hr": {
+        "capital": "zagreb",
+
+        "continent": "europe",
+
+        "currency_code": "hrk",
+
+        "currency_name": "kuna",
+
+        "geoname_id": 3202326,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "hrv",
+
+        "iso3166_numeric": 191,
+
+        "languages": [
+            "hr-HR",
+
+            "sr"
+        ],
+
+        "name": "croatia",
+
+        "name_human": "the republic of croatia",
+
+        "phone_code": "385",
+
+        "timezones": [
+            "europe/zagreb"
+        ],
+
+        "tld": ".hr"
+    },
+
+    "ht": {
+        "capital": "port-au-prince",
+
+        "continent": "americas",
+
+        "currency_code": "htg,usd",
+
+        "currency_name": "gourde,us dollar",
+
+        "geoname_id": 3723988,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "hti",
+
+        "iso3166_numeric": 332,
+
+        "languages": [
+            "ht",
+
+            "fr-HT"
+        ],
+
+        "name": "haiti",
+
+        "name_human": "the republic of haiti",
+
+        "phone_code": "509",
+
+        "timezones": [
+            "america/guatemala"
+        ],
+
+        "tld": ".ht"
+    },
+
+    "hu": {
+        "capital": "budapest",
+
+        "continent": "europe",
+
+        "currency_code": "huf",
+
+        "currency_name": "forint",
+
+        "geoname_id": 719819,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "hun",
+
+        "iso3166_numeric": 348,
+
+        "languages": [
+            "hu-HU"
+        ],
+
+        "name": "hungary",
+
+        "name_human": "hungary",
+
+        "phone_code": "36",
+
+        "timezones": [
+            "europe/budapest"
+        ],
+
+        "tld": ".hu"
+    },
+
+    "id": {
+        "capital": "jakarta",
+
+        "continent": "asia",
+
+        "currency_code": "idr",
+
+        "currency_name": "rupiah",
+
+        "geoname_id": 1643084,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "idn",
+
+        "iso3166_numeric": 360,
+
+        "languages": [
+            "id",
+
+            "en",
+
+            "nl",
+
+            "jv"
+        ],
+
+        "name": "indonesia",
+
+        "name_human": "the republic of indonesia",
+
+        "phone_code": "62",
+
+        "timezones": [
+            "asia/jakarta",
+
+            "asia/pontianak",
+
+            "asia/makassar",
+
+            "asia/jayapura"
+        ],
+
+        "tld": ".id"
+    },
+
+    "ie": {
+        "capital": "dublin",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 2963597,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "irl",
+
+        "iso3166_numeric": 372,
+
+        "languages": [
+            "en-IE",
+
+            "ga-IE"
+        ],
+
+        "name": "ireland",
+
+        "name_human": "ireland",
+
+        "phone_code": "353",
+
+        "timezones": [
+            "europe/dublin"
+        ],
+
+        "tld": ".ie"
+    },
+
+    "il": {
+        "capital": "jerusalem",
+
+        "continent": "asia",
+
+        "currency_code": "ils",
+
+        "currency_name": "new israeli sheqel",
+
+        "geoname_id": 294640,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "isr",
+
+        "iso3166_numeric": 376,
+
+        "languages": [
+            "he",
+
+            "ar-IL",
+
+            "en-IL",
+
+            ""
+        ],
+
+        "name": "israel",
+
+        "name_human": "the state of israel",
+
+        "phone_code": "972",
+
+        "timezones": [
+            "asia/jerusalem"
+        ],
+
+        "tld": ".il"
+    },
+
+    "im": {
+        "capital": "douglas",
+
+        "continent": "europe",
+
+        "currency_code": "gbp",
+
+        "currency_name": "pound sterling",
+
+        "geoname_id": 3042225,
+
+        "is_developed": true,
+
+        "is_independent": false,
+
+        "iso3166_a3": "imn",
+
+        "iso3166_numeric": 833,
+
+        "languages": [
+            "en",
+
+            "gv"
+        ],
+
+        "name": "isle of man",
+
+        "name_human": null,
+
+        "phone_code": "44",
+
+        "timezones": [],
+
+        "tld": ".im"
+    },
+
+    "in": {
+        "capital": "new delhi",
+
+        "continent": "asia",
+
+        "currency_code": "inr",
+
+        "currency_name": "indian rupee",
+
+        "geoname_id": 1269750,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "ind",
+
+        "iso3166_numeric": 356,
+
+        "languages": [
+            "en-IN",
+
+            "hi",
+
+            "bn",
+
+            "te",
+
+            "mr",
+
+            "ta",
+
+            "ur",
+
+            "gu",
+
+            "kn",
+
+            "ml",
+
+            "or",
+
+            "pa",
+
+            "as",
+
+            "bh",
+
+            "sat",
+
+            "ks",
+
+            "ne",
+
+            "sd",
+
+            "kok",
+
+            "doi",
+
+            "mni",
+
+            "sit",
+
+            "sa",
+
+            "fr",
+
+            "lus",
+
+            "inc"
+        ],
+
+        "name": "india",
+
+        "name_human": "the republic of india",
+
+        "phone_code": "91",
+
+        "timezones": [
+            "asia/calcutta"
+        ],
+
+        "tld": ".in"
+    },
+
+    "io": {
+        "capital": "diego garcia",
+
+        "continent": "africa",
+
+        "currency_code": "usd",
+
+        "currency_name": "us dollar",
+
+        "geoname_id": 1282588,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "iot",
+
+        "iso3166_numeric": 86,
+
+        "languages": [
+            "en-IO"
+        ],
+
+        "name": "british indian ocean territory",
+
+        "name_human": null,
+
+        "phone_code": "246",
+
+        "timezones": [
+            "america/noronha",
+
+            "america/belem",
+
+            "america/fortaleza",
+
+            "america/recife",
+
+            "america/araguaina",
+
+            "america/maceio",
+
+            "america/bahia",
+
+            "america/sao_paulo",
+
+            "america/campo_grande",
+
+            "america/cuiaba",
+
+            "america/porto_velho",
+
+            "america/boa_vista",
+
+            "america/manaus",
+
+            "america/eirunepe",
+
+            "america/rio_branco"
+        ],
+
+        "tld": ".io"
+    },
+
+    "iq": {
+        "capital": "baghdad",
+
+        "continent": "asia",
+
+        "currency_code": "iqd",
+
+        "currency_name": "iraqi dinar",
+
+        "geoname_id": 99237,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "irq",
+
+        "iso3166_numeric": 368,
+
+        "languages": [
+            "ar-IQ",
+
+            "ku",
+
+            "hy"
+        ],
+
+        "name": "iraq",
+
+        "name_human": "the republic of iraq",
+
+        "phone_code": "964",
+
+        "timezones": [
+            "asia/baghdad"
+        ],
+
+        "tld": ".iq"
+    },
+
+    "ir": {
+        "capital": "tehran",
+
+        "continent": "asia",
+
+        "currency_code": "irr",
+
+        "currency_name": "iranian rial",
+
+        "geoname_id": 130758,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "irn",
+
+        "iso3166_numeric": 364,
+
+        "languages": [
+            "fa-IR",
+
+            "ku"
+        ],
+
+        "name": "iran",
+
+        "name_human": "the islamic republic of iran",
+
+        "phone_code": "98",
+
+        "timezones": [
+            "asia/tehran"
+        ],
+
+        "tld": ".ir"
+    },
+
+    "is": {
+        "capital": "reykjavik",
+
+        "continent": "europe",
+
+        "currency_code": "isk",
+
+        "currency_name": "iceland krona",
+
+        "geoname_id": 2629691,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "isl",
+
+        "iso3166_numeric": 352,
+
+        "languages": [
+            "is",
+
+            "en",
+
+            "de",
+
+            "da",
+
+            "sv",
+
+            "no"
+        ],
+
+        "name": "iceland",
+
+        "name_human": "the republic of iceland",
+
+        "phone_code": "354",
+
+        "timezones": [
+            "atlantic/reykjavik"
+        ],
+
+        "tld": ".is"
+    },
+
+    "it": {
+        "capital": "rome",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 3175395,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "ita",
+
+        "iso3166_numeric": 380,
+
+        "languages": [
+            "it-IT",
+
+            "de-IT",
+
+            "fr-IT",
+
+            "sc",
+
+            "ca",
+
+            "co",
+
+            "sl"
+        ],
+
+        "name": "italy",
+
+        "name_human": "the republic of italy",
+
+        "phone_code": "39",
+
+        "timezones": [
+            "europe/rome"
+        ],
+
+        "tld": ".it"
+    },
+
+    "je": {
+        "capital": "saint helier",
+
+        "continent": "europe",
+
+        "currency_code": "gbp",
+
+        "currency_name": "pound sterling",
+
+        "geoname_id": 3042142,
+
+        "is_developed": true,
+
+        "is_independent": false,
+
+        "iso3166_a3": "jey",
+
+        "iso3166_numeric": 832,
+
+        "languages": [
+            "en",
+
+            "pt"
+        ],
+
+        "name": "jersey",
+
+        "name_human": null,
+
+        "phone_code": "44",
+
+        "timezones": [],
+
+        "tld": ".je"
+    },
+
+    "jm": {
+        "capital": "kingston",
+
+        "continent": "americas",
+
+        "currency_code": "jmd",
+
+        "currency_name": "jamaican dollar",
+
+        "geoname_id": 3489940,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "jam",
+
+        "iso3166_numeric": 388,
+
+        "languages": [
+            "en-JM"
+        ],
+
+        "name": "jamaica",
+
+        "name_human": "jamaica",
+
+        "phone_code": "1-876",
+
+        "timezones": [
+            "america/jamaica"
+        ],
+
+        "tld": ".jm"
+    },
+
+    "jo": {
+        "capital": "amman",
+
+        "continent": "asia",
+
+        "currency_code": "jod",
+
+        "currency_name": "jordanian dinar",
+
+        "geoname_id": 248816,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "jor",
+
+        "iso3166_numeric": 400,
+
+        "languages": [
+            "ar-JO",
+
+            "en"
+        ],
+
+        "name": "jordan",
+
+        "name_human": "the hashemite kingdom of jordan",
+
+        "phone_code": "962",
+
+        "timezones": [
+            "asia/amman"
+        ],
+
+        "tld": ".jo"
+    },
+
+    "jp": {
+        "capital": "tokyo",
+
+        "continent": "asia",
+
+        "currency_code": "jpy",
+
+        "currency_name": "yen",
+
+        "geoname_id": 1861060,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "jpn",
+
+        "iso3166_numeric": 392,
+
+        "languages": [
+            "ja"
+        ],
+
+        "name": "japan",
+
+        "name_human": "japan",
+
+        "phone_code": "81",
+
+        "timezones": [
+            "asia/tokyo"
+        ],
+
+        "tld": ".jp"
+    },
+
+    "ke": {
+        "capital": "nairobi",
+
+        "continent": "africa",
+
+        "currency_code": "kes",
+
+        "currency_name": "kenyan shilling",
+
+        "geoname_id": 192950,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "ken",
+
+        "iso3166_numeric": 404,
+
+        "languages": [
+            "en-KE",
+
+            "sw-KE"
+        ],
+
+        "name": "kenya",
+
+        "name_human": "the republic of kenya",
+
+        "phone_code": "254",
+
+        "timezones": [
+            "africa/nairobi"
+        ],
+
+        "tld": ".ke"
+    },
+
+    "kg": {
+        "capital": "bishkek",
+
+        "continent": "asia",
+
+        "currency_code": "kgs",
+
+        "currency_name": "som",
+
+        "geoname_id": 1527747,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "kgz",
+
+        "iso3166_numeric": 417,
+
+        "languages": [
+            "ky",
+
+            "uz",
+
+            "ru"
+        ],
+
+        "name": "kyrgyzstan",
+
+        "name_human": "the kyrgyz republic",
+
+        "phone_code": "996",
+
+        "timezones": [
+            "asia/bishkek"
+        ],
+
+        "tld": ".kg"
+    },
+
+    "kh": {
+        "capital": "phnom penh",
+
+        "continent": "asia",
+
+        "currency_code": "khr",
+
+        "currency_name": "riel",
+
+        "geoname_id": 1831722,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "khm",
+
+        "iso3166_numeric": 116,
+
+        "languages": [
+            "km",
+
+            "fr",
+
+            "en"
+        ],
+
+        "name": "cambodia",
+
+        "name_human": "the kingdom of cambodia",
+
+        "phone_code": "855",
+
+        "timezones": [
+            "asia/phnom_penh"
+        ],
+
+        "tld": ".kh"
+    },
+
+    "ki": {
+        "capital": "tarawa",
+
+        "continent": "oceania",
+
+        "currency_code": "aud",
+
+        "currency_name": "australian dollar",
+
+        "geoname_id": 4030945,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "kir",
+
+        "iso3166_numeric": 296,
+
+        "languages": [
+            "en-KI",
+
+            "gil"
+        ],
+
+        "name": "kiribati",
+
+        "name_human": "the republic of kiribati",
+
+        "phone_code": "686",
+
+        "timezones": [
+            "pacific/tarawa",
+
+            "pacific/enderbury",
+
+            "pacific/kiritimati"
+        ],
+
+        "tld": ".ki"
+    },
+
+    "km": {
+        "capital": "moroni",
+
+        "continent": "africa",
+
+        "currency_code": "kmf",
+
+        "currency_name": "comorian franc",
+
+        "geoname_id": 921929,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "com",
+
+        "iso3166_numeric": 174,
+
+        "languages": [
+            "ar",
+
+            "fr-KM"
+        ],
+
+        "name": "comoros",
+
+        "name_human": "the union of the comoros",
+
+        "phone_code": "269",
+
+        "timezones": [
+            "indian/comoro"
+        ],
+
+        "tld": ".km"
+    },
+
+    "kn": {
+        "capital": "basseterre",
+
+        "continent": "americas",
+
+        "currency_code": "xcd",
+
+        "currency_name": "east caribbean dollar",
+
+        "geoname_id": 3575174,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "kna",
+
+        "iso3166_numeric": 659,
+
+        "languages": [
+            "en-KN"
+        ],
+
+        "name": "st. kitts & nevis",
+
+        "name_human": "saint kitts and nevis",
+
+        "phone_code": "1-869",
+
+        "timezones": [
+            "america/st_kitts"
+        ],
+
+        "tld": ".kn"
+    },
+
+    "kp": {
+        "capital": "pyongyang",
+
+        "continent": "asia",
+
+        "currency_code": "kpw",
+
+        "currency_name": "north korean won",
+
+        "geoname_id": 1873107,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "prk",
+
+        "iso3166_numeric": 408,
+
+        "languages": [
+            "ko-KP"
+        ],
+
+        "name": "north korea",
+
+        "name_human": "the democratic people's republic of korea",
+
+        "phone_code": "850",
+
+        "timezones": [
+            "asia/pyongyang"
+        ],
+
+        "tld": ".kp"
+    },
+
+    "kr": {
+        "capital": "seoul",
+
+        "continent": "asia",
+
+        "currency_code": "krw",
+
+        "currency_name": "won",
+
+        "geoname_id": 1835841,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "kor",
+
+        "iso3166_numeric": 410,
+
+        "languages": [
+            "ko-KR",
+
+            "en"
+        ],
+
+        "name": "south korea",
+
+        "name_human": "the republic of korea",
+
+        "phone_code": "82",
+
+        "timezones": [
+            "asia/seoul"
+        ],
+
+        "tld": ".kr"
+    },
+
+    "kw": {
+        "capital": "kuwait city",
+
+        "continent": "asia",
+
+        "currency_code": "kwd",
+
+        "currency_name": "kuwaiti dinar",
+
+        "geoname_id": 285570,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "kwt",
+
+        "iso3166_numeric": 414,
+
+        "languages": [
+            "ar-KW",
+
+            "en"
+        ],
+
+        "name": "kuwait",
+
+        "name_human": "the state of kuwait",
+
+        "phone_code": "965",
+
+        "timezones": [
+            "asia/kuwait"
+        ],
+
+        "tld": ".kw"
+    },
+
+    "ky": {
+        "capital": "george town",
+
+        "continent": "americas",
+
+        "currency_code": "kyd",
+
+        "currency_name": "cayman islands dollar",
+
+        "geoname_id": 3580718,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "cym",
+
+        "iso3166_numeric": 136,
+
+        "languages": [
+            "en-KY"
+        ],
+
+        "name": "cayman islands",
+
+        "name_human": null,
+
+        "phone_code": "1-345",
+
+        "timezones": [],
+
+        "tld": ".ky"
+    },
+
+    "kz": {
+        "capital": "astana",
+
+        "continent": "asia",
+
+        "currency_code": "kzt",
+
+        "currency_name": "tenge",
+
+        "geoname_id": 1522867,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "kaz",
+
+        "iso3166_numeric": 398,
+
+        "languages": [
+            "kk",
+
+            "ru"
+        ],
+
+        "name": "kazakhstan",
+
+        "name_human": "the republic of kazakhstan",
+
+        "phone_code": "7",
+
+        "timezones": [
+            "asia/almaty",
+
+            "asia/qyzylorda",
+
+            "asia/aqtobe",
+
+            "asia/aqtau",
+
+            "asia/oral"
+        ],
+
+        "tld": ".kz"
+    },
+
+    "la": {
+        "capital": "vientiane",
+
+        "continent": "asia",
+
+        "currency_code": "lak",
+
+        "currency_name": "lao kip",
+
+        "geoname_id": 1655842,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "lao",
+
+        "iso3166_numeric": 418,
+
+        "languages": [
+            "lo",
+
+            "fr",
+
+            "en"
+        ],
+
+        "name": "laos",
+
+        "name_human": "the lao people's democratic republic",
+
+        "phone_code": "856",
+
+        "timezones": [
+            "asia/vientiane"
+        ],
+
+        "tld": ".la"
+    },
+
+    "lb": {
+        "capital": "beirut",
+
+        "continent": "asia",
+
+        "currency_code": "lbp",
+
+        "currency_name": "lebanese pound",
+
+        "geoname_id": 272103,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "lbn",
+
+        "iso3166_numeric": 422,
+
+        "languages": [
+            "ar-LB",
+
+            "fr-LB",
+
+            "en",
+
+            "hy"
+        ],
+
+        "name": "lebanon",
+
+        "name_human": "the lebanese republic",
+
+        "phone_code": "961",
+
+        "timezones": [
+            "asia/beirut"
+        ],
+
+        "tld": ".lb"
+    },
+
+    "lc": {
+        "capital": "castries",
+
+        "continent": "americas",
+
+        "currency_code": "xcd",
+
+        "currency_name": "east caribbean dollar",
+
+        "geoname_id": 3576468,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "lca",
+
+        "iso3166_numeric": 662,
+
+        "languages": [
+            "en-LC"
+        ],
+
+        "name": "st. lucia",
+
+        "name_human": "saint lucia",
+
+        "phone_code": "1-758",
+
+        "timezones": [
+            "america/st_lucia"
+        ],
+
+        "tld": ".lc"
+    },
+
+    "li": {
+        "capital": "vaduz",
+
+        "continent": "europe",
+
+        "currency_code": "chf",
+
+        "currency_name": "swiss franc",
+
+        "geoname_id": 3042058,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "lie",
+
+        "iso3166_numeric": 438,
+
+        "languages": [
+            "de-LI"
+        ],
+
+        "name": "liechtenstein",
+
+        "name_human": "the principality of liechtenstein",
+
+        "phone_code": "423",
+
+        "timezones": [
+            "europe/vaduz"
+        ],
+
+        "tld": ".li"
+    },
+
+    "lk": {
+        "capital": "colombo",
+
+        "continent": "asia",
+
+        "currency_code": "lkr",
+
+        "currency_name": "sri lanka rupee",
+
+        "geoname_id": 1227603,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "lka",
+
+        "iso3166_numeric": 144,
+
+        "languages": [
+            "si",
+
+            "ta",
+
+            "en"
+        ],
+
+        "name": "sri lanka",
+
+        "name_human": "the democratic socialist republic of sri lanka",
+
+        "phone_code": "94",
+
+        "timezones": [
+            "asia/colombo"
+        ],
+
+        "tld": ".lk"
+    },
+
+    "lr": {
+        "capital": "monrovia",
+
+        "continent": "africa",
+
+        "currency_code": "lrd",
+
+        "currency_name": "liberian dollar",
+
+        "geoname_id": 2275384,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "lbr",
+
+        "iso3166_numeric": 430,
+
+        "languages": [
+            "en-LR"
+        ],
+
+        "name": "liberia",
+
+        "name_human": "the republic of liberia",
+
+        "phone_code": "231",
+
+        "timezones": [
+            "africa/monrovia"
+        ],
+
+        "tld": ".lr"
+    },
+
+    "ls": {
+        "capital": "maseru",
+
+        "continent": "africa",
+
+        "currency_code": "lsl,zar",
+
+        "currency_name": "loti,rand",
+
+        "geoname_id": 932692,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "lso",
+
+        "iso3166_numeric": 426,
+
+        "languages": [
+            "en-LS",
+
+            "st",
+
+            "zu",
+
+            "xh"
+        ],
+
+        "name": "lesotho",
+
+        "name_human": "the kingdom of lesotho",
+
+        "phone_code": "266",
+
+        "timezones": [
+            "africa/maseru"
+        ],
+
+        "tld": ".ls"
+    },
+
+    "lt": {
+        "capital": "vilnius",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 597427,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "ltu",
+
+        "iso3166_numeric": 440,
+
+        "languages": [
+            "lt",
+
+            "ru",
+
+            "pl"
+        ],
+
+        "name": "lithuania",
+
+        "name_human": "the republic of lithuania",
+
+        "phone_code": "370",
+
+        "timezones": [
+            "europe/vilnius"
+        ],
+
+        "tld": ".lt"
+    },
+
+    "lu": {
+        "capital": "luxembourg",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 2960313,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "lux",
+
+        "iso3166_numeric": 442,
+
+        "languages": [
+            "lb",
+
+            "de-LU",
+
+            "fr-LU"
+        ],
+
+        "name": "luxembourg",
+
+        "name_human": "the grand duchy of luxembourg",
+
+        "phone_code": "352",
+
+        "timezones": [
+            "europe/luxembourg"
+        ],
+
+        "tld": ".lu"
+    },
+
+    "lv": {
+        "capital": "riga",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 458258,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "lva",
+
+        "iso3166_numeric": 428,
+
+        "languages": [
+            "lv",
+
+            "ru",
+
+            "lt"
+        ],
+
+        "name": "latvia",
+
+        "name_human": "the republic of latvia",
+
+        "phone_code": "371",
+
+        "timezones": [
+            "europe/riga"
+        ],
+
+        "tld": ".lv"
+    },
+
+    "ly": {
+        "capital": "tripoli",
+
+        "continent": "africa",
+
+        "currency_code": "lyd",
+
+        "currency_name": "libyan dinar",
+
+        "geoname_id": 2215636,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "lby",
+
+        "iso3166_numeric": 434,
+
+        "languages": [
+            "ar-LY",
+
+            "it",
+
+            "en"
+        ],
+
+        "name": "libya",
+
+        "name_human": "libya",
+
+        "phone_code": "218",
+
+        "timezones": [
+            "africa/tripoli"
+        ],
+
+        "tld": ".ly"
+    },
+
+    "ma": {
+        "capital": "rabat",
+
+        "continent": "africa",
+
+        "currency_code": "mad",
+
+        "currency_name": "moroccan dirham",
+
+        "geoname_id": 2542007,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "mar",
+
+        "iso3166_numeric": 504,
+
+        "languages": [
+            "ar-MA",
+
+            "ber",
+
+            "fr"
+        ],
+
+        "name": "morocco",
+
+        "name_human": "the kingdom of morocco",
+
+        "phone_code": "212",
+
+        "timezones": [
+            "africa/casablanca"
+        ],
+
+        "tld": ".ma"
+    },
+
+    "mc": {
+        "capital": "monaco",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 2993457,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "mco",
+
+        "iso3166_numeric": 492,
+
+        "languages": [
+            "fr-MC",
+
+            "en",
+
+            "it"
+        ],
+
+        "name": "monaco",
+
+        "name_human": "the principality of monaco",
+
+        "phone_code": "377",
+
+        "timezones": [
+            "europe/monaco"
+        ],
+
+        "tld": ".mc"
+    },
+
+    "md": {
+        "capital": "chisinau",
+
+        "continent": "europe",
+
+        "currency_code": "mdl",
+
+        "currency_name": "moldovan leu",
+
+        "geoname_id": 617790,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "mda",
+
+        "iso3166_numeric": 498,
+
+        "languages": [
+            "ro",
+
+            "ru",
+
+            "gag",
+
+            "tr"
+        ],
+
+        "name": "moldova",
+
+        "name_human": "the republic of moldova",
+
+        "phone_code": "373",
+
+        "timezones": [
+            "europe/chisinau"
+        ],
+
+        "tld": ".md"
+    },
+
+    "me": {
+        "capital": "podgorica",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 3194884,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "mne",
+
+        "iso3166_numeric": 499,
+
+        "languages": [
+            "sr",
+
+            "hu",
+
+            "bs",
+
+            "sq",
+
+            "hr",
+
+            "rom"
+        ],
+
+        "name": "montenegro",
+
+        "name_human": "montenegro",
+
+        "phone_code": "382",
+
+        "timezones": [
+            "europe/podgorica"
+        ],
+
+        "tld": ".me"
+    },
+
+    "mf": {
+        "capital": "marigot",
+
+        "continent": "americas",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 3578421,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "maf",
+
+        "iso3166_numeric": 663,
+
+        "languages": [
+            "fr"
+        ],
+
+        "name": "st. martin",
+
+        "name_human": null,
+
+        "phone_code": "590",
+
+        "timezones": [
+            "america/st_lucia"
+        ],
+
+        "tld": ".gp"
+    },
+
+    "mg": {
+        "capital": "antananarivo",
+
+        "continent": "africa",
+
+        "currency_code": "mga",
+
+        "currency_name": "malagasy ariary",
+
+        "geoname_id": 1062947,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "mdg",
+
+        "iso3166_numeric": 450,
+
+        "languages": [
+            "fr-MG",
+
+            "mg"
+        ],
+
+        "name": "madagascar",
+
+        "name_human": "the republic of madagascar",
+
+        "phone_code": "261",
+
+        "timezones": [
+            "indian/antananarivo"
+        ],
+
+        "tld": ".mg"
+    },
+
+    "mh": {
+        "capital": "majuro",
+
+        "continent": "oceania",
+
+        "currency_code": "usd",
+
+        "currency_name": "us dollar",
+
+        "geoname_id": 2080185,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "mhl",
+
+        "iso3166_numeric": 584,
+
+        "languages": [
+            "mh",
+
+            "en-MH"
+        ],
+
+        "name": "marshall islands",
+
+        "name_human": "the republic of the marshall islands",
+
+        "phone_code": "692",
+
+        "timezones": [
+            "pacific/majuro",
+
+            "pacific/kwajalein"
+        ],
+
+        "tld": ".mh"
+    },
+
+    "mk": {
+        "capital": "skopje",
+
+        "continent": "europe",
+
+        "currency_code": "mkd",
+
+        "currency_name": "denar",
+
+        "geoname_id": 718075,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "mkd",
+
+        "iso3166_numeric": 807,
+
+        "languages": [
+            "mk",
+
+            "sq",
+
+            "tr",
+
+            "rmm",
+
+            "sr"
+        ],
+
+        "name": "macedonia",
+
+        "name_human": "the former yugoslav republic of macedonia",
+
+        "phone_code": "389",
+
+        "timezones": [
+            "europe/skopje"
+        ],
+
+        "tld": ".mk"
+    },
+
+    "ml": {
+        "capital": "bamako",
+
+        "continent": "africa",
+
+        "currency_code": "xof",
+
+        "currency_name": "cfa franc bceao",
+
+        "geoname_id": 2453866,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "mli",
+
+        "iso3166_numeric": 466,
+
+        "languages": [
+            "fr-ML",
+
+            "bm"
+        ],
+
+        "name": "mali",
+
+        "name_human": "the republic of mali",
+
+        "phone_code": "223",
+
+        "timezones": [
+            "africa/bamako"
+        ],
+
+        "tld": ".ml"
+    },
+
+    "mm": {
+        "capital": "nay pyi taw",
+
+        "continent": "asia",
+
+        "currency_code": "mmk",
+
+        "currency_name": "kyat",
+
+        "geoname_id": 1327865,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "mmr",
+
+        "iso3166_numeric": 104,
+
+        "languages": [
+            "my"
+        ],
+
+        "name": "myanmar",
+
+        "name_human": "the republic of the union of myanmar",
+
+        "phone_code": "95",
+
+        "timezones": [
+            "asia/rangoon"
+        ],
+
+        "tld": ".mm"
+    },
+
+    "mn": {
+        "capital": "ulan bator",
+
+        "continent": "asia",
+
+        "currency_code": "mnt",
+
+        "currency_name": "tugrik",
+
+        "geoname_id": 2029969,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "mng",
+
+        "iso3166_numeric": 496,
+
+        "languages": [
+            "mn",
+
+            "ru"
+        ],
+
+        "name": "mongolia",
+
+        "name_human": "mongolia",
+
+        "phone_code": "976",
+
+        "timezones": [
+            "asia/ulaanbaatar",
+
+            "asia/hovd",
+
+            "asia/choibalsan"
+        ],
+
+        "tld": ".mn"
+    },
+
+    "mo": {
+        "capital": "macao",
+
+        "continent": "asia",
+
+        "currency_code": "mop",
+
+        "currency_name": "pataca",
+
+        "geoname_id": 1821275,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "mac",
+
+        "iso3166_numeric": 446,
+
+        "languages": [
+            "zh",
+
+            "zh-MO",
+
+            "pt"
+        ],
+
+        "name": "macau",
+
+        "name_human": null,
+
+        "phone_code": "853",
+
+        "timezones": [],
+
+        "tld": ".mo"
+    },
+
+    "mp": {
+        "capital": "saipan",
+
+        "continent": "oceania",
+
+        "currency_code": "usd",
+
+        "currency_name": "us dollar",
+
+        "geoname_id": 4041468,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "mnp",
+
+        "iso3166_numeric": 580,
+
+        "languages": [
+            "fil",
+
+            "tl",
+
+            "zh",
+
+            "ch-MP",
+
+            "en-MP"
+        ],
+
+        "name": "northern mariana islands",
+
+        "name_human": null,
+
+        "phone_code": "1-670",
+
+        "timezones": [],
+
+        "tld": ".mp"
+    },
+
+    "mq": {
+        "capital": "fort-de-france",
+
+        "continent": "americas",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 3570311,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "mtq",
+
+        "iso3166_numeric": 474,
+
+        "languages": [
+            "fr-MQ"
+        ],
+
+        "name": "martinique",
+
+        "name_human": null,
+
+        "phone_code": "596",
+
+        "timezones": [
+            "pacific/majuro",
+
+            "pacific/kwajalein"
+        ],
+
+        "tld": ".mq"
+    },
+
+    "mr": {
+        "capital": "nouakchott",
+
+        "continent": "africa",
+
+        "currency_code": "mro",
+
+        "currency_name": "ouguiya",
+
+        "geoname_id": 2378080,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "mrt",
+
+        "iso3166_numeric": 478,
+
+        "languages": [
+            "ar-MR",
+
+            "fuc",
+
+            "snk",
+
+            "fr",
+
+            "mey",
+
+            "wo"
+        ],
+
+        "name": "mauritania",
+
+        "name_human": "the islamic republic of mauritania",
+
+        "phone_code": "222",
+
+        "timezones": [
+            "africa/nouakchott"
+        ],
+
+        "tld": ".mr"
+    },
+
+    "ms": {
+        "capital": "plymouth",
+
+        "continent": "americas",
+
+        "currency_code": "xcd",
+
+        "currency_name": "east caribbean dollar",
+
+        "geoname_id": 3578097,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "msr",
+
+        "iso3166_numeric": 500,
+
+        "languages": [
+            "en-MS"
+        ],
+
+        "name": "montserrat",
+
+        "name_human": null,
+
+        "phone_code": "1-664",
+
+        "timezones": [
+            "europe/podgorica"
+        ],
+
+        "tld": ".ms"
+    },
+
+    "mt": {
+        "capital": "valletta",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 2562770,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "mlt",
+
+        "iso3166_numeric": 470,
+
+        "languages": [
+            "mt",
+
+            "en-MT"
+        ],
+
+        "name": "malta",
+
+        "name_human": "the republic of malta",
+
+        "phone_code": "356",
+
+        "timezones": [
+            "europe/malta"
+        ],
+
+        "tld": ".mt"
+    },
+
+    "mu": {
+        "capital": "port louis",
+
+        "continent": "africa",
+
+        "currency_code": "mur",
+
+        "currency_name": "mauritius rupee",
+
+        "geoname_id": 934292,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "mus",
+
+        "iso3166_numeric": 480,
+
+        "languages": [
+            "en-MU",
+
+            "bho",
+
+            "fr"
+        ],
+
+        "name": "mauritius",
+
+        "name_human": "the republic of mauritius",
+
+        "phone_code": "230",
+
+        "timezones": [
+            "indian/mauritius"
+        ],
+
+        "tld": ".mu"
+    },
+
+    "mv": {
+        "capital": "male",
+
+        "continent": "asia",
+
+        "currency_code": "mvr",
+
+        "currency_name": "rufiyaa",
+
+        "geoname_id": 1282028,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "mdv",
+
+        "iso3166_numeric": 462,
+
+        "languages": [
+            "dv",
+
+            "en"
+        ],
+
+        "name": "maldives",
+
+        "name_human": "the republic of maldives",
+
+        "phone_code": "960",
+
+        "timezones": [
+            "indian/maldives"
+        ],
+
+        "tld": ".mv"
+    },
+
+    "mw": {
+        "capital": "lilongwe",
+
+        "continent": "africa",
+
+        "currency_code": "mwk",
+
+        "currency_name": "malawi kwacha",
+
+        "geoname_id": 927384,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "mwi",
+
+        "iso3166_numeric": 454,
+
+        "languages": [
+            "ny",
+
+            "yao",
+
+            "tum",
+
+            "swk"
+        ],
+
+        "name": "malawi",
+
+        "name_human": "the republic of malawi",
+
+        "phone_code": "265",
+
+        "timezones": [
+            "africa/blantyre"
+        ],
+
+        "tld": ".mw"
+    },
+
+    "mx": {
+        "capital": "mexico city",
+
+        "continent": "americas",
+
+        "currency_code": "mxn",
+
+        "currency_name": "mexican peso",
+
+        "geoname_id": 3996063,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "mex",
+
+        "iso3166_numeric": 484,
+
+        "languages": [
+            "es-MX"
+        ],
+
+        "name": "mexico",
+
+        "name_human": "the united mexican states",
+
+        "phone_code": "52",
+
+        "timezones": [
+            "america/mexico_city",
+
+            "america/cancun",
+
+            "america/merida",
+
+            "america/monterrey",
+
+            "america/mazatlan",
+
+            "america/chihuahua",
+
+            "america/hermosillo",
+
+            "america/tijuana"
+        ],
+
+        "tld": ".mx"
+    },
+
+    "my": {
+        "capital": "kuala lumpur",
+
+        "continent": "asia",
+
+        "currency_code": "myr",
+
+        "currency_name": "malaysian ringgit",
+
+        "geoname_id": 1733045,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "mys",
+
+        "iso3166_numeric": 458,
+
+        "languages": [
+            "ms-MY",
+
+            "en",
+
+            "zh",
+
+            "ta",
+
+            "te",
+
+            "ml",
+
+            "pa",
+
+            "th"
+        ],
+
+        "name": "malaysia",
+
+        "name_human": "malaysia",
+
+        "phone_code": "60",
+
+        "timezones": [
+            "asia/kuala_lumpur",
+
+            "asia/kuching"
+        ],
+
+        "tld": ".my"
+    },
+
+    "mz": {
+        "capital": "maputo",
+
+        "continent": "africa",
+
+        "currency_code": "mzn",
+
+        "currency_name": "mozambique metical",
+
+        "geoname_id": 1036973,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "moz",
+
+        "iso3166_numeric": 508,
+
+        "languages": [
+            "pt-MZ",
+
+            "vmw"
+        ],
+
+        "name": "mozambique",
+
+        "name_human": "the republic of mozambique",
+
+        "phone_code": "258",
+
+        "timezones": [
+            "africa/maputo"
+        ],
+
+        "tld": ".mz"
+    },
+
+    "na": {
+        "capital": "windhoek",
+
+        "continent": "africa",
+
+        "currency_code": "nad,zar",
+
+        "currency_name": "namibia dollar,rand",
+
+        "geoname_id": 3355338,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "nam",
+
+        "iso3166_numeric": 516,
+
+        "languages": [
+            "en-NA",
+
+            "af",
+
+            "de",
+
+            "hz",
+
+            "naq"
+        ],
+
+        "name": "namibia",
+
+        "name_human": "the republic of namibia",
+
+        "phone_code": "264",
+
+        "timezones": [
+            "africa/windhoek"
+        ],
+
+        "tld": ".na"
+    },
+
+    "nc": {
+        "capital": "noumea",
+
+        "continent": "oceania",
+
+        "currency_code": "xpf",
+
+        "currency_name": "cfp franc",
+
+        "geoname_id": 2139685,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "ncl",
+
+        "iso3166_numeric": 540,
+
+        "languages": [
+            "fr-NC"
+        ],
+
+        "name": "new caledonia",
+
+        "name_human": null,
+
+        "phone_code": "687",
+
+        "timezones": [],
+
+        "tld": ".nc"
+    },
+
+    "ne": {
+        "capital": "niamey",
+
+        "continent": "africa",
+
+        "currency_code": "xof",
+
+        "currency_name": "cfa franc bceao",
+
+        "geoname_id": 2440476,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "ner",
+
+        "iso3166_numeric": 562,
+
+        "languages": [
+            "fr-NE",
+
+            "ha",
+
+            "kr",
+
+            "dje"
+        ],
+
+        "name": "niger",
+
+        "name_human": "the republic of the niger",
+
+        "phone_code": "227",
+
+        "timezones": [
+            "africa/niamey"
+        ],
+
+        "tld": ".ne"
+    },
+
+    "nf": {
+        "capital": "kingston",
+
+        "continent": "oceania",
+
+        "currency_code": "aud",
+
+        "currency_name": "australian dollar",
+
+        "geoname_id": 2155115,
+
+        "is_developed": true,
+
+        "is_independent": false,
+
+        "iso3166_a3": "nfk",
+
+        "iso3166_numeric": 574,
+
+        "languages": [
+            "en-NF"
+        ],
+
+        "name": "norfolk island",
+
+        "name_human": null,
+
+        "phone_code": "672",
+
+        "timezones": [
+            "africa/lagos"
+        ],
+
+        "tld": ".nf"
+    },
+
+    "ng": {
+        "capital": "abuja",
+
+        "continent": "africa",
+
+        "currency_code": "ngn",
+
+        "currency_name": "naira",
+
+        "geoname_id": 2328926,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "nga",
+
+        "iso3166_numeric": 566,
+
+        "languages": [
+            "en-NG",
+
+            "ha",
+
+            "yo",
+
+            "ig",
+
+            "ff"
+        ],
+
+        "name": "nigeria",
+
+        "name_human": "the federal republic of nigeria",
+
+        "phone_code": "234",
+
+        "timezones": [
+            "africa/lagos"
+        ],
+
+        "tld": ".ng"
+    },
+
+    "ni": {
+        "capital": "managua",
+
+        "continent": "americas",
+
+        "currency_code": "nio",
+
+        "currency_name": "cordoba oro",
+
+        "geoname_id": 3617476,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "nic",
+
+        "iso3166_numeric": 558,
+
+        "languages": [
+            "es-NI",
+
+            "en"
+        ],
+
+        "name": "nicaragua",
+
+        "name_human": "the republic of nicaragua",
+
+        "phone_code": "505",
+
+        "timezones": [
+            "america/managua"
+        ],
+
+        "tld": ".ni"
+    },
+
+    "nl": {
+        "capital": "amsterdam",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 2750405,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "nld",
+
+        "iso3166_numeric": 528,
+
+        "languages": [
+            "nl-NL",
+
+            "fy-NL"
+        ],
+
+        "name": "netherlands",
+
+        "name_human": "the kingdom of the netherlands",
+
+        "phone_code": "31",
+
+        "timezones": [
+            "europe/amsterdam"
+        ],
+
+        "tld": ".nl"
+    },
+
+    "no": {
+        "capital": "oslo",
+
+        "continent": "europe",
+
+        "currency_code": "nok",
+
+        "currency_name": "norwegian krone",
+
+        "geoname_id": 3144096,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "nor",
+
+        "iso3166_numeric": 578,
+
+        "languages": [
+            "no",
+
+            "nb",
+
+            "nn",
+
+            "se",
+
+            "fi"
+        ],
+
+        "name": "norway",
+
+        "name_human": "the kingdom of norway",
+
+        "phone_code": "47",
+
+        "timezones": [
+            "europe/oslo"
+        ],
+
+        "tld": ".no"
+    },
+
+    "np": {
+        "capital": "kathmandu",
+
+        "continent": "asia",
+
+        "currency_code": "npr",
+
+        "currency_name": "nepalese rupee",
+
+        "geoname_id": 1282988,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "npl",
+
+        "iso3166_numeric": 524,
+
+        "languages": [
+            "ne",
+
+            "en"
+        ],
+
+        "name": "nepal",
+
+        "name_human": "the federal democratic republic of nepal",
+
+        "phone_code": "977",
+
+        "timezones": [
+            "asia/katmandu"
+        ],
+
+        "tld": ".np"
+    },
+
+    "nr": {
+        "capital": "yaren",
+
+        "continent": "oceania",
+
+        "currency_code": "aud",
+
+        "currency_name": "australian dollar",
+
+        "geoname_id": 2110425,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "nru",
+
+        "iso3166_numeric": 520,
+
+        "languages": [
+            "na",
+
+            "en-NR"
+        ],
+
+        "name": "nauru",
+
+        "name_human": "the republic of nauru",
+
+        "phone_code": "674",
+
+        "timezones": [
+            "pacific/nauru"
+        ],
+
+        "tld": ".nr"
+    },
+
+    "nu": {
+        "capital": "alofi",
+
+        "continent": "oceania",
+
+        "currency_code": "nzd",
+
+        "currency_name": "new zealand dollar",
+
+        "geoname_id": 4036232,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "niu",
+
+        "iso3166_numeric": 570,
+
+        "languages": [
+            "niu",
+
+            "en-NU"
+        ],
+
+        "name": "niue",
+
+        "name_human": "niue",
+
+        "phone_code": "683",
+
+        "timezones": [
+            "africa/lagos"
+        ],
+
+        "tld": ".nu"
+    },
+
+    "nz": {
+        "capital": "wellington",
+
+        "continent": "oceania",
+
+        "currency_code": "nzd",
+
+        "currency_name": "new zealand dollar",
+
+        "geoname_id": 2186224,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "nzl",
+
+        "iso3166_numeric": 554,
+
+        "languages": [
+            "en-NZ",
+
+            "mi"
+        ],
+
+        "name": "new zealand",
+
+        "name_human": "new zealand",
+
+        "phone_code": "64",
+
+        "timezones": [
+            "pacific/auckland",
+
+            "pacific/chatham"
+        ],
+
+        "tld": ".nz"
+    },
+
+    "om": {
+        "capital": "muscat",
+
+        "continent": "asia",
+
+        "currency_code": "omr",
+
+        "currency_name": "rial omani",
+
+        "geoname_id": 286963,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "omn",
+
+        "iso3166_numeric": 512,
+
+        "languages": [
+            "ar-OM",
+
+            "en",
+
+            "bal",
+
+            "ur"
+        ],
+
+        "name": "oman",
+
+        "name_human": "the sultanate of oman",
+
+        "phone_code": "968",
+
+        "timezones": [
+            "asia/muscat"
+        ],
+
+        "tld": ".om"
+    },
+
+    "pa": {
+        "capital": "panama city",
+
+        "continent": "americas",
+
+        "currency_code": "pab,usd",
+
+        "currency_name": "balboa,us dollar",
+
+        "geoname_id": 3703430,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "pan",
+
+        "iso3166_numeric": 591,
+
+        "languages": [
+            "es-PA",
+
+            "en"
+        ],
+
+        "name": "panama",
+
+        "name_human": "the republic of panama",
+
+        "phone_code": "507",
+
+        "timezones": [
+            "america/panama"
+        ],
+
+        "tld": ".pa"
+    },
+
+    "pe": {
+        "capital": "lima",
+
+        "continent": "americas",
+
+        "currency_code": "pen",
+
+        "currency_name": "sol",
+
+        "geoname_id": 3932488,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "per",
+
+        "iso3166_numeric": 604,
+
+        "languages": [
+            "es-PE",
+
+            "qu",
+
+            "ay"
+        ],
+
+        "name": "peru",
+
+        "name_human": "the republic of peru",
+
+        "phone_code": "51",
+
+        "timezones": [
+            "america/lima"
+        ],
+
+        "tld": ".pe"
+    },
+
+    "pf": {
+        "capital": "papeete",
+
+        "continent": "oceania",
+
+        "currency_code": "xpf",
+
+        "currency_name": "cfp franc",
+
+        "geoname_id": 4030656,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "pyf",
+
+        "iso3166_numeric": 258,
+
+        "languages": [
+            "fr-PF",
+
+            "ty"
+        ],
+
+        "name": "french polynesia",
+
+        "name_human": null,
+
+        "phone_code": "689",
+
+        "timezones": [],
+
+        "tld": ".pf"
+    },
+
+    "pg": {
+        "capital": "port moresby",
+
+        "continent": "oceania",
+
+        "currency_code": "pgk",
+
+        "currency_name": "kina",
+
+        "geoname_id": 2088628,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "png",
+
+        "iso3166_numeric": 598,
+
+        "languages": [
+            "en-PG",
+
+            "ho",
+
+            "meu",
+
+            "tpi"
+        ],
+
+        "name": "papua new guinea",
+
+        "name_human": "independent state of papua new guinea",
+
+        "phone_code": "675",
+
+        "timezones": [
+            "pacific/port_moresby"
+        ],
+
+        "tld": ".pg"
+    },
+
+    "ph": {
+        "capital": "manila",
+
+        "continent": "asia",
+
+        "currency_code": "php",
+
+        "currency_name": "philippine piso",
+
+        "geoname_id": 1694008,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "phl",
+
+        "iso3166_numeric": 608,
+
+        "languages": [
+            "tl",
+
+            "en-PH",
+
+            "fil"
+        ],
+
+        "name": "philippines",
+
+        "name_human": "the republic of the philippines",
+
+        "phone_code": "63",
+
+        "timezones": [
+            "asia/manila"
+        ],
+
+        "tld": ".ph"
+    },
+
+    "pk": {
+        "capital": "islamabad",
+
+        "continent": "asia",
+
+        "currency_code": "pkr",
+
+        "currency_name": "pakistan rupee",
+
+        "geoname_id": 1168579,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "pak",
+
+        "iso3166_numeric": 586,
+
+        "languages": [
+            "ur-PK",
+
+            "en-PK",
+
+            "pa",
+
+            "sd",
+
+            "ps",
+
+            "brh"
+        ],
+
+        "name": "pakistan",
+
+        "name_human": "the islamic republic of pakistan",
+
+        "phone_code": "92",
+
+        "timezones": [
+            "asia/karachi"
+        ],
+
+        "tld": ".pk"
+    },
+
+    "pl": {
+        "capital": "warsaw",
+
+        "continent": "europe",
+
+        "currency_code": "pln",
+
+        "currency_name": "zloty",
+
+        "geoname_id": 798544,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "pol",
+
+        "iso3166_numeric": 616,
+
+        "languages": [
+            "pl"
+        ],
+
+        "name": "poland",
+
+        "name_human": "the republic of poland",
+
+        "phone_code": "48",
+
+        "timezones": [
+            "europe/warsaw"
+        ],
+
+        "tld": ".pl"
+    },
+
+    "pm": {
+        "capital": "saint-pierre",
+
+        "continent": "americas",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 3424932,
+
+        "is_developed": true,
+
+        "is_independent": false,
+
+        "iso3166_a3": "spm",
+
+        "iso3166_numeric": 666,
+
+        "languages": [
+            "fr-PM"
+        ],
+
+        "name": "st. pierre & miquelon",
+
+        "name_human": null,
+
+        "phone_code": "508",
+
+        "timezones": [
+            "america/st_lucia"
+        ],
+
+        "tld": ".pm"
+    },
+
+    "pn": {
+        "capital": "adamstown",
+
+        "continent": "oceania",
+
+        "currency_code": "nzd",
+
+        "currency_name": "new zealand dollar",
+
+        "geoname_id": 4030699,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "pcn",
+
+        "iso3166_numeric": 612,
+
+        "languages": [
+            "en-PN"
+        ],
+
+        "name": "pitcairn islands",
+
+        "name_human": null,
+
+        "phone_code": "870",
+
+        "timezones": [
+            "asia/manila"
+        ],
+
+        "tld": ".pn"
+    },
+
+    "pr": {
+        "capital": "san juan",
+
+        "continent": "americas",
+
+        "currency_code": "usd",
+
+        "currency_name": "us dollar",
+
+        "geoname_id": 4566966,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "pri",
+
+        "iso3166_numeric": 630,
+
+        "languages": [
+            "en-PR",
+
+            "es-PR"
+        ],
+
+        "name": "puerto rico",
+
+        "name_human": null,
+
+        "phone_code": "1",
+
+        "timezones": [],
+
+        "tld": ".pr"
+    },
+
+    "ps": {
+        "capital": "east jerusalem",
+
+        "continent": "asia",
+
+        "currency_code": null,
+
+        "currency_name": "no universal currency",
+
+        "geoname_id": 6254930,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "pse",
+
+        "iso3166_numeric": 275,
+
+        "languages": [
+            "ar-PS"
+        ],
+
+        "name": "palestine",
+
+        "name_human": "state of palestine",
+
+        "phone_code": "970",
+
+        "timezones": [
+            "asia/colombo"
+        ],
+
+        "tld": ".ps"
+    },
+
+    "pt": {
+        "capital": "lisbon",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 2264397,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "prt",
+
+        "iso3166_numeric": 620,
+
+        "languages": [
+            "pt-PT",
+
+            "mwl"
+        ],
+
+        "name": "portugal",
+
+        "name_human": "the portuguese republic",
+
+        "phone_code": "351",
+
+        "timezones": [
+            "europe/lisbon",
+
+            "atlantic/madeira",
+
+            "atlantic/azores"
+        ],
+
+        "tld": ".pt"
+    },
+
+    "pw": {
+        "capital": "melekeok",
+
+        "continent": "oceania",
+
+        "currency_code": "usd",
+
+        "currency_name": "us dollar",
+
+        "geoname_id": 1559582,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "plw",
+
+        "iso3166_numeric": 585,
+
+        "languages": [
+            "pau",
+
+            "sov",
+
+            "en-PW",
+
+            "tox",
+
+            "ja",
+
+            "fil",
+
+            "zh"
+        ],
+
+        "name": "palau",
+
+        "name_human": "the republic of palau",
+
+        "phone_code": "680",
+
+        "timezones": [
+            "pacific/palau"
+        ],
+
+        "tld": ".pw"
+    },
+
+    "py": {
+        "capital": "asuncion",
+
+        "continent": "americas",
+
+        "currency_code": "pyg",
+
+        "currency_name": "guarani",
+
+        "geoname_id": 3437598,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "pry",
+
+        "iso3166_numeric": 600,
+
+        "languages": [
+            "es-PY",
+
+            "gn"
+        ],
+
+        "name": "paraguay",
+
+        "name_human": "the republic of paraguay",
+
+        "phone_code": "595",
+
+        "timezones": [
+            "america/asuncion"
+        ],
+
+        "tld": ".py"
+    },
+
+    "qa": {
+        "capital": "doha",
+
+        "continent": "asia",
+
+        "currency_code": "qar",
+
+        "currency_name": "qatari rial",
+
+        "geoname_id": 289688,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "qat",
+
+        "iso3166_numeric": 634,
+
+        "languages": [
+            "ar-QA",
+
+            "es"
+        ],
+
+        "name": "qatar",
+
+        "name_human": "the state of qatar",
+
+        "phone_code": "974",
+
+        "timezones": [
+            "asia/qatar"
+        ],
+
+        "tld": ".qa"
+    },
+
+    "re": {
+        "capital": "saint-denis",
+
+        "continent": "africa",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 935317,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "reu",
+
+        "iso3166_numeric": 638,
+
+        "languages": [
+            "fr-RE"
+        ],
+
+        "name": "r\u00e9union",
+
+        "name_human": null,
+
+        "phone_code": "262",
+
+        "timezones": [
+            "africa/kigali"
+        ],
+
+        "tld": ".re"
+    },
+
+    "ro": {
+        "capital": "bucharest",
+
+        "continent": "europe",
+
+        "currency_code": "ron",
+
+        "currency_name": "romanian leu",
+
+        "geoname_id": 798549,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "rou",
+
+        "iso3166_numeric": 642,
+
+        "languages": [
+            "ro",
+
+            "hu",
+
+            "rom"
+        ],
+
+        "name": "romania",
+
+        "name_human": "romania",
+
+        "phone_code": "40",
+
+        "timezones": [
+            "europe/bucharest"
+        ],
+
+        "tld": ".ro"
+    },
+
+    "rs": {
+        "capital": "belgrade",
+
+        "continent": "europe",
+
+        "currency_code": "rsd",
+
+        "currency_name": "serbian dinar",
+
+        "geoname_id": 6290252,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "srb",
+
+        "iso3166_numeric": 688,
+
+        "languages": [
+            "sr",
+
+            "hu",
+
+            "bs",
+
+            "rom"
+        ],
+
+        "name": "serbia",
+
+        "name_human": "the republic of serbia",
+
+        "phone_code": "381",
+
+        "timezones": [
+            "europe/belgrade"
+        ],
+
+        "tld": ".rs"
+    },
+
+    "ru": {
+        "capital": "moscow",
+
+        "continent": "europe",
+
+        "currency_code": "rub",
+
+        "currency_name": "russian ruble",
+
+        "geoname_id": 2017370,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "rus",
+
+        "iso3166_numeric": 643,
+
+        "languages": [
+            "ru",
+
+            "tt",
+
+            "xal",
+
+            "cau",
+
+            "ady",
+
+            "kv",
+
+            "ce",
+
+            "tyv",
+
+            "cv",
+
+            "udm",
+
+            "tut",
+
+            "mns",
+
+            "bua",
+
+            "myv",
+
+            "mdf",
+
+            "chm",
+
+            "ba",
+
+            "inh",
+
+            "tut",
+
+            "kbd",
+
+            "krc",
+
+            "av",
+
+            "sah",
+
+            "nog"
+        ],
+
+        "name": "russia",
+
+        "name_human": "the russian federation",
+
+        "phone_code": "7",
+
+        "timezones": [
+            "europe/kaliningrad",
+
+            "europe/moscow",
+
+            "europe/volgograd",
+
+            "europe/samara",
+
+            "asia/yekaterinburg",
+
+            "asia/omsk",
+
+            "asia/novosibirsk",
+
+            "asia/krasnoyarsk",
+
+            "asia/irkutsk",
+
+            "asia/yakutsk",
+
+            "asia/vladivostok",
+
+            "asia/sakhalin",
+
+            "asia/magadan",
+
+            "asia/kamchatka",
+
+            "asia/anadyr"
+        ],
+
+        "tld": ".ru"
+    },
+
+    "rw": {
+        "capital": "kigali",
+
+        "continent": "africa",
+
+        "currency_code": "rwf",
+
+        "currency_name": "rwanda franc",
+
+        "geoname_id": 49518,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "rwa",
+
+        "iso3166_numeric": 646,
+
+        "languages": [
+            "rw",
+
+            "en-RW",
+
+            "fr-RW",
+
+            "sw"
+        ],
+
+        "name": "rwanda",
+
+        "name_human": "the republic of rwanda",
+
+        "phone_code": "250",
+
+        "timezones": [
+            "africa/kigali"
+        ],
+
+        "tld": ".rw"
+    },
+
+    "sa": {
+        "capital": "riyadh",
+
+        "continent": "asia",
+
+        "currency_code": "sar",
+
+        "currency_name": "saudi riyal",
+
+        "geoname_id": 102358,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "sau",
+
+        "iso3166_numeric": 682,
+
+        "languages": [
+            "ar-SA"
+        ],
+
+        "name": "saudi arabia",
+
+        "name_human": "the kingdom of saudi arabia",
+
+        "phone_code": "966",
+
+        "timezones": [
+            "asia/riyadh"
+        ],
+
+        "tld": ".sa"
+    },
+
+    "sb": {
+        "capital": "honiara",
+
+        "continent": "oceania",
+
+        "currency_code": "sbd",
+
+        "currency_name": "solomon islands dollar",
+
+        "geoname_id": 2103350,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "slb",
+
+        "iso3166_numeric": 90,
+
+        "languages": [
+            "en-SB",
+
+            "tpi"
+        ],
+
+        "name": "solomon islands",
+
+        "name_human": "solomon islands",
+
+        "phone_code": "677",
+
+        "timezones": [
+            "pacific/guadalcanal"
+        ],
+
+        "tld": ".sb"
+    },
+
+    "sc": {
+        "capital": "victoria",
+
+        "continent": "africa",
+
+        "currency_code": "scr",
+
+        "currency_name": "seychelles rupee",
+
+        "geoname_id": 241170,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "syc",
+
+        "iso3166_numeric": 690,
+
+        "languages": [
+            "en-SC",
+
+            "fr-SC"
+        ],
+
+        "name": "seychelles",
+
+        "name_human": "the republic of seychelles",
+
+        "phone_code": "248",
+
+        "timezones": [
+            "indian/mahe"
+        ],
+
+        "tld": ".sc"
+    },
+
+    "sd": {
+        "capital": "khartoum",
+
+        "continent": "africa",
+
+        "currency_code": "sdg",
+
+        "currency_name": "sudanese pound",
+
+        "geoname_id": 366755,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "sdn",
+
+        "iso3166_numeric": 729,
+
+        "languages": [
+            "ar-SD",
+
+            "en",
+
+            "fia"
+        ],
+
+        "name": "sudan",
+
+        "name_human": "the republic of the sudan",
+
+        "phone_code": "249",
+
+        "timezones": [
+            "africa/khartoum"
+        ],
+
+        "tld": ".sd"
+    },
+
+    "se": {
+        "capital": "stockholm",
+
+        "continent": "europe",
+
+        "currency_code": "sek",
+
+        "currency_name": "swedish krona",
+
+        "geoname_id": 2661886,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "swe",
+
+        "iso3166_numeric": 752,
+
+        "languages": [
+            "sv-SE",
+
+            "se",
+
+            "sma",
+
+            "fi-SE"
+        ],
+
+        "name": "sweden",
+
+        "name_human": "the kingdom of sweden",
+
+        "phone_code": "46",
+
+        "timezones": [
+            "europe/stockholm"
+        ],
+
+        "tld": ".se"
+    },
+
+    "sg": {
+        "capital": "singapore",
+
+        "continent": "asia",
+
+        "currency_code": "sgd",
+
+        "currency_name": "singapore dollar",
+
+        "geoname_id": 1880251,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "sgp",
+
+        "iso3166_numeric": 702,
+
+        "languages": [
+            "cmn",
+
+            "en-SG",
+
+            "ms-SG",
+
+            "ta-SG",
+
+            "zh-SG"
+        ],
+
+        "name": "singapore",
+
+        "name_human": "the republic of singapore",
+
+        "phone_code": "65",
+
+        "timezones": [
+            "asia/singapore"
+        ],
+
+        "tld": ".sg"
+    },
+
+    "sh": {
+        "capital": "jamestown",
+
+        "continent": "africa",
+
+        "currency_code": "shp",
+
+        "currency_name": "saint helena pound",
+
+        "geoname_id": 3370751,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "shn",
+
+        "iso3166_numeric": 654,
+
+        "languages": [
+            "en-SH"
+        ],
+
+        "name": "st. helena",
+
+        "name_human": null,
+
+        "phone_code": "290",
+
+        "timezones": [
+            "africa/kigali"
+        ],
+
+        "tld": ".sh"
+    },
+
+    "si": {
+        "capital": "ljubljana",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 3190538,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "svn",
+
+        "iso3166_numeric": 705,
+
+        "languages": [
+            "sl",
+
+            "sh"
+        ],
+
+        "name": "slovenia",
+
+        "name_human": "the republic of slovenia",
+
+        "phone_code": "386",
+
+        "timezones": [
+            "europe/ljubljana"
+        ],
+
+        "tld": ".si"
+    },
+
+    "sj": {
+        "capital": "longyearbyen",
+
+        "continent": "europe",
+
+        "currency_code": "nok",
+
+        "currency_name": "norwegian krone",
+
+        "geoname_id": 607072,
+
+        "is_developed": true,
+
+        "is_independent": false,
+
+        "iso3166_a3": "sjm",
+
+        "iso3166_numeric": 744,
+
+        "languages": [
+            "no",
+
+            "ru"
+        ],
+
+        "name": "svalbard & jan mayen",
+
+        "name_human": null,
+
+        "phone_code": "47",
+
+        "timezones": [
+            "america/paramaribo"
+        ],
+
+        "tld": ".sj"
+    },
+
+    "sk": {
+        "capital": "bratislava",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 3057568,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "svk",
+
+        "iso3166_numeric": 703,
+
+        "languages": [
+            "sk",
+
+            "hu"
+        ],
+
+        "name": "slovakia",
+
+        "name_human": "the slovak republic",
+
+        "phone_code": "421",
+
+        "timezones": [
+            "europe/bratislava"
+        ],
+
+        "tld": ".sk"
+    },
+
+    "sl": {
+        "capital": "freetown",
+
+        "continent": "africa",
+
+        "currency_code": "sll",
+
+        "currency_name": "leone",
+
+        "geoname_id": 2403846,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "sle",
+
+        "iso3166_numeric": 694,
+
+        "languages": [
+            "en-SL",
+
+            "men",
+
+            "tem"
+        ],
+
+        "name": "sierra leone",
+
+        "name_human": "the republic of sierra leone",
+
+        "phone_code": "232",
+
+        "timezones": [
+            "africa/freetown"
+        ],
+
+        "tld": ".sl"
+    },
+
+    "sm": {
+        "capital": "san marino",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 3168068,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "smr",
+
+        "iso3166_numeric": 674,
+
+        "languages": [
+            "it-SM"
+        ],
+
+        "name": "san marino",
+
+        "name_human": "the republic of san marino",
+
+        "phone_code": "378",
+
+        "timezones": [
+            "europe/san_marino"
+        ],
+
+        "tld": ".sm"
+    },
+
+    "sn": {
+        "capital": "dakar",
+
+        "continent": "africa",
+
+        "currency_code": "xof",
+
+        "currency_name": "cfa franc bceao",
+
+        "geoname_id": 2245662,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "sen",
+
+        "iso3166_numeric": 686,
+
+        "languages": [
+            "fr-SN",
+
+            "wo",
+
+            "fuc",
+
+            "mnk"
+        ],
+
+        "name": "senegal",
+
+        "name_human": "the republic of senegal",
+
+        "phone_code": "221",
+
+        "timezones": [
+            "africa/dakar"
+        ],
+
+        "tld": ".sn"
+    },
+
+    "so": {
+        "capital": "mogadishu",
+
+        "continent": "africa",
+
+        "currency_code": "sos",
+
+        "currency_name": "somali shilling",
+
+        "geoname_id": 51537,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "som",
+
+        "iso3166_numeric": 706,
+
+        "languages": [
+            "so-SO",
+
+            "ar-SO",
+
+            "it",
+
+            "en-SO"
+        ],
+
+        "name": "somalia",
+
+        "name_human": "the federal republic of somalia",
+
+        "phone_code": "252",
+
+        "timezones": [
+            "africa/mogadishu"
+        ],
+
+        "tld": ".so"
+    },
+
+    "sr": {
+        "capital": "paramaribo",
+
+        "continent": "americas",
+
+        "currency_code": "srd",
+
+        "currency_name": "surinam dollar",
+
+        "geoname_id": 3382998,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "sur",
+
+        "iso3166_numeric": 740,
+
+        "languages": [
+            "nl-SR",
+
+            "en",
+
+            "srn",
+
+            "hns",
+
+            "jv"
+        ],
+
+        "name": "suriname",
+
+        "name_human": "the republic of suriname",
+
+        "phone_code": "597",
+
+        "timezones": [
+            "america/paramaribo"
+        ],
+
+        "tld": ".sr"
+    },
+
+    "ss": {
+        "capital": "juba",
+
+        "continent": "africa",
+
+        "currency_code": "ssp",
+
+        "currency_name": "south sudanese pound",
+
+        "geoname_id": 7909807,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "ssd",
+
+        "iso3166_numeric": 728,
+
+        "languages": [
+            "en"
+        ],
+
+        "name": "south sudan",
+
+        "name_human": "the republic of south sudan",
+
+        "phone_code": "211",
+
+        "timezones": [
+            "africa/johannesburg"
+        ],
+
+        "tld": null
+    },
+
+    "st": {
+        "capital": "sao tome",
+
+        "continent": "africa",
+
+        "currency_code": "std",
+
+        "currency_name": "dobra",
+
+        "geoname_id": 2410758,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "stp",
+
+        "iso3166_numeric": 678,
+
+        "languages": [
+            "pt-ST"
+        ],
+
+        "name": "s\u00e3o tom\u00e9 & pr\u00edncipe",
+
+        "name_human": "the democratic republic of sao tome and principe",
+
+        "phone_code": "239",
+
+        "timezones": [
+            "africa/sao_tome"
+        ],
+
+        "tld": ".st"
+    },
+
+    "sv": {
+        "capital": "san salvador",
+
+        "continent": "americas",
+
+        "currency_code": "svc,usd",
+
+        "currency_name": "el salvador colon,us dollar",
+
+        "geoname_id": 3585968,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "slv",
+
+        "iso3166_numeric": 222,
+
+        "languages": [
+            "es-SV"
+        ],
+
+        "name": "el salvador",
+
+        "name_human": "the republic of el salvador",
+
+        "phone_code": "503",
+
+        "timezones": [
+            "america/el_salvador"
+        ],
+
+        "tld": ".sv"
+    },
+
+    "sx": {
+        "capital": "philipsburg",
+
+        "continent": "americas",
+
+        "currency_code": "ang",
+
+        "currency_name": "netherlands antillean guilder",
+
+        "geoname_id": 7609695,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "sxm",
+
+        "iso3166_numeric": 534,
+
+        "languages": [
+            "nl",
+
+            "en"
+        ],
+
+        "name": "sint maarten",
+
+        "name_human": null,
+
+        "phone_code": "1-721",
+
+        "timezones": [
+            "asia/singapore"
+        ],
+
+        "tld": ".sx"
+    },
+
+    "sy": {
+        "capital": "damascus",
+
+        "continent": "asia",
+
+        "currency_code": "syp",
+
+        "currency_name": "syrian pound",
+
+        "geoname_id": 163843,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "syr",
+
+        "iso3166_numeric": 760,
+
+        "languages": [
+            "ar-SY",
+
+            "ku",
+
+            "hy",
+
+            "arc",
+
+            "fr",
+
+            "en"
+        ],
+
+        "name": "syria",
+
+        "name_human": "the syrian arab republic",
+
+        "phone_code": "963",
+
+        "timezones": [
+            "asia/damascus"
+        ],
+
+        "tld": ".sy"
+    },
+
+    "sz": {
+        "capital": "mbabane",
+
+        "continent": "africa",
+
+        "currency_code": "szl",
+
+        "currency_name": "lilangeni",
+
+        "geoname_id": 934841,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "swz",
+
+        "iso3166_numeric": 748,
+
+        "languages": [
+            "en-SZ",
+
+            "ss-SZ"
+        ],
+
+        "name": "swaziland",
+
+        "name_human": "the kingdom of swaziland",
+
+        "phone_code": "268",
+
+        "timezones": [
+            "africa/mbabane"
+        ],
+
+        "tld": ".sz"
+    },
+
+    "tc": {
+        "capital": "cockburn town",
+
+        "continent": "americas",
+
+        "currency_code": "usd",
+
+        "currency_name": "us dollar",
+
+        "geoname_id": 3576916,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "tca",
+
+        "iso3166_numeric": 796,
+
+        "languages": [
+            "en-TC"
+        ],
+
+        "name": "turks & caicos islands",
+
+        "name_human": null,
+
+        "phone_code": "1-649",
+
+        "timezones": [
+            "asia/ashgabat"
+        ],
+
+        "tld": ".tc"
+    },
+
+    "td": {
+        "capital": "n'djamena",
+
+        "continent": "africa",
+
+        "currency_code": "xaf",
+
+        "currency_name": "cfa franc beac",
+
+        "geoname_id": 2434508,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "tcd",
+
+        "iso3166_numeric": 148,
+
+        "languages": [
+            "fr-TD",
+
+            "ar-TD",
+
+            "sre"
+        ],
+
+        "name": "chad",
+
+        "name_human": "the republic of chad",
+
+        "phone_code": "235",
+
+        "timezones": [
+            "africa/ndjamena"
+        ],
+
+        "tld": ".td"
+    },
+
+    "tf": {
+        "capital": "port-aux-francais",
+
+        "continent": "africa",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 1546748,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "atf",
+
+        "iso3166_numeric": 260,
+
+        "languages": [
+            "fr"
+        ],
+
+        "name": "french southern territories",
+
+        "name_human": null,
+
+        "phone_code": "262",
+
+        "timezones": [],
+
+        "tld": ".tf"
+    },
+
+    "tg": {
+        "capital": "lome",
+
+        "continent": "africa",
+
+        "currency_code": "xof",
+
+        "currency_name": "cfa franc bceao",
+
+        "geoname_id": 2363686,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "tgo",
+
+        "iso3166_numeric": 768,
+
+        "languages": [
+            "fr-TG",
+
+            "ee",
+
+            "hna",
+
+            "kbp",
+
+            "dag",
+
+            "ha"
+        ],
+
+        "name": "togo",
+
+        "name_human": "the togolese republic",
+
+        "phone_code": "228",
+
+        "timezones": [
+            "africa/lome"
+        ],
+
+        "tld": ".tg"
+    },
+
+    "th": {
+        "capital": "bangkok",
+
+        "continent": "asia",
+
+        "currency_code": "thb",
+
+        "currency_name": "baht",
+
+        "geoname_id": 1605651,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "tha",
+
+        "iso3166_numeric": 764,
+
+        "languages": [
+            "th",
+
+            "en"
+        ],
+
+        "name": "thailand",
+
+        "name_human": "the kingdom of thailand",
+
+        "phone_code": "66",
+
+        "timezones": [
+            "asia/bangkok"
+        ],
+
+        "tld": ".th"
+    },
+
+    "tj": {
+        "capital": "dushanbe",
+
+        "continent": "asia",
+
+        "currency_code": "tjs",
+
+        "currency_name": "somoni",
+
+        "geoname_id": 1220409,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "tjk",
+
+        "iso3166_numeric": 762,
+
+        "languages": [
+            "tg",
+
+            "ru"
+        ],
+
+        "name": "tajikistan",
+
+        "name_human": "the republic of tajikistan",
+
+        "phone_code": "992",
+
+        "timezones": [
+            "asia/dushanbe"
+        ],
+
+        "tld": ".tj"
+    },
+
+    "tk": {
+        "capital": null,
+
+        "continent": "oceania",
+
+        "currency_code": "nzd",
+
+        "currency_name": "new zealand dollar",
+
+        "geoname_id": 4031074,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "tkl",
+
+        "iso3166_numeric": 772,
+
+        "languages": [
+            "tkl",
+
+            "en-TK"
+        ],
+
+        "name": "tokelau",
+
+        "name_human": null,
+
+        "phone_code": "690",
+
+        "timezones": [
+            "africa/lome"
+        ],
+
+        "tld": ".tk"
+    },
+
+    "tl": {
+        "capital": "dili",
+
+        "continent": "asia",
+
+        "currency_code": "usd",
+
+        "currency_name": "us dollar",
+
+        "geoname_id": 1966436,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "tls",
+
+        "iso3166_numeric": 626,
+
+        "languages": [
+            "tet",
+
+            "pt-TL",
+
+            "id",
+
+            "en"
+        ],
+
+        "name": "timor-leste",
+
+        "name_human": "the democratic republic of timor-leste",
+
+        "phone_code": "670",
+
+        "timezones": [
+            "asia/dili"
+        ],
+
+        "tld": ".tl"
+    },
+
+    "tm": {
+        "capital": "ashgabat",
+
+        "continent": "asia",
+
+        "currency_code": "tmt",
+
+        "currency_name": "turkmenistan new manat",
+
+        "geoname_id": 1218197,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "tkm",
+
+        "iso3166_numeric": 795,
+
+        "languages": [
+            "tk",
+
+            "ru",
+
+            "uz"
+        ],
+
+        "name": "turkmenistan",
+
+        "name_human": "turkmenistan",
+
+        "phone_code": "993",
+
+        "timezones": [
+            "asia/ashgabat"
+        ],
+
+        "tld": ".tm"
+    },
+
+    "tn": {
+        "capital": "tunis",
+
+        "continent": "africa",
+
+        "currency_code": "tnd",
+
+        "currency_name": "tunisian dinar",
+
+        "geoname_id": 2464461,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "tun",
+
+        "iso3166_numeric": 788,
+
+        "languages": [
+            "ar-TN",
+
+            "fr"
+        ],
+
+        "name": "tunisia",
+
+        "name_human": "the republic of tunisia",
+
+        "phone_code": "216",
+
+        "timezones": [
+            "africa/tunis"
+        ],
+
+        "tld": ".tn"
+    },
+
+    "to": {
+        "capital": "nuku'alofa",
+
+        "continent": "oceania",
+
+        "currency_code": "top",
+
+        "currency_name": "pa\u2019anga",
+
+        "geoname_id": 4032283,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "ton",
+
+        "iso3166_numeric": 776,
+
+        "languages": [
+            "to",
+
+            "en-TO"
+        ],
+
+        "name": "tonga",
+
+        "name_human": "the kingdom of tonga",
+
+        "phone_code": "676",
+
+        "timezones": [
+            "pacific/tongatapu"
+        ],
+
+        "tld": ".to"
+    },
+
+    "tr": {
+        "capital": "ankara",
+
+        "continent": "asia",
+
+        "currency_code": "try",
+
+        "currency_name": "turkish lira",
+
+        "geoname_id": 298795,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "tur",
+
+        "iso3166_numeric": 792,
+
+        "languages": [
+            "tr-TR",
+
+            "ku",
+
+            "diq",
+
+            "az",
+
+            "av"
+        ],
+
+        "name": "turkey",
+
+        "name_human": "the republic of turkey",
+
+        "phone_code": "90",
+
+        "timezones": [
+            "europe/istanbul"
+        ],
+
+        "tld": ".tr"
+    },
+
+    "tt": {
+        "capital": "port of spain",
+
+        "continent": "americas",
+
+        "currency_code": "ttd",
+
+        "currency_name": "trinidad and tobago dollar",
+
+        "geoname_id": 3573591,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "tto",
+
+        "iso3166_numeric": 780,
+
+        "languages": [
+            "en-TT",
+
+            "hns",
+
+            "fr",
+
+            "es",
+
+            "zh"
+        ],
+
+        "name": "trinidad & tobago",
+
+        "name_human": "the republic of trinidad and tobago",
+
+        "phone_code": "1-868",
+
+        "timezones": [
+            "america/port_of_spain"
+        ],
+
+        "tld": ".tt"
+    },
+
+    "tv": {
+        "capital": "funafuti",
+
+        "continent": "oceania",
+
+        "currency_code": "aud",
+
+        "currency_name": "australian dollar",
+
+        "geoname_id": 2110297,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "tuv",
+
+        "iso3166_numeric": 798,
+
+        "languages": [
+            "tvl",
+
+            "en",
+
+            "sm",
+
+            "gil"
+        ],
+
+        "name": "tuvalu",
+
+        "name_human": "tuvalu",
+
+        "phone_code": "688",
+
+        "timezones": [
+            "pacific/funafuti"
+        ],
+
+        "tld": ".tv"
+    },
+
+    "tw": {
+        "capital": "taipei",
+
+        "continent": null,
+
+        "currency_code": null,
+
+        "currency_name": null,
+
+        "geoname_id": 1668284,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "twn",
+
+        "iso3166_numeric": 158,
+
+        "languages": [
+            "zh-TW",
+
+            "zh",
+
+            "nan",
+
+            "hak"
+        ],
+
+        "name": "taiwan",
+
+        "name_human": null,
+
+        "phone_code": "886",
+
+        "timezones": [],
+
+        "tld": ".tw"
+    },
+
+    "tz": {
+        "capital": "dodoma",
+
+        "continent": "africa",
+
+        "currency_code": "tzs",
+
+        "currency_name": "tanzanian shilling",
+
+        "geoname_id": 149590,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "tza",
+
+        "iso3166_numeric": 834,
+
+        "languages": [
+            "sw-TZ",
+
+            "en",
+
+            "ar"
+        ],
+
+        "name": "tanzania",
+
+        "name_human": "the united republic of tanzania",
+
+        "phone_code": "255",
+
+        "timezones": [
+            "africa/dar_es_salaam"
+        ],
+
+        "tld": ".tz"
+    },
+
+    "ua": {
+        "capital": "kiev",
+
+        "continent": "europe",
+
+        "currency_code": "uah",
+
+        "currency_name": "hryvnia",
+
+        "geoname_id": 690791,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "ukr",
+
+        "iso3166_numeric": 804,
+
+        "languages": [
+            "uk",
+
+            "ru-UA",
+
+            "rom",
+
+            "pl",
+
+            "hu"
+        ],
+
+        "name": "ukraine",
+
+        "name_human": "ukraine",
+
+        "phone_code": "380",
+
+        "timezones": [
+            "europe/kiev",
+
+            "europe/uzhgorod",
+
+            "europe/zaporozhye",
+
+            "europe/simferopol"
+        ],
+
+        "tld": ".ua"
+    },
+
+    "ug": {
+        "capital": "kampala",
+
+        "continent": "africa",
+
+        "currency_code": "ugx",
+
+        "currency_name": "uganda shilling",
+
+        "geoname_id": 226074,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "uga",
+
+        "iso3166_numeric": 800,
+
+        "languages": [
+            "en-UG",
+
+            "lg",
+
+            "sw",
+
+            "ar"
+        ],
+
+        "name": "uganda",
+
+        "name_human": "the republic of uganda",
+
+        "phone_code": "256",
+
+        "timezones": [
+            "africa/kampala"
+        ],
+
+        "tld": ".ug"
+    },
+
+    "um": {
+        "capital": null,
+
+        "continent": "oceania",
+
+        "currency_code": "usd",
+
+        "currency_name": "us dollar",
+
+        "geoname_id": 5854968,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "umi",
+
+        "iso3166_numeric": 581,
+
+        "languages": [
+            "en-UM"
+        ],
+
+        "name": "u.s. outlying islands",
+
+        "name_human": null,
+
+        "phone_code": null,
+
+        "timezones": [
+            "africa/dar_es_salaam"
+        ],
+
+        "tld": ".um"
+    },
+
+    "us": {
+        "capital": "washington",
+
+        "continent": "americas",
+
+        "currency_code": "usd",
+
+        "currency_name": "us dollar",
+
+        "geoname_id": 6252001,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "usa",
+
+        "iso3166_numeric": 840,
+
+        "languages": [
+            "en-US",
+
+            "es-US",
+
+            "haw",
+
+            "fr"
+        ],
+
+        "name": "us",
+
+        "name_human": "the united states of america",
+
+        "phone_code": "1",
+
+        "timezones": [
+            "america/new_york",
+
+            "america/detroit",
+
+            "america/kentucky/louisville",
+
+            "america/kentucky/monticello",
+
+            "america/indiana/indianapolis",
+
+            "america/indiana/marengo",
+
+            "america/indiana/knox",
+
+            "america/indiana/vevay",
+
+            "america/chicago",
+
+            "america/indiana/vincennes",
+
+            "america/indiana/petersburg",
+
+            "america/menominee",
+
+            "america/north_dakota/center",
+
+            "america/north_dakota/new_salem",
+
+            "america/denver",
+
+            "america/boise",
+
+            "america/shiprock",
+
+            "america/phoenix",
+
+            "america/los_angeles",
+
+            "america/anchorage",
+
+            "america/juneau",
+
+            "america/yakutat",
+
+            "america/nome",
+
+            "america/adak",
+
+            "pacific/honolulu"
+        ],
+
+        "tld": ".us"
+    },
+
+    "uy": {
+        "capital": "montevideo",
+
+        "continent": "americas",
+
+        "currency_code": "uyu",
+
+        "currency_name": "peso uruguayo",
+
+        "geoname_id": 3439705,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "ury",
+
+        "iso3166_numeric": 858,
+
+        "languages": [
+            "es-UY"
+        ],
+
+        "name": "uruguay",
+
+        "name_human": "the eastern republic of uruguay",
+
+        "phone_code": "598",
+
+        "timezones": [
+            "america/montevideo"
+        ],
+
+        "tld": ".uy"
+    },
+
+    "uz": {
+        "capital": "tashkent",
+
+        "continent": "asia",
+
+        "currency_code": "uzs",
+
+        "currency_name": "uzbekistan sum",
+
+        "geoname_id": 1512440,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "uzb",
+
+        "iso3166_numeric": 860,
+
+        "languages": [
+            "uz",
+
+            "ru",
+
+            "tg"
+        ],
+
+        "name": "uzbekistan",
+
+        "name_human": "the republic of uzbekistan",
+
+        "phone_code": "998",
+
+        "timezones": [
+            "asia/samarkand",
+
+            "asia/tashkent"
+        ],
+
+        "tld": ".uz"
+    },
+
+    "va": {
+        "capital": "vatican city",
+
+        "continent": "europe",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 3164670,
+
+        "is_developed": true,
+
+        "is_independent": true,
+
+        "iso3166_a3": "vat",
+
+        "iso3166_numeric": 336,
+
+        "languages": [
+            "la",
+
+            "it",
+
+            "fr"
+        ],
+
+        "name": "vatican city",
+
+        "name_human": "the holy see",
+
+        "phone_code": "39-06",
+
+        "timezones": [
+            "europe/vatican"
+        ],
+
+        "tld": ".va"
+    },
+
+    "vc": {
+        "capital": "kingstown",
+
+        "continent": "americas",
+
+        "currency_code": "xcd",
+
+        "currency_name": "east caribbean dollar",
+
+        "geoname_id": 3577815,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "vct",
+
+        "iso3166_numeric": 670,
+
+        "languages": [
+            "en-VC",
+
+            "fr"
+        ],
+
+        "name": "st. vincent & grenadines",
+
+        "name_human": "saint vincent and the grenadines",
+
+        "phone_code": "1-784",
+
+        "timezones": [
+            "america/st_vincent"
+        ],
+
+        "tld": ".vc"
+    },
+
+    "ve": {
+        "capital": "caracas",
+
+        "continent": "americas",
+
+        "currency_code": "vef",
+
+        "currency_name": "bol\u00edvar",
+
+        "geoname_id": 3625428,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "ven",
+
+        "iso3166_numeric": 862,
+
+        "languages": [
+            "es-VE"
+        ],
+
+        "name": "venezuela",
+
+        "name_human": "the bolivarian republic of venezuela",
+
+        "phone_code": "58",
+
+        "timezones": [
+            "america/caracas"
+        ],
+
+        "tld": ".ve"
+    },
+
+    "vg": {
+        "capital": "road town",
+
+        "continent": "americas",
+
+        "currency_code": "usd",
+
+        "currency_name": "us dollar",
+
+        "geoname_id": 3577718,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "vgb",
+
+        "iso3166_numeric": 92,
+
+        "languages": [
+            "en-VG"
+        ],
+
+        "name": "british virgin islands",
+
+        "name_human": null,
+
+        "phone_code": "1-284",
+
+        "timezones": [
+            "america/noronha",
+
+            "america/belem",
+
+            "america/fortaleza",
+
+            "america/recife",
+
+            "america/araguaina",
+
+            "america/maceio",
+
+            "america/bahia",
+
+            "america/sao_paulo",
+
+            "america/campo_grande",
+
+            "america/cuiaba",
+
+            "america/porto_velho",
+
+            "america/boa_vista",
+
+            "america/manaus",
+
+            "america/eirunepe",
+
+            "america/rio_branco"
+        ],
+
+        "tld": ".vg"
+    },
+
+    "vi": {
+        "capital": "charlotte amalie",
+
+        "continent": "americas",
+
+        "currency_code": "usd",
+
+        "currency_name": "us dollar",
+
+        "geoname_id": 4796775,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "vir",
+
+        "iso3166_numeric": 850,
+
+        "languages": [
+            "en-VI"
+        ],
+
+        "name": "u.s. virgin islands",
+
+        "name_human": null,
+
+        "phone_code": "1-340",
+
+        "timezones": [],
+
+        "tld": ".vi"
+    },
+
+    "vn": {
+        "capital": "hanoi",
+
+        "continent": "asia",
+
+        "currency_code": "vnd",
+
+        "currency_name": "dong",
+
+        "geoname_id": 1562822,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "vnm",
+
+        "iso3166_numeric": 704,
+
+        "languages": [
+            "vi",
+
+            "en",
+
+            "fr",
+
+            "zh",
+
+            "km"
+        ],
+
+        "name": "vietnam",
+
+        "name_human": "the socialist republic of viet nam",
+
+        "phone_code": "84",
+
+        "timezones": [
+            "asia/saigon"
+        ],
+
+        "tld": ".vn"
+    },
+
+    "vu": {
+        "capital": "port vila",
+
+        "continent": "oceania",
+
+        "currency_code": "vuv",
+
+        "currency_name": "vatu",
+
+        "geoname_id": 2134431,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "vut",
+
+        "iso3166_numeric": 548,
+
+        "languages": [
+            "bi",
+
+            "en-VU",
+
+            "fr-VU"
+        ],
+
+        "name": "vanuatu",
+
+        "name_human": "the republic of vanuatu",
+
+        "phone_code": "678",
+
+        "timezones": [
+            "pacific/efate"
+        ],
+
+        "tld": ".vu"
+    },
+
+    "wf": {
+        "capital": "mata utu",
+
+        "continent": "oceania",
+
+        "currency_code": "xpf",
+
+        "currency_name": "cfp franc",
+
+        "geoname_id": 4034749,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "wlf",
+
+        "iso3166_numeric": 876,
+
+        "languages": [
+            "wls",
+
+            "fud",
+
+            "fr-WF"
+        ],
+
+        "name": "wallis & futuna",
+
+        "name_human": null,
+
+        "phone_code": "681",
+
+        "timezones": [
+            "asia/saigon"
+        ],
+
+        "tld": ".wf"
+    },
+
+    "ws": {
+        "capital": "apia",
+
+        "continent": "oceania",
+
+        "currency_code": "wst",
+
+        "currency_name": "tala",
+
+        "geoname_id": 4034894,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "wsm",
+
+        "iso3166_numeric": 882,
+
+        "languages": [
+            "sm",
+
+            "en-WS"
+        ],
+
+        "name": "samoa",
+
+        "name_human": "the independent state of samoa",
+
+        "phone_code": "685",
+
+        "timezones": [
+            "pacific/apia"
+        ],
+
+        "tld": ".ws"
+    },
+
+    "ye": {
+        "capital": "sanaa",
+
+        "continent": "asia",
+
+        "currency_code": "yer",
+
+        "currency_name": "yemeni rial",
+
+        "geoname_id": 69543,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "yem",
+
+        "iso3166_numeric": 887,
+
+        "languages": [
+            "ar-YE"
+        ],
+
+        "name": "yemen",
+
+        "name_human": "the republic of yemen",
+
+        "phone_code": "967",
+
+        "timezones": [
+            "asia/aden"
+        ],
+
+        "tld": ".ye"
+    },
+
+    "yt": {
+        "capital": "mamoudzou",
+
+        "continent": "africa",
+
+        "currency_code": "eur",
+
+        "currency_name": "euro",
+
+        "geoname_id": 1024031,
+
+        "is_developed": false,
+
+        "is_independent": false,
+
+        "iso3166_a3": "myt",
+
+        "iso3166_numeric": 175,
+
+        "languages": [
+            "fr-YT"
+        ],
+
+        "name": "mayotte",
+
+        "name_human": null,
+
+        "phone_code": "262",
+
+        "timezones": [],
+
+        "tld": ".yt"
+    },
+
+    "za": {
+        "capital": "pretoria",
+
+        "continent": "africa",
+
+        "currency_code": "zar",
+
+        "currency_name": "rand",
+
+        "geoname_id": 953987,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "zaf",
+
+        "iso3166_numeric": 710,
+
+        "languages": [
+            "zu",
+
+            "xh",
+
+            "af",
+
+            "nso",
+
+            "en-ZA",
+
+            "tn",
+
+            "st",
+
+            "ts",
+
+            "ss",
+
+            "ve",
+
+            "nr"
+        ],
+
+        "name": "south africa",
+
+        "name_human": "the republic of south africa",
+
+        "phone_code": "27",
+
+        "timezones": [
+            "africa/johannesburg"
+        ],
+
+        "tld": ".za"
+    },
+
+    "zm": {
+        "capital": "lusaka",
+
+        "continent": "africa",
+
+        "currency_code": "zmw",
+
+        "currency_name": "zambian kwacha",
+
+        "geoname_id": 895949,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "zmb",
+
+        "iso3166_numeric": 894,
+
+        "languages": [
+            "en-ZM",
+
+            "bem",
+
+            "loz",
+
+            "lun",
+
+            "lue",
+
+            "ny",
+
+            "toi"
+        ],
+
+        "name": "zambia",
+
+        "name_human": "the republic of zambia",
+
+        "phone_code": "260",
+
+        "timezones": [
+            "africa/lusaka"
+        ],
+
+        "tld": ".zm"
+    },
+
+    "zw": {
+        "capital": "harare",
+
+        "continent": "africa",
+
+        "currency_code": "zwl",
+
+        "currency_name": "zimbabwe dollar",
+
+        "geoname_id": 878675,
+
+        "is_developed": false,
+
+        "is_independent": true,
+
+        "iso3166_a3": "zwe",
+
+        "iso3166_numeric": 716,
+
+        "languages": [
+            "en-ZW",
+
+            "sn",
+
+            "nr",
+
+            "nd"
+        ],
+
+        "name": "zimbabwe",
+
+        "name_human": "the republic of zimbabwe",
+
+        "phone_code": "263",
+
+        "timezones": [
+            "africa/harare"
+        ],
+
+        "tld": ".zw"
+    }
+}
