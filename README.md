@@ -13,7 +13,7 @@ We want to be a hub for all custom Fields. If your created a Custom Peewee Field
 [![Python Version](https://img.shields.io/badge/Python-3-brightgreen.svg)](http://python.org)
 
 
-# Description of fields
+# Documentation
 
 ##### PositiveIntegerField
 <details>
