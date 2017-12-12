@@ -28,6 +28,10 @@ We want to be a hub for all custom Fields. If your created a Custom Peewee Field
 
 **Returns:** `int`.
 
+**Base Class:** `IntegerField`.
+
+**Type:** `<class 'type'>`.
+
 **Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
 | State              | OS          | Description |
@@ -68,6 +72,10 @@ Optionally it can round Floats using Pythons `round()` with `round_by` integer a
 **Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `FloatField`).
 
 **Returns:** `float`.
+
+**Base Class:** `FloatField`.
+
+**Type:** `<class 'type'>`.
 
 **Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
@@ -119,6 +127,10 @@ ValueError: PositiveFloatField 'round_by' argument is not a Non-Zero Positive In
 
 **Returns:** `decimal.Decimal`.
 
+**Base Class:** `DecimalField`.
+
+**Type:** `<class 'type'>`.
+
 **Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
 | State              | OS          | Description |
@@ -168,6 +180,10 @@ ValueError: PositiveDecimalField 'round_by' argument is not a Non-Zero Positive 
 **Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
 
 **Returns:** `IPv4Address` or `IPv6Address`.
+
+**Base Class:** `CharField`.
+
+**Type:** `<class 'type'>`.
 
 **Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
@@ -221,6 +237,10 @@ IPv4Address('172.16.0.1')
 
 **Returns:** `IPv4Network` or `IPv6Network`.
 
+**Base Class:** `CharField`.
+
+**Type:** `<class 'type'>`.
+
 **Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
 | State              | OS          | Description |
@@ -264,6 +284,10 @@ Most of times you need Dates on the Past, eg. your Birthday cant be in the Futur
 
 **Returns:** `date`.
 
+**Base Class:** `DateField`.
+
+**Type:** `<class 'type'>`.
+
 **Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
 | State              | OS          | Description |
@@ -306,6 +330,10 @@ Most of times you need DateTimes on the Past, eg. your Birthday cant be in the F
 
 **Returns:** `datetime`.
 
+**Base Class:** `DateTimeField`.
+
+**Type:** `<class 'type'>`.
+
 **Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
 | State              | OS          | Description |
@@ -347,6 +375,10 @@ Uses hardcoded `max_length = 2`.
 **Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `FixedCharField`).
 
 **Returns:** `collections.namedtuple`.
+
+**Base Class:** `FixedCharField`.
+
+**Type:** `<class 'type'>`.
 
 **Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
@@ -410,6 +442,10 @@ Small integer is always faster than varchar or text in every aspect.
 
 **Returns:** `collections.namedtuple`.
 
+**Base Class:** `SmallIntegerField`.
+
+**Type:** `<class 'type'>`.
+
 **Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
 | State              | OS          | Description |
@@ -460,6 +496,10 @@ Small integer is always faster than varchar or text in every aspect.
 
 **Returns:** `collections.namedtuple`.
 
+**Base Class:** `SmallIntegerField`.
+
+**Type:** `<class 'type'>`.
+
 **Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
 | State              | OS          | Description |
@@ -505,6 +545,10 @@ ValueError: CurrencyISOCodeField Value is not an ISO-4217 Standard Currency Code
 
 **Returns:** `str`.
 
+**Base Class:** `CharField`.
+
+**Type:** `<class 'type'>`.
+
 **Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
 | State              | OS          | Description |
@@ -541,6 +585,10 @@ ValueError: ARPostalCodeField Value is not a valid Argentine Postal Code (old & 
 **Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
 
 **Returns:** `str`.
+
+**Base Class:** `CharField`.
+
+**Type:** `<class 'type'>`.
 
 **Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
