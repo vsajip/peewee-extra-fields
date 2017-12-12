@@ -27,7 +27,7 @@ If your created a Custom Peewee Field feel free to Sen Pull Requests!!!.
 
 **Returns:** `int`.
 
-**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
 | State              | OS          | Description |
 | ------------------ |:-----------:| -----------:|
@@ -68,7 +68,7 @@ Optionally it can round Floats using Pythons `round()` with `round_by` integer a
 
 **Returns:** `float`.
 
-**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
 | State              | OS          | Description |
 | ------------------ |:-----------:| -----------:|
@@ -118,7 +118,7 @@ ValueError: PositiveFloatField 'round_by' argument is not a Non-Zero Positive In
 
 **Returns:** `decimal.Decimal`.
 
-**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
 | State              | OS          | Description |
 | ------------------ |:-----------:| -----------:|
@@ -168,7 +168,7 @@ ValueError: PositiveDecimalField 'round_by' argument is not a Non-Zero Positive 
 
 **Returns:** `IPv4Address` or `IPv6Address`.
 
-**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
 | State              | OS          | Description |
 | ------------------ |:-----------:| -----------:|
@@ -220,7 +220,7 @@ IPv4Address('172.16.0.1')
 
 **Returns:** `IPv4Network` or `IPv6Network`.
 
-**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
 | State              | OS          | Description |
 | ------------------ |:-----------:| -----------:|
@@ -263,7 +263,7 @@ Most of times you need Dates on the Past, eg. your Birthday cant be in the Futur
 
 **Returns:** `date`.
 
-**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
 | State              | OS          | Description |
 | ------------------ |:-----------:| -----------:|
@@ -305,7 +305,7 @@ Most of times you need DateTimes on the Past, eg. your Birthday cant be in the F
 
 **Returns:** `datetime`.
 
-**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
 | State              | OS          | Description |
 | ------------------ |:-----------:| -----------:|
@@ -347,7 +347,7 @@ Uses hardcoded `max_length = 2`.
 
 **Returns:** `collections.namedtuple`.
 
-**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
 | State              | OS          | Description |
 | ------------------ |:-----------:| -----------:|
@@ -409,7 +409,7 @@ Small integer is always faster than varchar or text in every aspect.
 
 **Returns:** `collections.namedtuple`.
 
-**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
 | State              | OS          | Description |
 | ------------------ |:-----------:| -----------:|
@@ -459,7 +459,7 @@ Small integer is always faster than varchar or text in every aspect.
 
 **Returns:** `collections.namedtuple`.
 
-**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
 | State              | OS          | Description |
 | ------------------ |:-----------:| -----------:|
@@ -504,7 +504,7 @@ ValueError: CurrencyISOCodeField Value is not an ISO-4217 Standard Currency Code
 
 **Returns:** `str`.
 
-**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
 | State              | OS          | Description |
 | ------------------ |:-----------:| -----------:|
@@ -541,7 +541,7 @@ ValueError: ARPostalCodeField Value is not a valid Argentine Postal Code (old & 
 
 **Returns:** `str`.
 
-**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee-extra-fields.py
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
 
 | State              | OS          | Description |
 | ------------------ |:-----------:| -----------:|
@@ -563,7 +563,7 @@ ValueError: ARPostalCodeField Value is not a valid Argentine Postal Code (old & 
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 
-ValueError: ARCUITField Value is not a valid Argentine Postal Code (old or new) string of 4 to 8 characters long: 20-30999-6.
+ValueError: ARCUITField Value is not a valid Argentine CUIT Code string of 11 to 13 characters long: 20-30999-6.
 
 ```
 </details>

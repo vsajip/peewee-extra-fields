@@ -440,7 +440,7 @@ class ARCUITField(CharField):
         cuit_code_regex = r'^\d{2}-?\d{8}-?\d$'
         if value and not re.match(cuit_code_regex, value) or len(value) < 10:
             raise ValueError(f"""{self.__class__.__name__} Value is not a valid
-            Argentine Postal Code (old or new) string of 4 to 8 characters long
+            Argentine CUIT Code string of 11 to 13 characters long
             (valid values must match a Regex {cuit_code_regex}): {value}.""")
 
         return value.replace("-", "") if value else value
