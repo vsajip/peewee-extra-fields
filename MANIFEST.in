@@ -1,0 +1,3 @@
+recursive-include peewee_extra_fields *.py
+recursive-include peewee_extra_fields *.json
+include LICENSE
