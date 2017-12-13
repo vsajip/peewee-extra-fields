@@ -617,7 +617,7 @@ ValueError: ARCUITField Value is not a valid Argentine CUIT Code string of 11 to
 ```
 </details>
 
-- [Check an actual working Example copied from official Peewee docs.](https://github.com/juancarlospaco/peewee-extra-fields/blob/master/example.py). Run it executing on the terminal command line: `python example.py`.
+- [Check an actual working Example copied from official Peewee docs.](https://github.com/juancarlospaco/peewee-extra-fields/blob/master/example.py) Run it executing on the terminal command line: `python example.py`.
 
 
 # Requisites:
