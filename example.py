@@ -8,10 +8,10 @@ from peewee import Model, SqliteDatabase
 from peewee_extra_fields import *
 
 
-db = SqliteDatabase('test.db')
+db = SqliteDatabase('')
 
 
-class Person(Model):
+class Person(Model):  # All peewee_extra_fields.
     name = CharFieldCustom()
     birthday = PastDateField()
     cuit = ARCUITField()
@@ -22,9 +22,6 @@ class Person(Model):
     ip = IPNetworkField()
     age = PositiveIntegerField()
     interests = CSVField()
-
-    class Meta:
-        database = db
 
 
 if __name__ in "__main__":
