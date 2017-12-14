@@ -278,6 +278,14 @@ IPv4Network('10.0.0.0/23')
 Past is Ok, Present is Ok, Future is Not Ok.
 Most of times you need Dates on the Past, eg. your Birthday cant be in the Future.
 
+This Field has an additional helper method for lazy devs: 
+`peewee_extra_fields.PastDateField().get_html_widget(clas: tuple=None, ids: str=None, required: bool=False)` 
+that will build and return a string with 1 HTML5 widget element fit for purpose for the possible values of the Field, 
+No CSS, No JS, Nothing Embed, just plain clear text HTML,
+you can set the DOM Classes with `class` argument of `tuple` type, you can set the DOM ID with `ids` argument of `str` type, 
+you can set the DOM "required" with `required` argument of `bool` type, return type is always `str`, 
+it just returns an string does not affect the internals of the Field.
+
 **Arguments:** None (should take the same `*args` and `**kwargs` as `IntegerField`).
 
 **Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `IntegerField`).
@@ -324,6 +332,14 @@ ValueError: PastDateField Dates Value is not in the Past (valid values must be i
 Past is Ok, Present is Ok, Future is Not Ok.
 Most of times you need DateTimes on the Past, eg. your Birthday cant be in the Future.
 
+This Field has an additional helper method for lazy devs: 
+`peewee_extra_fields.PastDateTimeField().get_html_widget(clas: tuple=None, ids: str=None, required: bool=False)` 
+that will build and return a string with 1 HTML5 widget element fit for purpose for the possible values of the Field, 
+No CSS, No JS, Nothing Embed, just plain clear text HTML,
+you can set the DOM Classes with `class` argument of `tuple` type, you can set the DOM ID with `ids` argument of `str` type, 
+you can set the DOM "required" with `required` argument of `bool` type, return type is always `str`, 
+it just returns an string does not affect the internals of the Field.
+
 **Arguments:** None (should take the same `*args` and `**kwargs` as `DateTimeField`).
 
 **Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `DateTimeField`).
@@ -369,6 +385,14 @@ ValueError: PastDateTimeField Dates & Times Value is not in the Past (valid valu
 
 **Description:** [`FixedCharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Language ISO Code** values (ISO-639_1).
 Uses hardcoded `max_length = 2`.
+
+This Field has an additional helper method for lazy devs: 
+`peewee_extra_fields.LanguageISOCodeField().get_html_widget(clas: tuple=None, ids: str=None, required: bool=False)` 
+that will build and return a string with 1 HTML5 widget element fit for purpose for the possible values of the Field, 
+No CSS, No JS, Nothing Embed, just plain clear text HTML,
+you can set the DOM Classes with `class` argument of `tuple` type, you can set the DOM ID with `ids` argument of `str` type, 
+you can set the DOM "required" with `required` argument of `bool` type, return type is always `str`, 
+it just returns an string does not affect the internals of the Field.
 
 **Arguments:** None (should take the same `*args` and `**kwargs` as `FixedCharField`).
 
@@ -436,6 +460,14 @@ that maps 1-to-1 to 2-Characters string Country Codes, according to ISO.
 
 Small integer is always faster than varchar or text in every aspect.
 
+This Field has an additional helper method for lazy devs: 
+`peewee_extra_fields.CountryISOCodeField().get_html_widget(clas: tuple=None, ids: str=None, required: bool=False)` 
+that will build and return a string with 1 HTML5 widget element fit for purpose for the possible values of the Field, 
+No CSS, No JS, Nothing Embed, just plain clear text HTML,
+you can set the DOM Classes with `class` argument of `tuple` type, you can set the DOM ID with `ids` argument of `str` type, 
+you can set the DOM "required" with `required` argument of `bool` type, return type is always `str`, 
+it just returns an string does not affect the internals of the Field.
+
 **Arguments:** None (should take the same `*args` and `**kwargs` as `SmallIntegerField`).
 
 **Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `SmallIntegerField`).
@@ -490,6 +522,14 @@ that maps 1-to-1 to 3-Characters string Currency Codes, according to ISO.
 
 Small integer is always faster than varchar or text in every aspect.
 
+This Field has an additional helper method for lazy devs: 
+`peewee_extra_fields.CurrencyISOCodeField().get_html_widget(clas: tuple=None, ids: str=None, required: bool=False)` 
+that will build and return a string with 1 HTML5 widget element fit for purpose for the possible values of the Field, 
+No CSS, No JS, Nothing Embed, just plain clear text HTML,
+you can set the DOM Classes with `class` argument of `tuple` type, you can set the DOM ID with `ids` argument of `str` type, 
+you can set the DOM "required" with `required` argument of `bool` type, return type is always `str`, 
+it just returns an string does not affect the internals of the Field.
+
 **Arguments:** None (should take the same `*args` and `**kwargs` as `SmallIntegerField`).
 
 **Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `SmallIntegerField`).
@@ -539,6 +579,14 @@ ValueError: CurrencyISOCodeField Value is not an ISO-4217 Standard Currency Code
 
 **Description:** [`CharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Argentine Postal Codes** (old & new).
 
+This Field has an additional helper method for lazy devs: 
+`peewee_extra_fields.ARPostalCodeField().get_html_widget(clas: tuple=None, ids: str=None, required: bool=False)` 
+that will build and return a string with 1 HTML5 widget element fit for purpose for the possible values of the Field, 
+No CSS, No JS, Nothing Embed, just plain clear text HTML,
+you can set the DOM Classes with `class` argument of `tuple` type, you can set the DOM ID with `ids` argument of `str` type, 
+you can set the DOM "required" with `required` argument of `bool` type, return type is always `str`, 
+it just returns an string does not affect the internals of the Field.
+
 **Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
 
 **Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
@@ -579,6 +627,14 @@ ValueError: ARPostalCodeField Value is not a valid Argentine Postal Code (old & 
 `peewee_extra_fields.ARCUITField()`
 
 **Description:** [`CharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Argentine CUIT**, also it can extract DNI from CUIT.
+
+This Field has an additional helper method for lazy devs: 
+`peewee_extra_fields.ARCUITField().get_html_widget(clas: tuple=None, ids: str=None, required: bool=False)` 
+that will build and return a string with 1 HTML5 widget element fit for purpose for the possible values of the Field, 
+No CSS, No JS, Nothing Embed, just plain clear text HTML,
+you can set the DOM Classes with `class` argument of `tuple` type, you can set the DOM ID with `ids` argument of `str` type, 
+you can set the DOM "required" with `required` argument of `bool` type, return type is always `str`, 
+it just returns an string does not affect the internals of the Field.
 
 **Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
 
