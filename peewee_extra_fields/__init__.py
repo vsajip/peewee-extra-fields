@@ -219,10 +219,23 @@ class LanguageISOCodeField(FixedCharField):
 
     def python_value(self, value: str) -> namedtuple:
         if value and isinstance(value, str):
-            return namedtuple("LanguageISO639", "code name")(
-                value, ISO639_1.get(value).title())
+            lang = ISO639_1.get(value).get  # OPTIMIZATION
+            return namedtuple("LanguageISO639", "code name name_native")(
+                value, lang("name").title(), lang("name_native").title())
 
         return value
+
+    def get_html_widget(self) -> str:
+        html_widget = '<select id="language" name="language">\n'
+
+        for lang in ISO639_1.items():
+                html_widget += (
+                    f'    <option value="{lang[0]}">({lang[0].upper()}) '
+                    f'{lang[1]["name"].title()} ({lang[1]["name_native"]})'
+                    '</option>\n')
+        else:
+            html_widget += '    <option selected disabled >\n</select>\n'
+            return html_widget
 
 
 class CountryISOCodeField(SmallIntegerField):
@@ -291,6 +304,19 @@ class CountryISOCodeField(SmallIntegerField):
 
         return value
 
+    def get_html_widget(self) -> str:
+        html_widget = '<select id="country" name="country">\n'
+
+        for c in ISO3166.items():
+            html_widget += (
+                f'    <option value="{c[0]}" data-iso3166numeric="'
+                f'''{str(str(c[1]["iso3166_numeric"]) + '"').ljust(4)} '''
+                f'data-iso3166a3="{c[1]["iso3166_a3"]}">({c[0].upper()}) '
+                f'{c[1]["name"].title().ljust(38)}</option>\n')
+        else:
+            html_widget += '    <option selected disabled >\n</select>\n'
+            return html_widget
+
 
 class CurrencyISOCodeField(SmallIntegerField):
     """SmallIntegerField clone only accepts Currency ISO Code values.
@@ -337,6 +363,24 @@ class CurrencyISOCodeField(SmallIntegerField):
             )
 
         return value
+
+    def get_html_widget(self) -> str:
+        not_bill_money = ("che", "chw", "clf", "cou", "mxv", "usn", "uss",
+                          "xag", "xau", "xba", "xbb", "xbc", "xbd", "xdr",
+                          "xpd", "xpt", "xsu", "xts", "xua", "xxx", "uyi")
+
+        html_widget = '<select id="currency" name="currency">\n'
+
+        for mon in ISO4217.items():
+            if mon[0] not in not_bill_money:
+                html_widget += (
+                    f'    <option value="{mon[0]}" data-iso4217numeric="'
+                    f'''{str(str(mon[1]["iso4217_numeric"]) + '"').ljust(4)}>'''
+                    f'({mon[0].upper()}) {mon[1]["name"].title().ljust(35)}'
+                    '</option>\n')
+        else:
+            html_widget += '    <option selected disabled >\n</select>\n'
+            return html_widget
 
 
 class CharFieldCustom(CharField):
