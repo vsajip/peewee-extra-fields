@@ -180,6 +180,14 @@ class PastDateTimeField(DateTimeField):
             is not in the Past (valid values must be in the Past): {value}.""")
         return value
 
+    def get_html_widget(self, clas: tuple=None, ids: str=None,
+                        required: bool=False) -> str:
+        clas = f'''class="{' '.join(clas)}" ''' if clas else ""
+        ids = f'id="{ids}" ' if ids else ""
+        r = "required " if required else ""
+        return (f'<input type="datetime-local" name="datetime" {ids}{clas}{r}'
+                f'''max="{datetime.utcnow().strftime('%Y-%m-%dT%H:%M')}">\n''')
+
 
 class PastDateField(DateField):
     """DateField clone but dont allow Dates on the Future.
@@ -192,6 +200,14 @@ class PastDateField(DateField):
             raise ValueError(f"""{self.__class__.__name__} Dates Value is not
             in the Past (valid values must be in the Past): {value}.""")
         return value
+
+    def get_html_widget(self, clas: tuple=None, ids: str=None,
+                        required: bool=False) -> str:
+        clas = f'''class="{' '.join(clas)}" ''' if clas else ""
+        ids = f'id="{ids}" ' if ids else ""
+        r = "required " if required else ""
+        return (f'<input type="date" name="date" {ids}{clas}{r} '
+                f'max="{date.today()}">\n')
 
 
 class LanguageISOCodeField(FixedCharField):
@@ -225,8 +241,14 @@ class LanguageISOCodeField(FixedCharField):
 
         return value
 
-    def get_html_widget(self) -> str:
-        html_widget = '<select id="language" name="language">\n'
+    def get_html_widget(self, clas: tuple=None, ids: str=None,
+                        required: bool=False) -> str:
+        clas = f'''class="{' '.join(clas)}" ''' if clas else ""
+        ids = f'id="{ids}" ' if ids else ""
+
+        r = 'required="required" ' if required else ""
+        html_widget = (f'<select name="language" {ids}{clas}{r}>\n'
+                       '    <option selected disabled value=""></option>\n')
 
         for lang in ISO639_1.items():
                 html_widget += (
@@ -234,7 +256,7 @@ class LanguageISOCodeField(FixedCharField):
                     f'{lang[1]["name"].title()} ({lang[1]["name_native"]})'
                     '</option>\n')
         else:
-            html_widget += '    <option selected disabled >\n</select>\n'
+            html_widget += '</select>\n'
             return html_widget
 
 
@@ -304,8 +326,14 @@ class CountryISOCodeField(SmallIntegerField):
 
         return value
 
-    def get_html_widget(self) -> str:
-        html_widget = '<select id="country" name="country">\n'
+    def get_html_widget(self, clas: tuple=None, ids: str=None,
+                        required: bool=False) -> str:
+        clas = f'''class="{' '.join(clas)}" ''' if clas else ""
+        ids = f'id="{ids}" ' if ids else ""
+
+        r = 'required="required" ' if required else ""
+        html_widget = (f'<select name="country" {ids}{clas}{r}>\n'
+                       '    <option selected disabled value=""></option>\n')
 
         for c in ISO3166.items():
             html_widget += (
@@ -314,7 +342,7 @@ class CountryISOCodeField(SmallIntegerField):
                 f'data-iso3166a3="{c[1]["iso3166_a3"]}">({c[0].upper()}) '
                 f'{c[1]["name"].title().ljust(38)}</option>\n')
         else:
-            html_widget += '    <option selected disabled >\n</select>\n'
+            html_widget += '</select>\n'
             return html_widget
 
 
@@ -364,12 +392,17 @@ class CurrencyISOCodeField(SmallIntegerField):
 
         return value
 
-    def get_html_widget(self) -> str:
+    def get_html_widget(self, clas: tuple=None, ids: str=None,
+                        required: bool=False) -> str:
+        clas = f'''class="{' '.join(clas)}" ''' if clas else ""
+        ids = f'id="{ids}" ' if ids else ""
         not_bill_money = ("che", "chw", "clf", "cou", "mxv", "usn", "uss",
                           "xag", "xau", "xba", "xbb", "xbc", "xbd", "xdr",
                           "xpd", "xpt", "xsu", "xts", "xua", "xxx", "uyi")
 
-        html_widget = '<select id="currency" name="currency">\n'
+        r = 'required="required" ' if required else ""
+        html_widget = (f'<select name="currency" {ids}{clas}{r}>\n'
+                       '    <option selected disabled value=""></option>\n')
 
         for mon in ISO4217.items():
             if mon[0] not in not_bill_money:
@@ -379,7 +412,7 @@ class CurrencyISOCodeField(SmallIntegerField):
                     f'({mon[0].upper()}) {mon[1]["name"].title().ljust(35)}'
                     '</option>\n')
         else:
-            html_widget += '    <option selected disabled >\n</select>\n'
+            html_widget += '</select>\n'
             return html_widget
 
 
@@ -475,6 +508,15 @@ class ARPostalCodeField(CharField):
 
         return value
 
+    def get_html_widget(self, clas: tuple=None, ids: str=None,
+                        required: bool=False) -> str:
+        clas = f'''class="{' '.join(clas)}" ''' if clas else ""
+        ids = f'id="{ids}" ' if ids else ""
+        r = "required " if required else ""
+        return (f'<input type="text" name="postal-code" {ids}{clas}{r} '
+                'placeholder="Codigo Postal Argentino" '
+                'minlength="4" maxlength="8" size="8">\n')
+
 
 class ARCUITField(CharField):
     """CharField clone but only accepts Argentine CUIT, also extracts DNI."""
@@ -491,6 +533,14 @@ class ARCUITField(CharField):
 
     def cuit2dni(self, value: str) -> int:  # Helper, takes CUIT returns DNI.
         return int(value.replace("-", "")[2:-1])  # Removes the XX- and -X.
+
+    def get_html_widget(self, clas: tuple=None, ids: str=None,
+                        required: bool=False) -> str:
+        clas = f'''class="{' '.join(clas)}" ''' if clas else ""
+        ids = f'id="{ids}" ' if ids else ""
+        r = "required " if required else ""
+        return ('<input type="text" name="cuit" placeholder="CUIT Argentino" '
+                f'{ids}{clas}{r}minlength="10" maxlength="13" size="13">\n')
 
 
 # Most Wanted Fields:
