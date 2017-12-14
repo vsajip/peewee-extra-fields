@@ -340,7 +340,7 @@ class CountryISOCodeField(SmallIntegerField):
                 f'    <option value="{c[0]}" data-iso3166numeric="'
                 f'''{str(str(c[1]["iso3166_numeric"]) + '"').ljust(4)} '''
                 f'data-iso3166a3="{c[1]["iso3166_a3"]}">({c[0].upper()}) '
-                f'{c[1]["name"].title().ljust(38)}</option>\n')
+                f'{c[1]["name"].title()}</option>\n')
         else:
             html_widget += '</select>\n'
             return html_widget
@@ -409,7 +409,7 @@ class CurrencyISOCodeField(SmallIntegerField):
                 html_widget += (
                     f'    <option value="{mon[0]}" data-iso4217numeric="'
                     f'''{str(str(mon[1]["iso4217_numeric"]) + '"').ljust(4)}>'''
-                    f'({mon[0].upper()}) {mon[1]["name"].title().ljust(35)}'
+                    f'({mon[0].upper()}) {mon[1]["name"].title()}'
                     '</option>\n')
         else:
             html_widget += '</select>\n'
