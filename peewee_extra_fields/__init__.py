@@ -175,9 +175,12 @@ class PastDateTimeField(DateTimeField):
     Most of times you need DateTimes on Past,eg. Bday cant be in the Future."""
 
     def db_value(self, value):
-        if value and value > datetime.utcnow():
-            raise ValueError(f"""{self.__class__.__name__} Dates & Times Value
-            is not in the Past (valid values must be in the Past): {value}.""")
+        # developer.mozilla.org/en/docs/Web/HTML/Element/input/datetime-local
+        if value and isinstance(value, str):
+            if datetime.strptime(r'%Y-%m-%dT%H:%M', value) > datetime.utcnow():
+                raise ValueError(f"""{self.__class__.__name__} Dates & Times
+                Value is not in the Past (valid values must be in the Past):
+                {value} > {datetime.utcnow().isoformat()}.""")
         return value
 
     def get_html_widget(self, clas: tuple=None, ids: str=None,
@@ -195,10 +198,13 @@ class PastDateField(DateField):
     Past is Ok, Present is Ok, Future is Not Ok.
     Most of times you need Dates on the Past,eg. Bday cant be in the Future."""
 
-    def db_value(self, value):
-        if value and value > date.today():
-            raise ValueError(f"""{self.__class__.__name__} Dates Value is not
-            in the Past (valid values must be in the Past): {value}.""")
+    def db_value(self, value):  # check if its valid for date()
+        if value and isinstance(value, str):
+            # http:developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date
+            if datetime.strptime(value, r'%Y-%m-%d').date() > date.today():
+                raise ValueError(f"""{self.__class__.__name__} Dates Value is
+                not in the Past (valid values must be in the Past or Present):
+                {value} > {date.today()}.""")
         return value
 
     def get_html_widget(self, clas: tuple=None, ids: str=None,
@@ -523,13 +529,15 @@ class ARCUITField(CharField):
     max_length = 14  # 11 Digits + 2 Hyphens.
 
     def db_value(self, value: str) -> str:
-        cuit_code_regex = r'^\d{2}-?\d{8}-?\d$'
-        if value and not re.match(cuit_code_regex, value) or len(value) < 10:
-            raise ValueError(f"""{self.__class__.__name__} Value is not a valid
-            Argentine CUIT Code string of 11 to 13 characters long
-            (valid values must match a Regex {cuit_code_regex}): {value}.""")
+        if value is not None:
+            cuit_code_regex = r'^\d{2}-?\d{8}-?\d$'
+            if not re.match(cuit_code_regex, value) or len(value) < 10:
+                raise ValueError(f"""{self.__class__.__name__} Value is not a
+                valid Argentine CUIT Code string of 11 to 13 characters long
+                (valid values must match Regex {cuit_code_regex}): {value}.""")
+            value = value.replace("-", "")
 
-        return value.replace("-", "") if value else value
+        return value
 
     def cuit2dni(self, value: str) -> int:  # Helper, takes CUIT returns DNI.
         return int(value.replace("-", "")[2:-1])  # Removes the XX- and -X.
