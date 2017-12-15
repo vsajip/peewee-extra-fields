@@ -490,9 +490,7 @@ class CSVField(CharField):
                 value = sorted(value)  # Lost of Order?.
 
             value = self.separator_character.join(value)
-            return value
-        else:
-            return value
+        return value
 
     def python_value(self, value: str) -> tuple:
         return tuple(value.split(self.separator_character) if value else [])
@@ -506,11 +504,13 @@ class ARPostalCodeField(CharField):
     max_length = 8  # New = 8, Old = 4
 
     def db_value(self, value: str) -> str:
-        postal_code_regex = r'^\d{4}$|^[A-HJ-NP-Za-hj-np-z]\d{4}\D{3}$'
-        if value and not re.match(postal_code_regex, value) or len(value) < 4:
-            raise ValueError(f"""{self.__class__.__name__} Value is not a valid
-            Argentine Postal Code (old & new) string of 4 to 8 characters long
-            (valid values must match a Regex {postal_code_regex}): {value}.""")
+        if value and isinstance(value, str):
+            postal_code_regex = r'^\d{4}$|^[A-HJ-NP-Za-hj-np-z]\d{4}\D{3}$'
+            if not re.match(postal_code_regex, value) or len(value) < 4:
+                raise ValueError(f"""{self.__class__.__name__} Value is not a
+                valid Argentine Postal Code (old or new) string from 4 to 8
+                characters long (valid values must match a Regex
+                {postal_code_regex}): {value}.""")
 
         return value
 
@@ -529,7 +529,7 @@ class ARCUITField(CharField):
     max_length = 14  # 11 Digits + 2 Hyphens.
 
     def db_value(self, value: str) -> str:
-        if value is not None:
+        if value and isinstance(value, str):
             cuit_code_regex = r'^\d{2}-?\d{8}-?\d$'
             if not re.match(cuit_code_regex, value) or len(value) < 10:
                 raise ValueError(f"""{self.__class__.__name__} Value is not a
