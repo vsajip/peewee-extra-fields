@@ -1,0 +1,41 @@
+language: python
+
+python:
+  - 3.6
+  - 3.7
+  - nightly
+
+
+before_install:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+
+
+install:
+  - pip install .
+
+
+before_script: rm --recursive --force --verbose *.py[cod]
+
+
+script:
+  - python -m unittest --verbose --locals tests.TestFields
+
+
+notifications:
+  email:
+    recipients: juancarlospaco@gmail.com
+    on_success: change
+    on_failure: always
+
+
+cache:
+  apt: true
+  pip: true
+
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - python: 3.7
+    - nightly
