@@ -1,6 +1,6 @@
 # peewee-extra-fields
 
-[Extra additional Fields](http://docs.peewee-orm.com/en/latest/peewee/models.html#creating-a-custom-field) for [Peewee ORM.](http://docs.peewee-orm.com)
+[Extra additional Fields](http://docs.peewee-orm.com/en/latest/peewee/models.html#creating-a-custom-field) for [Peewee ORM.](http://docs.peewee-orm.com) [![Build Status](https://travis-ci.org/juancarlospaco/peewee-extra-fields.svg?branch=master)](https://travis-ci.org/juancarlospaco/peewee-extra-fields)
 
 CSVField, CharFieldCustom, CountryISOCodeField, CurrencyISOCodeField, IPAddressField, IPNetworkField, LanguageISOCodeField, PastDateField, PastDateTimeField, PositiveDecimalField, PositiveFloatField, PositiveIntegerField and more. Autogeneration of HTML5 Widgets for Fields.
 
