@@ -241,6 +241,7 @@ class TestFields(unittest.TestCase):
                              minute=randint(0, 59),
                              second=randint(0, 59))
             with self.assertRaises(ValueError):
+                print(value)
                 PastDateTimeField().db_value(value)
 
     def test_LanguageISOCodeField(self):
