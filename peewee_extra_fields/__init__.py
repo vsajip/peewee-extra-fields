@@ -181,6 +181,11 @@ class PastDateTimeField(DateTimeField):
                 raise ValueError(f"""{self.__class__.__name__} Dates & Times
                 Value is not in the Past (valid values must be in the Past):
                 {value} > {datetime.utcnow().isoformat()}.""")
+        if value and isinstance(value, datetime):
+            if value > datetime.utcnow():
+                raise ValueError(f"""{self.__class__.__name__} Dates & Times
+                Value is not in the Past (valid values must be in the Past):
+                {value} > {datetime.utcnow().isoformat()}.""")
         return value
 
     def get_html_widget(self, clas: tuple=None, ids: str=None,
@@ -202,6 +207,11 @@ class PastDateField(DateField):
         if value and isinstance(value, str):
             # http:developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date
             if datetime.strptime(value, r'%Y-%m-%d').date() > date.today():
+                raise ValueError(f"""{self.__class__.__name__} Dates Value is
+                not in the Past (valid values must be in the Past or Present):
+                {value} > {date.today()}.""")
+        if value and isinstance(value, date):
+            if value > date.today():
                 raise ValueError(f"""{self.__class__.__name__} Dates Value is
                 not in the Past (valid values must be in the Past or Present):
                 {value} > {date.today()}.""")
