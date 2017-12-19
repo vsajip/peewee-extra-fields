@@ -16,7 +16,7 @@ from types import MappingProxyType as frozendict
 
 from peewee import (CharField, DateField, DateTimeField, DecimalField,
                     FixedCharField, FloatField, IntegerField,
-                    SmallIntegerField)
+                    SmallIntegerField, BigIntegerField)
 
 
 __version__ = "1.1.0"
@@ -30,7 +30,8 @@ __all__ = ('ARCUITField', 'ARPostalCodeField', 'CSVField',
            'CharFieldCustom', 'CountryISOCodeField', 'CurrencyISOCodeField',
            'IPAddressField', 'IPNetworkField', 'LanguageISOCodeField',
            'PastDateField', 'PastDateTimeField', 'PositiveDecimalField',
-           'PositiveFloatField', 'PositiveIntegerField')
+           'PositiveFloatField', 'PositiveIntegerField',
+           'PositiveSmallIntegerField', 'PositiveBigIntegerField')
 
 
 ##############################################################################
@@ -55,13 +56,51 @@ INT2CURRENCY: dict = frozendict(loads(
 ##############################################################################
 
 
+class PositiveSmallIntegerField(SmallIntegerField):
+    """SmallIntegerField clone but only accepts Positive values (>= 0)."""
+
+    # https://www.postgresql.org/docs/current/static/datatype-numeric.html
+    min = 0
+    max = 32_767
+
+    def db_value(self, value):
+        if value and isinstance(value, int):
+            if value < self.min or value > self.max:
+                raise ValueError(f"""{self.__class__.__name__} Value is not a
+                Positive Integer (valid values must be Positive Integers
+                between {self.min} and {self.max}): {value}.""")
+        return value
+
+
 class PositiveIntegerField(IntegerField):
     """IntegerField clone but only accepts Positive values (>= 0)."""
 
+    # https://www.postgresql.org/docs/current/static/datatype-numeric.html
+    min = 0
+    max = 2_147_483_647
+
     def db_value(self, value):
-        if value and value < 0:
-            raise ValueError(f"""{self.__class__.__name__} Value is not a
-            Positive Integer (valid values must be Integers >=0): {value}.""")
+        if value and isinstance(value, int):
+            if value < self.min or value > self.max:
+                raise ValueError(f"""{self.__class__.__name__} Value is not a
+                Positive Integer (valid values must be Positive Integers
+                between {self.min} and {self.max}): {value}.""")
+        return value
+
+
+class PositiveBigIntegerField(BigIntegerField):
+    """BigIntegerField clone but only accepts Positive values (>= 0)."""
+
+    # https://www.postgresql.org/docs/current/static/datatype-numeric.html
+    min = 0
+    max = 9_223_372_036_854_775_807
+
+    def db_value(self, value):
+        if value and isinstance(value, int):
+            if value < self.min or value > self.max:
+                raise ValueError(f"""{self.__class__.__name__} Value is not a
+                Positive Integer (valid values must be Positive Integers
+                between {self.min} and {self.max}): {value}.""")
         return value
 
 
