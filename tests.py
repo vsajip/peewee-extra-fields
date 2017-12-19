@@ -28,7 +28,7 @@ class TestFields(unittest.TestCase):
     maxDiff, __slots__ = None, ()
 
     def test_PositiveIntegerField(self):
-        valid_values = (0, 1, 2, 3, 9, 100, 1_000, 1_000_000, 1_000_000_000)
+        valid_values = (0, 1, 2, 3, 9, 100, 1_000, 2_147_483_647)
         invalid_values = (-1, -2, -3, -9, -100, -1_000, -100_000, -100_000)
 
         for value in valid_values:
@@ -40,6 +40,34 @@ class TestFields(unittest.TestCase):
         for value in invalid_values:
             with self.assertRaises(ValueError):
                 PositiveIntegerField().db_value(value)
+
+    def test_PositiveSmallIntegerField(self):
+        valid_values = (0, 1, 2, 3, 9, 100, 1_000, 32_767)
+        invalid_values = (-1, -2, -3, -9, -100, -1_000, -100_000, -100_000)
+
+        for value in valid_values:
+            self.assertEqual(PositiveSmallIntegerField().python_value(value), value)
+            self.assertEqual(PositiveSmallIntegerField().db_value(value), value)
+            self.assertIsInstance(PositiveSmallIntegerField().python_value(value), int)
+            self.assertIsInstance(PositiveSmallIntegerField().db_value(value), int)
+
+        for value in invalid_values:
+            with self.assertRaises(ValueError):
+                PositiveSmallIntegerField().db_value(value)
+
+    def test_PositiveBigIntegerField(self):
+        valid_values = (0, 1, 2, 3, 9, 100, 1_000, 9_223_372_036_854_775_807)
+        invalid_values = (-1, -2, -3, -9, -100, -1_000, -100_000, -100_000)
+
+        for value in valid_values:
+            self.assertEqual(PositiveBigIntegerField().python_value(value), value)
+            self.assertEqual(PositiveBigIntegerField().db_value(value), value)
+            self.assertIsInstance(PositiveBigIntegerField().python_value(value), int)
+            self.assertIsInstance(PositiveBigIntegerField().db_value(value), int)
+
+        for value in invalid_values:
+            with self.assertRaises(ValueError):
+                PositiveBigIntegerField().db_value(value)
 
     def test_PositiveFloatField(self):
         valid_values = (0.0, 1.0, 2.0, 3.0, 9.123456789, 100.55, 1_000.9999)
