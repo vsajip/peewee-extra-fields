@@ -19,7 +19,7 @@ from peewee import (CharField, DateField, DateTimeField, DecimalField,
                     SmallIntegerField, BigIntegerField)
 
 
-__version__ = "1.1.0"
+__version__ = "1.5.0"
 __license__ = "GPLv3+ LGPLv3+"
 __author__ = "Juan Carlos"
 __email__ = "juancarlospaco@gmail.com"
