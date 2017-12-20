@@ -995,6 +995,73 @@ ValueError: USZipCodeField Value is not a valid USA ZIP Codes (XXXXX or XXXXX-XX
 </details>
 
 
+##### USSocialSecurityNumberField
+<details>
+
+`peewee_extra_fields.USSocialSecurityNumberField()`
+
+**Description:** [`FixedCharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **U.S.A. Social Security Numbers** (XXX-XX-XXXX format).
+Has a hardcoded `max_length = 11`.
+Returns a `namedtuple` with `ssn`, `area`, `group`, `serial`.
+
+Checks that values conforms to the `XXX-XX-XXXX` format.
+
+Area, Group, Serial must not be all Zeroes.
+
+Group must not be `"666"`.
+
+Must not be in the "promotional block" `987-65-4320` ~ `987-65-4329`.
+
+**Arguments:** None (should take the same `*args` and `**kwargs` as `FixedCharField`).
+
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `FixedCharField`).
+
+**Returns:** `collections.namedtuple`.
+
+**Base Class:** `FixedCharField`.
+
+**Type:** `<class 'type'>`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import USSocialSecurityNumberField
+>>> USSocialSecurityNumberField().db_value("205-21-9000")
+'205-21-9000'
+
+>>> USSocialSecurityNumberField().python_value("205-21-9000")
+USSocialSecurityNumber(ssn='205-21-9000', area=205, group=21, serial=9000)
+
+>>> USSocialSecurityNumberField().db_value("205-21-90")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: USSocialSecurityNumberField Value is not a valid U.S.A. Social Security Number string (XXX-XX-XXXX format) (valid Social Security Number values be a must match a Regex '^(?P<area>\\d{3})[-\\ ]?(?P<group>\\d{2})[-\\ ]?(?P<sri>\\d{4})$'): 205-21-90 -> None.
+
+In [7]: USSocialSecurityNumberField().db_value("")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: USSocialSecurityNumberField Value is not a valid U.S.A. Social Security Number string (XXX-XX-XXXX format) (valid Social Security Number values be a must match a Regex '^(?P<area>\\d{3})[-\\ ]?(?P<group>\\d{2})[-\\ ]?(?P<sri>\\d{4})$'):  -> None.
+
+In [8]: USSocialSecurityNumberField().db_value("1")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: USSocialSecurityNumberField Value is not a valid U.S.A. Social Security Number string (XXX-XX-XXXX format) (valid Social Security Number values be a must match a Regex '^(?P<area>\\d{3})[-\\ ]?(?P<group>\\d{2})[-\\ ]?(?P<sri>\\d{4})$'): 1 -> None.
+
+```
+</details>
+
+
 - [Check an actual working Example copied from official Peewee docs.](https://github.com/juancarlospaco/peewee-extra-fields/blob/master/example.py) Run it executing on the terminal command line: `python example.py`.
 
 
