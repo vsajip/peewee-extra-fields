@@ -80,6 +80,8 @@ ValueError: PositiveIntegerField Value is not a Positive Integer (valid values m
 **Description:** [`FloatField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Positive** values (>= 0).
 Optionally it can round Floats using Pythons `round()` with `round_by` integer argument.
 
+`PositiveFloatField` from `0` to `6` decimal digits precision according to [the Standard SQL Oficial Specs](https://www.postgresql.org/docs/current/static/datatype-numeric.html).
+
 **Arguments:**
 - `round()` round `float` using Pythons `round()`, optional, defaults to `None`, integer type, positive value.
 
@@ -134,6 +136,9 @@ ValueError: PositiveFloatField 'round_by' argument is not a Non-Zero Positive In
 
 **Description:** [`DecimalField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Positive** values (>= 0).
 
+`PositiveDecimalField` from `0` to `131_072` decimal digits precision before the decimal point and from `0` to `131_072` decimal digits precision after the decimal point according to [the Standard SQL Oficial Specs](https://www.postgresql.org/docs/current/static/datatype-numeric.html).
+
+up to 131072 digits before the decimal point; up to 16383 digits after the decimal point
 **Arguments:**
 - `round()` round `decimal.Decimal` using Pythons `Decimal().quantize().normalize()`, optional, defaults to `None`, integer type, positive value.
 
