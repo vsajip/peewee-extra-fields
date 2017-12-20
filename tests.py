@@ -398,6 +398,20 @@ class TestFields(unittest.TestCase):
             with self.assertRaises(ValueError):
                 USZipCodeField().db_value(value)
 
+    def test_USSocialSecurityNumberField(self):  # TODO Add more testing Values
+        valid_values = ("205-21-9000", "205-21-9000", "205-21-9000", "205-50-3434")
+        invalid_values = ("", "1", "abc", "205-21-900", "05-21-9000", "205-2-9000")
+
+        for value in valid_values:
+            self.assertEqual(USSocialSecurityNumberField().python_value(value).ssn, value)
+            self.assertEqual(USSocialSecurityNumberField().db_value(value), value)
+            self.assertIsInstance(USSocialSecurityNumberField().python_value(value), tuple)
+            self.assertIsInstance(USSocialSecurityNumberField().db_value(value), str)
+
+        for value in invalid_values:
+            with self.assertRaises(ValueError):
+                USSocialSecurityNumberField().db_value(value)
+
 
 if __name__.__contains__("__main__"):
     print(__doc__)
