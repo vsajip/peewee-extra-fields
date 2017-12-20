@@ -136,7 +136,7 @@ ValueError: PositiveFloatField 'round_by' argument is not a Non-Zero Positive In
 
 **Description:** [`DecimalField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Positive** values (>= 0).
 
-`PositiveDecimalField` from `0` to `131_072` decimal digits precision before the decimal point and from `0` to `131_072` decimal digits precision after the decimal point according to [the Standard SQL Oficial Specs](https://www.postgresql.org/docs/current/static/datatype-numeric.html).
+`PositiveDecimalField` from `0` to `131_072` decimal digits precision before the decimal point and from `0` to `16_383` decimal digits precision after the decimal point according to [the Standard SQL Oficial Specs](https://www.postgresql.org/docs/current/static/datatype-numeric.html).
 
 up to 131072 digits before the decimal point; up to 16383 digits after the decimal point
 **Arguments:**
