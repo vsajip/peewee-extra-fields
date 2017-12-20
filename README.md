@@ -623,10 +623,15 @@ ValueError: CurrencyISOCodeField Value is not an ISO-4217 Standard Currency Code
 `peewee_extra_fields.SWIFTISOCodeField()`
 
 **Description:** [`CharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **SWIFT-Codes ISO-9362** values (SWIFT Business Identifier Code BIC ISO-9362:2014, AKA SWIFT).
+
 Has a hardcoded `max_length = 11` according to ISO-9362 Standard.
+
 `country_code` must be a valid ISO-3166 country code according to ISO-9362 Standard.
+
 `branch_code` can be a `str` or `None` according to ISO-9362 Standard.
+
 This code is also known as: SWIFT-BIC, BIC code, SWIFT ID, SWIFT code or ISO-9362.
+
 Returns a `collections.namedtuple` with `bank_code`, `country_code`, `location_code`, `branch_code`, `swift`.
 
 **Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`)
@@ -685,8 +690,11 @@ ValueError: SWIFTISOCodeField Value string is not a Valid SWIFT-Code ISO-9362:20
 `peewee_extra_fields.IBANISOCodeField()`
 
 **Description:** [`CharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **IBAN-Codes ISO 13616:2007** values (International Bank Account Number (IBAN).
+
 Has a hardcoded `max_length = 34` according to ISO-13616 Standard.
+
 `country_code` must be a valid ISO-3166 country code according to ISO-13616 Standard.
+
 Returns a `collections.namedtuple` with `country_code`, `checksum`, `bban`, `iban_pretty`, `iban`.
 
 **Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`)
