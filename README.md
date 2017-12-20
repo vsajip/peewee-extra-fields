@@ -626,6 +626,7 @@ ValueError: CurrencyISOCodeField Value is not an ISO-4217 Standard Currency Code
 Has a hardcoded `max_length = 11` according to ISO-9362 Standard.
 `country_code` must be a valid ISO-3166 country code according to ISO-9362 Standard.
 `branch_code` can be a `str` or `None` according to ISO-9362 Standard.
+This code is also known as: SWIFT-BIC, BIC code, SWIFT ID, SWIFT code or ISO-9362.
 Returns a `collections.namedtuple` with `bank_code`, `country_code`, `location_code`, `branch_code`, `swift`.
 
 **Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`)
@@ -673,6 +674,83 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 
 ValueError: SWIFTISOCodeField Value string is not a Valid SWIFT-Code ISO-9362:2014 (valid values must be a valid SWIFT-Code of 8 or 11 characters long): NONE.
+
+```
+</details>
+
+
+##### IBANISOCodeField
+<details>
+
+`peewee_extra_fields.IBANISOCodeField()`
+
+**Description:** [`CharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **IBAN-Codes ISO 13616:2007** values (International Bank Account Number (IBAN).
+Has a hardcoded `max_length = 34` according to ISO-13616 Standard.
+`country_code` must be a valid ISO-3166 country code according to ISO-13616 Standard.
+Returns a `collections.namedtuple` with `country_code`, `checksum`, `bban`, `iban_pretty`, `iban`.
+
+**Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`)
+
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
+
+**Returns:** `collections.namedtuple`.
+
+**Base Class:** `CharField`.
+
+**Type:** `<class 'type'>`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import IBANISOCodeField  
+>>> IBANISOCodeField().db_value("DE44 5001 0517 5407 3249 31")
+'DE44500105175407324931'
+
+>>> IBANISOCodeField().python_value("DE44 5001 0517 5407 3249 31")
+SWIFTCodeISO9362(country_code='DE', check_code='44', bban='500105175407324931', iban_pretty='DE44 5001 0517 5407 3249 31', iban='DE44500105175407324931')
+
+>>> IBANISOCodeField().python_value("GB29 NWBK 6016 1331 9268 19")
+SWIFTCodeISO9362(country_code='GB', check_code='29', bban='NWBK60161331926819', iban_pretty='GB29 NWBK 6016 1331 9268 19', iban='GB29NWBK60161331926819')
+
+>>> IBANISOCodeField().python_value("SA03 8000 0000 6080 1016 7519")
+SWIFTCodeISO9362(country_code='SA', check_code='03', bban='80000000608010167519', iban_pretty='SA03 8000 0000 6080 1016 7519', iban='SA0380000000608010167519')
+
+>>> IBANISOCodeField().python_value("CH93 0076 2011 6238 5295 7")
+SWIFTCodeISO9362(country_code='CH', check_code='93', bban='00762011623852957', iban_pretty='CH93 0076 2011 6238 5295 7', iban='CH9300762011623852957')
+>>> IBANISOCodeField().python_value("GB82 WEST 1234 5698 7654 32")
+SWIFTCodeISO9362(country_code='GB', check_code='82', bban='WEST12345698765432', iban_pretty='GB82 WEST 1234 5698 7654 32', iban='GB82WEST12345698765432')
+
+>>> IBANISOCodeField().db_value("DEzz 5001 0517 5407 3249 31")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: IBANISOCodeField Value string is not a Valid IBAN-Code ISO-13616:2007 (valid values must be a valid IBAN-Code, must contain a Valid IBAN CheckSum Digit): DEZZ500105175407324931 -> zz.
+
+>>> IBANISOCodeField().db_value("DE00 5001 0517 5407 3249 31")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: IBANISOCodeField Value string is not a Valid IBAN-Code ISO-13616:2007 (valid values must have a valid IBAN CheckSum digits): DE00500105175407324931 -> 00.
+
+>>> IBANISOCodeField().db_value("")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: IBANISOCodeField Value string is not a Valid IBAN-Code ISO-13616:2007 (valid values must not be an Empty String): "".
+
+>>> IBANISOCodeField().db_value("DE00 5001 0517 5407 3249 3100 0000 0000 0000")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: IBANISOCodeField Value string is not a Valid IBAN-Code ISO-13616:2007 (valid values must be a valid IBAN-Code ISO-13616 of 34 characters max): DE0050010517540732493100000000000000.
 
 ```
 </details>
