@@ -333,6 +333,20 @@ class TestFields(unittest.TestCase):
             with self.assertRaises(ValueError):
                 ARCUITField().db_value(value)
 
+    def test_SWIFTISOCodeField(self):
+        valid_values = ("DEUTDEFF", "NEDSZAJJ", "DABADKKK", "UNCRITMM")
+        invalid_values = ("", "1", "abcdefg")
+
+        for value in valid_values:
+            self.assertEqual(SWIFTISOCodeField().python_value(value).swift, value)
+            self.assertEqual(SWIFTISOCodeField().db_value(value), value)
+            self.assertIsInstance(SWIFTISOCodeField().python_value(value), tuple)
+            self.assertIsInstance(SWIFTISOCodeField().db_value(value), str)
+
+        for value in invalid_values:
+            with self.assertRaises(ValueError):
+                SWIFTISOCodeField().db_value(value)
+
 
 if __name__.__contains__("__main__"):
     print(__doc__)
