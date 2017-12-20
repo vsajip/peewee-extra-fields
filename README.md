@@ -28,6 +28,12 @@ We want to be a hub for all custom Fields. If your created a Custom Peewee Field
 
 **Description:** [`IntegerField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Positive** values (>= 0).
 
+`PositiveSmallIntegerField` accepts positive integers from `0` to `32_767` according to [the Standard SQL Oficial Specs](https://www.postgresql.org/docs/current/static/datatype-numeric.html).
+
+`PositiveIntegerField` accepts positive integers from `0` to `2_147_483_647` according to [the Standard SQL Oficial Specs](https://www.postgresql.org/docs/current/static/datatype-numeric.html).
+
+`PositiveBigIntegerField` accepts positive integers from `0` to `9_223_372_036_854_775_807` according to [the Standard SQL Oficial Specs](https://www.postgresql.org/docs/current/static/datatype-numeric.html).
+
 **Arguments:** None (should take the same `*args` and `**kwargs` as `IntegerField`)
 
 **Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `IntegerField`).
