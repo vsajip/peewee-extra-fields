@@ -34,7 +34,7 @@ __all__ = ('ARCUITField', 'ARPostalCodeField', 'CSVField', 'CharFieldCustom',
            'LanguageISOCodeField', 'PastDateField', 'PastDateTimeField',
            'PositiveBigIntegerField', 'PositiveDecimalField',
            'PositiveFloatField', 'PositiveIntegerField',
-           'PositiveSmallIntegerField', 'SWIFTISOCodeField')
+           'PositiveSmallIntegerField', 'SWIFTISOCodeField', 'USZipCodeField')
 
 
 ##############################################################################
@@ -792,6 +792,26 @@ class ARCUITField(CharField):
         r = "required " if required else ""
         return ('<input type="text" name="cuit" placeholder="CUIT Argentino" '
                 f'{ids}{clas}{r}minlength="10" maxlength="13" size="13">\n')
+
+
+##############################################################################
+
+
+class USZipCodeField(CharField):
+    """CharField clone but only accepts US ZIP Codes (XXXXX or XXXXX-XXXX)."""
+    max_length = 10
+
+    def db_value(self, value: str) -> str:
+        if isinstance(value, str):
+            value = value.strip()
+            zip_code_regex = r'^\d{5}(?:-\d{4})?$'
+            if not re.match(zip_code_regex, value) or len(value) < 5:
+                raise ValueError(f"""{self.__class__.__name__} Value is not a
+                valid USA ZIP Codes (XXXXX or XXXXX-XXXX) string from 5 to 10
+                characters long (valid values must match a Regex
+                {zip_code_regex}): {value}.""")
+
+        return value
 
 
 # Most Wanted Fields:
