@@ -617,6 +617,67 @@ ValueError: CurrencyISOCodeField Value is not an ISO-4217 Standard Currency Code
 </details>
 
 
+##### SWIFTISOCodeField
+<details>
+
+`peewee_extra_fields.SWIFTISOCodeField()`
+
+**Description:** [`CharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **SWIFT-Codes ISO-9362** values (SWIFT Business Identifier Code BIC ISO-9362:2014, AKA SWIFT).
+Has a hardcoded `max_length = 11` according to ISO-9362 Standard.
+`country_code` must be a valid ISO-3166 country code according to ISO-9362 Standard.
+`branch_code` can be a `str` or `None` according to ISO-9362 Standard.
+Returns a `collections.namedtuple` with `bank_code`, `country_code`, `location_code`, `branch_code`, `swift`.
+
+**Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`)
+
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
+
+**Returns:** `collections.namedtuple`.
+
+**Base Class:** `CharField`.
+
+**Type:** `<class 'type'>`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import SWIFTISOCodeField  
+>>> SWIFTISOCodeField().python_value("DEUTDEFF")
+SWIFTCodeISO9362(bank_code='DEUT', country_code='DE', location_code='FF', branch_code=None, swift='DEUTDEFF')
+
+>>> SWIFTISOCodeField().python_value("NEDSZAJJ")
+SWIFTCodeISO9362(bank_code='NEDS', country_code='ZA', location_code='JJ', branch_code=None, swift='NEDSZAJJ')
+
+>>> SWIFTISOCodeField().python_value("DABADKKK")
+SWIFTCodeISO9362(bank_code='DABA', country_code='DK', location_code='KK', branch_code=None, swift='DABADKKK')
+
+>>> SWIFTISOCodeField().python_value("UNCRITMM")
+SWIFTCodeISO9362(bank_code='UNCR', country_code='IT', location_code='MM', branch_code=None, swift='UNCRITMM')
+
+>>> SWIFTISOCodeField().db_value("")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: SWIFTISOCodeField Value string is not a Valid SWIFT-Code ISO-9362:2014 (valid values must not be an Empty String): "".
+
+>>> SWIFTISOCodeField().db_value("None")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: SWIFTISOCodeField Value string is not a Valid SWIFT-Code ISO-9362:2014 (valid values must be a valid SWIFT-Code of 8 or 11 characters long): NONE.
+
+```
+</details>
+
+
 ##### ARPostalCodeField
 <details>
 
