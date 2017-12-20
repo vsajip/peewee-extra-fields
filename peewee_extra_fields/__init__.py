@@ -6,6 +6,8 @@
 
 
 import re
+import string
+
 from collections import namedtuple
 from datetime import date, datetime
 from decimal import Decimal
@@ -30,7 +32,7 @@ __all__ = ('ARCUITField', 'ARPostalCodeField', 'CSVField',
            'CharFieldCustom', 'CountryISOCodeField', 'CurrencyISOCodeField',
            'IPAddressField', 'IPNetworkField', 'LanguageISOCodeField',
            'PastDateField', 'PastDateTimeField', 'PositiveDecimalField',
-           'PositiveFloatField', 'PositiveIntegerField',
+           'PositiveFloatField', 'PositiveIntegerField', 'SWIFTISOCodeField',
            'PositiveSmallIntegerField', 'PositiveBigIntegerField')
 
 
@@ -207,6 +209,60 @@ class IPNetworkField(CharField):
         return ip_network(value) if value else value
 
 
+class SWIFTISOCodeField(CharField):
+    """CharField clone but only accepts SWIFT-Codes ISO-9362 values.
+
+    CharField for SWIFT Business Identifier Code (BIC ISO-9362:2014, AKA SWIFT)
+    https://en.wikipedia.org/wiki/ISO_9362."""
+    max_length = 11
+
+    def db_value(self, value: str) -> str:
+        if isinstance(value, str):
+            value = value.strip().replace(' ', '').upper()  # Must be Upper.
+
+            if len(value) == 12:  # Must be ISO-9362:2014.
+                raise ValueError(f"""{self.__class__.__name__} Value string is
+                not a Valid SWIFT-Code ISO-9362:2014
+                (12-Character SWIFTNet FIN Address based on BIC is not Valid,
+                Internal 'BIC12' are not part of the ISO Standard): {value}""")
+
+            if value == "":
+                raise ValueError(f"""{self.__class__.__name__}
+                Value string is not a Valid SWIFT-Code ISO-9362:2014
+                (valid values must not be an Empty String): {value}.""")
+
+            if not (len(value) == 8 or len(value) == 11):
+                raise ValueError(f"""{self.__class__.__name__} Value string is
+                not a Valid SWIFT-Code ISO-9362:2014 (valid values must be a
+                valid SWIFT-Code of 8 or 11 characters long): {value}.""")
+
+            bank_code = value[:4]  # First 4 letters must be A ~ Z.
+            for x in bank_code:
+                if x not in string.ascii_uppercase:
+                    raise ValueError(f"""{self.__class__.__name__} Value string
+                    is not a Valid SWIFT-Code ISO-9362:2014 (valid values must
+                    be a valid SWIFT-Code, the first 4 Letters must be A-Z):
+                    {value} -> {x}.""")
+
+            country_code = value[4:6].lower()  # Letters 5 & 6 is ISO 3166-1.
+            if country_code not in ISO3166:
+                raise ValueError(f"""{self.__class__.__name__} Value string
+                is not a Valid SWIFT-Code ISO-9362:2014 (valid values must
+                be a valid SWIFT-Code, the letters 5 and 6 must consist of an
+                ISO-3166-1 Alpha-2 Country Code): {value} -> {country_code}""")
+
+        return value
+
+    def python_value(self, value: str) -> namedtuple:
+        if value and isinstance(value, str):
+            branch_code = value[8:11] if value[8:11] != "" else None
+            return namedtuple(
+                "SWIFTCodeISO9362",
+                "bank_code country_code location_code branch_code swift")(
+                    value[:4], value[4:6], value[6:8], branch_code, value)
+        return value
+
+
 class PastDateTimeField(DateTimeField):
     """DateTimeField clone but dont allow Dates and Times on the Future.
 
@@ -216,10 +272,18 @@ class PastDateTimeField(DateTimeField):
     def db_value(self, value):
         # developer.mozilla.org/en/docs/Web/HTML/Element/input/datetime-local
         if value and isinstance(value, str):
-            if datetime.strptime(r'%Y-%m-%dT%H:%M', value) > datetime.utcnow():
+            # http:docs.peewee-orm.com/en/latest/peewee/api.html#DateTimeField
+            for datetime_format in self.formats:
+                try:
+                    valid_datetime = datetime.strptime(value, datetime_format)
+                except Exception:
+                    pass   # this datetime_format does not match value.
+                else:
+                    break  # this datetime_format match value.
+            if valid_datetime > datetime.utcnow():
                 raise ValueError(f"""{self.__class__.__name__} Dates & Times
                 Value is not in the Past (valid values must be in the Past):
-                {value} > {datetime.utcnow().isoformat()}.""")
+                {valid_datetime}, {value} > {datetime.utcnow().isoformat()}""")
         if value and isinstance(value, datetime):
             if value > datetime.utcnow():
                 raise ValueError(f"""{self.__class__.__name__} Dates & Times
@@ -245,10 +309,17 @@ class PastDateField(DateField):
     def db_value(self, value):  # check if its valid for date()
         if value and isinstance(value, str):
             # http:developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date
-            if datetime.strptime(value, r'%Y-%m-%d').date() > date.today():
+            for date_format in self.formats:
+                try:  # docs.peewee-orm.com/en/latest/peewee/api.html#DateField
+                    valid_date = datetime.strptime(value, date_format).date()
+                except Exception:
+                    pass   # this date_format does not match value.
+                else:
+                    break  # this date_format match value.
+            if valid_date > date.today():
                 raise ValueError(f"""{self.__class__.__name__} Dates Value is
                 not in the Past (valid values must be in the Past or Present):
-                {value} > {date.today()}.""")
+                {valid_date}, {value} > {date.today()}.""")
         if value and isinstance(value, date):
             if value > date.today():
                 raise ValueError(f"""{self.__class__.__name__} Dates Value is
