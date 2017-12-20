@@ -33,7 +33,8 @@ __all__ = ('ARCUITField', 'ARPostalCodeField', 'CSVField',
            'IPAddressField', 'IPNetworkField', 'LanguageISOCodeField',
            'PastDateField', 'PastDateTimeField', 'PositiveDecimalField',
            'PositiveFloatField', 'PositiveIntegerField', 'SWIFTISOCodeField',
-           'PositiveSmallIntegerField', 'PositiveBigIntegerField')
+           'PositiveSmallIntegerField', 'PositiveBigIntegerField',
+           'IBANISOCodeField')
 
 
 ##############################################################################
@@ -218,7 +219,7 @@ class SWIFTISOCodeField(CharField):
 
     def db_value(self, value: str) -> str:
         if isinstance(value, str):
-            value = value.strip().replace(' ', '').upper()  # Must be Upper.
+            value = value.strip().replace(' ', '').replace('-', '').upper()
 
             if len(value) == 12:  # Must be ISO-9362:2014.
                 raise ValueError(f"""{self.__class__.__name__} Value string is
@@ -261,6 +262,78 @@ class SWIFTISOCodeField(CharField):
                 "bank_code country_code location_code branch_code swift")(
                     value[:4], value[4:6], value[6:8], branch_code, value)
         return value
+
+
+class IBANISOCodeField(CharField):
+    """CharField clone but only accepts IBAN-Codes ISO 13616 values.
+
+    CharField for International Bank Account Number IBAN Code (ISO-13616:2007).
+    https://en.wikipedia.org/wiki/International_Bank_Account_Number.
+    wikipedia.org/wiki/International_Bank_Account_Number#Validating_the_IBAN."""
+    max_length = 34
+
+    def db_value(self, value: str) -> str:
+        if isinstance(value, str):
+            value = value.strip().replace(' ', '').replace('-', '').upper()
+
+            if value == "":
+                raise ValueError(f"""{self.__class__.__name__}
+                Value string is not a Valid IBAN-Code ISO-13616:2007
+                (valid values must not be an Empty String): {value}.""")
+
+            if len(value) > 34:
+                raise ValueError(f"""{self.__class__.__name__} Value string is
+                not a Valid IBAN-Code ISO-13616:2007 (valid values must be a
+                valid IBAN-Code ISO-13616 of 34 characters max): {value}.""")
+
+            country_code = value[:2].lower()
+            if country_code not in ISO3166:
+                raise ValueError(f"""{self.__class__.__name__} Value string
+                is not a Valid IBAN-Code ISO-13616:2007 (valid values must be a
+                valid IBAN-Code, must contain a ISO-3166 Alpha-2 Country Code):
+                {value} -> {country_code}.""")
+
+            iban_checksum = value[2:4].lower()
+            if not iban_checksum.isdigit():
+                raise ValueError(f"""{self.__class__.__name__} Value string
+                is not a Valid IBAN-Code ISO-13616:2007 (valid values must be a
+                valid IBAN-Code, must contain a Valid IBAN CheckSum Digit):
+                {value} -> {iban_checksum}.""")
+
+            if self.get_iban_checksum(value) != value[2:4]:
+                raise ValueError(f"""{self.__class__.__name__} Value string is
+                not a Valid IBAN-Code ISO-13616:2007 (valid values must have a
+                valid IBAN CheckSum digits): {value} -> {value[2:4]}.""")
+
+        return value
+
+    def python_value(self, value: str) -> namedtuple:
+        if value and isinstance(value, str):
+            value = value.strip().replace(' ', '').replace('-', '').upper()
+            # Pretty format for IBAN has 1 white space every 4 characters.
+            pretty = ' '.join(value[i:i + 4] for i in range(0, len(value), 4))
+            return namedtuple(
+                "SWIFTCodeISO9362",
+                "country_code checksum bban iban_pretty iban")(
+                    value[:2], value[2:4], value[4:], pretty, value)
+        return value
+
+    @staticmethod
+    def get_iban_checksum(value: str) -> str:
+        """Return check digits for an input IBAN number,original is ignored."""
+        value = value.strip().replace(' ', '').replace('-', '').upper()
+        value = value[4:] + value[:2] + '00'
+        value_digits = ''
+        for x in value:
+            if '0' <= x <= '9':
+                value_digits += x
+            elif 'A' <= x <= 'Z':
+                value_digits += str(ord(x) - 55)
+            else:
+                raise ValueError(f"""{self.__class__.__name__} Value string is
+                not a Valid IBAN-Code ISO-13616:2007 (valid values must have a
+                valid IBAN CheckSum integer number): {value} -> {x}.""")
+        return '%02d' % (98 - int(value_digits) % 97)
 
 
 class PastDateTimeField(DateTimeField):
