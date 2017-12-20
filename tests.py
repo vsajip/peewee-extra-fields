@@ -384,6 +384,20 @@ class TestFields(unittest.TestCase):
             with self.assertRaises(ValueError):
                 IANCodeField().db_value(value)
 
+    def test_USZipCodeField(self):  # TODO Add more testing Values.
+        valid_values = ("20521-9000", "99750-0077", "12201-7050")
+        invalid_values = ("", "1", "20521-90000")
+
+        for value in valid_values:
+            self.assertEqual(USZipCodeField().python_value(value), value)
+            self.assertEqual(USZipCodeField().db_value(value), value)
+            self.assertIsInstance(USZipCodeField().python_value(value), str)
+            self.assertIsInstance(USZipCodeField().db_value(value), str)
+
+        for value in invalid_values:
+            with self.assertRaises(ValueError):
+                USZipCodeField().db_value(value)
+
 
 if __name__.__contains__("__main__"):
     print(__doc__)
