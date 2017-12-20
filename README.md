@@ -934,6 +934,67 @@ ValueError: ARCUITField Value is not a valid Argentine CUIT Code string of 11 to
 ```
 </details>
 
+
+##### USZipCodeField
+<details>
+
+`peewee_extra_fields.USZipCodeField()`
+
+**Description:** [`CharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **US ZIP Codes** (XXXXX or XXXXX-XXXX).
+
+**Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
+
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
+
+**Returns:** `str`.
+
+**Base Class:** `CharField`.
+
+**Type:** `<class 'type'>`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import USZipCodeField
+>>> USZipCodeField().db_value("20521-9000")
+'20521-9000'
+
+>>> USZipCodeField().db_value("99750-0077")
+'99750-0077'
+
+>>> USZipCodeField().db_value("12201-7050")
+'12201-7050'
+
+>>> USZipCodeField().db_value("")
+Traceback (most recent call last):
+ File "<stdin>", line 1, in <module>
+
+ValueError: USZipCodeField Value is not a valid USA ZIP Codes (XXXXX or XXXXX-XXXX) string from 5 to 10 characters long (valid values must match a Regex "^\d{5}(?:-\d{4})?$"): "".
+
+>>> USZipCodeField().db_value("1")
+Traceback (most recent call last):
+ File "<stdin>", line 1, in <module>
+
+ValueError: USZipCodeField Value is not a valid USA ZIP Codes (XXXXX or XXXXX-XXXX) string from 5 to 10 characters long (valid values must match a Regex "^\d{5}(?:-\d{4})?$"): 1.
+
+>>> USZipCodeField().db_value("20521-90000")
+Traceback (most recent call last):
+ File "<stdin>", line 1, in <module>
+
+ValueError: USZipCodeField Value is not a valid USA ZIP Codes (XXXXX or XXXXX-XXXX) string from 5 to 10 characters long (valid values must match a Regex "^\d{5}(?:-\d{4})?$"): 20521-90000.
+
+```
+</details>
+
+
 - [Check an actual working Example copied from official Peewee docs.](https://github.com/juancarlospaco/peewee-extra-fields/blob/master/example.py) Run it executing on the terminal command line: `python example.py`.
 
 
