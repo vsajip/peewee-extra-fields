@@ -34,6 +34,8 @@ We want to be a hub for all custom Fields. If your created a Custom Peewee Field
 
 `PositiveBigIntegerField` accepts positive integers from `0` to `9_223_372_036_854_775_807` according to [the Standard SQL Oficial Specs](https://www.postgresql.org/docs/current/static/datatype-numeric.html).
 
+The smaller integer field type you can use, the faster performance, by definition.
+
 **Arguments:** None (should take the same `*args` and `**kwargs` as `IntegerField`)
 
 **Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `IntegerField`).
