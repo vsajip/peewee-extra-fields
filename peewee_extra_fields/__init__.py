@@ -21,20 +21,20 @@ from peewee import (CharField, DateField, DateTimeField, DecimalField,
                     SmallIntegerField, BigIntegerField)
 
 
-__version__ = "1.5.0"
+__version__ = "1.7.5"
 __license__ = "GPLv3+ LGPLv3+"
 __author__ = "Juan Carlos"
 __email__ = "juancarlospaco@gmail.com"
 __contact__ = "https://t.me/juancarlospaco"
 __maintainer__ = "Juan Carlos"
 __url__ = "https://github.com/juancarlospaco/peewee-extra-fields"
-__all__ = ('ARCUITField', 'ARPostalCodeField', 'CSVField',
-           'CharFieldCustom', 'CountryISOCodeField', 'CurrencyISOCodeField',
-           'IPAddressField', 'IPNetworkField', 'LanguageISOCodeField',
-           'PastDateField', 'PastDateTimeField', 'PositiveDecimalField',
-           'PositiveFloatField', 'PositiveIntegerField', 'SWIFTISOCodeField',
-           'PositiveSmallIntegerField', 'PositiveBigIntegerField',
-           'IBANISOCodeField')
+__all__ = ('ARCUITField', 'ARPostalCodeField', 'CSVField', 'CharFieldCustom',
+           'CountryISOCodeField', 'CurrencyISOCodeField', 'IANCodeField',
+           'IBANISOCodeField', 'IPAddressField', 'IPNetworkField',
+           'LanguageISOCodeField', 'PastDateField', 'PastDateTimeField',
+           'PositiveBigIntegerField', 'PositiveDecimalField',
+           'PositiveFloatField', 'PositiveIntegerField',
+           'PositiveSmallIntegerField', 'SWIFTISOCodeField')
 
 
 ##############################################################################
@@ -336,6 +336,48 @@ class IBANISOCodeField(CharField):
         return '%02d' % (98 - int(value_digits) % 97)
 
 
+class IANCodeField(CharField):
+    """CharField clone but only accepts IAN-Codes values.
+
+    CharField for International Article Number (AKA European Article Number).
+    Notice this is not an ISO Standard. CheckSum for 8 to 13 IAN-Codes only.
+    https://en.wikipedia.org/wiki/International_Article_Number (EAN)."""
+    max_length = 13
+
+    def db_value(self, value: str) -> str:
+        if isinstance(value, str):
+            value = value.strip()
+
+            if value == "":
+                raise ValueError(f"""{self.__class__.__name__}
+                Value string is not a Valid International Article Number (IAN)
+                (valid values must not be an Empty String): {value}.""")
+
+            if len(value) > 13:
+                raise ValueError(f"""{self.__class__.__name__} Value string is
+                not a Valid International Article Number (IAN) (valid values
+                must be a valid IAN of 13 characters max): {value}.""")
+
+            if len(value) > 7 and self.get_ian_checksum(value) != value[-1]:
+                raise ValueError(f"""{self.__class__.__name__} Value string is
+                not a Valid International Article Number IAN 8~13 Characters
+                (valid values must have a valid IAN CheckSum int): {value}.""")
+
+        return value
+
+    @staticmethod
+    def get_ian_checksum(value: str) -> str:
+        """Return checksum for IAN, original is ignored."""
+        try:
+            calculated_checksum = sum(
+                int(digit) * (3, 1)[i % 2]
+                for i, digit in enumerate(reversed(value[:-1])))
+            calculated_checksum = str(10 - (calculated_checksum % 10))
+            return calculated_checksum
+        except ValueError as error:  # Raised if an int conversion fails
+            return error
+
+
 class PastDateTimeField(DateTimeField):
     """DateTimeField clone but dont allow Dates and Times on the Future.
 
@@ -364,7 +406,8 @@ class PastDateTimeField(DateTimeField):
                 {value} > {datetime.utcnow().isoformat()}.""")
         return value
 
-    def get_html_widget(self, clas: tuple=None, ids: str=None,
+    @staticmethod
+    def get_html_widget(clas: tuple=None, ids: str=None,
                         required: bool=False) -> str:
         clas = f'''class="{' '.join(clas)}" ''' if clas else ""
         ids = f'id="{ids}" ' if ids else ""
@@ -400,7 +443,8 @@ class PastDateField(DateField):
                 {value} > {date.today()}.""")
         return value
 
-    def get_html_widget(self, clas: tuple=None, ids: str=None,
+    @staticmethod
+    def get_html_widget(clas: tuple=None, ids: str=None,
                         required: bool=False) -> str:
         clas = f'''class="{' '.join(clas)}" ''' if clas else ""
         ids = f'id="{ids}" ' if ids else ""
@@ -440,7 +484,8 @@ class LanguageISOCodeField(FixedCharField):
 
         return value
 
-    def get_html_widget(self, clas: tuple=None, ids: str=None,
+    @staticmethod
+    def get_html_widget(clas: tuple=None, ids: str=None,
                         required: bool=False) -> str:
         clas = f'''class="{' '.join(clas)}" ''' if clas else ""
         ids = f'id="{ids}" ' if ids else ""
@@ -525,7 +570,8 @@ class CountryISOCodeField(SmallIntegerField):
 
         return value
 
-    def get_html_widget(self, clas: tuple=None, ids: str=None,
+    @staticmethod
+    def get_html_widget(clas: tuple=None, ids: str=None,
                         required: bool=False) -> str:
         clas = f'''class="{' '.join(clas)}" ''' if clas else ""
         ids = f'id="{ids}" ' if ids else ""
@@ -591,7 +637,8 @@ class CurrencyISOCodeField(SmallIntegerField):
 
         return value
 
-    def get_html_widget(self, clas: tuple=None, ids: str=None,
+    @staticmethod
+    def get_html_widget(clas: tuple=None, ids: str=None,
                         required: bool=False) -> str:
         clas = f'''class="{' '.join(clas)}" ''' if clas else ""
         ids = f'id="{ids}" ' if ids else ""
@@ -707,7 +754,8 @@ class ARPostalCodeField(CharField):
 
         return value
 
-    def get_html_widget(self, clas: tuple=None, ids: str=None,
+    @staticmethod
+    def get_html_widget(clas: tuple=None, ids: str=None,
                         required: bool=False) -> str:
         clas = f'''class="{' '.join(clas)}" ''' if clas else ""
         ids = f'id="{ids}" ' if ids else ""
@@ -732,10 +780,12 @@ class ARCUITField(CharField):
 
         return value
 
-    def cuit2dni(self, value: str) -> int:  # Helper, takes CUIT returns DNI.
+    @staticmethod
+    def cuit2dni(value: str) -> int:  # Helper, takes CUIT returns DNI.
         return int(value.replace("-", "")[2:-1])  # Removes the XX- and -X.
 
-    def get_html_widget(self, clas: tuple=None, ids: str=None,
+    @staticmethod
+    def get_html_widget(clas: tuple=None, ids: str=None,
                         required: bool=False) -> str:
         clas = f'''class="{' '.join(clas)}" ''' if clas else ""
         ids = f'id="{ids}" ' if ids else ""
