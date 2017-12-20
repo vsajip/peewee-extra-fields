@@ -347,6 +347,29 @@ class TestFields(unittest.TestCase):
             with self.assertRaises(ValueError):
                 SWIFTISOCodeField().db_value(value)
 
+    def test_IBANISOCodeField(self):
+        valid_values = ("DE44 5001 0517 5407 3249 31",
+                        "GR16 0110 1250 0000 0001 2300 695",
+                        "GB29 NWBK 6016 1331 9268 19",
+                        "SA03 8000 0000 6080 1016 7519",
+                        "CH93 0076 2011 6238 5295 7",
+                        "GB82 WEST 1234 5698 7654 32")
+        invalid_values = ("", "1", "abcdefg",
+                          "DEzz 5001 0517 5407 3249 31",
+                          "DE00 5001 0517 5407 3249 31",
+                          "xx44 5001 0517 5407 3249 31")
+
+        for value in valid_values:
+            self.assertEqual(IBANISOCodeField().python_value(value).iban_pretty, value)
+            self.assertEqual(IBANISOCodeField().db_value(value),
+                             value.strip().replace(' ', '').replace('-', '').upper())
+            self.assertIsInstance(IBANISOCodeField().python_value(value), tuple)
+            self.assertIsInstance(IBANISOCodeField().db_value(value), str)
+
+        for value in invalid_values:
+            with self.assertRaises(ValueError):
+                IBANISOCodeField().db_value(value)
+
 
 if __name__.__contains__("__main__"):
     print(__doc__)
