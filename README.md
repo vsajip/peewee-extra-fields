@@ -1092,6 +1092,28 @@ pytest
 - [Test Templates.](https://gist.github.com/juancarlospaco/040fbe326631e638f2a540fe8c1f2092)
 
 
+### Why?
+
+This is not designed to replace Validators AKA Schemas. We use and recommend Schemas.
+
+This is to give more context and make Peewee for Humans.
+
+Lets imagine you have a `Charfield` with value `"al"` and the Validator returns `True`.
+But whats `"al"`?, the republic of Albania?, the US State of Alabama?, a wrong value?,
+some abbreviation?, a short-code?, some other ISO standard?, a name?, a random string?.
+
+
+But if you have a `CountryISOCodeField` you already know you are working with Countries,
+and the field follows the ISO-3166, and the string is a Country Code,
+and that the string value will Validate if it respects the Standard ISO-3166, then you see:
+
+```python
+CountryISO3166(iso3166_a3='ALB', iso3166_numeric=8, capital='Tirana', continent='Europe', currency_code='ALL', currency_name='Lek', geoname_id=783754, is_developed=True, is_independent=True, languages=['sq', 'el'], name='Albania', name_human='The Republic Of Albania', phone_code='355', timezones=['europe/tirane'], tld='.al')
+```
+
+That gives a lot more context, than just an `"al"`. :smile_cat:
+
+
 ### Contributors:
 
 - **Please Star this Repo on Github !**, it helps to show up faster on searchs.
