@@ -370,6 +370,20 @@ class TestFields(unittest.TestCase):
             with self.assertRaises(ValueError):
                 IBANISOCodeField().db_value(value)
 
+    def test_IANCodeField(self):  # TODO Add more testing Values.
+        valid_values = ("5901234123457", "4012345123456")  # From Wikipedia.
+        invalid_values = ("", "1234567896765756756", "1234567890")
+
+        for value in valid_values:
+            self.assertEqual(IANCodeField().python_value(value), value)
+            self.assertEqual(IANCodeField().db_value(value), value)
+            self.assertIsInstance(IANCodeField().python_value(value), str)
+            self.assertIsInstance(IANCodeField().db_value(value), str)
+
+        for value in invalid_values:
+            with self.assertRaises(ValueError):
+                IANCodeField().db_value(value)
+
 
 if __name__.__contains__("__main__"):
     print(__doc__)
