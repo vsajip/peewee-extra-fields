@@ -764,6 +764,69 @@ ValueError: IBANISOCodeField Value string is not a Valid IBAN-Code ISO-13616:200
 </details>
 
 
+##### IANCodeField
+<details>
+
+`peewee_extra_fields.IANCodeField()`
+
+**Description:** [`CharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **IAN Codes** values, International Article Number (AKA European Article Number or EAN or IAN).
+
+Has a hardcoded `max_length = 13` according to Wikipedia.
+
+Notice this is not an ISO Standard, if you work with this codes, any improvement is welcome.
+
+CheckSum for 8 to 13 IAN-Codes only.
+
+**Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`)
+
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
+
+**Returns:** `str`.
+
+**Base Class:** `CharField`.
+
+**Type:** `<class 'type'>`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import IANCodeField  
+>>> IANCodeField().db_value("5901234123457")
+'5901234123457'
+
+>>> IANCodeField().db_value("4012345123456")
+'4012345123456'
+
+>>> IANCodeField().db_value("")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: IANCodeField Value string is not a Valid International Article Number (IAN) (valid values must not be an Empty String): "".
+
+>>> IANCodeField().db_value("1234567896765756756")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: IANCodeField Value string is not a Valid International Article Number (IAN) (valid values must be a valid IAN of 13 characters max): 1234567896765756756.
+
+>>> IANCodeField().db_value("1234567890")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: IANCodeField Value string is not a Valid International Article Number IAN 8~13 Characters (valid values must have a valid IAN CheckSum int): 1234567890.
+
+```
+</details>
+
+
 ##### ARPostalCodeField
 <details>
 
