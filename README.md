@@ -7,7 +7,7 @@ IBANISOCodeField, IPAddressField, IPNetworkField, LanguageISOCodeField, PastDate
 PositiveBigIntegerField, PositiveDecimalField, PositiveFloatField, PositiveIntegerField, PositiveSmallIntegerField, SWIFTISOCodeField,USSocialSecurityNumberField, USZipCodeField, and more. Autogeneration of HTML5 Widgets for Fields.
 
 We want to be a hub for all custom Fields. If your created a Custom Peewee Field feel free to [Send Pull Requests!!!.](https://github.com/juancarlospaco/peewee-extra-fields/compare)
-I give Repo access to anyone who wants it and then to review their commits. So if you want to contribute just contact me.
+Open Repo access to anyone who want to contribute, just contact me.
 
 ![screenshot](https://source.unsplash.com/IClZBVw5W5A/800x400 "Illustrative Photo by https://unsplash.com/@toddquackenbush")
 
