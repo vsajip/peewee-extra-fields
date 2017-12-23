@@ -37,8 +37,8 @@ __all__ = (
     'IANCodeField', 'IBANISOCodeField', 'IPAddressField', 'IPNetworkField',
     'LanguageISOCodeField', 'PastDateField', 'PastDateTimeField',
     'PositiveBigIntegerField', 'PositiveDecimalField', 'PositiveFloatField',
-    'PositiveIntegerField', 'PositiveSmallIntegerField', 'SWIFTISOCodeField',
-    'USSocialSecurityNumberField', 'USZipCodeField',
+    'PositiveIntegerField', 'PositiveSmallIntegerField', 'SemVerField',
+    'SWIFTISOCodeField', 'USSocialSecurityNumberField', 'USZipCodeField',
 )
 
 
@@ -804,6 +804,25 @@ class ColorHexadecimalField(FixedCharField):
     def hex2rgb(color_hex: str) -> namedtuple:
         return namedtuple("RGB", "red green blue")(*struct.unpack(
             'BBB', codecs.decode(bytes(color_hex, "utf-8"), "hex")))
+
+
+class SemVerField(CharField):
+    """CharField clone only accepts Semantic Versions (https://semver.org)."""
+    max_length = 255  # According to https://semver.org
+
+    def db_value(self, value: str) -> str:
+        if isinstance(value, str):
+            value = value.lower().strip()
+
+            semver_regex = str(
+                r"\bv?(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[\d"
+                r"a-z-]+(?:\.[\da-z-]+)*)?(?:\+[\da-z-]+(?:\.[\da-z-]+)*)?\b")
+            if not re.match(semver_regex, value) or len(value) < 5:
+                raise ValueError(f"""{self.__class__.__name__} Value is not a
+                valid Semantic Version string, from 5 to 255 characters long
+                (valid values must match a Regex {semver_regex}): {value}.""")
+
+        return value
 
 
 ##############################################################################
