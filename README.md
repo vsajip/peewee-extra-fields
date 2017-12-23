@@ -229,7 +229,6 @@ IPv4Address('172.16.0.1')
 </details>
 
 
-
 ##### IPNetworkField
 <details>
 
@@ -824,6 +823,91 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 
 ValueError: IANCodeField Value string is not a Valid International Article Number IAN 8~13 Characters (valid values must have a valid IAN CheckSum int): 1234567890.
+
+```
+</details>
+
+
+##### ColorHexadecimalField
+<details>
+
+`peewee_extra_fields.ColorHexadecimalField()`
+
+**Description:** [`FixedCharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Colors on Hexadecimal** values (4 & 7 chars format).
+Format is 3 or 6 Hexadecimal characters, eg `"#00ff00"`, `"#be0"`, etc.
+Values must start with a `"#"`.
+Values must be 4 or 7 characters long.
+Has a hardcoded `max_length = 7`.
+
+**Arguments:** None (should take the same `*args` and `**kwargs` as `FixedCharField`).
+
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `FixedCharField`).
+
+**Returns:** `collections.namedtuple`.
+
+**Base Class:** `FixedCharField`.
+
+**Type:** `<class 'type'>`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import ColorHexadecimalField
+>>> ColorHexadecimalField().db_value("#f0f0f0")
+'#f0f0f0'
+
+>>> ColorHexadecimalField().db_value("#be0")
+'#bbee00'
+
+>>> ColorHexadecimalField().db_value("#fe0")
+'#ffee00'
+
+>>> ColorHexadecimalField().db_value("#bebebe")
+'#bebebe'
+
+>>> ColorHexadecimalField().python_value("#f0f0f0")
+Color(hex='#f0f0f0', rgb=RGB(red=240, green=240, blue=240), hls=HLS(h=0.0, l=240.0, s=0.0), hsv=HSV(h=0.0, s=0.0, v=240), yiq=YIQ(y=240.0, i=0.0, q=0.0), css='rgb(240,240,240)', css_prcnt='rgb(94%,94%,94%)')
+
+>>> ColorHexadecimalField().python_value("#ffee00")
+Color(hex='#ffee00', rgb=RGB(red=255, green=238, blue=0), hls=HLS(h=0.16, l=127.5, s=-1.01), hsv=HSV(h=0.16, s=1.0, v=255), yiq=YIQ(y=216.92, i=86.75, q=-70.66), css='rgb(255,238,0)', css_prcnt='rgb(100%,93%,0%)')
+
+>>> ColorHexadecimalField().python_value("#ffee00").hex
+'#ffee00'
+
+>>> ColorHexadecimalField().python_value("#bebebe")
+Color(hex='#bebebe', rgb=RGB(red=190, green=190, blue=190), hls=HLS(h=0.0, l=190.0, s=0.0), hsv=HSV(h=0.0, s=0.0, v=190), yiq=YIQ(y=190.0, i=0.0, q=0.0), css='rgb(190,190,190)', css_prcnt='rgb(74%,74%,74%)')
+
+>>> ColorHexadecimalField().db_value("#bebehh")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: ColorHexadecimalField Value is not an Hexadecimal (values must be Hexadecimals): #bebehh invalid literal for int() with base 16: 'bebehh'
+
+>>> ColorHexadecimalField().db_value("#bebe")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: ColorHexadecimalField Value is 5 Characters long instead of 7 or 4 Characters long (valid values must be exactly 7 or 4 characters): #bebe.
+
+>>> ColorHexadecimalField().db_value("#bebebe0")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: ColorHexadecimalField Value is 8 Characters long instead of 7 or 4 Characters long (valid values must be exactly 7 or 4 characters): #bebebe0.
+
+>>> ColorHexadecimalField().db_value("bebebeb")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: ColorHexadecimalField Value is not a valid RGB Hexadecimal Color value of 7 characters long (valid values must start with '#'): bebebeb.
 
 ```
 </details>
