@@ -412,6 +412,19 @@ class TestFields(unittest.TestCase):
             with self.assertRaises(ValueError):
                 USSocialSecurityNumberField().db_value(value)
 
+    def test_ColorHexadecimalField(self):
+        valid_values = ("#bebebe", "#f0f0f0", "#000000", "#ffffff")
+        invalid_values = ("", "1", "abc", "#0000gg", "#00h", "#-1f0f0")
+
+        for value in valid_values:
+            self.assertIsInstance(ColorHexadecimalField().python_value(value), tuple)
+            self.assertIsInstance(ColorHexadecimalField().db_value(value), str)
+            print(ColorHexadecimalField().python_value(value))
+
+        for value in invalid_values:
+            with self.assertRaises(ValueError):
+                ColorHexadecimalField().db_value(value)
+
 
 if __name__.__contains__("__main__"):
     print(__doc__)
