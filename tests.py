@@ -425,6 +425,25 @@ class TestFields(unittest.TestCase):
             with self.assertRaises(ValueError):
                 ColorHexadecimalField().db_value(value)
 
+    def test_SemVerField(self):
+        valid_values = (
+            '0.0.0', '0.10.0', 'v1.0.0', '0.0.0-foo', '1.2.3-4', '2.7.2+asdf',
+            '1.2.3-a.b.c.10.d.5', '2.7.2-foo+bar', '1.2.3-alpha.10.beta.0',
+            '1.2.3-alpha.10.beta.0+build.unicorn.rainbow', '0.0.1', '99.0.0',
+        )
+        invalid_values = ("", "1", "abc", "0a", "#0", "-1f0", "cat", "42", "%")
+
+        for value in valid_values:
+            self.assertEqual(SemVerField().python_value(value), value)
+            self.assertEqual(SemVerField().db_value(value), value)
+            self.assertIsInstance(SemVerField().python_value(value), str)
+            self.assertIsInstance(SemVerField().db_value(value), str)
+            print(SemVerField().python_value(value))
+
+        for value in invalid_values:
+            with self.assertRaises(ValueError):
+                SemVerField().db_value(value)
+
 
 if __name__.__contains__("__main__"):
     print(__doc__)
