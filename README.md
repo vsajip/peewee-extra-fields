@@ -927,6 +927,89 @@ ValueError: ColorHexadecimalField Value is not a valid RGB Hexadecimal Color val
 </details>
 
 
+##### SemVerField
+<details>
+
+`peewee_extra_fields.SemVerField()`
+
+**Description:** [`CharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Semantic Versions** values (from 5 to 255 chars format).
+Format standard spec is from [https://semver.org](https://semver.org).
+Has a hardcoded `max_length = 255` as recommended on semver.org.
+
+**Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
+
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
+
+**Returns:** `str`.
+
+**Base Class:** `CharField`.
+
+**Type:** `<class 'type'>`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import SemVerField
+>>> SemVerField().db_value("1.0.0")
+'1.0.0'
+
+>>> SemVerField().db_value("0.0.1")
+'0.0.1'
+
+>>> SemVerField().db_value("v1.0.0")
+'v1.0.0'
+
+>>> SemVerField().db_value("1.2.3-alpha.10.beta.0+build.unicorn.rainbow")
+'1.2.3-alpha.10.beta.0+build.unicorn.rainbow'
+
+>>> SemVerField().db_value("0.0.0-foo")
+'0.0.0-foo'
+
+>>> SemVerField().db_value("2.7.2-foo+bar")
+'2.7.2-foo+bar'
+
+>>> SemVerField().db_value("1.2.3-alpha.10.beta.0")
+'1.2.3-alpha.10.beta.0'
+
+>>> SemVerField().db_value("99.0.0")
+'99.0.0'
+
+>>> SemVerField().db_value("2.7.2+asdf")
+'2.7.2+asdf'
+
+>>> SemVerField().db_value("1.2.3-a.b.c.10.d.5")
+'1.2.3-a.b.c.10.d.5'
+
+>>> SemVerField().db_value("")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: SemVerField Value is not a valid Semantic Version string, from 5 to 255 characters long(valid values must match a Regex "\bv?(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[\da-z-]+(?:\.[\da-z-]+)*)?(?:\+[\da-z-]+(?:\.[\da-z-]+)*)?\b"): .
+
+>>> SemVerField().db_value("0a")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: SemVerField Value is not a valid Semantic Version string, from 5 to 255 characters long (valid values must match a Regex "\bv?(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[\da-z-]+(?:\.[\da-z-]+)*)?(?:\+[\da-z-]+(?:\.[\da-z-]+)*)?\b"): 0a.
+
+>>> SemVerField().db_value("cat")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+ValueError: SemVerField Value is not a valid Semantic Version string, from 5 to 255 characters long (valid values must match a Regex "\bv?(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[\da-z-]+(?:\.[\da-z-]+)*)?(?:\+[\da-z-]+(?:\.[\da-z-]+)*)?\b"): cat.
+
+```
+</details>
+
+
 ##### ARPostalCodeField
 <details>
 
