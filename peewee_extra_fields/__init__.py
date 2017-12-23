@@ -19,9 +19,9 @@ from json import loads
 from pathlib import Path
 from types import MappingProxyType as frozendict
 
-from peewee import (CharField, DateField, DateTimeField, DecimalField,
-                    FixedCharField, FloatField, IntegerField,
-                    SmallIntegerField, BigIntegerField)
+from peewee import (BigIntegerField, CharField, DateField, DateTimeField,
+                    DecimalField, FixedCharField, FloatField, IntegerField,
+                    SmallIntegerField)
 
 
 __version__ = "2.0.0"
