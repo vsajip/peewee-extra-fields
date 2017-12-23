@@ -7,6 +7,7 @@ IBANISOCodeField, IPAddressField, IPNetworkField, LanguageISOCodeField, PastDate
 PositiveBigIntegerField, PositiveDecimalField, PositiveFloatField, PositiveIntegerField, PositiveSmallIntegerField, SWIFTISOCodeField,USSocialSecurityNumberField, USZipCodeField, and more. Autogeneration of HTML5 Widgets for Fields.
 
 We want to be a hub for all custom Fields. If your created a Custom Peewee Field feel free to [Send Pull Requests!!!.](https://github.com/juancarlospaco/peewee-extra-fields/compare)
+Open Repo access to anyone who want to contribute, just contact me.
 
 ![screenshot](https://source.unsplash.com/IClZBVw5W5A/800x400 "Illustrative Photo by https://unsplash.com/@toddquackenbush")
 
@@ -27,6 +28,14 @@ We want to be a hub for all custom Fields. If your created a Custom Peewee Field
 `peewee_extra_fields.PositiveBigIntegerField()`
 
 **Description:** [`IntegerField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Positive** values (>= 0).
+
+`PositiveSmallIntegerField` accepts positive integers from `0` to `32_767` according to [the Standard SQL Oficial Specs](https://www.postgresql.org/docs/current/static/datatype-numeric.html).
+
+`PositiveIntegerField` accepts positive integers from `0` to `2_147_483_647` according to [the Standard SQL Oficial Specs](https://www.postgresql.org/docs/current/static/datatype-numeric.html).
+
+`PositiveBigIntegerField` accepts positive integers from `0` to `9_223_372_036_854_775_807` according to [the Standard SQL Oficial Specs](https://www.postgresql.org/docs/current/static/datatype-numeric.html).
+
+The smaller integer field type you can use, the faster performance, by definition.
 
 **Arguments:** None (should take the same `*args` and `**kwargs` as `IntegerField`)
 
@@ -71,6 +80,8 @@ ValueError: PositiveIntegerField Value is not a Positive Integer (valid values m
 
 **Description:** [`FloatField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Positive** values (>= 0).
 Optionally it can round Floats using Pythons `round()` with `round_by` integer argument.
+
+`PositiveFloatField` from `0` to `6` decimal digits precision according to [the Standard SQL Oficial Specs](https://www.postgresql.org/docs/current/static/datatype-numeric.html).
 
 **Arguments:**
 - `round()` round `float` using Pythons `round()`, optional, defaults to `None`, integer type, positive value.
@@ -126,6 +137,9 @@ ValueError: PositiveFloatField 'round_by' argument is not a Non-Zero Positive In
 
 **Description:** [`DecimalField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **Positive** values (>= 0).
 
+`PositiveDecimalField` from `0` to `131_072` decimal digits precision before the decimal point and from `0` to `16_383` decimal digits precision after the decimal point according to [the Standard SQL Oficial Specs](https://www.postgresql.org/docs/current/static/datatype-numeric.html).
+
+up to 131072 digits before the decimal point; up to 16383 digits after the decimal point
 **Arguments:**
 - `round()` round `decimal.Decimal` using Pythons `Decimal().quantize().normalize()`, optional, defaults to `None`, integer type, positive value.
 
