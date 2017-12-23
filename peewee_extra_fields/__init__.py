@@ -5,10 +5,13 @@
 """Extra Fields for Peewee ORM."""
 
 
+import codecs
 import re
 import string
+import struct
 
 from collections import namedtuple
+from colorsys import rgb_to_hls, rgb_to_hsv, rgb_to_yiq
 from datetime import date, datetime
 from decimal import Decimal
 from ipaddress import IPv4Address, IPv4Network, ip_address, ip_network
@@ -28,14 +31,15 @@ __email__ = "juancarlospaco@gmail.com"
 __contact__ = "https://t.me/juancarlospaco"
 __maintainer__ = "Juan Carlos"
 __url__ = "https://github.com/juancarlospaco/peewee-extra-fields"
-__all__ = ('ARCUITField', 'ARPostalCodeField', 'CSVField', 'CharFieldCustom',
-           'CountryISOCodeField', 'CurrencyISOCodeField', 'IANCodeField',
-           'IBANISOCodeField', 'IPAddressField', 'IPNetworkField',
-           'LanguageISOCodeField', 'PastDateField', 'PastDateTimeField',
-           'PositiveBigIntegerField', 'PositiveDecimalField',
-           'PositiveFloatField', 'PositiveIntegerField',
-           'PositiveSmallIntegerField', 'SWIFTISOCodeField',
-           'USSocialSecurityNumberField', 'USZipCodeField')
+__all__ = (
+    'ARCUITField', 'ARPostalCodeField', 'CSVField', 'CharFieldCustom',
+    'ColorHexadecimalField', 'CountryISOCodeField', 'CurrencyISOCodeField',
+    'IANCodeField', 'IBANISOCodeField', 'IPAddressField', 'IPNetworkField',
+    'LanguageISOCodeField', 'PastDateField', 'PastDateTimeField',
+    'PositiveBigIntegerField', 'PositiveDecimalField', 'PositiveFloatField',
+    'PositiveIntegerField', 'PositiveSmallIntegerField', 'SWIFTISOCodeField',
+    'USSocialSecurityNumberField', 'USZipCodeField',
+)
 
 
 ##############################################################################
@@ -735,6 +739,71 @@ class CSVField(CharField):
 
     def python_value(self, value: str) -> tuple:
         return tuple(value.split(self.separator_character) if value else [])
+
+
+class ColorHexadecimalField(FixedCharField):
+    """FixedCharField clone only accepts Hexadecimal RGB Color values.
+
+    3 Digit Hexadecimal colors are expanded by doubling each digit.
+    6 Digit Hexadecimal colors are keep as-is untouched.
+    Must start with a '#' as any Hexadecimal color.
+    https://www.w3.org/TR/2001/WD-css3-color-20010305#colorunits
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color."""
+    max_length = 7
+
+    def db_value(self, value: str) -> str:
+        if isinstance(value, str):
+            value = value.lower().replace("-", "").strip()
+
+            if len(value) != 7 and len(value) != 4:
+                raise ValueError(f"""{self.__class__.__name__} Value is
+                {len(value)} Characters long instead of 7 or 4 Characters long
+                (valid values must be exactly 7 or 4 characters): {value}.""")
+
+            if not value.startswith("#"):
+                raise ValueError(f"""{self.__class__.__name__} Value is not a
+                valid RGB Hexadecimal Color value of 7 or 4 characters long
+                (valid values must start with '#'): {value} -> {value[0]} .""")
+
+            try:
+                int(value[1:], 16)
+            except ValueError as error:
+                raise ValueError(f"""{self.__class__.__name__} Value is not an
+                Hexadecimal (values must be Hexadecimals): {value} {error}""")
+
+            if len(value) == 4: # Short 3 char version to long 6 char version.
+                value = f"#{value[1] * 2}{value[2] * 2}{value[3] * 2}"
+
+        return value
+
+    def python_value(self, value: str) -> namedtuple:
+        if value and isinstance(value, str):
+
+            rgb = self.hex2rgb(value.replace("#", ""))
+            hls = rgb_to_hls(rgb.red, rgb.green, rgb.blue)
+            hsv = rgb_to_hsv(rgb.red, rgb.green, rgb.blue)
+            yiq = rgb_to_yiq(rgb.red, rgb.green, rgb.blue)
+
+            hls = namedtuple("HLS", "h l s")(  # Round,default precision huge
+                round(hls[0], 2), round(hls[1], 2), round(hls[2], 2))
+            hsv = namedtuple("HSV", "h s v")(
+                round(hsv[0], 2), round(hsv[1], 2), round(hsv[2], 2))
+            yiq = namedtuple("YIQ", "y i q")(
+                round(yiq[0], 2), round(yiq[1], 2), round(yiq[2], 2))
+            per = lambda val: int(val * 100 / 255)  # Percent, 0~255 > 0~100%
+
+            return namedtuple(
+                "Color", "hex rgb hls hsv yiq css css_prcnt")(
+                value, rgb, hls, hsv, yiq,
+                f"rgb({rgb.red},{rgb.green},{rgb.blue})",  # rgb(int, int, int)
+                f"rgb({per(rgb.red)}%,{per(rgb.green)}%,{per(rgb.blue)}%)") # %
+
+        return value
+
+    @staticmethod
+    def hex2rgb(color_hex: str) -> namedtuple:
+        return namedtuple("RGB", "red green blue")(*struct.unpack(
+            'BBB', codecs.decode(bytes(color_hex, "utf-8"), "hex")))
 
 
 ##############################################################################
