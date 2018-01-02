@@ -1347,7 +1347,7 @@ Submit 1 of the following items (pick one):
 
 **Prize:**
 
-- 2000 ARS.
+- 1000 ARS.
 
 We are investigating changing to Bitcoin prize eventually.
 
