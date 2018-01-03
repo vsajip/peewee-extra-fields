@@ -1349,6 +1349,6 @@ Submit 1 of the following items (pick one):
 
 - 1000 ARS.
 
-We are investigating changing to Bitcoin prize eventually.
+We are investigating changing to Bitcoin prize eventually. If you dont understand the Challenge contact me before proceeding.
 
 </details>
