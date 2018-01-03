@@ -1324,7 +1324,7 @@ That gives a lot more context, than just an `"al"`. :smile_cat:
 - Contributor must be 1 individual person (+18) that self-identify as Girl/Woman.
 - Contributor must be living on Argentina, Antartida(AR) or Malvinas Argentinas.
 - Contributor must agree with COC, Licences and general project philosophies.
-- Contributor must Star and Fork the project on GitHub as usual.
+- Contributor must Star, Fork and Pull Request the project on GitHub as usual.
 - Contributor must provide 1 complete active valid written C.B.U. number.
 - Payment delays 1 week (working days, not include bank delay), for peer reviews.
 - Impersonations, fakes, bots, trolls, companies, organizations, Not allowed.
