@@ -1342,8 +1342,8 @@ That gives a lot more context, than just an `"al"`. :smile_cat:
 
 Submit 1 of the following items (pick one):
 
-- 1 Pull Request per 1 Contributor with passing Unittests for current Features.
-- 1 Pull Request per 1 Contributor with 1 new relevant Feature with 1 Unittest.
+- 1 Pull Request per 1 Contributor with passing Unittests for current Features (Unittests for actual code on the Repo).
+- 1 Pull Request per 1 Contributor with 1 new relevant Feature with 1 Unittest (New Feature with at least 1 Unittest).
 
 **Prize:**
 
