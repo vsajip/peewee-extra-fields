@@ -1257,7 +1257,7 @@ pip install peewee_extra_fields
 
 # Requisites:
 
-- [Peewee](http://docs.peewee-orm.com)
+- [Peewee](http://docs.peewee-orm.com) *(2.x or 3.x Versions)*
 
 
 # Tests
