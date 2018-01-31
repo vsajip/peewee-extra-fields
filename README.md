@@ -1252,8 +1252,7 @@ ValueError: USSocialSecurityNumberField Value is not a valid U.S.A. Social Secur
 
 **Description:** Peewee [PickledField](http://docs.peewee-orm.com/en/2.7.0/search.html?q=PickledField) backported from 2.x Versions (literal copy & paste) to work with Peewee 3 and Python 3.
 Stores arbitrary python objects, stores values in a pickled `BlobField`.
-If your objects are JSON-serializable, you can also use the `JSONField`,
-which stores the values as JSON-encoded strings.
+Internally uses `pickle.loads()` and `pickle.dumps()`.
 
 This field has been clean out of Legacy Python2 compatibility code that it originally used to have.
 
