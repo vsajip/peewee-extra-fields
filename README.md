@@ -1276,6 +1276,18 @@ This field has been clean out of Legacy Python2 compatibility code that it origi
 | :white_check_mark: | **Os X**    | Works Ok    |
 | :white_check_mark: | **Windows** | Works Ok    |
 
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import PickledField
+>>> PickledField().db_value("a")
+b'\x80\x03X\x01\x00\x00\x00aq\x00.'
+
+>>> PickledField().python_value(b'\x80\x03X\x01\x00\x00\x00aq\x00.')
+"a"
+
+```
+
 </details>
 
 
@@ -1318,6 +1330,15 @@ if you are implementing from zero, check `SimplePasswordField` that uses new Pyt
 | :white_check_mark: | **Os X**    | Works Ok    |
 | :white_check_mark: | **Windows** | Works Ok    |
 
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import PasswordField
+>>> PasswordField().db_value("a")
+b'$2b$12$9CMSMQYPkZ5RsWWrZccw7eqGrCQF679BhDA4dz6rG/e70FbQmeG.6'
+
+```
+
 </details>
 
 
@@ -1359,6 +1380,15 @@ after reading it from the database you can call:
 | :white_check_mark: | **Linux**   | Works Ok    |
 | :white_check_mark: | **Os X**    | Works Ok    |
 | :white_check_mark: | **Windows** | Works Ok    |
+
+**Usage Example:**
+
+```python
+>>> from peewee_extra_fields import SimplePasswordField
+>>> SimplePasswordField(salt="abc").db_value("123456789")
+'46b071b59b995e1a668e68d2112b829ad04e0d988ac989ba2ecc0e56ad8a72780081381f2b6f38573d294454b569d7f1d3bce9cc08edcec6f68f6584357b72a9'
+
+```
 
 </details>
 
