@@ -5,8 +5,11 @@
 """Extra Fields for Peewee ORM."""
 
 
+import binascii
 import codecs
+import hashlib
 import re
+import secrets
 import string
 import struct
 
@@ -49,7 +52,7 @@ __all__ = (
     'PastDateTimeField', 'PickledField', 'PositiveBigIntegerField',
     'PositiveDecimalField', 'PositiveFloatField', 'PositiveIntegerField',
     'PositiveSmallIntegerField', 'SWIFTISOCodeField', 'SemVerField',
-    'USSocialSecurityNumberField', 'USZipCodeField',
+    'SimplePasswordField', 'USSocialSecurityNumberField', 'USZipCodeField',
 )
 
 
@@ -93,15 +96,12 @@ if hashpw and gensalt:
             return hashpw(password, self) == self
 
     class PasswordField(BlobField):
-        def __init__(self, iterations=12, min_length=8, max_length=255,
-                     *args, **kwargs):
+        def __init__(self, iterations=12, *args, **kwargs):
             if None in (hashpw, gensalt):
                 raise ValueError(
                     'Module not found: Required for PasswordField: bcrypt.')
             self.bcrypt_iterations = iterations
             self.raw_password = None
-            self.min_length = int(min_length) if min_length else None
-            self.max_length = int(max_length) if max_length else None
             super(PasswordField, self).__init__(*args, **kwargs)
 
         def db_value(self, value):
@@ -109,19 +109,6 @@ if hashpw and gensalt:
             if isinstance(value, PasswordHash):
                 return bytes(value)
             if isinstance(value, str):
-
-                if value and self.min_length and len(value) < self.min_length:
-                    raise ValueError(
-                        (f"{self.__class__.__name__} Value string is too short"
-                         f" (valid values must be string of {self.min_length} "
-                         f"characters or more): {len(value)} length,{value}."))
-
-                if value and self.max_length and len(value) > self.max_length:
-                    raise ValueError(
-                        (f"{self.__class__.__name__} Value string is too long"
-                         f" (valid values must be string of {self.min_lenght} "
-                         f"characters maximum): {len(value)} length,{value}."))
-
                 value = value.encode('utf-8')
             salt = gensalt(self.bcrypt_iterations)
             return value if value is None else hashpw(value, salt)
@@ -131,6 +118,40 @@ if hashpw and gensalt:
             if isinstance(value, str):
                 value = value.encode('utf-8')
             return PasswordHash(value)
+
+
+class SimplePasswordField(CharField):
+    def __init__(self, salt, min_length: int=8, algorithm: str="sha512",
+                 iterations: int=100_000, dklen=None, *args, **kwargs):
+        self.min_length = int(min_length) if min_length else None
+        self.algorithm = str(algorithm).lower().strip()
+        self.salt = bytes(str(salt).strip(), "utf-8")
+        self.iterations = int(iterations)
+        self.dklen = dklen
+
+    def db_value(self, value):
+        """Convert the python value for storage in the database."""
+        if value and isinstance(value, str):
+            value = value.strip()
+
+            if value and self.min_length and len(value) < self.min_length:
+                raise ValueError(
+                    (f"{self.__class__.__name__} Value string is too short"
+                     f" (valid values must be string of {self.min_length} "
+                     f"characters or more): {len(value)} length,{value}."))
+
+            return binascii.hexlify(hashlib.pbkdf2_hmac(
+                self.algorithm, bytes(value, "utf-8"), self.salt,
+                self.iterations, self.dklen)).decode("utf-8")
+
+    def check_password(self, password) -> bool:
+        if password and isinstance(password, str):
+            value = password.strip()
+            digest = binascii.hexlify(hashlib.pbkdf2_hmac(
+                self.algorithm, bytes(value, "utf-8"), self.salt,
+                self.iterations, self.dklen)).decode("utf-8")
+            return secrets.compare_digest(self, digest)
+        return False
 
 
 ##############################################################################
