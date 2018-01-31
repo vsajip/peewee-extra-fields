@@ -1254,6 +1254,8 @@ ValueError: USSocialSecurityNumberField Value is not a valid U.S.A. Social Secur
 Stores arbitrary python objects, stores values in a pickled `BlobField`.
 Internally uses `pickle.loads()` and `pickle.dumps()`.
 
+[`PickledField` is explicitly no longer supported and deprecated by Peewee.](https://github.com/coleifer/peewee/issues/1444#issue-292958082)
+
 This field has been clean out of Legacy Python2 compatibility code that it originally used to have.
 
 **Arguments:** None (should take the same `*args` and `**kwargs` as `BlobField`).
@@ -1291,6 +1293,8 @@ after reading it from the database you can call:
 This field requires `bcrypt`, which can be installed by running `pip install bcrypt`.
 `peewee_extra_fields` still works Ok without `bcrypt`.
 
+[`PasswordField` is explicitly no longer supported and deprecated by Peewee.](https://github.com/coleifer/peewee/issues/1444#issue-292958082)
+
 This field has been clean out of Legacy Python2 compatibility code that it originally used to have.
 
 This field is to support code already using Peewee 2.x `PasswordField`,
@@ -1317,7 +1321,6 @@ if you are implementing from zero, check `SimplePasswordField` that uses new Pyt
 </details>
 
 
-
 ##### SimplePasswordField
 <details>
 
@@ -1326,7 +1329,9 @@ if you are implementing from zero, check `SimplePasswordField` that uses new Pyt
 **Description:** Peewee [PasswordField](http://docs.peewee-orm.com/en/2.7.0/peewee/playhouse.html?highlight=PasswordField#PasswordField) re-implemented and simplified from 2.x Versions to work with Peewee 3 and Python 3 using new `secrets` and `hashlib` from standard library, without dependencies, dont need `bcrypt`,
 internally uses `hashlib.pbkdf2_hmac()` and `secrets.compare_digest()`.
 Migration from `PasswordField` to `SimplePasswordField` is recommended when possible.
-`PasswordField` is no longer supported and deprecated by Peewee.
+
+[`PasswordField` is explicitly no longer supported and deprecated by Peewee.](https://github.com/coleifer/peewee/issues/1444#issue-292958082)
+
 `SimplePasswordField` stores a password hash and lets you verify it.
 The password is hashed when it is saved to the database and
 after reading it from the database you can call:
