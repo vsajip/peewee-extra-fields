@@ -19,12 +19,22 @@ from json import loads
 from pathlib import Path
 from types import MappingProxyType as frozendict
 
-from peewee import (BigIntegerField, CharField, DateField, DateTimeField,
-                    DecimalField, FixedCharField, FloatField, IntegerField,
-                    SmallIntegerField)
+from peewee import (BigIntegerField, BlobField, CharField, DateField,
+                    DateTimeField, DecimalField, FixedCharField, FloatField,
+                    IntegerField, SmallIntegerField)
+
+try:
+    import cPickle as pickle
+except ImportError:
+    import pickle
+
+try:
+    from bcrypt import hashpw, gensalt
+except ImportError:
+    hashpw = gensalt = None
 
 
-__version__ = "2.0.0"
+__version__ = "2.5.0"
 __license__ = "GPLv3+ LGPLv3+"
 __author__ = "Juan Carlos"
 __email__ = "juancarlospaco@gmail.com"
@@ -35,10 +45,11 @@ __all__ = (
     'ARCUITField', 'ARPostalCodeField', 'CSVField', 'CharFieldCustom',
     'ColorHexadecimalField', 'CountryISOCodeField', 'CurrencyISOCodeField',
     'IANCodeField', 'IBANISOCodeField', 'IPAddressField', 'IPNetworkField',
-    'LanguageISOCodeField', 'PastDateField', 'PastDateTimeField',
-    'PositiveBigIntegerField', 'PositiveDecimalField', 'PositiveFloatField',
-    'PositiveIntegerField', 'PositiveSmallIntegerField', 'SemVerField',
-    'SWIFTISOCodeField', 'USSocialSecurityNumberField', 'USZipCodeField',
+    'LanguageISOCodeField', 'PasswordField', 'PastDateField',
+    'PastDateTimeField', 'PickledField', 'PositiveBigIntegerField',
+    'PositiveDecimalField', 'PositiveFloatField', 'PositiveIntegerField',
+    'PositiveSmallIntegerField', 'SWIFTISOCodeField', 'SemVerField',
+    'USSocialSecurityNumberField', 'USZipCodeField',
 )
 
 
@@ -59,6 +70,67 @@ INT2COUNTRY: dict = frozendict(loads(
 
 INT2CURRENCY: dict = frozendict(loads(
     (Path(__file__).parent / "int2currency.json").read_bytes()))
+
+
+##############################################################################
+# Fields missing on Peewee >=3 but still relevant and useful,so they live here.
+
+
+class PickledField(BlobField):
+    def db_value(self, value):
+        if value is not None:
+            return pickle.dumps(value)
+
+    def python_value(self, value):
+        if value is not None:
+            return pickle.loads(value)
+
+
+if hashpw and gensalt:
+    class PasswordHash(bytes):
+        def check_password(self, password):
+            password = password.encode('utf-8')
+            return hashpw(password, self) == self
+
+    class PasswordField(BlobField):
+        def __init__(self, iterations=12, min_lenght=8, max_lenght=255,
+                     *args, **kwargs):
+            if None in (hashpw, gensalt):
+                raise ValueError(
+                    'Module not found: Required for PasswordField: bcrypt.')
+            self.bcrypt_iterations = iterations
+            self.raw_password = None
+            self.min_lenght = int(min_lenght) if min_lenght else None
+            self.max_lenght = int(max_lenght) if max_lenght else None
+            super(PasswordField, self).__init__(*args, **kwargs)
+
+        def db_value(self, value):
+            """Convert the python value for storage in the database."""
+            if isinstance(value, PasswordHash):
+                return bytes(value)
+            if isinstance(value, str):
+
+                if value and self.min_lenght and len(value) < self.min_lenght:
+                    raise ValueError(
+                        (f"{self.__class__.__name__} Value string is too short"
+                         f" (valid values must be string of {self.min_lenght} "
+                         f"characters or more): {len(value)} length,{value}."))
+
+                if value and self.max_lenght and len(value) > self.max_lenght:
+                    raise ValueError(
+                        (f"{self.__class__.__name__} Value string is too long"
+                         f" (valid values must be string of {self.min_lenght} "
+                         f"characters maximum): {len(value)} length,{value}."))
+
+                value = value.encode('utf-8')
+            salt = gensalt(self.bcrypt_iterations)
+            return value if value is None else hashpw(value, salt)
+
+        def python_value(self, value):
+            """Convert the database value to a pythonic value."""
+            if isinstance(value, str):
+                value = value.encode('utf-8')
+            return PasswordHash(value)
 
 
 ##############################################################################
