@@ -34,7 +34,7 @@ except ImportError:
 try:
     from bcrypt import hashpw, gensalt
 except ImportError:
-    hashpw = gensalt = None
+    hashpw = gensalt = PasswordField = None
 
 
 __version__ = "2.5.0"
