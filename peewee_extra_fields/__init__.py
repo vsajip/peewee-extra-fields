@@ -120,6 +120,9 @@ if hashpw and gensalt:
             return PasswordHash(value)
 
 
+##############################################################################
+
+
 class SimplePasswordField(CharField):
     def __init__(self, salt, min_length: int=8, algorithm: str="sha512",
                  iterations: int=100_000, dklen=None, *args, **kwargs):
@@ -153,9 +156,6 @@ class SimplePasswordField(CharField):
                 self.iterations, self.dklen)).decode("utf-8")
             return secrets.compare_digest(str(self), digest)
         return False
-
-
-##############################################################################
 
 
 class PositiveSmallIntegerField(SmallIntegerField):
