@@ -93,15 +93,15 @@ if hashpw and gensalt:
             return hashpw(password, self) == self
 
     class PasswordField(BlobField):
-        def __init__(self, iterations=12, min_lenght=8, max_lenght=255,
+        def __init__(self, iterations=12, min_length=8, max_length=255,
                      *args, **kwargs):
             if None in (hashpw, gensalt):
                 raise ValueError(
                     'Module not found: Required for PasswordField: bcrypt.')
             self.bcrypt_iterations = iterations
             self.raw_password = None
-            self.min_lenght = int(min_lenght) if min_lenght else None
-            self.max_lenght = int(max_lenght) if max_lenght else None
+            self.min_length = int(min_length) if min_length else None
+            self.max_length = int(max_length) if max_length else None
             super(PasswordField, self).__init__(*args, **kwargs)
 
         def db_value(self, value):
@@ -110,13 +110,13 @@ if hashpw and gensalt:
                 return bytes(value)
             if isinstance(value, str):
 
-                if value and self.min_lenght and len(value) < self.min_lenght:
+                if value and self.min_length and len(value) < self.min_length:
                     raise ValueError(
                         (f"{self.__class__.__name__} Value string is too short"
-                         f" (valid values must be string of {self.min_lenght} "
+                         f" (valid values must be string of {self.min_length} "
                          f"characters or more): {len(value)} length,{value}."))
 
-                if value and self.max_lenght and len(value) > self.max_lenght:
+                if value and self.max_length and len(value) > self.max_length:
                     raise ValueError(
                         (f"{self.__class__.__name__} Value string is too long"
                          f" (valid values must be string of {self.min_lenght} "
