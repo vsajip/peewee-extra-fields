@@ -1288,7 +1288,7 @@ The password is hashed when it is saved to the database and
 after reading it from the database you can call:
 `check_password(password)` to return a `bool`.
 
-This field has 2 additional extra options `min_lenght` and `max_length` for the Password,
+This field has 2 additional extra options `min_length` and `max_length` for the Password,
 allows setting the minimum and maximum length of the Password, using an integer.
 The original (deprecated) Peewee PasswordField dont have these 2 options.
 
