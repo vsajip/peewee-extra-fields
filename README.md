@@ -1245,6 +1245,80 @@ ValueError: USSocialSecurityNumberField Value is not a valid U.S.A. Social Secur
 </details>
 
 
+##### PickledField
+<details>
+
+`peewee_extra_fields.PickledField()`
+
+**Description:** Peewee [PickledField](http://docs.peewee-orm.com/en/2.7.0/search.html?q=PickledField) backported from 2.x Versions (literal copy & paste) to work with Peewee 3 and Python 3.
+Stores arbitrary python objects, stores values in a pickled `BlobField`.
+If your objects are JSON-serializable, you can also use the `JSONField`,
+which stores the values as JSON-encoded strings.
+
+This field has been clean out of Legacy Python2 compatibility code that it originally used to have.
+
+**Arguments:** None (should take the same `*args` and `**kwargs` as `BlobField`).
+
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `BlobField`).
+
+**Returns:** Arbitrary Python objects.
+
+**Base Class:** `BlobField`.
+
+**Type:** `<class 'type'>`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+</details>
+
+
+##### PasswordField
+<details>
+
+`peewee_extra_fields.PasswordField()`
+
+**Description:** Peewee [PasswordField](http://docs.peewee-orm.com/en/2.7.0/peewee/playhouse.html?highlight=PasswordField#PasswordField) backported from 2.x Versions (literal copy & paste) to work with Peewee 3 and Python 3.
+`PasswordField` stores a password hash and lets you verify it.
+The password is hashed when it is saved to the database and
+after reading it from the database you can call:
+`check_password(password)` to return a `bool`.
+
+This field has 2 additional extra options `min_lenght` and `max_length` for the Password,
+allows setting the minimum and maximum length of the Password, using an integer.
+The original (deprecated) Peewee PasswordField dont have these 2 options.
+
+This field requires `bcrypt`, which can be installed by running `pip install bcrypt`.
+`peewee_extra_fields` still works Ok without `bcrypt`.
+
+This field has been clean out of Legacy Python2 compatibility code that it originally used to have.
+
+**Arguments:** None (should take the same `*args` and `**kwargs` as `BlobField`).
+
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `BlobField`).
+
+**Returns:** `bytes`.
+
+**Base Class:** `BlobField`.
+
+**Type:** `<class 'type'>`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+</details>
+
+
 - [Check an actual working Example copied from official Peewee docs.](https://github.com/juancarlospaco/peewee-extra-fields/blob/master/example.py) Run it executing on the terminal command line: `python example.py`.
 
 
@@ -1258,6 +1332,10 @@ pip install peewee_extra_fields
 # Requisites:
 
 - [Peewee](http://docs.peewee-orm.com) *(2.x or 3.x Versions)*
+
+**Optional:**
+
+- [BCrypt](https://github.com/pyca/bcrypt) *(Only for PasswordField)*
 
 
 # Tests
@@ -1318,7 +1396,7 @@ That gives a lot more context, than just an `"al"`. :smile_cat:
 ### Challenge
 
 <details>
-  
+
 **Contributor:**
 
 - Contributor must be 1 individual person (+18) that self-identify as Girl/Woman.
