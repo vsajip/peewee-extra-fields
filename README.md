@@ -1288,14 +1288,13 @@ The password is hashed when it is saved to the database and
 after reading it from the database you can call:
 `check_password(password)` to return a `bool`.
 
-This field has 2 additional extra options `min_length` and `max_length` for the Password,
-allows setting the minimum and maximum length of the Password, using an integer.
-The original (deprecated) Peewee PasswordField dont have these 2 options.
-
 This field requires `bcrypt`, which can be installed by running `pip install bcrypt`.
 `peewee_extra_fields` still works Ok without `bcrypt`.
 
 This field has been clean out of Legacy Python2 compatibility code that it originally used to have.
+
+This field is to support code already using Peewee 2.x `PasswordField`,
+if you are implementing from zero, check `SimplePasswordField` that uses new Python `secrets` from standard lib.
 
 **Arguments:** None (should take the same `*args` and `**kwargs` as `BlobField`).
 
@@ -1304,6 +1303,47 @@ This field has been clean out of Legacy Python2 compatibility code that it origi
 **Returns:** `bytes`.
 
 **Base Class:** `BlobField`.
+
+**Type:** `<class 'type'>`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+</details>
+
+
+
+##### SimplePasswordField
+<details>
+
+`peewee_extra_fields.SimplePasswordField()`
+
+**Description:** Peewee [PasswordField](http://docs.peewee-orm.com/en/2.7.0/peewee/playhouse.html?highlight=PasswordField#PasswordField) re-implemented and simplified from 2.x Versions to work with Peewee 3 and Python 3 using new `secrets` and `hashlib` from standard library, without dependencies, dont need `bcrypt`,
+internally uses `hashlib.pbkdf2_hmac()` and `secrets.compare_digest()`.
+Migration from `PasswordField` to `SimplePasswordField` is recommended when possible.
+`PasswordField` is no longer supported and deprecated by Peewee.
+`SimplePasswordField` stores a password hash and lets you verify it.
+The password is hashed when it is saved to the database and
+after reading it from the database you can call:
+`check_password(password)` to return a `bool`.
+
+**Arguments:**
+- `salt` Salt for Password hashing, string type, required, use some random string, check `secrets.token_hex()` and `secrets.token_urlsafe()` as sources of random strings.
+- `min_length` Minimum Password length, optional, integer type, positive value, defaults to `8`.
+- `algorithm` Algorithm for Password hashing, optional, string type, dafaults to `"sha512"`.
+- `iterations` Iterations for Password hashing, optional, integer type, positive value, defaults to `100_000`.
+- `dklen` Output Hash length, optional, integer type or `None`, positive value, defaults to `None`, automatic and constant length based on `algorithm` is used if set to `None`.
+
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
+
+**Returns:** `str`.
+
+**Base Class:** `CharField`.
 
 **Type:** `<class 'type'>`.
 
