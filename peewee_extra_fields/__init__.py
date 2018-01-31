@@ -123,6 +123,7 @@ if hashpw and gensalt:
 class SimplePasswordField(CharField):
     def __init__(self, salt, min_length: int=8, algorithm: str="sha512",
                  iterations: int=100_000, dklen=None, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.min_length = int(min_length) if min_length else None
         self.algorithm = str(algorithm).lower().strip()
         self.salt = bytes(str(salt).strip(), "utf-8")
@@ -150,7 +151,7 @@ class SimplePasswordField(CharField):
             digest = binascii.hexlify(hashlib.pbkdf2_hmac(
                 self.algorithm, bytes(value, "utf-8"), self.salt,
                 self.iterations, self.dklen)).decode("utf-8")
-            return secrets.compare_digest(self, digest)
+            return secrets.compare_digest(str(self), digest)
         return False
 
 
