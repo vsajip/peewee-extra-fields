@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
-"""Extra Fields for Peewee ORM."""
+"""Extra Fields for Peewee ORM. Regex based extra Fields live here."""
 
 
 import re
@@ -20,6 +20,10 @@ class _BaseRegexField(CharField):
     def db_value(self, value: str) -> str:
         if isinstance(value, str):
             value = value.strip()
+
+            if value == "":
+                RuntimeWarning(
+                    f"{self.__class__.__name__}: Value is an Empty string!.")
 
             if len(value) > self.max_length:
                 raise ValueError((
