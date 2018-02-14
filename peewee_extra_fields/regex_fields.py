@@ -7,6 +7,8 @@
 
 import re
 
+from peewee import CharField
+
 
 __all__ = ("SemVerField", "ARPostalCodeField", "USZipCodeField")
 
