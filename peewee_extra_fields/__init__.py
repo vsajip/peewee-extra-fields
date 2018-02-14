@@ -26,6 +26,8 @@ from peewee import (BigIntegerField, BlobField, CharField, DateField,
                     DateTimeField, DecimalField, FixedCharField, FloatField,
                     IntegerField, SmallIntegerField)
 
+from .regex_fields import *
+
 try:
     import cPickle as pickle
 except ImportError:
@@ -900,52 +902,7 @@ class ColorHexadecimalField(FixedCharField):
             'BBB', codecs.decode(bytes(color_hex, "utf-8"), "hex")))
 
 
-class SemVerField(CharField):
-    """CharField clone only accepts Semantic Versions (https://semver.org)."""
-    max_length = 255  # According to https://semver.org
-
-    def db_value(self, value: str) -> str:
-        if isinstance(value, str):
-            value = value.lower().strip()
-
-            semver_regex = str(
-                r"\bv?(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[\d"
-                r"a-z-]+(?:\.[\da-z-]+)*)?(?:\+[\da-z-]+(?:\.[\da-z-]+)*)?\b")
-            if not re.match(semver_regex, value) or len(value) < 5:
-                raise ValueError(f"""{self.__class__.__name__} Value is not a
-                valid Semantic Version string, from 5 to 255 characters long
-                (valid values must match a Regex {semver_regex}): {value}.""")
-
-        return value
-
-
 ##############################################################################
-
-
-class ARPostalCodeField(CharField):
-    """CharField clone but only accepts Argentine Postal Codes (old & new)."""
-    max_length = 8  # New = 8, Old = 4
-
-    def db_value(self, value: str) -> str:
-        if value and isinstance(value, str):
-            postal_code_regex = r'^\d{4}$|^[A-HJ-NP-Za-hj-np-z]\d{4}\D{3}$'
-            if not re.match(postal_code_regex, value) or len(value) < 4:
-                raise ValueError(f"""{self.__class__.__name__} Value is not a
-                valid Argentine Postal Code (old or new) string from 4 to 8
-                characters long (valid values must match a Regex
-                {postal_code_regex}): {value}.""")
-
-        return value
-
-    @staticmethod
-    def get_html_widget(clas: tuple=None, ids: str=None,
-                        required: bool=False) -> str:
-        clas = f'''class="{' '.join(clas)}" ''' if clas else ""
-        ids = f'id="{ids}" ' if ids else ""
-        r = "required " if required else ""
-        return (f'<input type="text" name="postal-code" {ids}{clas}{r} '
-                'placeholder="Codigo Postal Argentino" '
-                'minlength="4" maxlength="8" size="8">\n')
 
 
 class ARCUITField(CharField):
@@ -979,22 +936,6 @@ class ARCUITField(CharField):
 
 ##############################################################################
 
-
-class USZipCodeField(CharField):
-    """CharField clone but only accepts US ZIP Codes (XXXXX or XXXXX-XXXX)."""
-    max_length = 10
-
-    def db_value(self, value: str) -> str:
-        if isinstance(value, str):
-            value = value.strip()
-            zip_code_regex = r'^\d{5}(?:-\d{4})?$'
-            if not re.match(zip_code_regex, value) or len(value) < 5:
-                raise ValueError(f"""{self.__class__.__name__} Value is not a
-                valid USA ZIP Codes (XXXXX or XXXXX-XXXX) string from 5 to 10
-                characters long (valid values must match a Regex
-                {zip_code_regex}): {value}.""")
-
-        return value
 
 
 class USSocialSecurityNumberField(FixedCharField):
