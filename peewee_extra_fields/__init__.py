@@ -47,14 +47,24 @@ __contact__ = "https://t.me/juancarlospaco"
 __maintainer__ = "Juan Carlos"
 __url__ = "https://github.com/juancarlospaco/peewee-extra-fields"
 __all__ = (
-    'ARCUITField', 'ARPostalCodeField', 'CSVField', 'CharFieldCustom',
-    'ColorHexadecimalField', 'CountryISOCodeField', 'CurrencyISOCodeField',
-    'IANCodeField', 'IBANISOCodeField', 'IPAddressField', 'IPNetworkField',
-    'LanguageISOCodeField', 'PasswordField', 'PastDateField',
+    'ARCUITField', 'ARZipCodeField', 'ATZipCodeField', 'AUZipCodeField',
+    'BEZipCodeField', 'BRZipCodeField', 'CHZipCodeField', 'CLRutField',
+    'CNZipCodeField', 'CONITField', 'CSVField', 'CUZipCodeField',
+    'CZZipCodeField', 'CharFieldCustom', 'ColorHexadecimalField',
+    'CountryISOCodeField', 'CurrencyISOCodeField', 'DEZipCodeField',
+    'EEZipCodeField', 'ESZipCodeField', 'GRZipCodeField', 'HROIBField',
+    'IANCodeField', 'IBANISOCodeField', 'ILZipCodeField', 'INZipCodeField',
+    'IPAddressField', 'IPNetworkField', 'ISIdNumberField', 'JPZipCodeField',
+    'LanguageISOCodeField', 'MKIdentityCardNumberField', 'MTZipCodeField',
+    'MXZipCodeField', 'PLNIPField', 'PLNationalIDCardNumberField',
+    'PLZipCodeField', 'PTZipCodeField', 'PasswordField', 'PastDateField',
     'PastDateTimeField', 'PickledField', 'PositiveBigIntegerField',
     'PositiveDecimalField', 'PositiveFloatField', 'PositiveIntegerField',
-    'PositiveSmallIntegerField', 'SWIFTISOCodeField', 'SemVerField',
-    'SimplePasswordField', 'USSocialSecurityNumberField', 'USZipCodeField',
+    'PositiveSmallIntegerField', 'ROCIFField', 'ROCNPField', 'ROZipCodeField',
+    'RUPassportNumberField', 'SEZipCodeField', 'SKZipCodeField',
+    'SWIFTISOCodeField', 'SemVerField', 'SimplePasswordField',
+    'UAZipCodeField', 'USSocialSecurityNumberField', 'USZipCodeField',
+    'UYCIField',
 )
 
 
