@@ -311,16 +311,16 @@ class TestFields(unittest.TestCase):
             with self.assertRaises(ValueError):
                 CurrencyISOCodeField().db_value(value)
 
-    def test_ARPostalCodeField(self):
+    def test_ARZipCodeField(self):
         valid_values = ("2804", "1024", "6666", "3421", "4232", "3231", "1215")
         invalid_values = ("yo", " ", "666", "uu", "42", "ox", "yyy")
 
         for value in valid_values:
-            self.assertIsInstance(ARPostalCodeField().db_value(value), str)
+            self.assertIsInstance(ARZipCodeField().db_value(value), str)
 
         for value in invalid_values:
             with self.assertRaises(ValueError):
-                ARPostalCodeField().db_value(value)
+                ARZipCodeField().db_value(value)
 
     def test_ARCUITField(self):
         valid_values = ("20-30999666-6", "20309996666", "20-10101010-5")
