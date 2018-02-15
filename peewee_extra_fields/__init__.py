@@ -163,13 +163,13 @@ class SimplePasswordField(CharField):
                 self.algorithm, bytes(value, "utf-8"), self.salt,
                 self.iterations, self.dklen)).decode("utf-8")
 
-    def check_password(self, password) -> bool:
-        if password and isinstance(password, str):
-            value = password.strip()
-            digest = binascii.hexlify(hashlib.pbkdf2_hmac(
-                self.algorithm, bytes(value, "utf-8"), self.salt,
-                self.iterations, self.dklen)).decode("utf-8")
-            return secrets.compare_digest(str(self), digest)
+    @staticmethod
+    def check_password(password_hash: str, password_literal: str) -> bool:
+        if isinstance(password_hash, str) and isinstance(password_literal, str):
+            digest = str(binascii.hexlify(hashlib.pbkdf2_hmac(
+                self.algorithm, bytes(password_literal.strip(), "utf-8"),
+                self.salt, self.iterations, self.dklen)).decode("utf-8"))
+            return bool(secrets.compare_digest(str(password_hash), digest))
         return False
 
 
