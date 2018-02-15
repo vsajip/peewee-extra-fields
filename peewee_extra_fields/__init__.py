@@ -169,7 +169,7 @@ class SimplePasswordField(CharField):
             digest = str(binascii.hexlify(hashlib.pbkdf2_hmac(
                 self.algorithm, bytes(password_literal.strip(), "utf-8"),
                 self.salt, self.iterations, self.dklen)).decode("utf-8"))
-            return bool(secrets.compare_digest(str(password_hash), digest))
+            return bool(secrets.compare_digest(password_hash, digest))
         return False
 
 
