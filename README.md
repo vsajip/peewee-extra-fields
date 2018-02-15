@@ -4,7 +4,7 @@
 
 ARCUITField, ARPostalCodeField, CSVField, CharFieldCustom, CountryISOCodeField, CurrencyISOCodeField, IANCodeField,
 IBANISOCodeField, IPAddressField, IPNetworkField, LanguageISOCodeField, PastDateField, PastDateTimeField,
-PositiveBigIntegerField, PositiveDecimalField, PositiveFloatField, PositiveIntegerField, PositiveSmallIntegerField, SWIFTISOCodeField,USSocialSecurityNumberField, USZipCodeField, and more. Autogeneration of HTML5 Widgets for Fields.
+PositiveBigIntegerField, PositiveDecimalField, PositiveFloatField, PositiveIntegerField, PositiveSmallIntegerField, SWIFTISOCodeField,USSocialSecurityNumberField, USZipCodeField, and more. Autogeneration of HTML5 Widgets for Fields. Support focus on Postgresql.
 
 We want to be a hub for all custom Fields. If your created a Custom Peewee Field feel free to [Send Pull Requests!!!.](https://github.com/juancarlospaco/peewee-extra-fields/compare)
 Open Repo access to anyone who want to contribute, just contact me.

@@ -317,6 +317,20 @@ class SmallHexadecimalField(SmallIntegerField):
         return value
 
 
+class SVGField(TextField):
+    """SVG Field using a TextField, validates string data is SVG."""
+
+    def db_value(self, value):
+        if value and isinstance(value, str):
+            if value < self.min or value > self.max:
+                raise ValueError(f"""{self.__class__.__name__} Value is not a
+                Positive Integer (valid values must be Positive Integers
+                between {self.min} and {self.max}): {value}.""")
+        return value
+
+
+
+
 class IPAddressField(CharField):
     """CharField clone but only accepts IP Address values, returns ip_address.
 
@@ -1152,6 +1166,35 @@ class USSocialSecurityNumberField(FixedCharField):
                 "USSocialSecurityNumber", "ssn area group serial")(
                     value, int(value[:3]), int(value[4:6]), int(value[7:]))
         return value
+
+
+# class XMLField(Field):
+#     """XML Field, uses Native XML Database Type, accepts str.
+#
+#     https://www.postgresql.org/docs/current/static/datatype-xml.html."""
+#     field_type = 'xml'
+#
+#     def db_value(self, value):
+#         if value and isinstance(value, str):
+#             value = value.strip()
+#             try:
+#                 ET.fromstring(value)
+#             except Exception as error:
+#                 raise ValueError((
+#                     f"{self.__class__.__name__} Value is not valid XML data. "
+#                     f"(valid values must be parseable by {ET}): {error}."))
+#         return value
+#
+#     def python_value(self, value):
+#         return str(value) if value else value
+#
+#
+# class MoneyField(Field):
+#     """Money Field, uses Native Monetary Database Type, accepts int,float,str.
+#
+#     8 Bytes, from $ -92233720368547758.08 to $ +92233720368547758.07.
+#     https://www.postgresql.org/docs/current/static/datatype-money.html."""
+#     field_type = 'money'
 
 
 # Most Wanted Fields:
