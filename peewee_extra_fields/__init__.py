@@ -20,9 +20,8 @@ from decimal import Decimal
 from ipaddress import IPv4Address, IPv4Network, ip_address, ip_network
 from json import loads
 from pathlib import Path
-from types import MappingProxyType as frozendict
-from ipaddress import ip_address
 from random import choice
+from types import MappingProxyType as frozendict
 from urllib.parse import urlencode
 
 from peewee import (BigIntegerField, BlobField, CharField, DateField,
