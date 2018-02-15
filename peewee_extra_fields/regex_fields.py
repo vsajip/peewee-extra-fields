@@ -45,6 +45,13 @@ class SemVerField(_BaseRegexField):
         r"a-z-]+(?:\.[\da-z-]+)*)?(?:\+[\da-z-]+(?:\.[\da-z-]+)*)?\b")
 
 
+class HexadecimalField(_BaseRegexField):
+    """Hexadecimal String Field,stores arbitrary Hexadecimal string(255 Chars).
+
+    Useful for Promo Codes, Redeem Codes, Invitation Codes, etc etc."""
+    regex = r"^(([0-9A-f])|(0x[0-9A-f]))+$"
+
+
 class ARZipCodeField(_BaseRegexField):
     """Argentine Postal Codes Field (old & new)."""
     max_length = 8  # New = 8, Old = 4
