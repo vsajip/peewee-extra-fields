@@ -21,6 +21,9 @@ from ipaddress import IPv4Address, IPv4Network, ip_address, ip_network
 from json import loads
 from pathlib import Path
 from types import MappingProxyType as frozendict
+from ipaddress import ip_address
+from random import choice
+from urllib.parse import urlencode
 
 from peewee import (BigIntegerField, BlobField, CharField, DateField,
                     DateTimeField, DecimalField, FixedCharField, FloatField,
@@ -52,19 +55,19 @@ __all__ = (
     'CNZipCodeField', 'CONITField', 'CSVField', 'CUZipCodeField',
     'CZZipCodeField', 'CharFieldCustom', 'ColorHexadecimalField',
     'CountryISOCodeField', 'CurrencyISOCodeField', 'DEZipCodeField',
-    'EEZipCodeField', 'ESZipCodeField', 'GRZipCodeField', 'HROIBField',
-    'IANCodeField', 'IBANISOCodeField', 'ILZipCodeField', 'INZipCodeField',
-    'IPAddressField', 'IPNetworkField', 'ISIdNumberField', 'JPZipCodeField',
-    'LanguageISOCodeField', 'MKIdentityCardNumberField', 'MTZipCodeField',
-    'MXZipCodeField', 'PLNIPField', 'PLNationalIDCardNumberField',
-    'PLZipCodeField', 'PTZipCodeField', 'PasswordField', 'PastDateField',
-    'PastDateTimeField', 'PickledField', 'PositiveBigIntegerField',
-    'PositiveDecimalField', 'PositiveFloatField', 'PositiveIntegerField',
-    'PositiveSmallIntegerField', 'ROCIFField', 'ROCNPField', 'ROZipCodeField',
-    'RUPassportNumberField', 'SEZipCodeField', 'SKZipCodeField',
-    'SWIFTISOCodeField', 'SemVerField', 'SimplePasswordField',
-    'UAZipCodeField', 'USSocialSecurityNumberField', 'USZipCodeField',
-    'UYCIField',
+    'EEZipCodeField', 'ESZipCodeField', 'EmailField', 'GRZipCodeField',
+    'HROIBField', 'IANCodeField', 'IBANISOCodeField', 'ILZipCodeField',
+    'INZipCodeField', 'IPAddressField', 'IPNetworkField', 'ISIdNumberField',
+    'JPZipCodeField', 'LanguageISOCodeField', 'MKIdentityCardNumberField',
+    'MTZipCodeField', 'MXZipCodeField', 'PLNIPField',
+    'PLNationalIDCardNumberField', 'PLZipCodeField', 'PTZipCodeField',
+    'PasswordField', 'PastDateField', 'PastDateTimeField', 'PickledField',
+    'PositiveBigIntegerField', 'PositiveDecimalField', 'PositiveFloatField',
+    'PositiveIntegerField', 'PositiveSmallIntegerField', 'ROCIFField',
+    'ROCNPField', 'ROZipCodeField', 'RUPassportNumberField', 'SEZipCodeField',
+    'SKZipCodeField', 'SWIFTISOCodeField', 'SemVerField',
+    'SimplePasswordField', 'UAZipCodeField', 'USSocialSecurityNumberField',
+    'USZipCodeField', 'UYCIField',
 )
 
 
@@ -910,6 +913,98 @@ class ColorHexadecimalField(FixedCharField):
     def hex2rgb(color_hex: str) -> namedtuple:
         return namedtuple("RGB", "red green blue")(*struct.unpack(
             'BBB', codecs.decode(bytes(color_hex, "utf-8"), "hex")))
+
+
+class EmailField(CharField):
+    """A CharField that checks that the value is a valid Email address.
+
+    max_length is Hardcoded to 254 to be compliant with RFCs 3696 and 5321.
+    Max length for domain name is 63 Characters to be compliant with RFC-1034.
+
+    str.lower() of the value string is Forced, to Normalize and simplify, KISS
+    (RFC says uppercase & lowercase email addresses are 2 different addresses).
+    https://code.djangoproject.com/ticket/17561#comment:7.
+
+    Gravatar capability is provided using method email2gravatar(email)."""
+    max_length = 254
+
+    user_regex = re.compile(
+        r"(^[-!#$%&'*+/=?^_`{}|~0-9A-Z]+(\.[-!#$%&'*+/=?^_`{}|~0-9A-Z]+)*\Z"
+        r'|^"([\001-\010\013\014\016-\037!#-\[\]-\177]|\\[\001-\011\013\014\016-\177])*"\Z)',
+        re.IGNORECASE)
+    domain_regex = re.compile(
+        r'((?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+)(?:[A-Z0-9-]{2,63}(?<!-))\Z',
+        re.IGNORECASE)
+
+    def db_value(self, value: str) -> str:
+        if isinstance(value, str):
+            value = value.strip().lower()
+
+            if value == "":
+                raise ValueError(
+                    f"{self.__class__.__name__}: Value is an Empty string!.")
+
+            if len(value) > self.max_length:
+                raise ValueError((
+                    f"{self.__class__.__name__}: Value string is too long!. "
+                    f"(valid values must be < {self.max_length} Characters, "
+                    "to be compliant with RFC-3696 and RFC-5321): "
+                    f"{len(value)} > {self.max_length} Characters, {value}."
+                ))
+
+            if len(value) < 4:
+                raise ValueError((
+                    f"{self.__class__.__name__}: Value string is too short!. "
+                    f"(valid values must be > 3 Characters): {value}."
+                ))
+
+            if "@" not in value:
+                raise ValueError((
+                    f"{self.__class__.__name__}: Value is not a Valid Email!. "
+                    f"(valid values must have an '@' Character): {value}."
+                ))
+
+            user_part, domain_part = value.rsplit('@', 1)
+
+            if len(domain_part) > 63:
+                raise ValueError((
+                    f"{self.__class__.__name__}: Value is not a Valid Email!. "
+                    "Max length for domain name is 63 Characters per RFC-1034 "
+                    f"(valid value domain name must be < 63 Characters long): "
+                    f"{len(value)} > 63 Characters long, {value}."
+                ))
+
+            if not self.user_regex.match(user_part):
+                raise ValueError((
+                    f"{self.__class__.__name__}: Value is not a Valid Email!. "
+                    f"(valid values must match a Regex {self.user_regex}): "
+                    f"The username part {user_part} is invalid, {value}."
+                ))
+
+            is_localhost = domain_part == "localhost"  # Domain is localhost.
+            try:
+                ip_address(domain_part)                # Domain is literal IP.
+                is_ipaddress = True
+            except Exception:
+                is_ipaddress = False
+
+            if (not self.domain_regex.match(domain_part) and
+                not is_localhost and not is_ipaddress):
+                raise ValueError((
+                    f"{self.__class__.__name__}: Value is not a Valid Email!. "
+                    f"(valid values must match a Regex {self.domain_regex}): "
+                    f"The domain part {domain_part} is invalid, {value}."
+                ))
+
+        return value
+
+    @staticmethod
+    def email2gravatar(email, size: int=512, rating: str="r") -> str:
+        _url = 'https://secure.gravatar.com/'  # 'http://www.gravatar.com/'
+        _hash = hashlib.md5(email.strip().lower().encode("utf-8")).hexdigest()
+        default = choice(('mm', 'identicon', 'monsterid', 'wavatar', 'retro'))
+        query_str = urlencode({'s': str(int(size)), 'd': default, 'r': rating})
+        return f'{_url}avatar/{_hash}.jpg?{query_str}'
 
 
 ##############################################################################
