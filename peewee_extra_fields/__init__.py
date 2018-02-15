@@ -317,20 +317,6 @@ class SmallHexadecimalField(SmallIntegerField):
         return value
 
 
-class SVGField(TextField):
-    """SVG Field using a TextField, validates string data is SVG."""
-
-    def db_value(self, value):
-        if value and isinstance(value, str):
-            if value < self.min or value > self.max:
-                raise ValueError(f"""{self.__class__.__name__} Value is not a
-                Positive Integer (valid values must be Positive Integers
-                between {self.min} and {self.max}): {value}.""")
-        return value
-
-
-
-
 class IPAddressField(CharField):
     """CharField clone but only accepts IP Address values, returns ip_address.
 
@@ -1093,7 +1079,6 @@ class ARCUITField(CharField):
 
 
 ##############################################################################
-
 
 
 class USSocialSecurityNumberField(FixedCharField):
