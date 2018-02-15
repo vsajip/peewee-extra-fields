@@ -56,18 +56,18 @@ __all__ = (
     'CZZipCodeField', 'CharFieldCustom', 'ColorHexadecimalField',
     'CountryISOCodeField', 'CurrencyISOCodeField', 'DEZipCodeField',
     'EEZipCodeField', 'ESZipCodeField', 'EmailField', 'GRZipCodeField',
-    'HROIBField', 'IANCodeField', 'IBANISOCodeField', 'ILZipCodeField',
-    'INZipCodeField', 'IPAddressField', 'IPNetworkField', 'ISIdNumberField',
-    'JPZipCodeField', 'LanguageISOCodeField', 'MKIdentityCardNumberField',
-    'MTZipCodeField', 'MXZipCodeField', 'PLNIPField',
-    'PLNationalIDCardNumberField', 'PLZipCodeField', 'PTZipCodeField',
-    'PasswordField', 'PastDateField', 'PastDateTimeField', 'PickledField',
-    'PositiveBigIntegerField', 'PositiveDecimalField', 'PositiveFloatField',
-    'PositiveIntegerField', 'PositiveSmallIntegerField', 'ROCIFField',
-    'ROCNPField', 'ROZipCodeField', 'RUPassportNumberField', 'SEZipCodeField',
-    'SKZipCodeField', 'SWIFTISOCodeField', 'SemVerField',
-    'SimplePasswordField', 'UAZipCodeField', 'USSocialSecurityNumberField',
-    'USZipCodeField', 'UYCIField',
+    'HROIBField', 'HexadecimalField', 'IANCodeField', 'IBANISOCodeField',
+    'ILZipCodeField', 'INZipCodeField', 'IPAddressField', 'IPNetworkField',
+    'ISIdNumberField', 'JPZipCodeField', 'LanguageISOCodeField',
+    'MKIdentityCardNumberField', 'MTZipCodeField', 'MXZipCodeField',
+    'PLNIPField', 'PLNationalIDCardNumberField', 'PLZipCodeField',
+    'PTZipCodeField', 'PasswordField', 'PastDateField', 'PastDateTimeField',
+    'PickledField', 'PositiveBigIntegerField', 'PositiveDecimalField',
+    'PositiveFloatField', 'PositiveIntegerField', 'PositiveSmallIntegerField',
+    'ROCIFField', 'ROCNPField', 'ROZipCodeField', 'RUPassportNumberField',
+    'SEZipCodeField', 'SKZipCodeField', 'SWIFTISOCodeField', 'SemVerField',
+    'SimplePasswordField', 'SmallHexadecimalField', 'UAZipCodeField',
+    'USSocialSecurityNumberField', 'USZipCodeField', 'UYCIField',
 )
 
 
@@ -275,6 +275,46 @@ class PositiveDecimalField(DecimalField):
             value = Decimal(value).quantize(
                 Decimal(10) ** -self.round_by).normalize()
 
+        return value
+
+
+class SmallHexadecimalField(SmallIntegerField):
+    """Small Hexadecimal str,stores arbitrary Hexadecimal as integer (Base 16).
+
+    Useful for Promo Codes, Redeem Codes, Invitation Codes, etc etc.
+    Converts the Hexadecimal String to Integer of Base16,
+    stores only integers on the database, uses SmallIntegerField.
+
+    For Big Long Hexadecimal strings use HexadecimalField (CharField based)."""
+    regex = r"^(([0-9A-f])|(0x[0-9A-f]))+$"
+    # https://www.postgresql.org/docs/current/static/datatype-numeric.html
+    min = 0
+    max = 32_767
+
+    def db_value(self, value):
+        if value and isinstance(value, str):
+            if value == "":
+                raise ValueError(
+                    f"{self.__class__.__name__}: Value is an Empty string!.")
+
+            if not re.match(self.regex, value):
+                raise ValueError((
+                    f"{self.__class__.__name__}: Value string is not valid!. "
+                    f"(valid values must match a Regex {self.regex}): {value}."
+                ))
+
+            value = int(value.lower().strip(), 16)  # string to integer.
+
+            if value < self.min or value > self.max:
+                raise ValueError((
+                f"{self.__class__.__name__} Value is too Big or too Small!, "
+                f"(valid values must be between {self.min} and {self.max}, "
+                f"the Field internally uses a {SmallIntegerField}): {value}."))
+        return value
+
+    def python_value(self, value):
+        if value and isinstance(value, int):
+            value = hex(value & 0xffffffff)[2:]
         return value
 
 
