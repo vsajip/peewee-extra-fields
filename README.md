@@ -2,9 +2,25 @@
 
 [Extra additional Fields](http://docs.peewee-orm.com/en/latest/peewee/models.html#creating-a-custom-field) for [Peewee ORM.](http://docs.peewee-orm.com) [![Build Status](https://travis-ci.org/juancarlospaco/peewee-extra-fields.svg?branch=master)](https://travis-ci.org/juancarlospaco/peewee-extra-fields)
 
-ARCUITField, ARPostalCodeField, CSVField, CharFieldCustom, CountryISOCodeField, CurrencyISOCodeField, IANCodeField,
-IBANISOCodeField, IPAddressField, IPNetworkField, LanguageISOCodeField, PastDateField, PastDateTimeField,
-PositiveBigIntegerField, PositiveDecimalField, PositiveFloatField, PositiveIntegerField, PositiveSmallIntegerField, SWIFTISOCodeField,USSocialSecurityNumberField, USZipCodeField, and more. Autogeneration of HTML5 Widgets for Fields. Support focus on Postgresql.
+ARCUITField, ARZipCodeField, ATZipCodeField, AUZipCodeField,
+BEZipCodeField, BRZipCodeField, CHZipCodeField, CLRutField,
+CNZipCodeField, CONITField, CSVField, CUZipCodeField,
+CZZipCodeField, CharFieldCustom, ColorHexadecimalField,
+CountryISOCodeField, CurrencyISOCodeField, DEZipCodeField,
+EEZipCodeField, ESZipCodeField, EmailField, GRZipCodeField,
+HROIBField, HexadecimalField, IANCodeField, IBANISOCodeField,
+ILZipCodeField, INZipCodeField, IPAddressField, IPNetworkField,
+ISIdNumberField, JPZipCodeField, LanguageISOCodeField,
+MKIdentityCardNumberField, MTZipCodeField, MXZipCodeField,
+PLNIPField, PLNationalIDCardNumberField, PLZipCodeField,
+PTZipCodeField, PasswordField, PastDateField, PastDateTimeField,
+PickledField, PositiveBigIntegerField, PositiveDecimalField,
+PositiveFloatField, PositiveIntegerField, PositiveSmallIntegerField,
+ROCIFField, ROCNPField, ROZipCodeField, RUPassportNumberField,
+SEZipCodeField, SKZipCodeField, SWIFTISOCodeField, SemVerField,
+SimplePasswordField, SmallHexadecimalField, UAZipCodeField,
+USSocialSecurityNumberField, USZipCodeField, UYCIField, and more.
+Autogeneration of HTML5 Widgets for Fields. Postgresql Support.
 
 We want to be a hub for all custom Fields. If your created a Custom Peewee Field feel free to [Send Pull Requests!!!.](https://github.com/juancarlospaco/peewee-extra-fields/compare)
 Open Repo access to anyone who want to contribute, just contact me.
