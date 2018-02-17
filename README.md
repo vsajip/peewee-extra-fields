@@ -6,24 +6,6 @@
 
 ![screenshot](https://source.unsplash.com/OIfFRthAASc/800x400 "Illustrative Photo by https://unsplash.com/@jackdouglass")
 
-ARCUITField, ARZipCodeField, ATZipCodeField, AUZipCodeField,
-BEZipCodeField, BRZipCodeField, CHZipCodeField, CLRutField,
-CNZipCodeField, CONITField, CSVField, CUZipCodeField,
-CZZipCodeField, CharFieldCustom, ColorHexadecimalField,
-CountryISOCodeField, CurrencyISOCodeField, DEZipCodeField,
-EEZipCodeField, ESZipCodeField, EmailField, GRZipCodeField,
-HROIBField, HexadecimalField, IANCodeField, IBANISOCodeField,
-ILZipCodeField, INZipCodeField, IPAddressField, IPNetworkField,
-ISIdNumberField, JPZipCodeField, LanguageISOCodeField,
-MKIdentityCardNumberField, MTZipCodeField, MXZipCodeField,
-PLNIPField, PLNationalIDCardNumberField, PLZipCodeField,
-PTZipCodeField, PasswordField, PastDateField, PastDateTimeField,
-PickledField, PositiveBigIntegerField, PositiveDecimalField,
-PositiveFloatField, PositiveIntegerField, PositiveSmallIntegerField,
-ROCIFField, ROCNPField, ROZipCodeField, RUPassportNumberField,
-SEZipCodeField, SKZipCodeField, SWIFTISOCodeField, SemVerField,
-SimplePasswordField, SmallHexadecimalField, UAZipCodeField,
-USSocialSecurityNumberField, USZipCodeField, UYCIField, and more.
 Autogeneration of HTML5 Widgets for Fields. Postgresql Support.
 
 We want to be a hub for all custom Fields.
