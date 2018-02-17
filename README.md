@@ -2,6 +2,8 @@
 
 [Extra additional Fields](http://docs.peewee-orm.com/en/latest/peewee/models.html#creating-a-custom-field) for [Peewee ORM.](http://docs.peewee-orm.com) [![Build Status](https://travis-ci.org/juancarlospaco/peewee-extra-fields.svg?branch=master)](https://travis-ci.org/juancarlospaco/peewee-extra-fields)
 
+![screenshot](https://source.unsplash.com/IClZBVw5W5A/800x400 "Illustrative Photo by https://unsplash.com/@toddquackenbush")
+
 ARCUITField, ARZipCodeField, ATZipCodeField, AUZipCodeField,
 BEZipCodeField, BRZipCodeField, CHZipCodeField, CLRutField,
 CNZipCodeField, CONITField, CSVField, CUZipCodeField,
@@ -22,10 +24,9 @@ SimplePasswordField, SmallHexadecimalField, UAZipCodeField,
 USSocialSecurityNumberField, USZipCodeField, UYCIField, and more.
 Autogeneration of HTML5 Widgets for Fields. Postgresql Support.
 
-We want to be a hub for all custom Fields. If your created a Custom Peewee Field feel free to [Send Pull Requests!!!.](https://github.com/juancarlospaco/peewee-extra-fields/compare)
+We want to be a hub for all custom Fields.
+If your created a Custom Peewee Field feel free to [Send Pull Requests!!!.](https://github.com/juancarlospaco/peewee-extra-fields/compare)
 Open Repo access to anyone who want to contribute, just contact me.
-
-![screenshot](https://source.unsplash.com/IClZBVw5W5A/800x400 "Illustrative Photo by https://unsplash.com/@toddquackenbush")
 
 [![GPL License](http://img.shields.io/badge/license-GPL-blue.svg)](http://opensource.org/licenses/GPL-3.0)
 [![LGPL License](http://img.shields.io/badge/license-LGPL-blue.svg)](http://opensource.org/licenses/LGPL-3.0)
