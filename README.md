@@ -2,7 +2,9 @@
 
 [Extra additional Fields](http://docs.peewee-orm.com/en/latest/peewee/models.html#creating-a-custom-field) for [Peewee ORM.](http://docs.peewee-orm.com) [![Build Status](https://travis-ci.org/juancarlospaco/peewee-extra-fields.svg?branch=master)](https://travis-ci.org/juancarlospaco/peewee-extra-fields)
 
-![screenshot](https://source.unsplash.com/IClZBVw5W5A/800x400 "Illustrative Photo by https://unsplash.com/@toddquackenbush")
+<!-- ![screenshot](https://source.unsplash.com/IClZBVw5W5A/800x400 "Illustrative Photo by https://unsplash.com/@toddquackenbush") -->
+
+![screenshot](https://source.unsplash.com/OIfFRthAASc/800x400 "Illustrative Photo by https://unsplash.com/@jackdouglass")
 
 ARCUITField, ARZipCodeField, ATZipCodeField, AUZipCodeField,
 BEZipCodeField, BRZipCodeField, CHZipCodeField, CLRutField,
