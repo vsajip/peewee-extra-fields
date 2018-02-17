@@ -6,7 +6,7 @@
 
 ![screenshot](https://source.unsplash.com/OIfFRthAASc/800x400 "Illustrative Photo by https://unsplash.com/@jackdouglass")
 
-Autogeneration of HTML5 Widgets for Fields. Postgresql Support.
+Autogeneration of HTML5 Widgets for Fields. Postgresql & Peewee 3 Support. Fields for several countries.
 
 We want to be a hub for all custom Fields.
 If your created a Custom Peewee Field feel free to [Send Pull Requests!!!.](https://github.com/juancarlospaco/peewee-extra-fields/compare)
