@@ -66,7 +66,7 @@ __all__ = (
     'ROCIFField', 'ROCNPField', 'ROZipCodeField', 'RUPassportNumberField',
     'SEZipCodeField', 'SKZipCodeField', 'SWIFTISOCodeField', 'SemVerField',
     'SimplePasswordField', 'SmallHexadecimalField', 'UAZipCodeField',
-    'USSocialSecurityNumberField', 'USZipCodeField', 'UYCIField',
+    'USSocialSecurityNumberField', 'USZipCodeField', 'UYCIField', 'EnumField'
 )
 
 
@@ -1152,6 +1152,32 @@ class USSocialSecurityNumberField(FixedCharField):
                     value, int(value[:3]), int(value[4:6]), int(value[7:]))
         return value
 
+
+class EnumField(CharField):
+    """
+    This class enables a Enum like field for Peewee.
+    """
+    db_field = "enum"
+
+    def __init__(self, choices, *args, **kwargs):
+        if not issubclass(choices, Enum):
+            raise TypeError("Argument choices must be of type enum.")
+        self.choices = choices
+        super().__init__(*args, **kwargs)
+
+    def db_value(self, value):
+        return value.name
+
+    def python_value(self, value):
+        return self.choices(value)
+
+    def get_column_type(self):
+        return "enum"
+
+    def coerce(self, value):
+        if value not in self.choices:
+            raise Exception("Invalid Enum Value `{}".format(value))
+        return str(value)
 
 # class XMLField(Field):
 #     """XML Field, uses Native XML Database Type, accepts str.
