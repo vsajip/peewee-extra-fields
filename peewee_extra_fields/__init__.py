@@ -23,6 +23,7 @@ from pathlib import Path
 from random import choice
 from types import MappingProxyType as frozendict
 from urllib.parse import urlencode
+from enum import Enum
 
 from peewee import (BigIntegerField, BlobField, CharField, DateField,
                     DateTimeField, DecimalField, FixedCharField, FloatField,
