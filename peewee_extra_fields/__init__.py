@@ -23,6 +23,7 @@ from pathlib import Path
 from random import choice
 from types import MappingProxyType as frozendict
 from urllib.parse import urlencode
+from enum import Enum, IntEnum
 
 from peewee import (BigIntegerField, BlobField, CharField, DateField,
                     DateTimeField, DecimalField, FixedCharField, FloatField,
@@ -66,7 +67,7 @@ __all__ = (
     'ROCIFField', 'ROCNPField', 'ROZipCodeField', 'RUPassportNumberField',
     'SEZipCodeField', 'SKZipCodeField', 'SWIFTISOCodeField', 'SemVerField',
     'SimplePasswordField', 'SmallHexadecimalField', 'UAZipCodeField',
-    'USSocialSecurityNumberField', 'USZipCodeField', 'UYCIField',
+    'USSocialSecurityNumberField', 'USZipCodeField', 'UYCIField', 'EnumField'
 )
 
 
@@ -162,8 +163,8 @@ class SimplePasswordField(CharField):
                 self.algorithm, bytes(value, "utf-8"), self.salt,
                 self.iterations, self.dklen)).decode("utf-8")
 
-    @staticmethod
-    def check_password(password_hash: str, password_literal: str) -> bool:
+
+    def check_password(self, password_hash: str, password_literal: str) -> bool:
         if isinstance(password_hash, str) and isinstance(password_literal, str):
             digest = str(binascii.hexlify(hashlib.pbkdf2_hmac(
                 self.algorithm, bytes(password_literal.strip(), "utf-8"),
@@ -1152,6 +1153,32 @@ class USSocialSecurityNumberField(FixedCharField):
                     value, int(value[:3]), int(value[4:6]), int(value[7:]))
         return value
 
+
+class EnumField(SmallIntegerField):
+    """
+    This class enables a Enum like field for Peewee.
+    """
+
+    def __init__(self, enum, *args, **kwargs):
+        if not issubclass(enum, Enum):
+            raise TypeError("Argument enum must be subclass of Enum.")
+        self.enum = enum
+        super().__init__(*args, **kwargs)
+
+    def db_value(self, member):
+        return member.value
+
+    def get_enum(self):
+        return getattr(self.model_class, self.verbose_name)
+
+    def python_value(self, value):
+        enum = self.get_enum()
+        return enum(value)
+
+    def coerce(self, value):
+        enum = self.get_enum()
+        if member not in enum:
+            raise Exception  # which type?
 
 # class XMLField(Field):
 #     """XML Field, uses Native XML Database Type, accepts str.
