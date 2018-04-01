@@ -321,8 +321,8 @@ class SmallHexadecimalField(SmallIntegerField):
 
 class IPAddressField(BigIntegerField):
     """BigIntegerField clone but only accepts IP Address, returns ip_address.
-    This works transparently with IPv4 and IPv6 Addresses.
 
+    This works transparently with IPv4 and IPv6 Addresses.
     Inspired by:
     docs.djangoproject.com/en/1.11/ref/models/fields/#genericipaddressfield and
     https://devdocs.io/python~3.6/library/ipaddress."""
@@ -346,6 +346,7 @@ class IPAddressField(BigIntegerField):
 class IPNetworkField(CharField):
     """CharField clone but only accepts IP Network values, returns ip_network.
 
+    This works transparently with IPv4 and IPv6 Networks.
     Inspired by:
     docs.djangoproject.com/en/1.11/ref/models/fields/#genericipaddressfield and
     https://devdocs.io/python~3.6/library/ipaddress."""
