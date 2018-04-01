@@ -1156,13 +1156,12 @@ class USSocialSecurityNumberField(FixedCharField):
 
 
 class EnumField(SmallIntegerField):
-    """
-    This class enables a Enum like field for Peewee.
-    """
+    """This class enables a Enum like field for Peewee."""
 
     def __init__(self, enum, *args, **kwargs):
         if not issubclass(enum, Enum):
-            raise TypeError("Argument enum must be subclass of Enum.")
+            raise TypeError((f"{self.__class__.__name__} Argument enum must be"
+                             f" subclass of enum.Enum: {enum} {type(enum)}."))
         self.enum = enum
         super().__init__(*args, **kwargs)
 
@@ -1178,8 +1177,10 @@ class EnumField(SmallIntegerField):
 
     def coerce(self, value):
         enum = self.get_enum()
-        if member not in enum:
-            raise Exception  # which type?
+        if value not in enum:
+            raise ValueError((f"{self.__class__.__name__} the value must be "
+                             f"member of the enum: {value}, {enum}."))
+
 
 # class XMLField(Field):
 #     """XML Field, uses Native XML Database Type, accepts str.
