@@ -17,13 +17,13 @@ from collections import namedtuple
 from colorsys import rgb_to_hls, rgb_to_hsv, rgb_to_yiq
 from datetime import date, datetime
 from decimal import Decimal
+from enum import Enum
 from ipaddress import IPv4Address, IPv4Network, ip_address, ip_network
 from json import loads
 from pathlib import Path
 from random import choice
 from types import MappingProxyType as frozendict
 from urllib.parse import urlencode
-from enum import Enum
 
 from peewee import (BigIntegerField, BlobField, CharField, DateField,
                     DateTimeField, DecimalField, FixedCharField, FloatField,
@@ -115,7 +115,7 @@ if hashpw and gensalt:
         def __init__(self, iterations=12, *args, **kwargs):
             if None in (hashpw, gensalt):
                 raise ValueError(
-                    'Module not found: Required for PasswordField: bcrypt.')
+                    f'{self.__class__.__name__} Module not found: BCrypt.')
             self.bcrypt_iterations = iterations
             self.raw_password = None
             super(PasswordField, self).__init__(*args, **kwargs)
