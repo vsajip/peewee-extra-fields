@@ -1166,7 +1166,7 @@ class EnumField(SmallIntegerField):
         super().__init__(*args, **kwargs)
 
     def db_value(self, member):
-        return member.value
+        return member
 
     def get_enum(self):
         return getattr(self.model_class, self.verbose_name)
