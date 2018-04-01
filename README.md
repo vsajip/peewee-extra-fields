@@ -194,15 +194,16 @@ ValueError: PositiveDecimalField 'round_by' argument is not a Non-Zero Positive 
 
 `peewee_extra_fields.IPAddressField()`
 
-**Description:** [`CharField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **IP Addresses** values (IPv4 & IPv6).
+**Description:** [`BigIntegerField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **IP Addresses** values (IPv4 & IPv6).
+IPAddressField uses BigIntegerField for maximum performance.
 
-**Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
+**Arguments:** None (should take the same `*args` and `**kwargs` as `BigIntegerField`).
 
-**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `CharField`).
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `BigIntegerField`).
 
 **Returns:** `IPv4Address` or `IPv6Address`.
 
-**Base Class:** `CharField`.
+**Base Class:** `BigIntegerField`.
 
 **Type:** `<class 'type'>`.
 
@@ -219,11 +220,12 @@ ValueError: PositiveDecimalField 'round_by' argument is not a Non-Zero Positive 
 ```python
 >>> from peewee_extra_fields import IPAddressField
 >>> IPAddressField().db_value("127.0.0.1")
-'127.0.0.1'
->>> IPAddressField().db_value("::1")
-'::1'
->>> IPAddressField().db_value("10.0.0.1")
-'10.0.0.1'
+2130706433
+>>> IPAddressField().db_value("fe80::12c3:7bff:fe92:9d4c")
+338288524927261089655370957493906873676
+>>> IPAddressField().python_value(338288524927261089655370957493906873676)
+IPv6Address('fe80::12c3:7bff:fe92:9d4c')
+
 >>> IPAddressField().db_value("10.0.256")
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -235,11 +237,6 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 
 ValueError: IPAddressField Value string is not a Valid IP v4 or v6 Address (valid values must be a valid <class 'ipaddress.IPv4Address'>): a.b.c --> 'a.b.c' does not appear to be an IPv4 or IPv6 address.
-
->>> IPAddressField().python_value("::1")
-IPv6Address('::1')
->>> IPAddressField().python_value("172.16.0.1")
-IPv4Address('172.16.0.1')
 ```
 </details>
 

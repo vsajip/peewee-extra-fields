@@ -144,9 +144,8 @@ class TestFields(unittest.TestCase):
         for value in valid_values:
             ip_addr = ip_address(value)
             self.assertEqual(IPAddressField().python_value(value), ip_addr)
-            self.assertEqual(IPAddressField().db_value(value), value)
             self.assertIsInstance(IPAddressField().python_value(value), (IPv4Address, IPv6Address))
-            self.assertIsInstance(IPAddressField().db_value(value), str)
+            self.assertIsInstance(IPAddressField().db_value(value), int)
 
         for value in invalid_values:
             with self.assertRaises(ValueError):

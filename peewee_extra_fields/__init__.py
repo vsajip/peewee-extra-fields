@@ -319,24 +319,25 @@ class SmallHexadecimalField(SmallIntegerField):
         return value
 
 
-class IPAddressField(CharField):
-    """CharField clone but only accepts IP Address values, returns ip_address.
+class IPAddressField(BigIntegerField):
+    """BigIntegerField clone but only accepts IP Address, returns ip_address.
+    This works transparently with IPv4 and IPv6 Addresses.
 
     Inspired by:
     docs.djangoproject.com/en/1.11/ref/models/fields/#genericipaddressfield and
     https://devdocs.io/python~3.6/library/ipaddress."""
 
-    def db_value(self, value: str) -> str:
-        if value and isinstance(value, str):
+    def db_value(self, value: str) -> int:
+        if value and isinstance(value, (str, int)):
             try:
                 ip_address(value)
             except Exception as error:
-                raise ValueError(f"""{self.__class__.__name__} Value string is
+                raise ValueError(f"""{self.__class__.__name__} IP Value is
                 not a Valid IP v4 or v6 Address (valid values must be a valid
                 {ip_address} {IPv4Address}): {value} --> {error}.""")
             else:
-                return value  # is a valid IPv4Address or IPv6Address.
-        return value          # is None.
+                return int(ip_address(value))  # Valid IPv4Address/IPv6Address.
+        return value                           # is None.
 
     def python_value(self, value: str) -> IPv4Address:
         return ip_address(value) if value else value
