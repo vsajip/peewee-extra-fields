@@ -1422,6 +1422,7 @@ after reading it from the database you can call:
 | :white_check_mark: | **Windows** | Works Ok    |
 
 ```
+
 </details>
 
 
