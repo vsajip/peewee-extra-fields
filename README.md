@@ -1251,7 +1251,7 @@ ValueError: USSocialSecurityNumberField Value is not a valid U.S.A. Social Secur
 
 `peewee_extra_fields.PickledField()`
 
-**Description:** Peewee [PickledField](http://docs.peewee-orm.com/en/2.7.0/search.html?q=PickledField) backported from 2.x Versions (literal copy & paste) to work with Peewee 3 and Python 3.
+**Description:** Peewee [PickledField](http://docs.peewee-orm.com/en/latest/search.html?q=PickledField) backported from 2.x Versions (literal copy & paste) to work with Peewee 3 and Python 3.
 Stores arbitrary python objects, stores values in a pickled `BlobField`.
 Internally uses `pickle.loads()` and `pickle.dumps()`.
 
@@ -1297,7 +1297,7 @@ b'\x80\x03X\x01\x00\x00\x00aq\x00.'
 
 `peewee_extra_fields.PasswordField()`
 
-**Description:** Peewee [PasswordField](http://docs.peewee-orm.com/en/2.7.0/peewee/playhouse.html?highlight=PasswordField#PasswordField) backported from 2.x Versions (literal copy & paste) to work with Peewee 3 and Python 3.
+**Description:** Peewee [PasswordField](http://docs.peewee-orm.com/en/latest/peewee/playhouse.html?highlight=PasswordField#PasswordField) backported from 2.x Versions (literal copy & paste) to work with Peewee 3 and Python 3.
 `PasswordField` stores a password hash and lets you verify it.
 The password is hashed when it is saved to the database and
 after reading it from the database you can call:
@@ -1348,7 +1348,7 @@ b'$2b$12$9CMSMQYPkZ5RsWWrZccw7eqGrCQF679BhDA4dz6rG/e70FbQmeG.6'
 
 `peewee_extra_fields.SimplePasswordField()`
 
-**Description:** Peewee [PasswordField](http://docs.peewee-orm.com/en/2.7.0/peewee/playhouse.html?highlight=PasswordField#PasswordField) re-implemented and simplified from 2.x Versions to work with Peewee 3 and Python 3 using new `secrets` and `hashlib` from standard library, without dependencies, dont need `bcrypt`,
+**Description:** Peewee [PasswordField](http://docs.peewee-orm.com/en/latest/peewee/playhouse.html?highlight=PasswordField#PasswordField) re-implemented and simplified from 2.x Versions to work with Peewee 3 and Python 3 using new `secrets` and `hashlib` from standard library, without dependencies, dont need `bcrypt`,
 internally uses `hashlib.pbkdf2_hmac()` and `secrets.compare_digest()`.
 Migration from `PasswordField` to `SimplePasswordField` is recommended when possible.
 
@@ -1392,6 +1392,38 @@ after reading it from the database you can call:
 ```
 
 </details>
+
+
+
+##### EnumField
+<details>
+
+`peewee_extra_fields.EnumField()`
+
+**Description:** Peewee [SmallIntegerField](http://docs.peewee-orm.com/en/latest/peewee/models.html?highlight=SmallIntegerField#fields) re-implemented to work with Pythons `enum.Enum`.
+
+**Arguments:**
+- `enum` a Python `enum.Enum` object, required, Enum type.
+
+**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `SmallIntegerField`).
+
+**Returns:** Whatever your Enum values has.
+
+**Base Class:** `SmallIntegerField`.
+
+**Type:** `<class 'type'>`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields/__init__.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+```
+</details>
+
 
 
 - [Check an actual working Example copied from official Peewee docs.](https://github.com/juancarlospaco/peewee-extra-fields/blob/master/example.py) Run it executing on the terminal command line: `python example.py`.

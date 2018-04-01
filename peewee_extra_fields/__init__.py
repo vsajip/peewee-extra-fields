@@ -1179,7 +1179,7 @@ class EnumField(SmallIntegerField):
         enum = self.get_enum()
         if value not in enum:
             raise ValueError((f"{self.__class__.__name__} the value must be "
-                             f"member of the enum: {value}, {enum}."))
+                              f"member of the enum: {value}, {enum}."))
 
 
 # class XMLField(Field):
