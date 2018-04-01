@@ -1394,7 +1394,6 @@ after reading it from the database you can call:
 </details>
 
 
-
 ##### EnumField
 <details>
 
@@ -1420,8 +1419,6 @@ after reading it from the database you can call:
 | :white_check_mark: | **Linux**   | Works Ok    |
 | :white_check_mark: | **Os X**    | Works Ok    |
 | :white_check_mark: | **Windows** | Works Ok    |
-
-```
 
 </details>
 
