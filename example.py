@@ -19,7 +19,6 @@ class Person(Model):  # All peewee_extra_fields.
     country = CountryISOCodeField()
     currency = CurrencyISOCodeField()
     language = LanguageISOCodeField()
-    ip = IPNetworkField()
     age = PositiveSmallIntegerField()
     interests = CSVField()
     mail = EmailField()
@@ -33,7 +32,7 @@ if __name__ in "__main__":
 
     zoe = Person(name="Zoe", birthday=date(1985, 1, 1), cuit="20-30900000-6",
                  postal_code="1010", country="ar", currency="usd",
-                 language="en", ip="::1", age=30, interests="python,peewee",
+                 language="en", age=30, interests="python,peewee",
                  mail="Zoe@Example.com", ip="10.0.0.1", color="#fe0", hexa="2f")
     zoe.save()
     del zoe  # Bye Zoe.
@@ -43,7 +42,6 @@ if __name__ in "__main__":
           Birthday:  {zoe.birthday},    Python Type: {type(zoe.birthday)}.
           CUIT:      {zoe.cuit},        Python Type: {type(zoe.cuit)}.
           Postal:    {zoe.postal_code}, Python Type: {type(zoe.postal_code)}.
-          IPv6:      {zoe.ip},          Python Type: {type(zoe.ip)}.
           Age:       {zoe.age},         Python Type: {type(zoe.age)}.
           interests: {zoe.interests},   Python Type: {type(zoe.interests)}.
           Country:   {zoe.country},     Python Type: {type(zoe.country)}.
