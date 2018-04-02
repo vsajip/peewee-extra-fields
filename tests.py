@@ -21,20 +21,18 @@ from peewee_extra_fields import *
 unittest.TestLoader.sortTestMethodsUsing = lambda _, x, y: randint(-1, 1)
 
 
+db = PostgresqlDatabase('travis_ci_test', field_types={'money': 'money'})
+db.connect()
+
+
 class TestFields(unittest.TestCase):
 
     """Peewee Extra Fields Unittests."""
 
-    maxDiff, __slots__, db = None, (), None
-
-    def setUp(self):
-        self.db = PostgresqlDatabase('travis_ci_test', field_types={'money': 'money'})
-        self.db.connect()
+    maxDiff, __slots__ = None, ()
 
     def tearDown(self):
-        self.db.drop_tables(self.db.get_tables(), fail_silently=True)
-        self.db.close()
-        del self.db
+        db.drop_tables(db.get_tables(), fail_silently=True)
 
     def test_PositiveIntegerField(self):
         valid_values = (0, 1, 2, 3, 9, 100, 1_000, 2_147_483_647)
@@ -456,9 +454,9 @@ class TestFields(unittest.TestCase):
         class Salary(Model):
             dollars = MoneyField()
             class Meta:
-                database = self.db
+                database = db
 
-        self.db.create_tables([Salary])
+        db.create_tables([Salary])
         invoice = Salary.create(dollars=1_024.75)
         invoice.save()
         salary = Salary.select()[0]
