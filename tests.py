@@ -458,6 +458,7 @@ class TestFields(unittest.TestCase):
         invoice.save()
         salary = Salary.select()[0]
         self.assertEqual(salary.dollars, '$1,024.75')
+        self.assertIsInstance(salary.dollars, str)
         invoice.delete_instance()
 
     def test_XMLField(self):
@@ -471,6 +472,7 @@ class TestFields(unittest.TestCase):
         vector_img.save()
         svg_img = SVGImage.select()[0]
         self.assertEqual(svg_img.data, "<svg><text>foo</text></svg>")
+        self.assertIsInstance(svg_img.data, str)
         vector_img.delete_instance()
 
 
