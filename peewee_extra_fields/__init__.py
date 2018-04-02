@@ -12,6 +12,7 @@ import re
 import secrets
 import string
 import struct
+import xml.etree.ElementTree as ET
 
 from collections import namedtuple
 from colorsys import rgb_to_hls, rgb_to_hsv, rgb_to_yiq
@@ -61,14 +62,14 @@ __all__ = (
     'RUPassportNumberField', 'SEZipCodeField', 'SKZipCodeField',
     'SWIFTISOCodeField', 'SemVerField', 'SimplePasswordField',
     'SmallHexadecimalField', 'UAZipCodeField', 'USSocialSecurityNumberField',
-    'USZipCodeField', 'UYCIField', 'MoneyField', 'FIELD_TYPES',
+    'USZipCodeField', 'UYCIField', 'MoneyField', 'FIELD_TYPES', 'XMLField'
 )
 
 
 ##############################################################################
 
 
-FIELD_TYPES = {'money': 'money'}
+FIELD_TYPES = {"money": "money", "xml": "xml"}
 
 ISO639_1: dict = frozendict(loads(
     (Path(__file__).parent / "languages-data.json").read_bytes()))
@@ -1042,28 +1043,22 @@ class MoneyField(Field):
         return value
 
 
-# class XMLField(Field):
-#     """XML Field, uses Native XML Database Type, accepts str.
-#
-#     https://www.postgresql.org/docs/current/static/datatype-xml.html."""
-#     field_type = 'xml'
-#
-#     def db_value(self, value):
-#         if value and isinstance(value, str):
-#             value = value.strip()
-#             try:
-#                 ET.fromstring(value)
-#             except Exception as error:
-#                 raise ValueError((
-#                     f"{self.__class__.__name__} Value is not valid XML data. "
-#                     f"(valid values must be parseable by {ET}): {error}."))
-#         return value
-#
-#     def python_value(self, value):
-#         return str(value) if value else value
-#
-#
+class XMLField(Field):
+    """XML Field, uses Native XML Database Type, accepts str.
 
+    https://www.postgresql.org/docs/current/static/datatype-xml.html."""
+    field_type = 'xml'
+
+    def db_value(self, value):
+        if value and isinstance(value, str):
+            value = value.strip()
+            try:
+                ET.fromstring(value)
+            except Exception as error:
+                raise ValueError((
+                    f"{self.__class__.__name__} Value is not valid XML data. "
+                    f"(valid values must be parseable by {ET}): {error}."))
+        return value
 
 
 # Most Wanted Fields:

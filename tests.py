@@ -460,6 +460,19 @@ class TestFields(unittest.TestCase):
         self.assertEqual(salary.dollars, '$1,024.75')
         invoice.delete_instance()
 
+    def test_XMLField(self):
+        class SVGImage(Model):
+            data = XMLField()
+            class Meta:
+                database = db
+
+        db.create_tables([SVGImage])
+        vector_img = SVGImage.create(data="<svg><text>foo</text></svg>")
+        vector_img.save()
+        svg_img = SVGImage.select()[0]
+        self.assertEqual(svg_img.data, "<svg><text>foo</text></svg>")
+        vector_img.delete_instance()
+
 
 if __name__.__contains__("__main__"):
     print(__doc__)
