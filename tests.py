@@ -455,8 +455,8 @@ class TestFields(unittest.TestCase):
         db.create_tables([Dinero])
         invoice = Dinero.create(dollars=1_024.75)
         invoice.save()
-        quering = Dinero.select()
-        print(f"Query: {quering}")
+        quering = Dinero.select()[0]
+        print(f"MoneyField Query: {quering}.")
         invoice.delete_instance()
 
 
