@@ -25,17 +25,16 @@ class TestFields(unittest.TestCase):
 
     """Peewee Extra Fields Unittests."""
 
-    maxDiff, __slots__ = None, ()
+    maxDiff, __slots__, db = None, (), None
 
     def setUp(self):
-        global db
-        db = PostgresqlDatabase('travis_ci_test', field_types={'money': 'money'})
-        db.connect()
+        self.db = PostgresqlDatabase('travis_ci_test', field_types={'money': 'money'})
+        self.db.connect()
 
     def tearDown(self):
-        db.drop_tables(db.get_tables(), fail_silently=True)
-        db.close()
-        del db
+        self.db.drop_tables(self.db.get_tables(), fail_silently=True)
+        self.db.close()
+        del self.db
 
     def test_PositiveIntegerField(self):
         valid_values = (0, 1, 2, 3, 9, 100, 1_000, 2_147_483_647)
@@ -457,9 +456,9 @@ class TestFields(unittest.TestCase):
         class Salary(Model):
             dollars = MoneyField()
             class Meta:
-                database = db
+                database = self.db
 
-        db.create_tables([Salary])
+        self.db.create_tables([Salary])
         invoice = Salary.create(dollars=1_024.75)
         invoice.save()
         salary = Salary.select()[0]
