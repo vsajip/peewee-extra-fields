@@ -14,6 +14,7 @@ import string
 import struct
 import xml.etree.ElementTree as ET
 
+from array import array
 from collections import namedtuple
 from colorsys import rgb_to_hls, rgb_to_hsv, rgb_to_yiq
 from datetime import date, datetime
@@ -62,14 +63,14 @@ __all__ = (
     'RUPassportNumberField', 'SEZipCodeField', 'SKZipCodeField',
     'SWIFTISOCodeField', 'SemVerField', 'SimplePasswordField',
     'SmallHexadecimalField', 'UAZipCodeField', 'USSocialSecurityNumberField',
-    'USZipCodeField', 'UYCIField', 'MoneyField', 'FIELD_TYPES', 'XMLField'
+    'USZipCodeField', 'UYCIField', 'MoneyField', 'FIELD_TYPES', 'XMLField', 'ArrayField'
 )
 
 
 ##############################################################################
 
 
-FIELD_TYPES = {"money": "money", "xml": "xml"}
+FIELD_TYPES = {"money": "money", "xml": "xml", "array": "array"}
 
 ISO639_1: dict = frozendict(loads(
     (Path(__file__).parent / "languages-data.json").read_bytes()))
@@ -1046,6 +1047,7 @@ class MoneyField(Field):
 class XMLField(Field):
     """XML Field, uses Native XML Database Type, accepts str.
 
+    Works with XML, SVG, XHTML, etc.
     https://www.postgresql.org/docs/current/static/datatype-xml.html."""
     field_type = 'xml'
 
@@ -1058,6 +1060,20 @@ class XMLField(Field):
                 raise ValueError((
                     f"{self.__class__.__name__} Value is not valid XML data. "
                     f"(valid values must be parseable by {ET}): {error}."))
+        return value
+
+
+class ArrayField(Field):
+     """Array Field, uses Native Array Database Type, accepts array.array.
+
+     https://www.postgresql.org/docs/current/static/arrays.html."""
+     field_type = 'array'
+
+     def db_value(self, value):
+        if not isinstance(value, array):
+            raise TypeError((
+                f"{self.__class__.__name__} Array value must be of Type "
+                f"{type(array)}: {value}, {type(value)}."))
         return value
 
 
