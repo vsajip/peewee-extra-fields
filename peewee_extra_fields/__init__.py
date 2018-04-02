@@ -503,7 +503,7 @@ class PastDateTimeField(DateTimeField):
                     pass   # this datetime_format does not match value.
                 else:
                     break  # this datetime_format match value.
-            if valid_datetime > datetime.utcnow():
+            if valid_datetime.today() > date.today():
                 raise ValueError(f"""{self.__class__.__name__} Dates & Times
                 Value is not in the Past (valid values must be in the Past):
                 {valid_datetime}, {value} > {datetime.utcnow().isoformat()}""")
