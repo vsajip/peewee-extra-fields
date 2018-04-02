@@ -200,6 +200,7 @@ Difference with Peewee `IPField` is that it supports IPv6, is a little bit faste
 can do checking whether or not two hosts are on the same subnet,
 iterating over all hosts in a particular subnet,
 checking whether or not a string represents a valid IP address or network definition, etc etc.
+[Difference between Peewee IPField and this IPAddressField.](https://github.com/coleifer/peewee/issues/1556#issuecomment-377934019)
 
 **Arguments:** None (should take the same `*args` and `**kwargs` as `BigIntegerField`).
 
