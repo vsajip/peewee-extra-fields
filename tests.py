@@ -31,9 +31,6 @@ class TestFields(unittest.TestCase):
 
     maxDiff, __slots__ = None, ()
 
-    def tearDown(self):
-        db.drop_tables(db.get_tables() or [], fail_silently=True)
-
     def test_PositiveIntegerField(self):
         valid_values = (0, 1, 2, 3, 9, 100, 1_000, 2_147_483_647)
         invalid_values = (-1, -2, -3, -9, -100, -1_000, -100_000, -100_000)
