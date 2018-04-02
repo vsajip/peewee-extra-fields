@@ -20,8 +20,12 @@ class Person(Model):  # All peewee_extra_fields.
     currency = CurrencyISOCodeField()
     language = LanguageISOCodeField()
     ip = IPNetworkField()
-    age = PositiveIntegerField()
+    age = PositiveSmallIntegerField()
     interests = CSVField()
+    mail = EmailField()
+    ip = IPAddressField()
+    color = ColorHexadecimalField()
+    hexa = SmallHexadecimalField()
 
 
 if __name__ in "__main__":
@@ -29,7 +33,8 @@ if __name__ in "__main__":
 
     zoe = Person(name="Zoe", birthday=date(1985, 1, 1), cuit="20-30900000-6",
                  postal_code="1010", country="ar", currency="usd",
-                 language="en", ip="::1", age=30, interests="python,peewee")
+                 language="en", ip="::1", age=30, interests="python,peewee",
+                 mail="Zoe@Example.com", ip="10.0.0.1", color="#fe0", hexa="2f")
     zoe.save()
     del zoe  # Bye Zoe.
 
@@ -43,4 +48,8 @@ if __name__ in "__main__":
           interests: {zoe.interests},   Python Type: {type(zoe.interests)}.
           Country:   {zoe.country},     Python Type: {type(zoe.country)}.
           Currency:  {zoe.currency},    Python Type: {type(zoe.currency)}.
-          Language:  {zoe.language},    Python Type: {type(zoe.language)}.""")
+          Language:  {zoe.language},    Python Type: {type(zoe.language)}.
+          Mail:      {zoe.mail},        Python Type: {type(zoe.mail)}.
+          IP:        {zoe.ip},          Python Type: {type(zoe.ip)}.
+          Color:     {zoe.color},       Python Type: {type(zoe.color)}.
+          Hexa:      {zoe.hexa},        Python Type: {type(zoe.hexa)}.""")
