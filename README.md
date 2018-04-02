@@ -1424,6 +1424,76 @@ after reading it from the database you can call:
 </details>
 
 
+##### MoneyField
+<details>
+
+`peewee_extra_fields.MoneyField()`
+
+**Description:** Peewee custom Field implemented to work with Monetary values,
+[uses Native Money database type](https://www.postgresql.org/docs/current/static/datatype-money.html),
+for Money values is faster than using Python `float` or `Decimal` fields,
+provides automatic smart formatting on money values,
+requires the argument `field_types=peewee_extra_fields.FIELD_TYPES`
+when instancing the Postgres connection like `db = PostgresqlDatabase('test', field_types=peewee_extra_fields.FIELD_TYPES)`,
+value limits are from $ -92233720368547758.08 to $ +92233720368547758.07.
+
+**Arguments:**
+- `value` A Monetary value, required, 1 of `int`, `float`, `str`, `Decimal` or None types.
+
+**Keyword Arguments:** None.
+
+**Returns:** str.
+
+**Base Class:** `Field`.
+
+**Type:** `<class 'type'>`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields/__init__.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+</details>
+
+
+##### XMLField
+<details>
+
+`peewee_extra_fields.XMLField()`
+
+**Description:** Peewee custom Field implemented to work with XML like values,
+[uses Native XML database type](https://www.postgresql.org/docs/current/static/datatype-xml.html),
+for XML like values is faster than using Python `str` fields,
+requires the argument `field_types=peewee_extra_fields.FIELD_TYPES`
+when instancing the Postgres connection like `db = PostgresqlDatabase('test', field_types=peewee_extra_fields.FIELD_TYPES)`,
+values are parsed using Pythons `xml.etree.ElementTree.fromstring(value)`,
+works with XML, SVG, XHTML, etc.
+
+**Arguments:**
+- `value` Valid XML value, required, `str` type.
+
+**Keyword Arguments:** None.
+
+**Returns:** str.
+
+**Base Class:** `Field`.
+
+**Type:** `<class 'type'>`.
+
+**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields/__init__.py
+
+| State              | OS          | Description |
+| ------------------ |:-----------:| -----------:|
+| :white_check_mark: | **Linux**   | Works Ok    |
+| :white_check_mark: | **Os X**    | Works Ok    |
+| :white_check_mark: | **Windows** | Works Ok    |
+
+</details>
+
+
 
 - [Check an actual working Example copied from official Peewee docs.](https://github.com/juancarlospaco/peewee-extra-fields/blob/master/example.py) Run it executing on the terminal command line: `python example.py`.
 
