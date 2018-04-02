@@ -450,6 +450,8 @@ class TestFields(unittest.TestCase):
     def test_MoneyField(self):
         class Salary(Model):
             dollars = MoneyField()
+            class Meta:
+                database = db
 
         db.create_tables([Salary])
         invoice = Salary.create(dollars=1_024.75)
