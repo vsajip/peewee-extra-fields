@@ -443,6 +443,17 @@ class TestFields(unittest.TestCase):
             with self.assertRaises(ValueError):
                 SemVerField().db_value(value)
 
+    def test_MoneyField(self):
+        db = PostgresqlDatabase('travis_ci_test', field_types={'money': 'money'})
+        db.connect()
+        db.create_tables([testing])
+
+        class Dinero(Model):
+            name = MoneyField()
+            class Meta:
+                database = db
+                table_name = 'testing'
+
 
 if __name__.__contains__("__main__"):
     print(__doc__)

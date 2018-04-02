@@ -26,8 +26,8 @@ from types import MappingProxyType as frozendict
 from urllib.parse import urlencode
 
 from peewee import (BigIntegerField, BlobField, CharField, DateField,
-                    DateTimeField, DecimalField, FixedCharField, FloatField,
-                    IntegerField, SmallIntegerField)
+                    DateTimeField, DecimalField, Field, FixedCharField,
+                    FloatField, IntegerField, SmallIntegerField)
 
 from .regex_fields import *
 from .legacy_fields import *
@@ -61,7 +61,7 @@ __all__ = (
     'RUPassportNumberField', 'SEZipCodeField', 'SKZipCodeField',
     'SWIFTISOCodeField', 'SemVerField', 'SimplePasswordField',
     'SmallHexadecimalField', 'UAZipCodeField', 'USSocialSecurityNumberField',
-    'USZipCodeField', 'UYCIField',
+    'USZipCodeField', 'UYCIField', 'MoneyField',
 )
 
 
@@ -1025,6 +1025,21 @@ class EnumField(SmallIntegerField):
                               f"member of the enum: {value}, {enum}."))
 
 
+class MoneyField(Field):
+     """Money Field, uses Native Monetary Database Type, accepts int,float,str.
+
+     8 Bytes, from $ -92233720368547758.08 to $ +92233720368547758.07.
+     https://www.postgresql.org/docs/current/static/datatype-money.html."""
+     field_type = 'money'
+
+     def db_value(self, value):
+        if not isinstance(value, (int, float, str, Decimal, type(None)):
+            raise TypeError((
+                f"{self.__class__.__name__} Monetary value must be of Type "
+                f"int, float, str, Decimal or None: {value}, {type(value)}."))
+        return value
+
+
 # class XMLField(Field):
 #     """XML Field, uses Native XML Database Type, accepts str.
 #
@@ -1046,12 +1061,7 @@ class EnumField(SmallIntegerField):
 #         return str(value) if value else value
 #
 #
-# class MoneyField(Field):
-#     """Money Field, uses Native Monetary Database Type, accepts int,float,str.
-#
-#     8 Bytes, from $ -92233720368547758.08 to $ +92233720368547758.07.
-#     https://www.postgresql.org/docs/current/static/datatype-money.html."""
-#     field_type = 'money'
+
 
 
 # Most Wanted Fields:
