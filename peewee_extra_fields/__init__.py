@@ -1033,7 +1033,7 @@ class MoneyField(Field):
      field_type = 'money'
 
      def db_value(self, value):
-        if not isinstance(value, (int, float, str, Decimal, type(None)):
+        if not isinstance(value, (int, float, str, Decimal, type(None))):
             raise TypeError((
                 f"{self.__class__.__name__} Monetary value must be of Type "
                 f"int, float, str, Decimal or None: {value}, {type(value)}."))
