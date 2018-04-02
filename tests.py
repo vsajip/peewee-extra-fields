@@ -446,13 +446,13 @@ class TestFields(unittest.TestCase):
     def test_MoneyField(self):
         db = PostgresqlDatabase('travis_ci_test', field_types={'money': 'money'})
         db.connect()
-        db.create_tables([testing])
 
         class Dinero(Model):
             name = MoneyField()
             class Meta:
                 database = db
-                table_name = 'testing'
+
+        db.create_tables([Dinero])
 
 
 if __name__.__contains__("__main__"):
