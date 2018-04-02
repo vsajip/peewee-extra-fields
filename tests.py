@@ -27,6 +27,16 @@ class TestFields(unittest.TestCase):
 
     maxDiff, __slots__ = None, ()
 
+    def setUp(self):
+        global db
+        db = PostgresqlDatabase('travis_ci_test', field_types={'money': 'money'})
+        db.connect()
+
+    def tearDown(self):
+        db.drop_tables(db.get_tables(), fail_silently=True)
+        db.close()
+        del db
+
     def test_PositiveIntegerField(self):
         valid_values = (0, 1, 2, 3, 9, 100, 1_000, 2_147_483_647)
         invalid_values = (-1, -2, -3, -9, -100, -1_000, -100_000, -100_000)
@@ -444,9 +454,6 @@ class TestFields(unittest.TestCase):
                 SemVerField().db_value(value)
 
     def test_MoneyField(self):
-        db = PostgresqlDatabase('travis_ci_test', field_types={'money': 'money'})
-        db.connect()
-
         class Salary(Model):
             dollars = MoneyField()
             class Meta:
