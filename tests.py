@@ -457,7 +457,7 @@ class TestFields(unittest.TestCase):
         invoice = Salary.create(dollars=1_024.75)
         invoice.save()
         salary = Salary.select()[0]
-        print(f"MoneyField Test Query: {salary.dollars}.")
+        self.assertEqual(salary.dollars, 1_024.75)
         invoice.delete_instance()
 
 
