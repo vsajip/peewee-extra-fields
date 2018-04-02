@@ -14,7 +14,6 @@ import string
 import struct
 import xml.etree.ElementTree as ET
 
-from array import array
 from collections import namedtuple
 from colorsys import rgb_to_hls, rgb_to_hsv, rgb_to_yiq
 from datetime import date, datetime
@@ -51,26 +50,26 @@ __all__ = (
     'CZZipCodeField', 'CharFieldCustom', 'ColorHexadecimalField',
     'CountryISOCodeField', 'CurrencyISOCodeField', 'DEZipCodeField',
     'EEZipCodeField', 'ESZipCodeField', 'EmailField', 'EnumField',
-    'GRZipCodeField', 'HROIBField', 'HexadecimalField', 'IANCodeField',
-    'IBANISOCodeField', 'ILZipCodeField', 'INZipCodeField', 'IPAddressField',
-    'IPNetworkField', 'ISIdNumberField', 'JPZipCodeField',
+    'FIELD_TYPES', 'GRZipCodeField', 'HROIBField', 'HexadecimalField',
+    'IANCodeField', 'IBANISOCodeField', 'ILZipCodeField', 'INZipCodeField',
+    'IPAddressField', 'IPNetworkField', 'ISIdNumberField', 'JPZipCodeField',
     'LanguageISOCodeField', 'MKIdentityCardNumberField', 'MTZipCodeField',
-    'MXZipCodeField', 'PLNIPField', 'PLNationalIDCardNumberField',
-    'PLZipCodeField', 'PTZipCodeField', 'PasswordField', 'PastDateField',
-    'PastDateTimeField', 'PickledField', 'PositiveBigIntegerField',
-    'PositiveDecimalField', 'PositiveFloatField', 'PositiveIntegerField',
-    'PositiveSmallIntegerField', 'ROCIFField', 'ROCNPField', 'ROZipCodeField',
-    'RUPassportNumberField', 'SEZipCodeField', 'SKZipCodeField',
-    'SWIFTISOCodeField', 'SemVerField', 'SimplePasswordField',
-    'SmallHexadecimalField', 'UAZipCodeField', 'USSocialSecurityNumberField',
-    'USZipCodeField', 'UYCIField', 'MoneyField', 'FIELD_TYPES', 'XMLField', 'ArrayField'
+    'MXZipCodeField', 'MoneyField', 'PLNIPField',
+    'PLNationalIDCardNumberField', 'PLZipCodeField', 'PTZipCodeField',
+    'PasswordField', 'PastDateField', 'PastDateTimeField', 'PickledField',
+    'PositiveBigIntegerField', 'PositiveDecimalField', 'PositiveFloatField',
+    'PositiveIntegerField', 'PositiveSmallIntegerField', 'ROCIFField',
+    'ROCNPField', 'ROZipCodeField', 'RUPassportNumberField', 'SEZipCodeField',
+    'SKZipCodeField', 'SWIFTISOCodeField', 'SemVerField',
+    'SimplePasswordField', 'SmallHexadecimalField', 'UAZipCodeField',
+    'USSocialSecurityNumberField', 'USZipCodeField', 'UYCIField', 'XMLField',
 )
 
 
 ##############################################################################
 
 
-FIELD_TYPES = {"money": "money", "xml": "xml", "array": "array"}
+FIELD_TYPES = {"money": "money", "xml": "xml"}
 
 ISO639_1: dict = frozendict(loads(
     (Path(__file__).parent / "languages-data.json").read_bytes()))
@@ -1060,20 +1059,6 @@ class XMLField(Field):
                 raise ValueError((
                     f"{self.__class__.__name__} Value is not valid XML data. "
                     f"(valid values must be parseable by {ET}): {error}."))
-        return value
-
-
-class ArrayField(Field):
-     """Array Field, uses Native Array Database Type, accepts array.array.
-
-     https://www.postgresql.org/docs/current/static/arrays.html."""
-     field_type = 'array'
-
-     def db_value(self, value):
-        if not isinstance(value, array):
-            raise TypeError((
-                f"{self.__class__.__name__} Array value must be of Type "
-                f"{type(array)}: {value}, {type(value)}."))
         return value
 
 

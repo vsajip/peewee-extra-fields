@@ -475,20 +475,6 @@ class TestFields(unittest.TestCase):
         self.assertIsInstance(svg_img.data, str)
         vector_img.delete_instance()
 
-    def test_ArrayField(self):
-        class ArrayStuff(Model):
-            data = ArrayField()
-            class Meta:
-                database = db
-
-        db.create_tables([ArrayStuff])
-        thingy = ArrayStuff.create(data=array('u', 'hello world'))
-        thingy.save()
-        arrays = ArrayStuff.select()[0]
-        self.assertEqual(arrays.data, array('u', 'hello world'))
-        # self.assertIsInstance(arrays.data, str)
-        thingy.delete_instance()
-
 
 if __name__.__contains__("__main__"):
     print(__doc__)
