@@ -196,6 +196,10 @@ ValueError: PositiveDecimalField 'round_by' argument is not a Non-Zero Positive 
 
 **Description:** [`BigIntegerField`](http://docs.peewee-orm.com/en/latest/peewee/models.html#field-types-table) subclass but only accepts **IP Addresses** values (IPv4 & IPv6).
 IPAddressField uses BigIntegerField for maximum performance.
+Difference with Peewee `IPField` is that it supports IPv6, is a little bit faster,
+can do checking whether or not two hosts are on the same subnet,
+iterating over all hosts in a particular subnet,
+checking whether or not a string represents a valid IP address or network definition, etc etc.
 
 **Arguments:** None (should take the same `*args` and `**kwargs` as `BigIntegerField`).
 
