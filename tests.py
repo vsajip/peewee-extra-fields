@@ -448,11 +448,16 @@ class TestFields(unittest.TestCase):
         db.connect()
 
         class Dinero(Model):
-            name = MoneyField()
+            dollars = MoneyField()
             class Meta:
                 database = db
 
         db.create_tables([Dinero])
+        invoice = Dinero.create(dollars=1_024.75)
+        invoice.save()
+        quering = Dinero.select()
+        print(f"Query: {quering}")
+        invoice.delete_instance()
 
 
 if __name__.__contains__("__main__"):
