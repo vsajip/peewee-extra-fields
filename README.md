@@ -1400,7 +1400,7 @@ after reading it from the database you can call:
 
 `peewee_extra_fields.EnumField()`
 
-**Description:** Peewee [SmallIntegerField](http://docs.peewee-orm.com/en/latest/peewee/models.html?highlight=SmallIntegerField#fields) re-implemented to work with Pythons `enum.Enum`.
+**Description:** Peewee [SmallIntegerField](http://docs.peewee-orm.com/en/latest/peewee/models.html?highlight=SmallIntegerField#fields) re-implemented to work with [Pythons `enum.Enum`](https://devdocs.io/python~3.6/library/enum#enum.Enum).
 
 **Arguments:**
 - `enum` a Python `enum.Enum` object, required, Enum type.
