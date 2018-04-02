@@ -4,18 +4,18 @@ python:
   - 3.6
   - 3.7
 
+services:
+  - postgresql
 
 install:
   - pip install peewee --quiet
   - pip install .
 
-
-before_script: rm --recursive --force --verbose *.py[cod]
-
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
 
 script:
   - python -m unittest --verbose --locals tests.TestFields
-
 
 notifications:
   email:
@@ -23,11 +23,9 @@ notifications:
     on_success: change
     on_failure: always
 
-
 cache:
   apt: true
   pip: true
-
 
 matrix:
   fast_finish: true
