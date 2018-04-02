@@ -447,16 +447,16 @@ class TestFields(unittest.TestCase):
         db = PostgresqlDatabase('travis_ci_test', field_types={'money': 'money'})
         db.connect()
 
-        class Dinero(Model):
+        class Salary(Model):
             dollars = MoneyField()
             class Meta:
                 database = db
 
-        db.create_tables([Dinero])
-        invoice = Dinero.create(dollars=1_024.75)
+        db.create_tables([Salary])
+        invoice = Salary.create(dollars=1_024.75)
         invoice.save()
-        quering = Dinero.select()[0]
-        print(f"MoneyField Query: {quering}.")
+        salary = Salary.select()[0]
+        print(f"MoneyField Test Query: {salary.dollars}.")
         invoice.delete_instance()
 
 
