@@ -61,12 +61,14 @@ __all__ = (
     'RUPassportNumberField', 'SEZipCodeField', 'SKZipCodeField',
     'SWIFTISOCodeField', 'SemVerField', 'SimplePasswordField',
     'SmallHexadecimalField', 'UAZipCodeField', 'USSocialSecurityNumberField',
-    'USZipCodeField', 'UYCIField', 'MoneyField',
+    'USZipCodeField', 'UYCIField', 'MoneyField', 'FIELD_TYPES',
 )
 
 
 ##############################################################################
 
+
+FIELD_TYPES = {'money': 'money'}
 
 ISO639_1: dict = frozendict(loads(
     (Path(__file__).parent / "languages-data.json").read_bytes()))

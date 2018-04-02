@@ -21,7 +21,7 @@ from peewee_extra_fields import *
 unittest.TestLoader.sortTestMethodsUsing = lambda _, x, y: randint(-1, 1)
 
 
-db = PostgresqlDatabase('travis_ci_test', field_types={'money': 'money'})
+db = PostgresqlDatabase('travis_ci_test', field_types=FIELD_TYPES)
 db.connect()
 
 
