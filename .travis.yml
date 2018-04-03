@@ -1,3 +1,5 @@
+sudo: true
+
 language: python
 
 python:
@@ -9,7 +11,7 @@ services:
 
 install:
   - pip install peewee psycopg2-binary --quiet
-  - apt-get install disorderfs
+  - sudo apt-get install disorderfs
   - pip install .
 
 before_script:
