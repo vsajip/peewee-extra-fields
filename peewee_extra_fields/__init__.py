@@ -49,7 +49,7 @@ __all__ = (
     'CNZipCodeField', 'CONITField', 'CSVField', 'CUZipCodeField',
     'CZZipCodeField', 'CharFieldCustom', 'ColorHexadecimalField',
     'CountryISOCodeField', 'CurrencyISOCodeField', 'DEZipCodeField',
-    'EEZipCodeField', 'ESZipCodeField', 'EmailField', 'EnumField',
+    'EEZipCodeField', 'ESZipCodeField', 'EmailField',  # 'EnumField',
     'FIELD_TYPES', 'GRZipCodeField', 'HROIBField', 'HexadecimalField',
     'IANCodeField', 'IBANISOCodeField', 'ILZipCodeField', 'INZipCodeField',
     'IPAddressField', 'IPNetworkField', 'ISIdNumberField', 'JPZipCodeField',
