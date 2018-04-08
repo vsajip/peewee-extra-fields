@@ -65,11 +65,7 @@ def find_this(search, source=SOURCE):
         what=search), re.S).match(source).group(1)).strip()
 
 
-print("Starting build of setuptools.setup().")
-
-
 ##############################################################################
-# EDIT HERE
 
 
 setup(
@@ -97,9 +93,9 @@ setup(
 
     tests_require=['isort', 'prospector', 'pre-commit', 'pre-commit-hooks'],
     python_requires='>=3.6',
-    install_requires=["peewee"],
-    setup_requires=["peewee"],
-    requires=["peewee"],
+    install_requires=["peewee", "psycopg2-binary"],
+    setup_requires=["peewee", "psycopg2-binary"],
+    requires=["peewee", "psycopg2-binary"],
 
     packages=["peewee_extra_fields"],
 
