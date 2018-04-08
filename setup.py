@@ -95,7 +95,7 @@ setup(
     python_requires='>=3.6',
     install_requires=["peewee", "psycopg2-binary"],
     setup_requires=["peewee", "psycopg2-binary"],
-    requires=["peewee", "psycopg2-binary"],
+    requires=["peewee"],
 
     packages=["peewee_extra_fields"],
 
