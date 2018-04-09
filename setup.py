@@ -29,9 +29,6 @@
 """Setup.py for Python, as Generic as possible."""
 
 
-import os
-import re
-
 from setuptools import setup
 
 
@@ -39,107 +36,6 @@ from setuptools import setup
 # EDIT HERE
 
 
-MODULE_PATH = os.path.join(os.path.dirname(__file__),
-                           "peewee_extra_fields", "__init__.py")
-
-
-##############################################################################
-# Dont touch below
-
-
-try:
-    with open(str(MODULE_PATH), "r", encoding="utf-8-sig") as source_code_file:
-        SOURCE = source_code_file.read()
-except Exception:
-    with open(str(MODULE_PATH),  "r") as source_code_file:
-        SOURCE = source_code_file.read()
-
-
-def find_this(search, source=SOURCE):
-    """Take a string and a filename path string and return the found value."""
-    print("Searching for {what}.".format(what=search))
-    if not search or not source:
-        print("Not found on source: {what}.".format(what=search))
-        return ""
-    return str(re.compile(r'.*__{what}__ = "(.*?)"'.format(
-        what=search), re.S).match(source).group(1)).strip()
-
-
-##############################################################################
-
-
 setup(
-
-    name="peewee_extra_fields",
-    version=find_this("version"),
-
-    description="""Extra Fields for Peewee ORM.""",
-    long_description="""Extra Fields for Peewee ORM. CSVField, CharFieldCustom,
-    CountryISOCodeField, CurrencyISOCodeField, IPAddressField, IPNetworkField,
-    LanguageISOCodeField, PastDateField, PastDateTimeField, PositiveDecimalField,
-    PositiveFloatField, PositiveIntegerField and more, with tests and examples.""",
-
-    url=find_this("url"),
-    download_url=find_this("url"),
-    license=find_this("license"),
-
-    author=find_this("author"),
-    author_email=find_this("email"),
-    maintainer=find_this("maintainer"),
-    maintainer_email=find_this("email"),
-
-    include_package_data=True,
-    zip_safe=True,
-
-    tests_require=['isort', 'prospector', 'pre-commit', 'pre-commit-hooks'],
-    python_requires='>=3.6',
-    install_requires=["peewee", "psycopg2-binary"],
-    setup_requires=["peewee", "psycopg2-binary"],
-    requires=["peewee"],
-
     packages=["peewee_extra_fields"],
-
-    keywords="peewee minimalism orm iso3166 iso4217 iso639 ipv4-address ipv6-address csv orm-extension python3 argentina".split(),
-
-    classifiers=[
-
-        'Development Status :: 5 - Production/Stable',
-        'Development Status :: 6 - Mature',
-
-        'Environment :: Console',
-        'Environment :: X11 Applications',
-        'Environment :: No Input/Output (Daemon)',
-        'Environment :: Other Environment',
-
-        'Intended Audience :: Developers',
-        'Intended Audience :: System Administrators',
-        'Intended Audience :: Other Audience',
-
-        'Natural Language :: English',
-
-        'License :: OSI Approved :: GNU General Public License (GPL)',
-        'License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)',
-        'License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)',
-        'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
-
-        'Operating System :: OS Independent',
-        'Operating System :: POSIX :: Linux',
-        'Operating System :: Microsoft :: Windows',
-        'Operating System :: MacOS :: MacOS X',
-
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3 :: Only',
-        'Programming Language :: Python :: 3.6',
-
-        'Programming Language :: Python :: Implementation :: CPython',
-
-        'Topic :: Software Development',
-        'Topic :: Software Development :: Libraries',
-        'Topic :: Software Development :: Libraries :: Python Modules',
-
-    ],
 )
-
-
-print("Finished build of setuptools.setup().")
