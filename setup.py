@@ -26,16 +26,9 @@
 # python3 setup.py bdist_egg bdist_wheel --universal sdist --formats=zip upload --sign
 
 
-"""Setup.py for Python, as Generic as possible."""
-
-
 from setuptools import setup
-
-
-##############################################################################
-# EDIT HERE
-
-
 setup(
     packages=["peewee_extra_fields"],
 )
+
+# ALL THE CONFIG LIVES IN SETUP.CFG,PLEASE EDIT THERE,KEEP IT SIMPLE AND CLEAN.
