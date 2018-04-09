@@ -101,7 +101,7 @@ def post_install_cythonize():
         site_packages = get_python_lib()
     gcc, cythoniz = which("gcc"), which("cythonize")
     if gcc and cythoniz and site_packages and sys.platform.startswith("linux"):
-        py_files = [(Path(site_packages) / f) for f in MODULES2CYTHONIZE]
+        py_files = [str(Path(site_packages) / f) for f in MODULES2CYTHONIZE]
         comand = f"{cythoniz} -3 --inplace --keep-going {' '.join(py_files)}"
         return run(comand, shell=True, timeout=99, check=True)
     else:
