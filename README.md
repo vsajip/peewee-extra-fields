@@ -1545,7 +1545,9 @@ then you can import the generated `*.so` module as a normal Python module.
 
 Its 100% Optional, but recommend. We check that Cython Compiles on Travis.
 
-[Please check Cython documentation for more info.](https://cython.readthedocs.io)
+The Packages on PyPi dont have any `*.c`, `*.cpp`, `*.pyc`, `*.so`.
+
+[Cython is used by lots of projects and companies.](https://github.com/cython/cython/wiki/projects#projects-using-cython) [Please check Cython documentation for more info.](https://cython.readthedocs.io)
 
 </details>
 
