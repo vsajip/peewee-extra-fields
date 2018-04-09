@@ -30,7 +30,7 @@ from peewee import (BigIntegerField, BlobField, CharField, DateField,
                     DateTimeField, DecimalField, Field, FixedCharField,
                     FloatField, IntegerField, SmallIntegerField)
 
-from playhouse.postgres_ext.PostgresqlExtDatabase import register_fields
+from playhouse.postgres_ext import PostgresqlExtDatabase
 
 from .regex_fields import *
 from .legacy_fields import *
@@ -1062,7 +1062,7 @@ class XMLField(Field):
         return value
 
 
-register_fields({"money": "money", "xml": "xml"})
+PostgresqlExtDatabase.register_fields({"money": "money", "xml": "xml"})
 
 
 # Most Wanted Fields:
