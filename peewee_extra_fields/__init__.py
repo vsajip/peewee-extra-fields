@@ -36,7 +36,7 @@ from .ar_fields import *
 from .us_fields import *
 
 
-__version__ = "2.5.5"
+__version__ = "2.7.5"
 __license__ = "GPLv3+ LGPLv3+"
 __author__ = "Juan Carlos"
 __email__ = "juancarlospaco@gmail.com"
@@ -49,12 +49,12 @@ __all__ = (
     'CNZipCodeField', 'CONITField', 'CSVField', 'CUZipCodeField',
     'CZZipCodeField', 'CharFieldCustom', 'ColorHexadecimalField',
     'CountryISOCodeField', 'CurrencyISOCodeField', 'DEZipCodeField',
-    'EEZipCodeField', 'ESZipCodeField', 'EmailField',  # 'EnumField',
-    'FIELD_TYPES', 'GRZipCodeField', 'HROIBField', 'HexadecimalField',
-    'IANCodeField', 'IBANISOCodeField', 'ILZipCodeField', 'INZipCodeField',
-    'IPAddressField', 'IPNetworkField', 'ISIdNumberField', 'JPZipCodeField',
-    'LanguageISOCodeField', 'MKIdentityCardNumberField', 'MTZipCodeField',
-    'MXZipCodeField', 'MoneyField', 'PLNIPField', 'DateTimeTZRangeField',
+    'DateTimeTZRangeField', 'EEZipCodeField', 'ESZipCodeField', 'EmailField',
+    'FIELD_TYPES', 'GRZipCodeField', 'HROIBField',  # 'EnumField',
+    'HexadecimalField', 'IANCodeField', 'IBANISOCodeField', 'ILZipCodeField',
+    'INZipCodeField', 'IPAddressField', 'IPNetworkField', 'ISIdNumberField',
+    'JPZipCodeField', 'LanguageISOCodeField', 'MKIdentityCardNumberField',
+    'MTZipCodeField', 'MXZipCodeField', 'MoneyField', 'PLNIPField',
     'PLNationalIDCardNumberField', 'PLZipCodeField', 'PTZipCodeField',
     'PasswordField', 'PastDateField', 'PastDateTimeField', 'PickledField',
     'PositiveBigIntegerField', 'PositiveDecimalField', 'PositiveFloatField',
