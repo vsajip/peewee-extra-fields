@@ -57,7 +57,7 @@ MODULES2CYTHONIZE = ("peewee_extra_fields/ar_fields.py",
 
 
 def post_install_cythonize():
-    """Compiles *.PY to *.SO using Cython,deletes *.C & *.PY if sucessful."""
+    """Compile *.PY to *.SO with Cython,delete *.PYC,*.C,*.PY if sucessful."""
     import sys
     from pathlib import Path
     from shutil import which, rmtree
