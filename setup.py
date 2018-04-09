@@ -55,55 +55,36 @@ MODULES2CYTHONIZE = ("peewee_extra_fields/ar_fields.py",
 ##############################################################################
 # Dont touch below
 
-#
-# def post_install_cythonize():
-#     """Compiles *.PY to *.SO using Cython,deletes *.C & *.PY if sucessful."""
-#     import sys
-#     from pathlib import Path
-#     from shutil import which, rmtree
-#     from subprocess import run
-#     from distutils.sysconfig import get_python_lib
-#     from site import getsitepackages
-#     site_packages = getsitepackages()[0]
-#     # site_packages = get_python_lib()
-#     gcc, cythoniz = which("gcc"), which("cythonize")
-#     if gcc and cythoniz and site_packages and sys.platform.startswith("linux"):
-#         for py_file in [(Path(site_packages) / f) for f in MODULES2CYTHONIZE]:
-#             if py_file.is_file():
-#                 comand = f"{cythoniz} -3 --inplace --force {py_file}"
-#                 try:
-#                     run(comand, shell=True, timeout=99, check=True)
-#                 except Exception as error:
-#                     print(error)
-#                 else:
-#                     print(f"CREATED Binary file: {py_file.with_suffix('.so')}")
-#                     if py_file.with_suffix(".c").is_file():
-#                         py_file.with_suffix(".c").unlink()  # is C Obfuscated.
-#                     if py_file.is_file():
-#                         print(f"DELETED unused file: {py_file}")
-#                         py_file.unlink()  # Because *.SO exist and is faster.
-#                     rmtree(py_file.parent / "__pycache__", ignore_errors=True)
-#     else:
-#         print("GCC & Cython not found, install GCC & Cython for Speed up.")
-
 
 def post_install_cythonize():
     """Compiles *.PY to *.SO using Cython,deletes *.C & *.PY if sucessful."""
     import sys
     from pathlib import Path
-    from shutil import which
+    from shutil import which, rmtree
     from subprocess import run
     try:
         from site import getsitepackages
         site_packages = getsitepackages()[0]
-    except (ImportError, Exception):  # Dont exist inside a virtualenv.
+    except (ImportError, Exception):
         from distutils.sysconfig import get_python_lib
         site_packages = get_python_lib()
     gcc, cythoniz = which("gcc"), which("cythonize")
     if gcc and cythoniz and site_packages and sys.platform.startswith("linux"):
-        py_files = [str(Path(site_packages) / f) for f in MODULES2CYTHONIZE]
-        comand = f"{cythoniz} -3 --inplace --keep-going {' '.join(py_files)}"
-        return run(comand, shell=True, timeout=99, check=True)
+        for py_file in [(Path(site_packages) / f) for f in MODULES2CYTHONIZE]:
+            if py_file.is_file():
+                comand = f"{cythoniz} -3 --inplace --force {py_file}"
+                try:
+                    run(comand, shell=True, timeout=99, check=True)
+                except Exception as error:
+                    print(error)
+                else:
+                    print(f"CREATED Binary file: {py_file.with_suffix('.so')}")
+                    if py_file.with_suffix(".c").is_file():
+                        py_file.with_suffix(".c").unlink()  # is C Obfuscated.
+                    if py_file.is_file():
+                        print(f"DELETED unused file: {py_file}")
+                        py_file.unlink()  # Because *.SO exist and is faster.
+                    rmtree(py_file.parent / "__pycache__", ignore_errors=True)
     else:
         print("GCC & Cython not found, install GCC & Cython for Speed up.")
 
