@@ -32,8 +32,8 @@ class ARCUITField(CharField):
     @staticmethod
     def get_html_widget(clas: tuple=None, ids: str=None,
                         required: bool=False) -> str:
-        clas = f'''class="{' '.join(clas)}" ''' if clas else ""
-        ids = f'id="{ids}" ' if ids else ""
+        klas = f'''class="{' '.join(clas)}" ''' if clas else ""
+        idz = f'id="{ids}" ' if ids else ""
         r = "required " if required else ""
-        return ('<input type="text" name="cuit" placeholder="CUIT Argentino" '
-                f'{ids}{clas}{r}minlength="10" maxlength="13" size="13">\n')
+        return str('<input type="text" name="cuit" placeholder="CUIT Argentino"'
+                   f' {idz}{klas}{r}minlength="10" maxlength="13" size="13">\n')
