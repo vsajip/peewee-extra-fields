@@ -25,37 +25,27 @@
 # sudo pip install --upgrade pip setuptools wheel virtualenv
 # python3 setup.py bdist_egg bdist_wheel --universal sdist --formats=zip upload --sign
 #
+#
 # How to check if your modules are Cythonizable ?:
 # cython -3 --verbose --no-docstrings your_module.py   # Pure Python,needs a *.pxd
 # cython -3 --verbose --no-docstrings your_module.pyx  # Cython Syntax,dont need *.px
 # gcc -O3 -march=native -shared -fPIC -I /usr/include/python3.6 -o your_module.so your_module.c
 
 
-"""Setup.py for Python, as Generic as possible."""
+"""Generic Setup.py.
+
+ALL THE CONFIG LIVES IN SETUP.CFG,PLEASE EDIT THERE,KEEP IT SIMPLE AND CLEAN."""
 
 
-import os
-import re
+import atexit
 
-from pathlib import Path
-
-from setuptools import setup, Extension
-
-try:
-    from Cython.Build import cythonize
-except ImportError:
-    cythonize = None
-    print(f"Cython not found, install Cython for Speed up: pip install cython")
-
-
-from distutils.command import build as build_module
+from setuptools import setup
 
 
 ##############################################################################
 # EDIT HERE
 
 
-SOURCE = (Path(__file__).parent / "peewee_extra_fields" / "__init__.py").read_text()
 MODULES2CYTHONIZE = ("peewee_extra_fields/ar_fields.py",
                      "peewee_extra_fields/us_fields.py",
                      "peewee_extra_fields/legacy_fields.py",
@@ -65,25 +55,59 @@ MODULES2CYTHONIZE = ("peewee_extra_fields/ar_fields.py",
 ##############################################################################
 # Dont touch below
 
+#
+# def post_install_cythonize():
+#     """Compiles *.PY to *.SO using Cython,deletes *.C & *.PY if sucessful."""
+#     import sys
+#     from pathlib import Path
+#     from shutil import which, rmtree
+#     from subprocess import run
+#     from distutils.sysconfig import get_python_lib
+#     from site import getsitepackages
+#     site_packages = getsitepackages()[0]
+#     # site_packages = get_python_lib()
+#     gcc, cythoniz = which("gcc"), which("cythonize")
+#     if gcc and cythoniz and site_packages and sys.platform.startswith("linux"):
+#         for py_file in [(Path(site_packages) / f) for f in MODULES2CYTHONIZE]:
+#             if py_file.is_file():
+#                 comand = f"{cythoniz} -3 --inplace --force {py_file}"
+#                 try:
+#                     run(comand, shell=True, timeout=99, check=True)
+#                 except Exception as error:
+#                     print(error)
+#                 else:
+#                     print(f"CREATED Binary file: {py_file.with_suffix('.so')}")
+#                     if py_file.with_suffix(".c").is_file():
+#                         py_file.with_suffix(".c").unlink()  # is C Obfuscated.
+#                     if py_file.is_file():
+#                         print(f"DELETED unused file: {py_file}")
+#                         py_file.unlink()  # Because *.SO exist and is faster.
+#                     rmtree(py_file.parent / "__pycache__", ignore_errors=True)
+#     else:
+#         print("GCC & Cython not found, install GCC & Cython for Speed up.")
 
-class vuild(build_module.build):
-  def run(self):
-    # *.PY --> *.C
-    cythons = cythonize(MODULES2CYTHONIZE, nthreads=9, exclude_failures=True, language_level=3)
-    # *.C --> *.SO
-    extensions = [
-        Extension(str(Path(e).with_suffix("")).replace(os.sep, "."), s.sources, extra_compile_args=["-O3", "-finline-functions", "-shared"])
-        for e, s in zip(MODULES2CYTHONIZE, cythons)]
 
-    # Delete all *.C
-    for c_files in cythons:
-        for file2delete in c_files.sources:
-            print(file2delete)
-            # Path(file2delete).unlink()
+def post_install_cythonize():
+    """Compiles *.PY to *.SO using Cython,deletes *.C & *.PY if sucessful."""
+    import sys
+    from pathlib import Path
+    from shutil import which
+    from subprocess import run
+    from site import getsitepackages
+    site_packages = getsitepackages()[0]
+    # from distutils.sysconfig import get_python_lib
+    # site_packages = get_python_lib()
+    gcc, cythoniz = which("gcc"), which("cythonize")
+    if gcc and cythoniz and site_packages and sys.platform.startswith("linux"):
+        py_files = [(Path(site_packages) / f) for f in MODULES2CYTHONIZE]
+        comand = f"{cythoniz} -3 --inplace --keep-going {' '.join(py_files)}"
+        return run(comand, shell=True, timeout=99, check=True)
+    else:
+        print("GCC & Cython not found, install GCC & Cython for Speed up.")
 
-    build_module.build.run(self)
 
+atexit.register(post_install_cythonize)
 
 setup(
-    # cmdclass = {'build': vuild},
+    packages=["peewee_extra_fields"],
 )
