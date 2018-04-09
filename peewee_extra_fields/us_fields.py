@@ -72,7 +72,7 @@ class USSocialSecurityNumberField(FixedCharField):
                 valid U.S.A. Social Security Number string (XXX-XX-XXXX format)
                 (promo & permanently invalid numbers): {value} -> {area}.""")
 
-            return f"{area}-{group}-{serial}"
+            return str(f"{area}-{group}-{serial}")
 
         return value
 
