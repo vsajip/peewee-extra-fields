@@ -96,7 +96,7 @@ def post_install_cythonize():
     try:
         from site import getsitepackages
         site_packages = getsitepackages()[0]
-    except (ImportError, Exception):
+    except (ImportError, Exception):  # Dont exist inside a virtualenv.
         from distutils.sysconfig import get_python_lib
         site_packages = get_python_lib()
     gcc, cythoniz = which("gcc"), which("cythonize")

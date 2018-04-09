@@ -8,7 +8,7 @@ services:
   - postgresql
 
 install:
-  - pip install peewee psycopg2-binary --quiet
+  - pip install peewee psycopg2-binary cython --quiet
   - pip install .
 
 before_script:
