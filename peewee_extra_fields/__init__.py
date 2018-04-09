@@ -54,7 +54,7 @@ __all__ = (
     'IANCodeField', 'IBANISOCodeField', 'ILZipCodeField', 'INZipCodeField',
     'IPAddressField', 'IPNetworkField', 'ISIdNumberField', 'JPZipCodeField',
     'LanguageISOCodeField', 'MKIdentityCardNumberField', 'MTZipCodeField',
-    'MXZipCodeField', 'MoneyField', 'PLNIPField',
+    'MXZipCodeField', 'MoneyField', 'PLNIPField', 'DateTimeTZRangeField',
     'PLNationalIDCardNumberField', 'PLZipCodeField', 'PTZipCodeField',
     'PasswordField', 'PastDateField', 'PastDateTimeField', 'PickledField',
     'PositiveBigIntegerField', 'PositiveDecimalField', 'PositiveFloatField',
@@ -69,7 +69,7 @@ __all__ = (
 ##############################################################################
 
 
-FIELD_TYPES = {"money": "money", "xml": "xml"}
+FIELD_TYPES = {"money": "money", "xml": "xml", "tstzrange": "tstzrange"}
 
 ISO639_1: dict = frozendict(loads(
     (Path(__file__).parent / "languages-data.json").read_bytes()))
@@ -227,6 +227,28 @@ class PositiveDecimalField(DecimalField):
             value = Decimal(value).quantize(
                 Decimal(10) ** -self.round_by).normalize()
 
+        return value
+
+
+class HexadecimalField(BlobField):
+    """Hexadecimal String Field,stores arbitrary Hexadecimal as Binary.
+
+    Useful for Promo Codes, Redeem Codes, Invitation Codes, etc etc."""
+    regex = r"^(([0-9A-f])|(0x[0-9A-f]))+$"
+
+    def db_value(self, value):
+        if value and isinstance(value, str):
+            if not re.match(self.regex, value):
+                raise ValueError((
+                    f"{self.__class__.__name__}: Value is not Hexadecimal. "
+                    f"(valid values must match a Regex {self.regex}): {value}."
+                ))
+            return binascii.unhexlify(value)
+        return value
+
+    def python_value(self, value):
+        if value:
+            return binascii.hexlify(value).decode(encoding='UTF-8')
         return value
 
 
@@ -1060,6 +1082,11 @@ class XMLField(Field):
                     f"{self.__class__.__name__} Value is not valid XML data. "
                     f"(valid values must be parseable by {ET}): {error}."))
         return value
+
+
+class DateTimeTZRangeField(Field):
+    """Date&Time Time Zone Field usin 'tstzrange' PostgreSQL type."""
+    db_field = 'tstzrange'
 
 
 # Most Wanted Fields:
