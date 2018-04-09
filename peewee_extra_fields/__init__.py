@@ -30,6 +30,8 @@ from peewee import (BigIntegerField, BlobField, CharField, DateField,
                     DateTimeField, DecimalField, Field, FixedCharField,
                     FloatField, IntegerField, SmallIntegerField)
 
+from playhouse.postgres_ext.PostgresqlExtDatabase import register_fields
+
 from .regex_fields import *
 from .legacy_fields import *
 from .ar_fields import *
