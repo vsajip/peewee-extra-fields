@@ -37,12 +37,6 @@ from .us_fields import *
 
 
 __version__ = "2.7.5"
-__license__ = "GPLv3+ LGPLv3+"
-__author__ = "Juan Carlos"
-__email__ = "juancarlospaco@gmail.com"
-__contact__ = "https://t.me/juancarlospaco"
-__maintainer__ = "Juan Carlos"
-__url__ = "https://github.com/juancarlospaco/peewee-extra-fields"
 __all__ = (
     'ARCUITField', 'ARZipCodeField', 'ATZipCodeField', 'AUZipCodeField',
     'BEZipCodeField', 'BRZipCodeField', 'CHZipCodeField', 'CLRutField',
