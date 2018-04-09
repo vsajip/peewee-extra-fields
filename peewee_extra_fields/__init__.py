@@ -36,7 +36,7 @@ from .ar_fields import *
 from .us_fields import *
 
 
-__version__ = "2.5.5"
+__version__ = "2.7.5"
 __license__ = "GPLv3+ LGPLv3+"
 __author__ = "Juan Carlos"
 __email__ = "juancarlospaco@gmail.com"
@@ -50,7 +50,7 @@ __all__ = (
     'CZZipCodeField', 'CharFieldCustom', 'ColorHexadecimalField',
     'CountryISOCodeField', 'CurrencyISOCodeField', 'DEZipCodeField',
     'EEZipCodeField', 'ESZipCodeField', 'EmailField',  # 'EnumField',
-    'FIELD_TYPES', 'GRZipCodeField', 'HROIBField', 'HexadecimalField',
+    'GRZipCodeField', 'HROIBField', 'HexadecimalField',
     'IANCodeField', 'IBANISOCodeField', 'ILZipCodeField', 'INZipCodeField',
     'IPAddressField', 'IPNetworkField', 'ISIdNumberField', 'JPZipCodeField',
     'LanguageISOCodeField', 'MKIdentityCardNumberField', 'MTZipCodeField',
@@ -68,8 +68,6 @@ __all__ = (
 
 ##############################################################################
 
-
-FIELD_TYPES = {"money": "money", "xml": "xml"}
 
 ISO639_1: dict = frozendict(loads(
     (Path(__file__).parent / "languages-data.json").read_bytes()))
@@ -1060,6 +1058,9 @@ class XMLField(Field):
                     f"{self.__class__.__name__} Value is not valid XML data. "
                     f"(valid values must be parseable by {ET}): {error}."))
         return value
+
+
+register_fields({"money": "money", "xml": "xml"})
 
 
 # Most Wanted Fields:
