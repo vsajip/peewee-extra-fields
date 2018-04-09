@@ -24,6 +24,11 @@
 # To Upload to PyPI by executing:
 # sudo pip install --upgrade pip setuptools wheel virtualenv
 # python3 setup.py bdist_egg bdist_wheel --universal sdist --formats=zip upload --sign
+#
+# How to check if your modules are Cythonizable ?:
+# cython -3 --verbose --no-docstrings your_module.py   # Pure Python,needs a *.pxd
+# cython -3 --verbose --no-docstrings your_module.pyx  # Cython Syntax,dont need *.px
+# gcc -O3 -march=native -shared -fPIC -I /usr/include/python3.6 -o your_module.so your_module.c
 
 
 """Setup.py for Python, as Generic as possible."""
@@ -32,114 +37,53 @@
 import os
 import re
 
-from setuptools import setup
+from pathlib import Path
+
+from setuptools import setup, Extension
+
+try:
+    from Cython.Build import cythonize
+except ImportError:
+    cythonize = None
+    print(f"Cython not found, install Cython for Speed up: pip install cython")
+
+
+from distutils.command import build as build_module
 
 
 ##############################################################################
 # EDIT HERE
 
 
-MODULE_PATH = os.path.join(os.path.dirname(__file__),
-                           "peewee_extra_fields", "__init__.py")
+SOURCE = (Path(__file__).parent / "peewee_extra_fields" / "__init__.py").read_text()
+MODULES2CYTHONIZE = ("peewee_extra_fields/ar_fields.py",
+                     "peewee_extra_fields/us_fields.py",
+                     "peewee_extra_fields/legacy_fields.py",
+                     "peewee_extra_fields/regex_fields.py")
 
 
 ##############################################################################
 # Dont touch below
 
 
-try:
-    with open(str(MODULE_PATH), "r", encoding="utf-8-sig") as source_code_file:
-        SOURCE = source_code_file.read()
-except Exception:
-    with open(str(MODULE_PATH),  "r") as source_code_file:
-        SOURCE = source_code_file.read()
+class vuild(build_module.build):
+  def run(self):
+    # *.PY --> *.C
+    cythons = cythonize(MODULES2CYTHONIZE, nthreads=9, exclude_failures=True, language_level=3)
+    # *.C --> *.SO
+    extensions = [
+        Extension(str(Path(e).with_suffix("")).replace(os.sep, "."), s.sources, extra_compile_args=["-O3", "-finline-functions", "-shared"])
+        for e, s in zip(MODULES2CYTHONIZE, cythons)]
 
+    # Delete all *.C
+    for c_files in cythons:
+        for file2delete in c_files.sources:
+            print(file2delete)
+            # Path(file2delete).unlink()
 
-def find_this(search, source=SOURCE):
-    """Take a string and a filename path string and return the found value."""
-    print("Searching for {what}.".format(what=search))
-    if not search or not source:
-        print("Not found on source: {what}.".format(what=search))
-        return ""
-    return str(re.compile(r'.*__{what}__ = "(.*?)"'.format(
-        what=search), re.S).match(source).group(1)).strip()
-
-
-##############################################################################
+    build_module.build.run(self)
 
 
 setup(
-
-    name="peewee_extra_fields",
-    version=find_this("version"),
-
-    description="""Extra Fields for Peewee ORM.""",
-    long_description="""Extra Fields for Peewee ORM. CSVField, CharFieldCustom,
-    CountryISOCodeField, CurrencyISOCodeField, IPAddressField, IPNetworkField,
-    LanguageISOCodeField, PastDateField, PastDateTimeField, PositiveDecimalField,
-    PositiveFloatField, PositiveIntegerField and more, with tests and examples.""",
-
-    url=find_this("url"),
-    download_url=find_this("url"),
-    license=find_this("license"),
-
-    author=find_this("author"),
-    author_email=find_this("email"),
-    maintainer=find_this("maintainer"),
-    maintainer_email=find_this("email"),
-
-    include_package_data=True,
-    zip_safe=True,
-
-    tests_require=['isort', 'prospector', 'pre-commit', 'pre-commit-hooks'],
-    python_requires='>=3.6',
-    install_requires=["peewee", "psycopg2-binary"],
-    setup_requires=["peewee", "psycopg2-binary"],
-    requires=["peewee", "psycopg2-binary"],
-
-    packages=["peewee_extra_fields"],
-
-    keywords="peewee minimalism orm iso3166 iso4217 iso639 ipv4-address ipv6-address csv orm-extension python3 argentina".split(),
-
-    classifiers=[
-
-        'Development Status :: 5 - Production/Stable',
-        'Development Status :: 6 - Mature',
-
-        'Environment :: Console',
-        'Environment :: X11 Applications',
-        'Environment :: No Input/Output (Daemon)',
-        'Environment :: Other Environment',
-
-        'Intended Audience :: Developers',
-        'Intended Audience :: System Administrators',
-        'Intended Audience :: Other Audience',
-
-        'Natural Language :: English',
-
-        'License :: OSI Approved :: GNU General Public License (GPL)',
-        'License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)',
-        'License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)',
-        'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
-
-        'Operating System :: OS Independent',
-        'Operating System :: POSIX :: Linux',
-        'Operating System :: Microsoft :: Windows',
-        'Operating System :: MacOS :: MacOS X',
-
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3 :: Only',
-        'Programming Language :: Python :: 3.6',
-
-        'Programming Language :: Python :: Implementation :: CPython',
-
-        'Topic :: Software Development',
-        'Topic :: Software Development :: Libraries',
-        'Topic :: Software Development :: Libraries :: Python Modules',
-
-    ],
+    # cmdclass = {'build': vuild},
 )
-
-
-print("Finished build of setuptools.setup().")
