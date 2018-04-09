@@ -93,10 +93,12 @@ def post_install_cythonize():
     from pathlib import Path
     from shutil import which
     from subprocess import run
-    from site import getsitepackages
-    site_packages = getsitepackages()[0]
-    # from distutils.sysconfig import get_python_lib
-    # site_packages = get_python_lib()
+    try:
+        from site import getsitepackages
+        site_packages = getsitepackages()[0]
+    except (ImportError, Exception):
+        from distutils.sysconfig import get_python_lib
+        site_packages = get_python_lib()
     gcc, cythoniz = which("gcc"), which("cythonize")
     if gcc and cythoniz and site_packages and sys.platform.startswith("linux"):
         py_files = [(Path(site_packages) / f) for f in MODULES2CYTHONIZE]
