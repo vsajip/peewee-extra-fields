@@ -69,12 +69,12 @@ class ARZipCodeField(_BaseRegexField):
     @staticmethod
     def get_html_widget(clas: tuple=None, ids: str=None,
                         required: bool=False) -> str:
-        clas = f'''class="{' '.join(clas)}" ''' if clas else ""
-        ids = f'id="{ids}" ' if ids else ""
+        klas = f'''class="{' '.join(clas)}" ''' if clas else ""
+        idz = f'id="{ids}" ' if ids else ""
         r = "required " if required else ""
-        return (f'<input type="text" name="postal-code" {ids}{clas}{r} '
-                'placeholder="Codigo Postal Argentino" '
-                'minlength="4" maxlength="8" size="8">\n')
+        return str(f'<input type="text" name="postal-code" {idz}{klas}{r} '
+                   'placeholder="Codigo Postal Argentino" '
+                   'minlength="4" maxlength="8" size="8">\n')
 
 
 class USZipCodeField(_BaseRegexField):
