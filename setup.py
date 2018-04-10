@@ -59,6 +59,7 @@ MODULES2CYTHONIZE = ("peewee_extra_fields/ar_fields.py",
 def post_install_cythonize():
     """Compile *.PY to *.SO with Cython,delete *.PYC,*.C,*.PY if sucessful."""
     import sys
+    import os
     from pathlib import Path
     from shutil import which, rmtree
     from subprocess import run
@@ -71,7 +72,7 @@ def post_install_cythonize():
     gcc, cythoniz = which("gcc"), which("cythonize")
     if gcc and cythoniz and site_packages and sys.platform.startswith("linux"):
         for py_file in [(Path(site_packages) / f) for f in MODULES2CYTHONIZE]:
-            if py_file.is_file():
+            if py_file.is_file() and os.access(py_file, os.W_OK):
                 comand = f"{cythoniz} -3 --inplace --force {py_file}"
                 try:
                     run(comand, shell=True, timeout=99, check=True)
@@ -84,7 +85,7 @@ def post_install_cythonize():
                     if py_file.is_file():
                         print(f"DELETED unused file: {py_file}")
                         py_file.unlink()  # Because *.SO exist and is faster.
-                    rmtree(py_file.parent / "__pycache__", ignore_errors=True)
+                rmtree(py_file.parent / "__pycache__", ignore_errors=True)
     else:
         print("GCC & Cython not found, install GCC & Cython for Speed up.")
 
