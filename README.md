@@ -1513,6 +1513,7 @@ pip install peewee_extra_fields
 **Optional:**
 
 - [BCrypt](https://github.com/pyca/bcrypt) *(Only for PasswordField)*
+- [Cython](http://cython.org) *(Speed Up)*
 
 
 # Tests
@@ -1530,26 +1531,26 @@ pytest
 - [Test Templates.](https://gist.github.com/juancarlospaco/040fbe326631e638f2a540fe8c1f2092)
 
 
-### Why?
+# Speed
 
-This is not designed to replace Validators AKA Schemas. We use and recommend Schemas.
+<details>
+<summary>Maximum performance for advanced Linux users.</summary>
 
-This is to give more context and make Peewee for Humans.
-
-Lets imagine you have a `Charfield` with value `"al"` and the Validator returns `True`.
-But whats `"al"`?, the republic of Albania?, the US State of Alabama?, a wrong value?,
-some abbreviation?, a short-code?, some other ISO standard?, a name?, a random string?.
-
-
-But if you have a `CountryISOCodeField` you already know you are working with Countries,
-and the field follows the ISO-3166, and the string is a Country Code,
-and that the string value will Validate if it respects the Standard ISO-3166, then you see:
-
-```python
-CountryISO3166(iso3166_a3='ALB', iso3166_numeric=8, capital='Tirana', continent='Europe', currency_code='ALL', currency_name='Lek', geoname_id=783754, is_developed=True, is_independent=True, languages=['sq', 'el'], name='Albania', name_human='The Republic Of Albania', phone_code='355', timezones=['europe/tirane'], tld='.al')
+```
+sudo pip install cython
 ```
 
-That gives a lot more context, than just an `"al"`. :smile_cat:
+Cython basically translates Python 3 to C and then Compiles C to Binary,
+then you can import the generated `*.so` module as a normal Python module.
+
+Its 100% Optional, but recommend. We check that Cython Compiles on Travis.
+
+You dont have to learn anything about Cython, it just works automatically.
+The Packages on PyPi dont have any `*.c`, `*.cpp`, `*.pyc`, `*.so`.
+
+[Cython is used by lots of projects and companies.](https://github.com/cython/cython/wiki/projects#projects-using-cython) [Please check Cython documentation for more info.](https://cython.readthedocs.io)
+
+</details>
 
 
 ### Contributors:
