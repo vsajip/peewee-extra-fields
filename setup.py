@@ -24,11 +24,74 @@
 # To Upload to PyPI by executing:
 # sudo pip install --upgrade pip setuptools wheel virtualenv
 # python3 setup.py bdist_egg bdist_wheel --universal sdist --formats=zip upload --sign
+#
+#
+# How to check if your modules are Cythonizable ?:
+# cython -3 --verbose --no-docstrings your_module.py   # Pure Python,needs a *.pxd
+# cython -3 --verbose --no-docstrings your_module.pyx  # Cython Syntax,dont need *.px
+# gcc -O3 -march=native -shared -fPIC -I /usr/include/python3.6 -o your_module.so your_module.c
 
+
+"""Generic Setup.py.
+
+ALL THE CONFIG LIVES IN SETUP.CFG,PLEASE EDIT THERE,KEEP IT SIMPLE AND CLEAN."""
+
+
+import atexit
 
 from setuptools import setup
+
+
+##############################################################################
+# EDIT HERE
+
+
+MODULES2CYTHONIZE = ("peewee_extra_fields/ar_fields.py",
+                     "peewee_extra_fields/us_fields.py",
+                     "peewee_extra_fields/legacy_fields.py",
+                     "peewee_extra_fields/regex_fields.py")
+
+
+##############################################################################
+# Dont touch below
+
+
+def post_install_cythonize():
+    """Compile *.PY to *.SO with Cython,delete *.PYC,*.C,*.PY if sucessful."""
+    import sys
+    import os
+    from pathlib import Path
+    from shutil import which, rmtree
+    from subprocess import run
+    try:
+        from site import getsitepackages
+        site_packages = getsitepackages()[0]
+    except (ImportError, Exception):
+        from distutils.sysconfig import get_python_lib
+        site_packages = get_python_lib()
+    gcc, cythoniz = which("gcc"), which("cythonize")
+    if gcc and cythoniz and site_packages and sys.platform.startswith("linux"):
+        for py_file in [(Path(site_packages) / f) for f in MODULES2CYTHONIZE]:
+            if py_file.is_file() and os.access(py_file, os.W_OK):
+                comand = f"{cythoniz} -3 --inplace --force {py_file}"
+                try:
+                    run(comand, shell=True, timeout=99, check=True)
+                except Exception as error:
+                    print(error)
+                else:
+                    print(f"CREATED Binary file: {py_file.with_suffix('.so')}")
+                    if py_file.with_suffix(".c").is_file():
+                        py_file.with_suffix(".c").unlink()  # is C Obfuscated.
+                    if py_file.is_file():
+                        print(f"DELETED unused file: {py_file}")
+                        py_file.unlink()  # Because *.SO exist and is faster.
+                rmtree(py_file.parent / "__pycache__", ignore_errors=True)
+    else:
+        print("GCC & Cython not found, install GCC & Cython for Speed up.")
+
+
+atexit.register(post_install_cythonize)
+
 setup(
     packages=["peewee_extra_fields"],
 )
-
-# ALL THE CONFIG LIVES IN SETUP.CFG,PLEASE EDIT THERE,KEEP IT SIMPLE AND CLEAN.

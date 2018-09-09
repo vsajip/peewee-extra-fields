@@ -53,13 +53,6 @@ class SemVerField(_BaseRegexField):
         r"a-z-]+(?:\.[\da-z-]+)*)?(?:\+[\da-z-]+(?:\.[\da-z-]+)*)?\b")
 
 
-class HexadecimalField(_BaseRegexField):
-    """Hexadecimal String Field,stores arbitrary Hexadecimal string(255 Chars).
-
-    Useful for Promo Codes, Redeem Codes, Invitation Codes, etc etc."""
-    regex = r"^(([0-9A-f])|(0x[0-9A-f]))+$"
-
-
 class ARZipCodeField(_BaseRegexField):
     """Argentine Postal Codes Field (old & new)."""
     min_length = 4
@@ -69,12 +62,12 @@ class ARZipCodeField(_BaseRegexField):
     @staticmethod
     def get_html_widget(clas: tuple=None, ids: str=None,
                         required: bool=False) -> str:
-        clas = f'''class="{' '.join(clas)}" ''' if clas else ""
-        ids = f'id="{ids}" ' if ids else ""
+        klas = f'''class="{' '.join(clas)}" ''' if clas else ""
+        idz = f'id="{ids}" ' if ids else ""
         r = "required " if required else ""
-        return (f'<input type="text" name="postal-code" {ids}{clas}{r} '
-                'placeholder="Codigo Postal Argentino" '
-                'minlength="4" maxlength="8" size="8">\n')
+        return str(f'<input type="text" name="postal-code" {idz}{klas}{r} '
+                   'placeholder="Codigo Postal Argentino" '
+                   'minlength="4" maxlength="8" size="8">\n')
 
 
 class USZipCodeField(_BaseRegexField):

@@ -20,7 +20,6 @@ from peewee_extra_fields import *
 # Random order for tests runs. (Original is: -1 if x<y, 0 if x==y, 1 if x>y).
 unittest.TestLoader.sortTestMethodsUsing = lambda _, x, y: randint(-1, 1)
 
-
 db = PostgresqlDatabase('travis_ci_test', field_types=FIELD_TYPES)
 db.connect()
 

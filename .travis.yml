@@ -6,16 +6,19 @@ python:
 services:
   - postgresql
 
+before_install:
+  - pip install peewee psycopg2-binary cython --quiet
+
 install:
-  - pip install peewee psycopg2-binary --quiet
   - pip install .
 
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
 
 script:
-  - python -m unittest --verbose --locals tests.TestFields
   - python setup.py bdist_egg bdist_wheel --universal sdist --formats=zip
+  - python -m unittest --verbose --locals tests.TestFields
+
 
 notifications:
   email:
