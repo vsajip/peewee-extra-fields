@@ -8,14 +8,14 @@ from peewee import Model, SqliteDatabase
 from peewee_extra_fields import *
 
 
-db = SqliteDatabase('')
+db = SqliteDatabase('testing.db')
 
 
 class Person(Model):  # All peewee_extra_fields.
     name = CharFieldCustom()
     birthday = PastDateField()
     cuit = ARCUITField()
-    postal_code = ARPostalCodeField()
+    postal_code = ARZipCodeField()
     country = CountryISOCodeField()
     currency = CurrencyISOCodeField()
     language = LanguageISOCodeField()
@@ -25,6 +25,9 @@ class Person(Model):  # All peewee_extra_fields.
     ip = IPAddressField()
     color = ColorHexadecimalField()
     hexa = SmallHexadecimalField()
+
+    class Meta:
+        database = db
 
 
 if __name__ in "__main__":
