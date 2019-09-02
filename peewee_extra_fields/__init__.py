@@ -1031,7 +1031,7 @@ class EnumField(SmallIntegerField):
         return member.value
 
     def get_enum(self):
-        return getattr(self.model_class, self.verbose_name)
+        return self.enum
 
     def python_value(self, value):
         enum = self.get_enum()
