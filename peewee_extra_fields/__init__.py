@@ -14,6 +14,11 @@ import string
 import struct
 import xml.etree.ElementTree as ET
 
+try:
+    import ujson as json
+except ImportError:
+    import json
+
 from collections import namedtuple
 from colorsys import rgb_to_hls, rgb_to_hsv, rgb_to_yiq
 from datetime import date, datetime
@@ -1049,9 +1054,9 @@ class MoneyField(Field):
 
      8 Bytes, from $ -92233720368547758.08 to $ +92233720368547758.07.
      https://www.postgresql.org/docs/current/static/datatype-money.html."""
-     field_type = 'money'
+    field_type = 'money'
 
-     def db_value(self, value):
+    def db_value(self, value):
         if not isinstance(value, (int, float, str, Decimal, type(None))):
             raise TypeError((
                 f"{self.__class__.__name__} Monetary value must be of Type "
@@ -1081,6 +1086,42 @@ class XMLField(Field):
 class DateTimeTZRangeField(Field):
     """Date&Time Time Zone Field usin 'tstzrange' PostgreSQL type."""
     db_field = 'tstzrange'
+
+
+class JSONField(CharField):
+    """json field"""
+
+    field_type = "json"
+
+    def __init__(self, ensure_ascii=False, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.ensure_ascii = ensure_ascii
+
+
+    def db_value(self, value):
+        if "" == value or 0 == len(value):
+            value = "{}"
+
+        elif (value) and (isinstance(value, list) or isinstance(value, dict)):
+            ensure_ascii = self.ensure_ascii
+            value = json.dumps(value, ensure_ascii=ensure_ascii)  # list -> str
+
+        elif not self.is_json(value):
+            raise ValueError
+
+        return value
+
+    def python_value(self, value):
+        return json.loads(value)
+
+    def is_json(myjson):
+        try:
+            json_object = json.loads(myjson)
+            resoinse = True
+        except TypeError as e:
+            response = False
+
+        return response
 
 
 # Most Wanted Fields:
