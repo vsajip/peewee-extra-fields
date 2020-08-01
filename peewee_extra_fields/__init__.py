@@ -1050,10 +1050,10 @@ class EnumField(SmallIntegerField):
 
 
 class MoneyField(Field):
-     """Money Field, uses Native Monetary Database Type, accepts int,float,str.
+    """Money Field, uses Native Monetary Database Type, accepts int,float,str.
 
-     8 Bytes, from $ -92233720368547758.08 to $ +92233720368547758.07.
-     https://www.postgresql.org/docs/current/static/datatype-money.html."""
+    8 Bytes, from $ -92233720368547758.08 to $ +92233720368547758.07.
+    https://www.postgresql.org/docs/current/static/datatype-money.html."""
     field_type = 'money'
 
     def db_value(self, value):
@@ -1097,12 +1097,11 @@ class JSONField(CharField):
         super().__init__(*args, **kwargs)
         self.ensure_ascii = ensure_ascii
 
-
     def db_value(self, value):
         if "" == value or 0 == len(value):
             value = "{}"
 
-        elif (value) and (isinstance(value, list) or isinstance(value, dict)):
+        elif isinstance(value, list) or isinstance(value, dict):
             ensure_ascii = self.ensure_ascii
             value = json.dumps(value, ensure_ascii=ensure_ascii)  # list -> str
 
@@ -1114,11 +1113,11 @@ class JSONField(CharField):
     def python_value(self, value):
         return json.loads(value)
 
-    def is_json(myjson):
+    def is_json(self, json_string):
         try:
-            json_object = json.loads(myjson)
+            json_object = json.loads(json_string)
             resoinse = True
-        except TypeError as e:
+        except TypeError:
             response = False
 
         return response
