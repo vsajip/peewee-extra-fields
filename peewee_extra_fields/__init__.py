@@ -62,6 +62,7 @@ __all__ = (
     'SKZipCodeField', 'SWIFTISOCodeField', 'SemVerField',
     'SimplePasswordField', 'SmallHexadecimalField', 'UAZipCodeField',
     'USSocialSecurityNumberField', 'USZipCodeField', 'UYCIField', 'XMLField',
+    'JSONField',
 )
 
 
