@@ -25,6 +25,7 @@ class Person(Model):  # All peewee_extra_fields.
     ip = IPAddressField()
     color = ColorHexadecimalField()
     hexa = SmallHexadecimalField()
+    json = JSONField()
 
     class Meta:
         database = db
@@ -36,7 +37,8 @@ if __name__ in "__main__":
     zoe = Person(name="Zoe", birthday=date(1985, 1, 1), cuit="20-30900000-6",
                  postal_code="1010", country="ar", currency="usd",
                  language="en", age=30, interests="python,peewee",
-                 mail="Zoe@Example.com", ip="10.0.0.1", color="#fe0", hexa="2f")
+                 mail="Zoe@Example.com", ip="10.0.0.1", color="#fe0", hexa="2f",
+                 json=[1, 2, 3, 4, 5])
     zoe.save()
     del zoe  # Bye Zoe.
 
@@ -53,4 +55,5 @@ if __name__ in "__main__":
           Mail:      {zoe.mail},        Python Type: {type(zoe.mail)}.
           IP:        {zoe.ip},          Python Type: {type(zoe.ip)}.
           Color:     {zoe.color},       Python Type: {type(zoe.color)}.
-          Hexa:      {zoe.hexa},        Python Type: {type(zoe.hexa)}.""")
+          Hexa:      {zoe.hexa},        Python Type: {type(zoe.hexa)}.
+          Json:      {zoe.json},        python Type: {type(zoe.json)}.""")
