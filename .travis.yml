@@ -1,7 +1,7 @@
 language: python
 
 python:
-  - 3.6
+  - 3.8
 
 services:
   - postgresql
@@ -33,4 +33,4 @@ cache:
 matrix:
   fast_finish: true
   allow_failures:
-    - python: 3.6
+    - python: 3.8
