@@ -1112,12 +1112,15 @@ class JSONField(CharField):
         return value
 
     def python_value(self, value):
-        return json.loads(value)
+        if not value is None:
+            value = json.loads(value)
+        return value
 
-    def is_json(self, json_string):
+    @staticmethod
+    def is_json(json_string):
         try:
-            json_object = json.loads(json_string)
-            resoinse = True
+            json.loads(json_string)
+            response = True
         except TypeError:
             response = False
 
