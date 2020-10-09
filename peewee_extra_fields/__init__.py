@@ -1099,7 +1099,10 @@ class JSONField(CharField):
         self.ensure_ascii = ensure_ascii
 
     def db_value(self, value):
-        if "" == value or 0 == len(value):
+        if value is None:
+            pass
+
+        elif "" == value or 0 == len(value):
             value = "{}"
 
         elif isinstance(value, list) or isinstance(value, dict):
