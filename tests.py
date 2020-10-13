@@ -5,6 +5,8 @@
 """Peewee Extra Fields Unittests."""
 
 
+import os
+import shutil
 import unittest
 from decimal import Decimal
 from ipaddress import (IPv4Address, IPv4Network, IPv6Address, IPv6Network,
@@ -473,6 +475,22 @@ class TestFields(unittest.TestCase):
         self.assertEqual(svg_img.data, "<svg><text>foo</text></svg>")
         self.assertIsInstance(svg_img.data, str)
         vector_img.delete_instance()
+
+    def test_File_write_path_file(self):
+        folder_for_files = "unit_test\\"
+
+        class File(Model):
+            data = FileField(folder_for_files=folder_for_files)
+            class Meta:
+                database = db
+
+        db.create_tables([File])
+        file = File.create(data="setup.py")
+        file = File.get(id=file.id)
+        self.assertIsInstance(file.data.bytecode, bytes)
+        self.assertEqual(file.data.file_path, os.path.join(folder_for_files, "setup.py"))
+        shutil.rmtree(folder_for_files)
+        file.delete_instance()
 
 
 if __name__.__contains__("__main__"):
