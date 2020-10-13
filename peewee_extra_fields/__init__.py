@@ -8,8 +8,11 @@
 import binascii
 import codecs
 import hashlib
+import io
+import os
 import re
 import secrets
+import shutil
 import string
 import struct
 import xml.etree.ElementTree as ET
@@ -62,7 +65,7 @@ __all__ = (
     'SKZipCodeField', 'SWIFTISOCodeField', 'SemVerField',
     'SimplePasswordField', 'SmallHexadecimalField', 'UAZipCodeField',
     'USSocialSecurityNumberField', 'USZipCodeField', 'UYCIField', 'XMLField',
-    'JSONField',
+    'JSONField', 'FileField',
 )
 
 
@@ -1126,6 +1129,73 @@ class JSONField(CharField):
             response = True
         except TypeError:
             response = False
+
+        return response
+
+
+class FileField(CharField):
+    """File field"""
+
+    field_type = "file"
+
+    def __init__(self, folder_for_files="peewee_files\\", *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.folder_for_files = folder_for_files
+        if os.path.exists(self.folder_for_files) is False:
+            os.mkdir(self.folder_for_files)
+
+    def db_value(self, path_or_bytesio):
+        if isinstance(path_or_bytesio, str):
+            file_name = os.path.basename(path_or_bytesio)
+            file_path = self.gen_path_for_file(file_name)
+            shutil.copyfile(path_or_bytesio, file_path)
+
+        elif isinstance(path_or_bytesio, io.IOBase):
+            file_name = self.get_file_name(path_or_bytesio)
+            file_path = self.gen_path_for_file(file_name)
+
+            with open(file_path, "wb") as f:
+                f.write(path_or_bytesio.read())
+
+        else:
+            file_path = None
+
+        return file_path
+
+    def python_value(self, value):
+        if value is not None:
+            file_path = value
+            with open(value, "rb") as value:
+                value.bytecode = value.read()
+
+            value.file_path = file_path
+
+        return value
+
+    def gen_path_for_file(self, file_name, file_id=1):
+        path = os.path.join(self.folder_for_files, file_name)
+        if os.path.exists(path):
+            file_name_without_extension_ = os.path.splitext(file_name)[0]
+            file_extension = os.path.splitext(file_name)[1]
+            _file_name = "{}_{}{}".format(file_name_without_extension_, file_id, file_extension)
+            path = os.path.join(self.folder_for_files, _file_name)
+            if os.path.exists(path):
+                return self.gen_path_for_file(file_name, file_id=file_id+1)
+
+        return path
+
+    @staticmethod
+    def get_file_name(obj):
+        """
+        Get file name from object
+        :param obj:
+        :return: str
+        """
+        name = getattr(obj, 'name', None)
+        if name and isinstance(name, str) and name[0] != "<" and name[-1] != ">":
+            response = os.path.basename(name)
+        else:
+            response = None
 
         return response
 
