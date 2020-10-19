@@ -58,7 +58,7 @@ __all__ = (
     'JPZipCodeField', 'LanguageISOCodeField', 'MKIdentityCardNumberField',
     'MTZipCodeField', 'MXZipCodeField', 'MoneyField', 'PLNIPField',
     'PLNationalIDCardNumberField', 'PLZipCodeField', 'PTZipCodeField',
-    'PasswordField', 'PastDateField', 'PastDateTimeField', 'PickledField',
+    'PasswordField', 'PastDateField', 'PastDateTimeField',
     'PositiveBigIntegerField', 'PositiveDecimalField', 'PositiveFloatField',
     'PositiveIntegerField', 'PositiveSmallIntegerField', 'ROCIFField',
     'ROCNPField', 'ROZipCodeField', 'RUPassportNumberField', 'SEZipCodeField',

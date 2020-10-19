@@ -9,24 +9,9 @@ Fields missing on Peewee >=3 but still relevant and useful."""
 from peewee import BlobField
 
 try:
-    import cPickle as pickle
-except ImportError:
-    import pickle
-
-try:
     from bcrypt import hashpw, gensalt
 except ImportError:
     hashpw = gensalt = PasswordField = PasswordHash = None
-
-
-class PickledField(BlobField):
-    def db_value(self, value):
-        if value is not None:
-            return pickle.dumps(value)
-
-    def python_value(self, value):
-        if value is not None:
-            return pickle.loads(value)
 
 
 if hashpw and gensalt:

@@ -1248,52 +1248,6 @@ ValueError: USSocialSecurityNumberField Value is not a valid U.S.A. Social Secur
 </details>
 
 
-##### PickledField
-<details>
-
-`peewee_extra_fields.PickledField()`
-
-**Description:** Peewee [PickledField](http://docs.peewee-orm.com/en/latest/search.html?q=PickledField) backported from 2.x Versions (literal copy & paste) to work with Peewee 3 and Python 3.
-Stores arbitrary python objects, stores values in a pickled `BlobField`.
-Internally uses `pickle.loads()` and `pickle.dumps()`.
-
-[`PickledField` is explicitly no longer supported and deprecated by Peewee.](https://github.com/coleifer/peewee/issues/1444#issue-292958082)
-
-This field has been clean out of Legacy Python2 compatibility code that it originally used to have.
-
-**Arguments:** None (should take the same `*args` and `**kwargs` as `BlobField`).
-
-**Keyword Arguments:** None (should take the same `*args` and `**kwargs` as `BlobField`).
-
-**Returns:** Arbitrary Python objects.
-
-**Base Class:** `BlobField`.
-
-**Type:** `<class 'type'>`.
-
-**Source Code file:** https://github.com/juancarlospaco/peewee-extra-fields/blob/master/peewee_extra_fields.py
-
-| State              | OS          | Description |
-| ------------------ |:-----------:| -----------:|
-| :white_check_mark: | **Linux**   | Works Ok    |
-| :white_check_mark: | **Os X**    | Works Ok    |
-| :white_check_mark: | **Windows** | Works Ok    |
-
-**Usage Example:**
-
-```python
->>> from peewee_extra_fields import PickledField
->>> PickledField().db_value("a")
-b'\x80\x03X\x01\x00\x00\x00aq\x00.'
-
->>> PickledField().python_value(b'\x80\x03X\x01\x00\x00\x00aq\x00.')
-"a"
-
-```
-
-</details>
-
-
 ##### PasswordField
 <details>
 
