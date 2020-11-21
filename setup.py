@@ -73,9 +73,9 @@ def post_install_cythonize():
     if gcc and cythoniz and site_packages and sys.platform.startswith("linux"):
         for py_file in [(Path(site_packages) / f) for f in MODULES2CYTHONIZE]:
             if py_file.is_file() and os.access(py_file, os.W_OK):
-                comand = f"{cythoniz} -3 --inplace --force {py_file}"
+                command = f"{cythoniz} -3 --inplace --force {py_file}"
                 try:
-                    run(comand, shell=True, timeout=99, check=True)
+                    run(command, shell=True, timeout=99, check=True)
                 except Exception as error:
                     print(error)
                 else:
