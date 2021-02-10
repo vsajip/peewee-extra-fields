@@ -1203,7 +1203,7 @@ class FileField(CharField):
 
 
 class TextField(TextField):
-    def __init__(self, validators: typing.Union = (str, int, callable), *args, **kwargs):
+    def __init__(self, validators: typing.Union = (typing.AnyStr, typing.Callable), *args, **kwargs):
         self.validators:  typing.Tuple  = validators
 
         super().__init__(*args, **kwargs)
@@ -1215,14 +1215,20 @@ class TextField(TextField):
         return value
 
     def run_validators(self, value):
-        result = True
         for validator in self.validators:
             if isinstance(validator, str):
                 result = value == validator
             else:  # Validator function
                 result = validator(value)
 
+            if result:
+                break
+        else:
+            result = False
+
         return result
+
+
 
 
 # Most Wanted Fields:
