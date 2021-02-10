@@ -1094,51 +1094,36 @@ class DateTimeTZRangeField(Field):
     db_field = 'tstzrange'
 
 
-class JSONField(CharField):
-    """json field"""
 
-    field_type = "json"
+class TextField(TextField):
+    def __init__(self, validators: typing.Union = (typing.AnyStr, typing.Callable), *args, **kwargs):
+        self.validators:  typing.Tuple  = validators
 
-    def __init__(self, ensure_ascii=False, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.ensure_ascii = ensure_ascii
 
     def db_value(self, value):
-        if value is None:
-            pass
-
-        elif "" == value or 0 == len(value):
-            value = "{}"
-
-        elif isinstance(value, list) or isinstance(value, dict):
-            ensure_ascii = self.ensure_ascii
-            value = json.dumps(value, ensure_ascii=ensure_ascii)  # list -> str
-
-        elif not self.is_json(value):
-            raise ValueError
+        if self.run_validators(value) is False:
+            raise exceptions.ValidationError("The value({}) failed validation".format(value))
 
         return value
 
-    def python_value(self, value):
-        if not value is None:
-            value = json.loads(value)
-        return value
+    def run_validators(self, value):
+        for validator in self.validators:
+            if isinstance(validator, str):
+                result = value == validator
+            else:  # Validator function
+                result = validator(value)
 
-    @staticmethod
-    def is_json(json_string):
-        try:
-            json.loads(json_string)
-            response = True
-        except TypeError:
-            response = False
+            if result:
+                break
+        else:
+            result = False
 
-        return response
+        return result
 
 
-class FileField(CharField):
+class FileField(TextField):
     """File field"""
-
-    field_type = "file"
 
     def __init__(self, folder_for_files="peewee_files\\", *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -1202,31 +1187,45 @@ class FileField(CharField):
         return response
 
 
-class TextField(TextField):
-    def __init__(self, validators: typing.Union = (typing.AnyStr, typing.Callable), *args, **kwargs):
-        self.validators:  typing.Tuple  = validators
+class JSONField(TextField):
+    """json field"""
 
+    field_type = "json"
+
+    def __init__(self, ensure_ascii=False, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.ensure_ascii = ensure_ascii
 
     def db_value(self, value):
-        if self.run_validators(value) is False:
-            raise exceptions.ValidationError("The value({}) failed validation".format(value))
+        if value is None:
+            pass
+
+        elif "" == value or 0 == len(value):
+            value = "{}"
+
+        elif isinstance(value, list) or isinstance(value, dict):
+            ensure_ascii = self.ensure_ascii
+            value = json.dumps(value, ensure_ascii=ensure_ascii)  # list -> str
+
+        elif not self.is_json(value):
+            raise ValueError
 
         return value
 
-    def run_validators(self, value):
-        for validator in self.validators:
-            if isinstance(validator, str):
-                result = value == validator
-            else:  # Validator function
-                result = validator(value)
+    def python_value(self, value):
+        if not value is None:
+            value = json.loads(value)
+        return value
 
-            if result:
-                break
-        else:
-            result = False
+    @staticmethod
+    def is_json(json_string):
+        try:
+            json.loads(json_string)
+            response = True
+        except TypeError:
+            response = False
 
-        return result
+        return response
 
 
 
