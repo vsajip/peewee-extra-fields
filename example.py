@@ -6,6 +6,7 @@
 from datetime import date
 from peewee import Model, SqliteDatabase
 from peewee_extra_fields import *
+from peewee_extra_fields import exceptions
 
 
 db = SqliteDatabase('testing.db')
@@ -27,6 +28,7 @@ class Person(Model):  # All peewee_extra_fields.
     hexa = SmallHexadecimalField()
     json = JSONField()
     files = FileField()
+    text = TextField(validators=["test_text"])
 
     class Meta:
         database = db
@@ -34,14 +36,23 @@ class Person(Model):  # All peewee_extra_fields.
 
 if __name__ in "__main__":
     db.create_tables([Person], safe=True)
-    file = open('testing.db', "rd")  # Reading the file in binary form
+    file = open('testing.db', "rb")  # Reading the file in binary form
 
     zoe = Person(name="Zoe", birthday=date(1985, 1, 1), cuit="20-30900000-6",
                  postal_code="1010", country="ar", currency="usd",
                  language="en", age=30, interests="python,peewee",
                  mail="Zoe@Example.com", ip="10.0.0.1", color="#fe0", hexa="2f",
-                 json=[1, 2, 3, 4, 5], files=file)
+                 json=[1, 2, 3, 4, 5], files=file, text="test_text")
+
     zoe.save()
+
+    try:
+        zoe.text = "test_text_"
+        zoe.save()
+    except exceptions.ValidationError:  # Attempt to fail
+        pass
+
+
     del zoe  # Bye Zoe.
 
     zoe = Person.get(Person.name == "Zoe")  # Zoe is back.
@@ -59,6 +70,7 @@ if __name__ in "__main__":
           Color:     {zoe.color},       Python Type: {type(zoe.color)}.
           Hexa:      {zoe.hexa},        Python Type: {type(zoe.hexa)}.
           Json:      {zoe.json},        python Type: {type(zoe.json)}.
-          File:      {zoe.file},        python Type: {type(zoe.file.file_path)}.
+          File:      {zoe.files},        python Type: {type(zoe.files.file_path)}.
+          Text:      {zoe.text},        python Type: {type(zoe.text)}.
 """)
 
