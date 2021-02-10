@@ -5,6 +5,7 @@
 """Extra Fields for Peewee ORM."""
 
 
+import typing
 import binascii
 import codecs
 import hashlib
@@ -36,8 +37,9 @@ from urllib.parse import urlencode
 
 from peewee import (BigIntegerField, BlobField, CharField, DateField,
                     DateTimeField, DecimalField, Field, FixedCharField,
-                    FloatField, IntegerField, SmallIntegerField)
+                    FloatField, IntegerField, SmallIntegerField, TextField)
 
+from . import exceptions
 from .regex_fields import *
 from .legacy_fields import *
 from .ar_fields import *
@@ -65,7 +67,7 @@ __all__ = (
     'SKZipCodeField', 'SWIFTISOCodeField', 'SemVerField',
     'SimplePasswordField', 'SmallHexadecimalField', 'UAZipCodeField',
     'USSocialSecurityNumberField', 'USZipCodeField', 'UYCIField', 'XMLField',
-    'JSONField', 'FileField',
+    'JSONField', 'FileField', 'TextField',
 )
 
 
@@ -1198,6 +1200,29 @@ class FileField(CharField):
             response = None
 
         return response
+
+
+class TextField(TextField):
+    def __init__(self, validators: typing.Union = (str, int, callable), *args, **kwargs):
+        self.validators:  typing.Tuple  = validators
+
+        super().__init__(*args, **kwargs)
+
+    def db_value(self, value):
+        if self.run_validators(value) is False:
+            raise exceptions.ValidationError("The value({}) failed validation".format(value))
+
+        return value
+
+    def run_validators(self, value):
+        result = True
+        for validator in self.validators:
+            if isinstance(validator, str):
+                result = value == validator
+            else:  # Validator function
+                result = validator(value)
+
+        return result
 
 
 # Most Wanted Fields:
