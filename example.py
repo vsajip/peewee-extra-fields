@@ -73,4 +73,3 @@ if __name__ in "__main__":
           File:      {zoe.files},        python Type: {type(zoe.files.file_path)}.
           Text:      {zoe.text},        python Type: {type(zoe.text)}.
 """)
-
