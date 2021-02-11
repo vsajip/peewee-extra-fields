@@ -46,7 +46,7 @@ from .ar_fields import *
 from .us_fields import *
 
 
-__version__ = "2.8.0"
+__version__ = "2.8.2"
 __all__ = (
     'ARCUITField', 'ARZipCodeField', 'ATZipCodeField', 'AUZipCodeField',
     'BEZipCodeField', 'BRZipCodeField', 'CHZipCodeField', 'CLRutField',
