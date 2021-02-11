@@ -1,14 +1,13 @@
 language: python
 
 python:
-  - 3.8
+  - 3.9
 
 services:
   - postgresql
 
 before_install:
-  - pip install peewee psycopg2-binary cython
-  - pip install codecov
+  - pip install peewee psycopg2-binary cython codecov
 
 install:
   - pip install .
@@ -35,4 +34,4 @@ cache:
 matrix:
   fast_finish: true
   allow_failures:
-    - python: 3.8
+    - python: 3.9
