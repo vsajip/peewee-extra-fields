@@ -1103,7 +1103,7 @@ class TextField(TextField):
 
     def db_value(self, value):
         if self.run_validators(value) is False:
-            raise exceptions.ValidationError("The value({}) failed validation".format(value))
+            raise exceptions.ValidationError(f"The value({value}) failed validation")
 
         return value
 
@@ -1164,7 +1164,7 @@ class FileField(TextField):
         if os.path.exists(path):
             file_name_without_extension_ = os.path.splitext(file_name)[0]
             file_extension = os.path.splitext(file_name)[1]
-            _file_name = "{}_{}{}".format(file_name_without_extension_, file_id, file_extension)
+            _file_name = f"{file_name_without_extension_}_{file_id}{file_extension}"
             path = os.path.join(self.folder_for_files, _file_name)
             if os.path.exists(path):
                 return self.gen_path_for_file(file_name, file_id=file_id+1)
