@@ -46,7 +46,7 @@ from .ar_fields import *
 from .us_fields import *
 
 
-__version__ = "2.7.5"
+__version__ = "2.8.2"
 __all__ = (
     'ARCUITField', 'ARZipCodeField', 'ATZipCodeField', 'AUZipCodeField',
     'BEZipCodeField', 'BRZipCodeField', 'CHZipCodeField', 'CLRutField',
@@ -60,7 +60,7 @@ __all__ = (
     'JPZipCodeField', 'LanguageISOCodeField', 'MKIdentityCardNumberField',
     'MTZipCodeField', 'MXZipCodeField', 'MoneyField', 'PLNIPField',
     'PLNationalIDCardNumberField', 'PLZipCodeField', 'PTZipCodeField',
-    'PasswordField', 'PastDateField', 'PastDateTimeField', 'PickledField',
+    'PasswordField', 'PastDateField', 'PastDateTimeField',
     'PositiveBigIntegerField', 'PositiveDecimalField', 'PositiveFloatField',
     'PositiveIntegerField', 'PositiveSmallIntegerField', 'ROCIFField',
     'ROCNPField', 'ROZipCodeField', 'RUPassportNumberField', 'SEZipCodeField',
@@ -1103,7 +1103,7 @@ class TextField(TextField):
 
     def db_value(self, value):
         if self.run_validators(value) is False:
-            raise exceptions.ValidationError("The value({}) failed validation".format(value))
+            raise exceptions.ValidationError(f"The value({value}) failed validation")
 
         return value
 
@@ -1164,7 +1164,7 @@ class FileField(TextField):
         if os.path.exists(path):
             file_name_without_extension_ = os.path.splitext(file_name)[0]
             file_extension = os.path.splitext(file_name)[1]
-            _file_name = "{}_{}{}".format(file_name_without_extension_, file_id, file_extension)
+            _file_name = f"{file_name_without_extension_}_{file_id}{file_extension}"
             path = os.path.join(self.folder_for_files, _file_name)
             if os.path.exists(path):
                 return self.gen_path_for_file(file_name, file_id=file_id+1)
